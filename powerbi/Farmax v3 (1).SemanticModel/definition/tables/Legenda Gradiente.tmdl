@@ -1,0 +1,20 @@
+table 'Legenda Gradiente'
+	lineageTag: ccf7d33a-2c62-4689-900d-be930327b423
+
+	column Value
+		formatString: 0
+		lineageTag: 2056ad23-81d2-4de6-84a1-49cc54e300e1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Legenda Gradiente' = calculated
+		mode: import
+		source =
+				
+				GENERATESERIES(1, 100, 1)
+
+	annotation PBI_Id = 837085f800ce429d9ba96f6b6ecd208c
+

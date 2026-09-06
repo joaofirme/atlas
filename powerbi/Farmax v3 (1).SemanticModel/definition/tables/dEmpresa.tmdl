@@ -1,0 +1,81 @@
+table dEmpresa
+	excludeFromModelRefresh
+	lineageTag: 9ed886fa-243f-43a5-ac86-7bb036a9dc73
+
+	column Company
+		dataType: string
+		lineageTag: 79001070-f078-47d0-8da4-22bd1636d63b
+		summarizeBy: none
+		sourceColumn: Company
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 57cb4f22-3589-4378-a341-e9c7cd633770
+		summarizeBy: none
+		sourceColumn: Description
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cod_Origem
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b899e38-e733-44de-9aee-08477474bb96
+		summarizeBy: sum
+		sourceColumn: Cod_Origem
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Grupo
+		dataType: string
+		lineageTag: a1fbc518-c825-40c3-9780-874cb2913c51
+		summarizeBy: none
+		sourceColumn: Grupo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Empresa
+		dataType: string
+		lineageTag: 62879733-6c47-44e4-8502-4a586dccdc94
+		summarizeBy: none
+		sourceColumn: Empresa
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dEmpresa-17376962-dc8c-41c7-8cde-55900ec5eb70 = m
+		mode: import
+		queryGroup: Dimensão
+		source = ```
+				//CONEXAO DATAFLOW
+				let
+				    Source = PowerPlatform.Dataflows([]),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    #"4c88a2b6-9309-4368-9a28-168154f1d083" = Workspaces{[workspaceId="4c88a2b6-9309-4368-9a28-168154f1d083"]}[Data],
+				    #"e935f8e3-404f-4bbd-8fbb-8942c0e6f04e" = #"4c88a2b6-9309-4368-9a28-168154f1d083"{[dataflowId="e935f8e3-404f-4bbd-8fbb-8942c0e6f04e"]}[Data],
+				    dEmpresa_ = #"e935f8e3-404f-4bbd-8fbb-8942c0e6f04e"{[entity="dEmpresa",version=""]}[Data]
+				in
+				    dEmpresa_
+				    
+				//CRIACAO MANUAL
+				/*
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WcnMM8lXSUfLMSzm8q7ikKDNRKVYHKOpiYAgUdckECSWVZqbkFwElYgE=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Company = _t, Description = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Company", type text}})
+				in
+				    #"Changed Type"
+				*/
+				```
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

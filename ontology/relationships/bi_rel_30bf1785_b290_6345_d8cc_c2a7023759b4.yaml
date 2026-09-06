@@ -1,0 +1,41 @@
+schema_version: 1
+id: "bi_rel_30bf1785_b290_6345_d8cc_c2a7023759b4"
+title: "fPlanProd_unificada.cobertura_estoque_company → dEmpresa.Company"
+type: "relationship"
+domain: "corporativo"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/relationships.tmdl"
+    locator: "relationship 30bf1785-b290-6345-d8cc-c2a7023759b4; linha 94"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+relationship_kind: "semantic_model_join"
+from_object: "fPlanProd_unificada.cobertura_estoque_company"
+to_object: "dEmpresa.Company"
+business_verb: null
+declared_properties:
+  fromColumn: "fPlanProd_unificada.cobertura_estoque_company"
+  toColumn: "dEmpresa.Company"
+cardinality:
+  from: null
+  to: null
+  note: "null significa propriedade omitida no TMDL; não é cardinalidade medida nos dados."
+active_declared: null
+filter_direction_declared: null
+join_sql: null
+orphan_handling: null
+fanout_risk: "Revisar muitos-para-muitos e duplicidade das chaves; não traduzir relacionamento automaticamente em JOIN SQL."

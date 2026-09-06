@@ -1,0 +1,117 @@
+table dExecutivos_unificada
+	lineageTag: 1983f860-142c-4712-9883-14b5394abff2
+
+	column empresa
+		dataType: string
+		lineageTag: 63693e71-6cbb-4edb-88bf-5432f40c1c80
+		summarizeBy: none
+		sourceColumn: empresa
+
+		annotation SummarizationSetBy = Automatic
+
+	column executivo_chave
+		dataType: string
+		lineageTag: d3646f33-ce77-40ba-b27a-d62ce9604acf
+		summarizeBy: none
+		sourceColumn: executivo_chave
+
+		annotation SummarizationSetBy = Automatic
+
+	column executivo_cod
+		dataType: int64
+		formatString: 0
+		lineageTag: be9151b5-3273-440d-8a8f-10058e582de7
+		summarizeBy: sum
+		sourceColumn: executivo_cod
+
+		annotation SummarizationSetBy = Automatic
+
+	column executivo_nome
+		dataType: string
+		lineageTag: 14642d35-f48d-4d4b-9fb3-ab6ab3d978c1
+		summarizeBy: none
+		sourceColumn: executivo_nome
+
+		annotation SummarizationSetBy = Automatic
+
+	column executivo_email
+		dataType: string
+		lineageTag: ff3033f0-6475-470a-93e2-979c25db6126
+		summarizeBy: none
+		sourceColumn: executivo_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column coordenador_cod
+		dataType: string
+		lineageTag: 7ef67037-e349-41cf-acef-ee77e7d59e47
+		summarizeBy: none
+		sourceColumn: coordenador_cod
+
+		annotation SummarizationSetBy = Automatic
+
+	column coordenador_nome
+		dataType: string
+		lineageTag: 2363e6d4-bc4d-4242-911a-368282c7dfcf
+		summarizeBy: none
+		sourceColumn: coordenador_nome
+
+		annotation SummarizationSetBy = Automatic
+
+	column coordenador_email
+		dataType: string
+		lineageTag: 97a92007-acbb-437a-9921-4b4a484e57b4
+		summarizeBy: none
+		sourceColumn: coordenador_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column regional_cod
+		dataType: string
+		lineageTag: 45ce218a-ec88-4ae5-b896-aad504497e36
+		summarizeBy: none
+		sourceColumn: regional_cod
+
+		annotation SummarizationSetBy = Automatic
+
+	column gerente_regional_nome
+		dataType: string
+		lineageTag: feca2c79-bd62-47f3-806a-8d11dd77b505
+		summarizeBy: none
+		sourceColumn: gerente_regional_nome
+
+		annotation SummarizationSetBy = Automatic
+
+	column gerente_email
+		dataType: string
+		lineageTag: 761cc610-b1fe-416b-bfd1-6683441b30eb
+		summarizeBy: none
+		sourceColumn: gerente_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_unificado
+		dataType: string
+		lineageTag: 41ce40d7-d1d8-4fde-97e9-e14de7b44984
+		summarizeBy: none
+		sourceColumn: nome_unificado
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dExecutivos_unificada = m
+		mode: import
+		queryGroup: Dimensão
+		source =
+				let
+				    Source = AmazonRedshift.Database("farmax-cluster.cdkgzqhbae0k.us-east-1.redshift.amazonaws.com:5439","farmax_prod"),
+				    comercial = Source{[Name="comercial"]}[Data],
+				    dimensao_executivos_unificada1 = comercial{[Name="dimensao_executivos_unificada"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(dimensao_executivos_unificada1,{{"empresa", type text}, {"executivo_chave", type text}, {"executivo_cod", Int64.Type}, {"executivo_nome", type text}, {"executivo_email", type text}, {"coordenador_cod", type text}, {"coordenador_nome", type text}, {"coordenador_email", type text}, {"regional_cod", type text}, {"gerente_regional_nome", type text}, {"gerente_email", type text}, {"nome_unificado", type text}}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Changed Type",{"empresa", "executivo_chave", "executivo_cod", "executivo_nome", "executivo_email", "coordenador_cod", "coordenador_nome", "coordenador_email", "regional_cod", "gerente_regional_nome", "gerente_email", "nome_unificado"})
+				in
+				    #"Reordered Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

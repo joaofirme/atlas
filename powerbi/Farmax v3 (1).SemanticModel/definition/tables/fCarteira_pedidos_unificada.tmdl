@@ -1,0 +1,214 @@
+table fCarteira_pedidos_unificada
+	lineageTag: 0194e1c3-fcdf-4fd7-bd82-9e9b46bedb81
+
+	column data_carteira
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e9fb072f-5bc4-4b98-ab6f-b5b5de899c90
+		summarizeBy: none
+		sourceColumn: data_carteira
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ano_mes
+		dataType: string
+		lineageTag: d4669534-283e-4250-80ae-45469c54ef0a
+		summarizeBy: none
+		sourceColumn: ano_mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_sale_order_code
+		dataType: int64
+		formatString: 0
+		lineageTag: 1eccf8bc-4525-4946-b543-2e58edadc32a
+		summarizeBy: sum
+		sourceColumn: order_sale_order_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_sale_order_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 800d297b-6a22-4178-b759-e69a078ebf5e
+		summarizeBy: none
+		sourceColumn: order_sale_order_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column order_billing_billing_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8ed9d604-71c7-41a1-9243-d67877611004
+		summarizeBy: none
+		sourceColumn: order_billing_billing_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column order_sale_program_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 489a2bef-fffa-426d-a3d1-62b653b9dc1e
+		summarizeBy: none
+		sourceColumn: order_sale_program_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column obt_sales_order_status
+		dataType: string
+		lineageTag: 2fde7fb6-8917-4f38-abf7-9e4c9ac87e50
+		summarizeBy: none
+		sourceColumn: obt_sales_order_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column obt_sales_order_type
+		dataType: string
+		lineageTag: af411d05-ea6c-4a15-8c23-03de7b11d9a1
+		summarizeBy: none
+		sourceColumn: obt_sales_order_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column company
+		dataType: string
+		lineageTag: 00213bde-5990-40bc-b127-35a8eb46f965
+		summarizeBy: none
+		sourceColumn: company
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_sale_order_office_code
+		dataType: string
+		lineageTag: d7e57a7b-6b6a-43ce-adad-8ca8219ccddb
+		summarizeBy: none
+		sourceColumn: order_sale_order_office_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_sale_material_code
+		dataType: string
+		lineageTag: d0c00e15-2d18-4d44-9bc5-751f835ac830
+		summarizeBy: none
+		sourceColumn: order_sale_material_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_sale_quantity
+		dataType: double
+		lineageTag: 96b175be-bb81-430b-9241-e9e0ea63efb1
+		summarizeBy: sum
+		sourceColumn: order_sale_quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_sale_subtotal
+		dataType: double
+		lineageTag: d238ce92-ab3c-4428-bbfb-19c912a02182
+		summarizeBy: sum
+		sourceColumn: order_sale_subtotal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_billing_quantity
+		dataType: double
+		lineageTag: 27dc7d05-911c-443d-8e56-933807f48007
+		summarizeBy: sum
+		sourceColumn: order_billing_quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_billing_subtotal
+		dataType: double
+		lineageTag: 47de1472-a955-403d-9664-30ba676ebd20
+		summarizeBy: sum
+		sourceColumn: order_billing_subtotal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column obt_sales_department_status
+		dataType: string
+		lineageTag: aec0e4df-d73d-47e8-9db4-32ff873dd03b
+		summarizeBy: none
+		sourceColumn: obt_sales_department_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_sale_storage_code
+		dataType: string
+		lineageTag: 100a31e8-792f-4be0-b406-8b40ca990cdc
+		summarizeBy: none
+		sourceColumn: order_sale_storage_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_sale_last_change_date_item
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d4789288-6956-4751-9332-575a60db8b9e
+		summarizeBy: none
+		sourceColumn: order_sale_last_change_date_item
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column status_carteira
+		dataType: string
+		lineageTag: 6e26dfff-85bc-414b-bd35-61e0ce07d9f3
+		summarizeBy: none
+		sourceColumn: status_carteira
+
+		annotation SummarizationSetBy = Automatic
+
+	column qt_ordem_carteira_inicial
+		dataType: double
+		lineageTag: 59df2eef-5e63-4fc5-bf64-79504acaea9d
+		summarizeBy: sum
+		sourceColumn: qt_ordem_carteira_inicial
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column vr_item_carteira_inicial
+		dataType: double
+		lineageTag: 475ea8b9-b707-40e8-b3d9-238bb1a59431
+		summarizeBy: sum
+		sourceColumn: vr_item_carteira_inicial
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fCarteira_pedidos_unificada = m
+		mode: import
+		queryGroup: Fato
+		source =
+				let
+				    Fonte = AmazonRedshift.Database("farmax-cluster.cdkgzqhbae0k.us-east-1.redshift.amazonaws.com:5439","farmax_prod"),
+				    comercial = Fonte{[Name="comercial"]}[Data],
+				    fato_carteira_pedidos_planejamento = comercial{[Name="fato_carteira_pedidos_planejamento"]}[Data]
+				in
+				    fato_carteira_pedidos_planejamento
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

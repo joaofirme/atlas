@@ -1,0 +1,53 @@
+table 'Parâmetros: Matriz Dinâmica'
+	lineageTag: daa35310-9acb-48b7-b9a9-a6a8e79457da
+
+	column 'Parâmetro 2'
+		lineageTag: 581622a7-d217-42f9-bf7c-78069237ef2b
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parâmetro 2 Pedido'
+
+		relatedColumnDetails
+			groupByColumn: 'Parâmetro 2 Campos'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parâmetro 2 Campos'
+		isHidden
+		lineageTag: 39b14965-c9e5-4b89-8c33-a83422446290
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parâmetro 2 Pedido'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parâmetro 2 Pedido'
+		isHidden
+		formatString: 0
+		lineageTag: 93bdef48-60a4-4a84-a0a3-b93d9c6cf080
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parâmetros: Matriz Dinâmica' = calculated
+		mode: import
+		source =
+				{
+				    ("MARCA", NAMEOF('dMaterial_unificada'[brand_novo]), 3),
+				    ("SEGMENTO", NAMEOF('dMaterial_unificada'[novo_segmento]), 4),
+				    ("CLIENTE", NAMEOF('dClientes_unificada'[cliente_grupo]), 2),
+				    ("REGIONAL", NAMEOF('dRegional'[order_sale_order_office]), 0),
+				    ("EXECUTIVO", NAMEOF('dExecutivos_unificada'[nome_unificado]), 1),
+				    ("CLASSIFICAÇÃO SKU", NAMEOF('dMaterial_unificada'[level]), 5),
+				    ("SKU", NAMEOF('dMaterial_unificada'[descricao]), 6)
+				}
+
+	annotation PBI_Id = 1334730686a24e37a4dbff8e6fb1f7a9
+

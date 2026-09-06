@@ -1,0 +1,117 @@
+relationship AutoDetected_3a7ec5fb-e044-4d8e-bb91-64b680a0678c
+	fromColumn: fDevolucao_unificada.chave_cliente
+	toColumn: dClientes_unificada.chave_cliente
+
+relationship AutoDetected_dce192c7-5eac-41c2-9f47-8e110cb40084
+	fromColumn: fVendas_unificada.chave_cliente
+	toColumn: dClientes_unificada.chave_cliente
+
+relationship 572c3062-14e1-a275-25a7-19f0278a9b03
+	fromColumn: fVendas_unificada.companhia
+	toColumn: dEmpresa.Company
+
+relationship e9e81fbe-ef49-0ef5-e02a-9db5336157a2
+	fromColumn: fVendas_unificada.data_pedido
+	toColumn: dTempo.Data
+
+relationship bc2323fc-68b3-6afa-f392-e7b6ff622dfe
+	fromColumn: fVendas_unificada.regional_cod
+	toColumn: dRegional.order_sale_order_office_code
+
+relationship b2283a9e-b095-76c3-b789-78e205056c3f
+	isActive: false
+	fromColumn: fVendas_unificada.sale_cancellation_date
+	toColumn: dTempo.Data
+
+relationship 2dd7faaf-5dc2-863e-2cfe-ea85d901ab43
+	isActive: false
+	fromColumn: fVendas_unificada.data_movimento
+	toColumn: dTempo.Data
+
+relationship e2a996b8-b1f2-5ccb-31e2-781e618d5da9
+	fromColumn: fDevolucao_unificada.data_movimento
+	toColumn: dTempo.Data
+
+relationship f4eedbc4-ea27-34bd-8aa5-d01a57f6ab93
+	fromColumn: fDevolucao_unificada.regional_codigo
+	toColumn: dRegional.order_sale_order_office_code
+
+relationship e03fc402-c1d4-be6e-bf2e-c296a9afc19e
+	fromColumn: fDevolucao_unificada.companhia
+	toColumn: dEmpresa.Company
+
+relationship 161570b7-b26e-3199-c561-a7dc1a96bc9a
+	fromColumn: fDevolucao_unificada.chave_executivo
+	toColumn: dExecutivos_unificada.executivo_chave
+
+relationship dc76daf3-fd84-0178-4fdf-6a5a48125462
+	fromColumn: fDevolucao_unificada.sku
+	toColumn: dMaterial_unificada.codigo_produto
+
+relationship 674b67a1-daba-f6f8-f065-acfb362ed046
+	fromColumn: fVendas_unificada.sku
+	toColumn: dMaterial_unificada.codigo_produto
+
+relationship dd11cd0b-c3a6-7323-3051-65b6486f480e
+	fromColumn: fMeta_unificada.meta_data_alvo
+	toColumn: dTempo.Data
+
+relationship 2ec3f4a3-a809-1d18-fdee-30075a931950
+	fromColumn: fMeta_unificada.companhia
+	toColumn: dEmpresa.Company
+
+relationship aa41f29b-e09e-855b-507d-cc07db2208eb
+	fromColumn: fMeta_unificada.chave_executivo
+	toColumn: dExecutivos_unificada.executivo_chave
+
+relationship db327af3-92e6-8445-b77e-ff98d2e263c4
+	fromColumn: fVendas_unificada.chave_executivo
+	toColumn: dExecutivos_unificada.executivo_chave
+
+relationship a22dd875-10a7-c4b2-067b-67da443a6c7d
+	fromColumn: fMeta_unificada.chave_regional
+	toColumn: dRegional.order_sale_order_office_code
+
+relationship ab55d04b-2753-63db-2450-20f80863e1f8
+	fromColumn: fCarteira_pedidos_unificada.data_carteira
+	toColumn: dTempo.Data
+
+relationship 964182c1-8e30-6d21-fa74-e19b722a13a0
+	toCardinality: many
+	fromColumn: fMeta_unificada.chave_marca
+	toColumn: dMaterial_unificada.brand_novo
+
+relationship 7eae087a-220d-86ff-9076-bc68cdf46e41
+	isActive: false
+	toCardinality: many
+	fromColumn: dExecutivos_unificada.empresa
+	toColumn: dEmpresa.Empresa
+
+relationship ff396aa3-4800-911b-45e1-5af2ad74ff9a
+	fromColumn: fPlanProd_unificada.cobertura_estoque_sku
+	toColumn: dMaterial_unificada.codigo_produto
+
+relationship 30bf1785-b290-6345-d8cc-c2a7023759b4
+	fromColumn: fPlanProd_unificada.cobertura_estoque_company
+	toColumn: dEmpresa.Company
+
+relationship 576e8b79-7e81-5ac5-2b3e-0a6a755ba7cd
+	fromColumn: fPlanProd_unificada.cobertura_estoque_data_referencia
+	toColumn: dTempo.Data
+
+relationship AutoDetected_a3c943a9-e146-4ffd-8b12-28019512d403
+	fromColumn: fCarteira_pedidos_unificada.company
+	toColumn: dEmpresa.Company
+
+relationship AutoDetected_5a6f9eb5-31ba-4e18-9194-10d04b1f1b35
+	fromColumn: fCarteira_pedidos_unificada.order_sale_order_office_code
+	toColumn: dRegional.order_sale_order_office_code
+
+relationship a04926d7-79bd-54e5-051a-393022f4a582
+	fromColumn: fCarteira_pedidos_unificada.order_sale_material_code
+	toColumn: dMaterial_unificada.codigo_produto
+
+relationship f35e2acf-6f9c-39ee-899b-4d2415430cdb
+	fromColumn: fMeta_Geral.obt_company
+	toColumn: dEmpresa.Company
+

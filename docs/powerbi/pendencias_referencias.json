@@ -1,0 +1,24 @@
+{
+  "missing_qualified_columns": [
+    {
+      "metric_id": "bi_meta_de_unidades_faturadas",
+      "table": "fMeta_Geral",
+      "column": "company"
+    },
+    {
+      "metric_id": "bi_meta_rl",
+      "table": "fMeta_Geral",
+      "column": "company"
+    }
+  ],
+  "missing_visual_measures": [
+    {
+      "page_id": "e7a7a2fc000d0a5b0c10",
+      "visual": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/cd2aded586ad937d0a9c/visual.json",
+      "kind": "Measure",
+      "table": "_Medidas",
+      "property": "04 Aberto Ajustado",
+      "locator": "$/filterConfig/filters/1/field/Measure"
+    }
+  ]
+}

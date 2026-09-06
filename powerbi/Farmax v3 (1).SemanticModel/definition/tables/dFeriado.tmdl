@@ -1,0 +1,37 @@
+table dFeriado
+	isHidden
+	excludeFromModelRefresh
+	lineageTag: 8f22c9bf-89ae-4897-a40d-016340b9a44a
+
+	column Data
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: fd191a2e-b0ce-4af8-a5ca-11e5fd5e9446
+		summarizeBy: none
+		sourceColumn: Data
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition dFeriado-549fd789-65bc-41df-96e3-0945011c20a6 = m
+		mode: import
+		queryGroup: Dimensão
+		source = ```
+				//CRIAÇÃO DIRETA    
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("VdPBDYMwDEDRXThXIrEdB2ZB3X+NQjHGX+LAl1F4ieA4ltbX85Imffl+jqWPtUlJR573zd6UjryWGiV1bV5yrm0vK8vaG1buZNSUM4Uv+k/lnm6BlJzqm9eOrDzckWmW3K+X6WMWmoVmoVloFpr1nrYwa6pKXu81TkumOXILs9KsNCvNSrPSrDTbs9SNjFSk7HHsRrPRfKc2ZJqNZqPZaDaajeaRH6GWNGTfAjloHjTHw3uc86B50DxoHjQPmgfNzp8uciKvHdmbaXaaPffrJR+z0+w0O81Os9M88yOUkjtSPI590jxpjulEpnnSPGmeNE+az/z+AA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Data = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Data", type date}})
+				in
+				    #"Changed Type"
+				```
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

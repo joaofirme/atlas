@@ -1,0 +1,129 @@
+schema_version: 1
+id: "bi_percentual_meta_rsl_mais_pedido"
+title: "% Meta (RSL + Pedido)"
+type: "metric"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
+    locator: "medida _Medidas[% Meta (RSL + Pedido)], linha 456"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+  - "Confirmar unidade/moeda, granularidade, aditividade e dimensões permitidas; não inferir a aprovação a partir dos relacionamentos existentes."
+kind: "indicador"
+definition: "Representação percentual de faturamento + pedido sobre a meta de RSL."
+definition_basis: "descricao_do_modelo"
+source_description: "Representação percentual de faturamento + pedido sobre a meta de RSL."
+business_questions: null
+synonyms:
+  - "% Meta (RSL + Pedido)"
+unit: "razão exibida em percentual"
+grain:
+  source: null
+  calculation: null
+time:
+  event: null
+  timezone: null
+  calendar: "dTempo; comportamento específico depende do contexto DAX"
+  context_functions: []
+formula:
+  conceptual: null
+  dependencies:
+    - "bi_02_rsl_mais_aberto"
+    - "bi_meta_rsl"
+aggregation:
+  rule: null
+  additivity: null
+dimensions: null
+relationships: null
+filters:
+  mandatory: null
+  optional: null
+  exclusions: null
+  note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
+data_sources:
+  -
+    semantic_table: "dTempo"
+    physical_sources:
+      -
+        engine: "Power Platform Dataflow"
+        entities:
+          - "dTempo"
+        upstream: null
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl:145"
+  -
+    semantic_table: "fDevolucao_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_devolucao_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl:184"
+  -
+    semantic_table: "fMeta_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_metas_executivos_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl:128"
+  -
+    semantic_table: "fVendas_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_vendas_faturamento_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl:480"
+implementations:
+  dax:
+    expression: |2-
+      Divide(
+          [02 RSL + Aberto],
+          [Meta RSL],
+          0
+      )
+    table: "_Medidas"
+    properties:
+      formatString: "0.0%;-0.0%;0.0%"
+      displayFolder: "07 Meta"
+      lineageTag: "50d7107f-d988-41fc-ac47-49c379280883"
+    execution_validated: false
+    note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
+dependencies:
+  tables_direct: []
+  columns_direct: []
+  measures_transitive:
+    - "bi_00_devolucao"
+    - "bi_00_faturamento"
+    - "bi_01_refaturamento"
+    - "bi_02_devolucao_total"
+    - "bi_02_rsl_mais_aberto"
+    - "bi_03_rsl"
+    - "bi_03_total_a_faturar"
+    - "bi_04_aberto"
+    - "bi_meta_rsl"
+  unqualified_references: []
+  method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
+edge_cases: null
+checks: null
+usage: []
+
+dependency_table_sources: [{"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fDevolucao_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl"}, {"table": "fMeta_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl"}, {"table": "fVendas_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl"}]

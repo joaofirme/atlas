@@ -1,0 +1,37 @@
+table 'Base Receita'
+	lineageTag: 2ad470ff-8ebb-4651-9c48-1313dd109103
+
+	column 'Base Receita'
+		lineageTag: ab471386-46d3-4ce1-a8da-f9be73c4cfdf
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Base Receita]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordem
+		formatString: 0
+		lineageTag: 74e2331c-e075-48cf-8252-e07ac0596212
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Ordem]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Base Receita' = calculated
+		mode: import
+		source = ```
+				
+				DATATABLE(
+				    "Base Receita", STRING,
+				    "Ordem", INTEGER,
+				    {
+				        {"Receita Semi Liquida", 1},
+				        {"Receita Bruta", 2}
+				    }
+				)
+				
+				```
+
+	annotation PBI_Id = 6ca50fdf9f6e429bba6af8afccb5fc79
+

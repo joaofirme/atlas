@@ -1,0 +1,835 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1563.3749270647652,
+            "y": 864.64815104676779
+          },
+          "nodeIndex": "Atualização",
+          "nodeLineageTag": "856966b2-db6c-4990-8704-0f9f812afd83",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1821.8430121711481,
+            "y": 530.47793828081035
+          },
+          "nodeIndex": "_Medidas",
+          "nodeLineageTag": "82572db7-21d2-423f-842c-bc1ce7a8db22",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 622.50232788332664,
+            "y": 303.63305707251254
+          },
+          "nodeIndex": "dTempo",
+          "nodeLineageTag": "6718868e-290c-4960-a8b1-7d988e9888ba",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 17
+        },
+        {
+          "location": {
+            "x": 445.10629391175587,
+            "y": 820.65619379346856
+          },
+          "nodeIndex": "dEmpresa",
+          "nodeLineageTag": "9ed886fa-243f-43a5-ac86-7bb036a9dc73",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 2105.8430121711481,
+            "y": 628.47793828081035
+          },
+          "nodeIndex": "dFeriado",
+          "nodeLineageTag": "8f22c9bf-89ae-4897-a40d-016340b9a44a",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 2389.8430121711481,
+            "y": 580.47793828081035
+          },
+          "nodeIndex": "tLogistica e CS",
+          "nodeLineageTag": "e43810a7-8f3d-49c9-b738-a1109db89397",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 996.22038104364788,
+            "y": 124.43863952877928
+          },
+          "nodeIndex": "dRegional",
+          "nodeLineageTag": "83edbc2f-9d7b-4cf5-bb5e-c5df55969ac6",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 2673.8430121711481,
+            "y": 530.47793828081035
+          },
+          "nodeIndex": "dUF",
+          "nodeLineageTag": "da4dc164-7dde-443c-93e9-9b140901dc96",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2957.8430121711481,
+            "y": 580.47793828081035
+          },
+          "nodeIndex": "Legenda Gradiente",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3241.8430121711481,
+            "y": 616.47793828081035
+          },
+          "nodeIndex": "Base Receita",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1303.8430121711478,
+            "y": 358.84951398735052
+          },
+          "nodeIndex": "dClientes_unificada",
+          "nodeLineageTag": "7a38c03f-16dc-4a26-9b9b-a296eaff61eb",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 832.19847292784868,
+            "y": 1010.9558765616205
+          },
+          "nodeIndex": "dExecutivos_unificada",
+          "nodeLineageTag": "1983f860-142c-4712-9883-14b5394abff2",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 908.91987952445879,
+            "y": 303.72691284745849
+          },
+          "nodeIndex": "fVendas_unificada",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1017.7854112358485,
+            "y": 657.29878361734836
+          },
+          "nodeIndex": "fDevolucao_unificada",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 336.31722476855907,
+            "y": 367.58203720321808
+          },
+          "nodeIndex": "dMaterial_unificada",
+          "nodeLineageTag": "9a80b9d4-8b88-4b15-9c75-e84ec56ac72b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 731.00964066435608,
+            "y": 657.29597383200235
+          },
+          "nodeIndex": "fMeta_unificada",
+          "nodeLineageTag": "5fc37cfb-f89d-4dd4-8614-dae8c66a5e3f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 454.80723450441565,
+            "y": -50
+          },
+          "nodeIndex": "fCarteira_pedidos_unificada",
+          "nodeLineageTag": "0194e1c3-fcdf-4fd7-bd82-9e9b46bedb81",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 174.68247042526946
+          },
+          "nodeIndex": "fPlanProd_unificada",
+          "nodeLineageTag": "12b32029-4645-49da-b6e4-5386ae9aa00d",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1296.0557781285947,
+            "y": 1038.8609170042146
+          },
+          "nodeIndex": "fMeta_Geral",
+          "nodeLineageTag": "2300c9de-d026-40ea-a06b-6180e7864b29",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3809.8430121711481,
+            "y": 604.47793828081035
+          },
+          "nodeIndex": "Parâmetros: Matriz Dinâmica",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas as tabelas",
+      "zoomValue": 47,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 682.13793103448279,
+            "y": 946.37931034482756
+          },
+          "nodeIndex": "dExecutivos_unificada",
+          "nodeLineageTag": "1983f860-142c-4712-9883-14b5394abff2",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 154.3699309696525,
+            "y": 743.50134138125168
+          },
+          "nodeIndex": "dClientes_unificada",
+          "nodeLineageTag": "7a38c03f-16dc-4a26-9b9b-a296eaff61eb",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 572.65834820978159,
+            "y": 347.75084746085378
+          },
+          "nodeIndex": "fVendas_unificada",
+          "nodeLineageTag": "b3992a8d-9f51-48a3-9736-53d730107bb3",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 353.21554348764317
+          },
+          "nodeIndex": "dEmpresa",
+          "nodeLineageTag": "9ed886fa-243f-43a5-ac86-7bb036a9dc73",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1190.8270683262481,
+            "y": 0
+          },
+          "nodeIndex": "dTempo",
+          "nodeLineageTag": "6718868e-290c-4960-a8b1-7d988e9888ba",
+          "size": {
+            "height": 297.25230333772214,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1098.3340741271775,
+            "y": 816.1663918560472
+          },
+          "nodeIndex": "dRegional",
+          "nodeLineageTag": "83edbc2f-9d7b-4cf5-bb5e-c5df55969ac6",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 936.05219012115549,
+            "y": 345.30754892823859
+          },
+          "nodeIndex": "fDevolucao_unificada",
+          "nodeLineageTag": "32ea2e60-313d-440f-87a0-99d868f1d390",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 1416.6206896551728,
+            "y": 736.0344827586207
+          },
+          "nodeIndex": "dMaterial_unificada",
+          "nodeLineageTag": "9a80b9d4-8b88-4b15-9c75-e84ec56ac72b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1637.3103448275863,
+            "y": 332.58620689655174
+          },
+          "nodeIndex": "fMeta_unificada",
+          "nodeLineageTag": "5fc37cfb-f89d-4dd4-8614-dae8c66a5e3f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Vendas-Faturamento",
+      "zoomValue": 57.999999999999993,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 2,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 905,
+            "y": 92
+          },
+          "nodeIndex": "dTempo",
+          "nodeLineageTag": "6718868e-290c-4960-a8b1-7d988e9888ba",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 539,
+            "y": 481
+          },
+          "nodeIndex": "dEmpresa",
+          "nodeLineageTag": "9ed886fa-243f-43a5-ac86-7bb036a9dc73",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 102,
+            "y": 213
+          },
+          "nodeIndex": "dMaterial_unificada",
+          "nodeLineageTag": "9a80b9d4-8b88-4b15-9c75-e84ec56ac72b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 497,
+            "y": 29
+          },
+          "nodeIndex": "fPlanProd_unificada",
+          "nodeLineageTag": "12b32029-4645-49da-b6e4-5386ae9aa00d",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Planejamento de Produção",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 3,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 707,
+            "y": 0
+          },
+          "nodeIndex": "dMaterial_unificada",
+          "nodeLineageTag": "9a80b9d4-8b88-4b15-9c75-e84ec56ac72b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 29,
+            "y": 6
+          },
+          "nodeIndex": "fMeta_unificada",
+          "nodeLineageTag": "5fc37cfb-f89d-4dd4-8614-dae8c66a5e3f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 448,
+            "y": 394
+          },
+          "nodeIndex": "fCarteira_pedidos_unificada",
+          "nodeLineageTag": "0194e1c3-fcdf-4fd7-bd82-9e9b46bedb81",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 910,
+            "y": 417
+          },
+          "nodeIndex": "dTempo",
+          "nodeLineageTag": "6718868e-290c-4960-a8b1-7d988e9888ba",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1049.7018976140178,
+            "y": 99.744131893143447
+          },
+          "nodeIndex": "dEmpresa",
+          "nodeLineageTag": "9ed886fa-243f-43a5-ac86-7bb036a9dc73",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 1
+        }
+      ],
+      "name": "Layout 1",
+      "zoomValue": 50.346892102823148,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 4,
+      "scrollPosition": {
+        "x": 0,
+        "y": 198.62199199062897
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 462.24077837590596,
+            "y": 497.67922460718887
+          },
+          "nodeIndex": "dEmpresa",
+          "nodeLineageTag": "9ed886fa-243f-43a5-ac86-7bb036a9dc73",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 522.71219837054343,
+            "y": -44.040266708001809
+          },
+          "nodeIndex": "fVendas_unificada",
+          "nodeLineageTag": "b3992a8d-9f51-48a3-9736-53d730107bb3",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1037.8846681390496,
+            "y": 309.52596746321956
+          },
+          "nodeIndex": "fDevolucao_unificada",
+          "nodeLineageTag": "32ea2e60-313d-440f-87a0-99d868f1d390",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 774.66454861568445,
+            "y": 666.70020023473694
+          },
+          "nodeIndex": "fMeta_unificada",
+          "nodeLineageTag": "5fc37cfb-f89d-4dd4-8614-dae8c66a5e3f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 748.84953327169956,
+            "y": 309.44674909924447
+          },
+          "nodeIndex": "dMaterial_unificada",
+          "nodeLineageTag": "9a80b9d4-8b88-4b15-9c75-e84ec56ac72b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1085.3890585960528,
+            "y": 1066.6869118944994
+          },
+          "nodeIndex": "dExecutivos_unificada",
+          "nodeLineageTag": "1983f860-142c-4712-9883-14b5394abff2",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "dEmpresa",
+      "zoomValue": 50.346892102823148,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 5,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 517.77827526250746,
+            "y": 330.65786398910205
+          },
+          "nodeIndex": "fDevolucao_unificada",
+          "nodeLineageTag": "32ea2e60-313d-440f-87a0-99d868f1d390",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 884.041734637638,
+            "y": 330.67447835864891
+          },
+          "nodeIndex": "dClientes_unificada",
+          "nodeLineageTag": "7a38c03f-16dc-4a26-9b9b-a296eaff61eb",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 717.64045147910247,
+            "y": -23.079425104116467
+          },
+          "nodeIndex": "dTempo",
+          "nodeLineageTag": "6718868e-290c-4960-a8b1-7d988e9888ba",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 691.19459265671719,
+            "y": 683.52128808985651
+          },
+          "nodeIndex": "dRegional",
+          "nodeLineageTag": "83edbc2f-9d7b-4cf5-bb5e-c5df55969ac6",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 303.1551715718
+          },
+          "nodeIndex": "dEmpresa",
+          "nodeLineageTag": "9ed886fa-243f-43a5-ac86-7bb036a9dc73",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 230.75127210010805,
+            "y": 555.4217588147776
+          },
+          "nodeIndex": "dExecutivos_unificada",
+          "nodeLineageTag": "1983f860-142c-4712-9883-14b5394abff2",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 291.57945359064274,
+            "y": 0
+          },
+          "nodeIndex": "dMaterial_unificada",
+          "nodeLineageTag": "9a80b9d4-8b88-4b15-9c75-e84ec56ac72b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "fDevolução",
+      "zoomValue": 78,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 6,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 421.1847511806298,
+            "y": 0
+          },
+          "nodeIndex": "fCarteira_pedidos_unificada",
+          "nodeLineageTag": "0194e1c3-fcdf-4fd7-bd82-9e9b46bedb81",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 6
+          },
+          "nodeIndex": "dTempo",
+          "nodeLineageTag": "6718868e-290c-4960-a8b1-7d988e9888ba",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 789,
+            "y": 27
+          },
+          "nodeIndex": "dEmpresa",
+          "nodeLineageTag": "9ed886fa-243f-43a5-ac86-7bb036a9dc73",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 418,
+            "y": 416
+          },
+          "nodeIndex": "dMaterial_unificada",
+          "nodeLineageTag": "9a80b9d4-8b88-4b15-9c75-e84ec56ac72b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 850,
+            "y": 397
+          },
+          "nodeIndex": "dRegional",
+          "nodeLineageTag": "83edbc2f-9d7b-4cf5-bb5e-c5df55969ac6",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Layout 2",
+      "zoomValue": 50.346892102823141,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Layout 1",
+  "defaultDiagram": "Todas as tabelas"
+}

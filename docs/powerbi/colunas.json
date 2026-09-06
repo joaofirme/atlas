@@ -1,0 +1,3191 @@
+[
+  {
+    "table": "Atualização",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Atualização.tmdl",
+    "name": "Atualização",
+    "line": 5,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "formatString": "General Date",
+      "lineageTag": "36c35a34-f3cb-476c-8370-870e3314be3b",
+      "summarizeBy": "none",
+      "sourceColumn": "Atualização"
+    }
+  },
+  {
+    "table": "Base Receita",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Base Receita.tmdl",
+    "name": "Base Receita",
+    "line": 4,
+    "description": null,
+    "properties": {
+      "lineageTag": "ab471386-46d3-4ce1-a8da-f9be73c4cfdf",
+      "summarizeBy": "none",
+      "sourceColumn": "[Base Receita]"
+    }
+  },
+  {
+    "table": "Base Receita",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Base Receita.tmdl",
+    "name": "Ordem",
+    "line": 12,
+    "description": null,
+    "properties": {
+      "formatString": "0",
+      "lineageTag": "74e2331c-e075-48cf-8252-e07ac0596212",
+      "summarizeBy": "sum",
+      "sourceColumn": "[Ordem]"
+    }
+  },
+  {
+    "table": "dClientes_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dClientes_unificada.tmdl",
+    "name": "empresa",
+    "line": 4,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "675ce95f-de30-447e-9da2-aa3fdde2b532",
+      "summarizeBy": "none",
+      "sourceColumn": "empresa"
+    }
+  },
+  {
+    "table": "dClientes_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dClientes_unificada.tmdl",
+    "name": "companhia",
+    "line": 12,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "744f4bb5-d2d0-47ab-8311-16c42f258dc7",
+      "summarizeBy": "none",
+      "sourceColumn": "companhia"
+    }
+  },
+  {
+    "table": "dClientes_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dClientes_unificada.tmdl",
+    "name": "cliente_codigo",
+    "line": 20,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "e0bc49c3-5b2c-4461-a2a4-a3aa2a032b94",
+      "summarizeBy": "sum",
+      "sourceColumn": "cliente_codigo"
+    }
+  },
+  {
+    "table": "dClientes_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dClientes_unificada.tmdl",
+    "name": "cliente",
+    "line": 29,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "8cd20045-2e66-4a8c-9339-89991642db07",
+      "summarizeBy": "none",
+      "sourceColumn": "cliente"
+    }
+  },
+  {
+    "table": "dClientes_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dClientes_unificada.tmdl",
+    "name": "cliente_cpf_cnpj_completo",
+    "line": 37,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "c4c16e62-a566-4d3d-ac25-9df14a461a67",
+      "summarizeBy": "none",
+      "sourceColumn": "cliente_cpf_cnpj_completo"
+    }
+  },
+  {
+    "table": "dClientes_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dClientes_unificada.tmdl",
+    "name": "cliente_cpf_cnpj_raiz",
+    "line": 45,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "cefc13bb-a04e-445a-8816-0597b1e93c0e",
+      "summarizeBy": "none",
+      "sourceColumn": "cliente_cpf_cnpj_raiz"
+    }
+  },
+  {
+    "table": "dClientes_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dClientes_unificada.tmdl",
+    "name": "cidade",
+    "line": 53,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "41e6cea2-1315-4220-85c6-1a646ae37322",
+      "summarizeBy": "none",
+      "sourceColumn": "cidade"
+    }
+  },
+  {
+    "table": "dClientes_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dClientes_unificada.tmdl",
+    "name": "estado",
+    "line": 61,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "4be3189d-73f8-458b-a8a3-4f405e0db9fb",
+      "summarizeBy": "none",
+      "sourceColumn": "estado"
+    }
+  },
+  {
+    "table": "dClientes_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dClientes_unificada.tmdl",
+    "name": "pais",
+    "line": 69,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "b930ef76-6033-4c38-ba50-5e9e8f68f5b7",
+      "summarizeBy": "none",
+      "sourceColumn": "pais"
+    }
+  },
+  {
+    "table": "dClientes_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dClientes_unificada.tmdl",
+    "name": "regiao",
+    "line": 77,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "4df6ec76-610e-4e22-ab30-74cfb4d4cdaf",
+      "summarizeBy": "none",
+      "sourceColumn": "regiao"
+    }
+  },
+  {
+    "table": "dClientes_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dClientes_unificada.tmdl",
+    "name": "chave_cliente",
+    "line": 85,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "0b2c2c0d-23dd-42db-ae74-96db6fd77578",
+      "summarizeBy": "none",
+      "sourceColumn": "chave_cliente"
+    }
+  },
+  {
+    "table": "dClientes_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dClientes_unificada.tmdl",
+    "name": "nome_grupo",
+    "line": 93,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "7cb12d55-3d9d-4499-82f5-4e089abdbeee",
+      "summarizeBy": "none",
+      "sourceColumn": "nome_grupo"
+    }
+  },
+  {
+    "table": "dClientes_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dClientes_unificada.tmdl",
+    "name": "cliente_grupo",
+    "line": 101,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "f4d3251e-b5ef-4181-890f-1b8f0eb162be",
+      "summarizeBy": "none",
+      "sourceColumn": "cliente_grupo"
+    }
+  },
+  {
+    "table": "dEmpresa",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dEmpresa.tmdl",
+    "name": "Company",
+    "line": 5,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "79001070-f078-47d0-8da4-22bd1636d63b",
+      "summarizeBy": "none",
+      "sourceColumn": "Company"
+    }
+  },
+  {
+    "table": "dEmpresa",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dEmpresa.tmdl",
+    "name": "Description",
+    "line": 15,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "57cb4f22-3589-4378-a341-e9c7cd633770",
+      "summarizeBy": "none",
+      "sourceColumn": "Description"
+    }
+  },
+  {
+    "table": "dEmpresa",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dEmpresa.tmdl",
+    "name": "Cod_Origem",
+    "line": 25,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "4b899e38-e733-44de-9aee-08477474bb96",
+      "summarizeBy": "sum",
+      "sourceColumn": "Cod_Origem"
+    }
+  },
+  {
+    "table": "dEmpresa",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dEmpresa.tmdl",
+    "name": "Grupo",
+    "line": 36,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "a1fbc518-c825-40c3-9780-874cb2913c51",
+      "summarizeBy": "none",
+      "sourceColumn": "Grupo"
+    }
+  },
+  {
+    "table": "dEmpresa",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dEmpresa.tmdl",
+    "name": "Empresa",
+    "line": 44,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "62879733-6c47-44e4-8502-4a586dccdc94",
+      "summarizeBy": "none",
+      "sourceColumn": "Empresa"
+    }
+  },
+  {
+    "table": "dExecutivos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dExecutivos_unificada.tmdl",
+    "name": "empresa",
+    "line": 4,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "63693e71-6cbb-4edb-88bf-5432f40c1c80",
+      "summarizeBy": "none",
+      "sourceColumn": "empresa"
+    }
+  },
+  {
+    "table": "dExecutivos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dExecutivos_unificada.tmdl",
+    "name": "executivo_chave",
+    "line": 12,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "d3646f33-ce77-40ba-b27a-d62ce9604acf",
+      "summarizeBy": "none",
+      "sourceColumn": "executivo_chave"
+    }
+  },
+  {
+    "table": "dExecutivos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dExecutivos_unificada.tmdl",
+    "name": "executivo_cod",
+    "line": 20,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "be9151b5-3273-440d-8a8f-10058e582de7",
+      "summarizeBy": "sum",
+      "sourceColumn": "executivo_cod"
+    }
+  },
+  {
+    "table": "dExecutivos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dExecutivos_unificada.tmdl",
+    "name": "executivo_nome",
+    "line": 29,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "14642d35-f48d-4d4b-9fb3-ab6ab3d978c1",
+      "summarizeBy": "none",
+      "sourceColumn": "executivo_nome"
+    }
+  },
+  {
+    "table": "dExecutivos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dExecutivos_unificada.tmdl",
+    "name": "executivo_email",
+    "line": 37,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "ff3033f0-6475-470a-93e2-979c25db6126",
+      "summarizeBy": "none",
+      "sourceColumn": "executivo_email"
+    }
+  },
+  {
+    "table": "dExecutivos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dExecutivos_unificada.tmdl",
+    "name": "coordenador_cod",
+    "line": 45,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "7ef67037-e349-41cf-acef-ee77e7d59e47",
+      "summarizeBy": "none",
+      "sourceColumn": "coordenador_cod"
+    }
+  },
+  {
+    "table": "dExecutivos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dExecutivos_unificada.tmdl",
+    "name": "coordenador_nome",
+    "line": 53,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "2363e6d4-bc4d-4242-911a-368282c7dfcf",
+      "summarizeBy": "none",
+      "sourceColumn": "coordenador_nome"
+    }
+  },
+  {
+    "table": "dExecutivos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dExecutivos_unificada.tmdl",
+    "name": "coordenador_email",
+    "line": 61,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "97a92007-acbb-437a-9921-4b4a484e57b4",
+      "summarizeBy": "none",
+      "sourceColumn": "coordenador_email"
+    }
+  },
+  {
+    "table": "dExecutivos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dExecutivos_unificada.tmdl",
+    "name": "regional_cod",
+    "line": 69,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "45ce218a-ec88-4ae5-b896-aad504497e36",
+      "summarizeBy": "none",
+      "sourceColumn": "regional_cod"
+    }
+  },
+  {
+    "table": "dExecutivos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dExecutivos_unificada.tmdl",
+    "name": "gerente_regional_nome",
+    "line": 77,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "feca2c79-bd62-47f3-806a-8d11dd77b505",
+      "summarizeBy": "none",
+      "sourceColumn": "gerente_regional_nome"
+    }
+  },
+  {
+    "table": "dExecutivos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dExecutivos_unificada.tmdl",
+    "name": "gerente_email",
+    "line": 85,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "761cc610-b1fe-416b-bfd1-6683441b30eb",
+      "summarizeBy": "none",
+      "sourceColumn": "gerente_email"
+    }
+  },
+  {
+    "table": "dExecutivos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dExecutivos_unificada.tmdl",
+    "name": "nome_unificado",
+    "line": 93,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "41ce40d7-d1d8-4fde-97e9-e14de7b44984",
+      "summarizeBy": "none",
+      "sourceColumn": "nome_unificado"
+    }
+  },
+  {
+    "table": "dFeriado",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dFeriado.tmdl",
+    "name": "Data",
+    "line": 6,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "isHidden": true,
+      "formatString": "Long Date",
+      "lineageTag": "fd191a2e-b0ce-4af8-a5ca-11e5fd5e9446",
+      "summarizeBy": "none",
+      "sourceColumn": "Data"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "empresa",
+    "line": 4,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "2b6c87dc-0e66-49b9-aef9-9916e44de646",
+      "summarizeBy": "none",
+      "sourceColumn": "empresa"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "codigo_produto",
+    "line": 12,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "6c34affa-0892-4d76-bfb5-81172fbc912e",
+      "summarizeBy": "none",
+      "sourceColumn": "codigo_produto"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "descricao",
+    "line": 20,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "221cfba7-946d-48b3-8bae-5cc8103bbcce",
+      "summarizeBy": "none",
+      "sourceColumn": "descricao"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "ean",
+    "line": 28,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "94e33609-fedf-4748-b173-198cb85c77b6",
+      "summarizeBy": "none",
+      "sourceColumn": "ean"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "marca",
+    "line": 36,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "de98ce9a-e118-4c5e-9f59-b959a184197a",
+      "summarizeBy": "none",
+      "sourceColumn": "marca"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "segmento",
+    "line": 44,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "9cd2e8df-0446-4444-9cff-8949d285cea7",
+      "summarizeBy": "none",
+      "sourceColumn": "segmento"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "familia",
+    "line": 52,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "2736b318-fcdd-46c7-a42d-3470682a89d7",
+      "summarizeBy": "none",
+      "sourceColumn": "familia"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "kit_brand",
+    "line": 60,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "1e37a04b-ffd9-43e9-afed-213d98ab0437",
+      "summarizeBy": "none",
+      "sourceColumn": "kit_brand"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "kit_atwrt",
+    "line": 68,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "3e9d4357-e40a-4a19-8bb5-a0c86be9b426",
+      "summarizeBy": "none",
+      "sourceColumn": "kit_atwrt"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "embalagem_brand",
+    "line": 76,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "0d007b53-f1cd-4711-a9b4-355d842a9030",
+      "summarizeBy": "none",
+      "sourceColumn": "embalagem_brand"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "embalagem_atwrt",
+    "line": 84,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "b2a34c77-9201-4b3b-ba65-5b0cfb39655e",
+      "summarizeBy": "none",
+      "sourceColumn": "embalagem_atwrt"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "familia_brand",
+    "line": 92,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "a8a72edd-e5f4-4e76-9c9c-647db50ebde9",
+      "summarizeBy": "none",
+      "sourceColumn": "familia_brand"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "familia_atwrt",
+    "line": 100,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "e7bf3748-3a4b-4bfd-840b-e021c719b291",
+      "summarizeBy": "none",
+      "sourceColumn": "familia_atwrt"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "subcategoria_brand",
+    "line": 108,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "f7383a38-d6fa-4129-9b21-b3a5320c4843",
+      "summarizeBy": "none",
+      "sourceColumn": "subcategoria_brand"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "subcategoria_atwrt",
+    "line": 116,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "41f904ea-a03b-42d2-a1d5-ebeb63c76c17",
+      "summarizeBy": "none",
+      "sourceColumn": "subcategoria_atwrt"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "categoria_brand",
+    "line": 124,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "28466718-dfef-411a-a389-8943b7096f17",
+      "summarizeBy": "none",
+      "sourceColumn": "categoria_brand"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "categoria_atwrt",
+    "line": 132,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "fe36b906-8df4-4835-9c38-3f4010422d2d",
+      "summarizeBy": "none",
+      "sourceColumn": "categoria_atwrt"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "publico_brand",
+    "line": 140,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "c845e133-26a0-4a83-a25f-d56dbc39198c",
+      "summarizeBy": "none",
+      "sourceColumn": "publico_brand"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "publico_atwrt",
+    "line": 148,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "839ac030-6d64-448f-b6d8-5c2b074f3c3a",
+      "summarizeBy": "none",
+      "sourceColumn": "publico_atwrt"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "textura_brand",
+    "line": 156,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "f5037455-3020-4673-ae30-cdaf7040138a",
+      "summarizeBy": "none",
+      "sourceColumn": "textura_brand"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "textura_atwrt",
+    "line": 164,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "339631dc-132d-47fe-a29a-dac9236029dc",
+      "summarizeBy": "none",
+      "sourceColumn": "textura_atwrt"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "fragrancia_brand",
+    "line": 172,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "438e7249-c652-4adb-bb4c-5cd0f76057d2",
+      "summarizeBy": "none",
+      "sourceColumn": "fragrancia_brand"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "fragrancia_atwrt",
+    "line": 180,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "9ff5d8bb-1655-4747-a57f-420d0f6dfa63",
+      "summarizeBy": "none",
+      "sourceColumn": "fragrancia_atwrt"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "principioativo_brand",
+    "line": 188,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "17223c10-64ef-48b4-a745-0d7a1cf99439",
+      "summarizeBy": "none",
+      "sourceColumn": "principioativo_brand"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "principioativo",
+    "line": 196,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "4cd3565b-777a-4ecd-965b-d343b1a8f705",
+      "summarizeBy": "none",
+      "sourceColumn": "principioativo"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "level",
+    "line": 204,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "98dd9b8b-7eb2-4092-b380-ea7b96c3ca21",
+      "summarizeBy": "none",
+      "sourceColumn": "level"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "gtm_novo",
+    "line": 212,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "980e3fc7-f541-464b-ac56-e9addb7615e1",
+      "summarizeBy": "none",
+      "sourceColumn": "gtm_novo"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "brand_novo",
+    "line": 220,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "07dde546-f9c2-4dfc-bb1f-8e686b79d60b",
+      "summarizeBy": "none",
+      "sourceColumn": "brand_novo"
+    }
+  },
+  {
+    "table": "dMaterial_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "name": "novo_segmento",
+    "line": 228,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "a8880841-ac8e-47ed-adb3-1a40135cad8a",
+      "summarizeBy": "none",
+      "sourceColumn": "novo_segmento"
+    }
+  },
+  {
+    "table": "dRegional",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dRegional.tmdl",
+    "name": "order_sale_order_office_code",
+    "line": 4,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "441b7414-2879-4ee4-8385-f2721e2f18c0",
+      "summarizeBy": "none",
+      "sourceColumn": "order_sale_order_office_code"
+    }
+  },
+  {
+    "table": "dRegional",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dRegional.tmdl",
+    "name": "order_sale_order_office",
+    "line": 12,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "fb09e628-7c42-4cbc-809f-ed2f02ee948f",
+      "summarizeBy": "none",
+      "sourceColumn": "order_sale_order_office"
+    }
+  },
+  {
+    "table": "dTempo",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl",
+    "name": "DiaNum",
+    "line": 5,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "d04fc31b-42fd-49c2-8f10-06b4c5ceb5a8",
+      "summarizeBy": "none",
+      "sourceColumn": "DiaNum"
+    }
+  },
+  {
+    "table": "dTempo",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl",
+    "name": "DiaComZero",
+    "line": 16,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "6818d637-e764-4631-957a-d776925ee3e2",
+      "summarizeBy": "none",
+      "sourceColumn": "DiaComZero"
+    }
+  },
+  {
+    "table": "dTempo",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl",
+    "name": "MesNum",
+    "line": 24,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "889e3ec7-3158-4450-b8b6-eb9b88590653",
+      "summarizeBy": "none",
+      "sourceColumn": "MesNum"
+    }
+  },
+  {
+    "table": "dTempo",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl",
+    "name": "MesComZero",
+    "line": 33,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "e6916df5-9d97-47f5-9928-cafd4277addb",
+      "summarizeBy": "none",
+      "sourceColumn": "MesComZero"
+    }
+  },
+  {
+    "table": "dTempo",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl",
+    "name": "MesNome",
+    "line": 41,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "e28992dd-d897-4dbb-8404-b9d5326e41e6",
+      "summarizeBy": "none",
+      "sourceColumn": "MesNome",
+      "sortByColumn": "MesNum"
+    }
+  },
+  {
+    "table": "dTempo",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl",
+    "name": "MesNomeAbrev",
+    "line": 50,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "5815805a-9cd5-4031-8e0e-33f4afd4fa3d",
+      "summarizeBy": "none",
+      "sourceColumn": "MesNomeAbrev",
+      "sortByColumn": "MesNum"
+    }
+  },
+  {
+    "table": "dTempo",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl",
+    "name": "Ano",
+    "line": 61,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "49bbd427-81ce-4c63-9af3-6a1a4bfc41d4",
+      "summarizeBy": "none",
+      "sourceColumn": "Ano"
+    }
+  },
+  {
+    "table": "dTempo",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl",
+    "name": "Data",
+    "line": 72,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "isKey": true,
+      "formatString": "Short Date",
+      "lineageTag": "99f752b6-694a-4727-b09e-de1acfbdd513",
+      "summarizeBy": "none",
+      "sourceColumn": "Data"
+    }
+  },
+  {
+    "table": "dTempo",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl",
+    "name": "Mes/Ano",
+    "line": 82,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "949a2e81-b488-4e55-83e2-ecaa788335bc",
+      "summarizeBy": "none",
+      "sourceColumn": "Mes/Ano",
+      "sortByColumn": "Ano0Mes"
+    }
+  },
+  {
+    "table": "dTempo",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl",
+    "name": "Ano0Mes",
+    "line": 93,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "38797f2e-5ff4-4e1c-add8-a88c19a46cb5",
+      "summarizeBy": "none",
+      "sourceColumn": "Ano0Mes"
+    }
+  },
+  {
+    "table": "dTempo",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl",
+    "name": "Ano/MesNum",
+    "line": 101,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "4a59c024-7457-43e8-af3f-7d13b2b7068d",
+      "summarizeBy": "none",
+      "sourceColumn": "Ano/MesNum"
+    }
+  },
+  {
+    "table": "dTempo",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl",
+    "name": "Estação",
+    "line": 109,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "b9388ceb-44e7-43aa-9d4d-5ad03bd6a0c5",
+      "summarizeBy": "none",
+      "sourceColumn": "Estação"
+    }
+  },
+  {
+    "table": "dTempo",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl",
+    "name": "DiaCorrente",
+    "line": 117,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "45f150f8-0e15-4f04-9068-f9ad314d6d03",
+      "summarizeBy": "none",
+      "sourceColumn": "DiaCorrente"
+    }
+  },
+  {
+    "table": "dTempo",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl",
+    "name": "DiaSemanaAbrev",
+    "line": 125,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "9a1d9ce4-df52-47e1-87a8-1f58e1e5ec58",
+      "summarizeBy": "none",
+      "sourceColumn": "DiaSemanaAbrev"
+    }
+  },
+  {
+    "table": "dTempo",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl",
+    "name": "DiaUtil",
+    "line": 133,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "a2b07aa3-6963-4cc2-8526-e1fef086ed9d",
+      "summarizeBy": "sum",
+      "sourceColumn": "DiaUtil"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "uf",
+    "line": 4,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "bea6b296-6361-41b7-957d-ae40132d0d2a",
+      "summarizeBy": "none",
+      "sourceColumn": "uf"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "estado",
+    "line": 12,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "d6f21961-85fc-4141-84cd-e4434c7c4306",
+      "summarizeBy": "none",
+      "sourceColumn": "estado"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "area",
+    "line": 20,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "66abbcc3-4629-48d9-b26b-11e226f8bea3",
+      "summarizeBy": "sum",
+      "sourceColumn": "area"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "den_demografica",
+    "line": 29,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "2ee244f9-c22f-4029-8685-e5118f40a697",
+      "summarizeBy": "sum",
+      "sourceColumn": "den_demografica"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "Pop_10",
+    "line": 38,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "c9d77f18-5acf-4153-9ae7-7f87a1ce1454",
+      "summarizeBy": "sum",
+      "sourceColumn": "Pop_10"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "Pop_21",
+    "line": 47,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "ef2be650-8324-4488-8e32-77b2b4dd1f9a",
+      "summarizeBy": "sum",
+      "sourceColumn": "Pop_21"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "pop_var",
+    "line": 56,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "5c629fe8-0bf7-4dd0-bfb5-9e3566795346",
+      "summarizeBy": "sum",
+      "sourceColumn": "pop_var"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "var",
+    "line": 65,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "05dd113d-6405-43ef-810b-72dfd395d03b",
+      "summarizeBy": "none",
+      "sourceColumn": "var"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "pib_10",
+    "line": 73,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "b243d814-bbf9-4c80-ac98-5a189741fdf2",
+      "summarizeBy": "sum",
+      "sourceColumn": "pib_10"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "pip_21",
+    "line": 82,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "5c75d0b6-2df9-4613-9b63-c3c4d51ce8b4",
+      "summarizeBy": "sum",
+      "sourceColumn": "pip_21"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "pib_var",
+    "line": 91,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "4f4f777f-c4b3-4b45-817f-cb0493e555b9",
+      "summarizeBy": "none",
+      "sourceColumn": "pib_var"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "idh_10",
+    "line": 99,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "b945c76e-06b9-4380-8942-46cf9b148246",
+      "summarizeBy": "none",
+      "sourceColumn": "idh_10"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "idh_21",
+    "line": 107,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "9d31666e-7426-4924-9104-67de97df2886",
+      "summarizeBy": "none",
+      "sourceColumn": "idh_21"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "idh_var",
+    "line": 115,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "866427f3-23b2-4fd1-b119-0e75a0a7592e",
+      "summarizeBy": "none",
+      "sourceColumn": "idh_var"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "rend_domiciliar_10",
+    "line": 123,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "828767e4-dbb4-42ad-8444-6418fc41155a",
+      "summarizeBy": "sum",
+      "sourceColumn": "rend_domiciliar_10"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "rend_domiciliar_21",
+    "line": 132,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "6fb29072-fcfc-4821-9ded-f582ef401b3d",
+      "summarizeBy": "sum",
+      "sourceColumn": "rend_domiciliar_21"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "rend_var",
+    "line": 141,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "a435524e-d8ae-42b2-8adc-d3cd380c4034",
+      "summarizeBy": "none",
+      "sourceColumn": "rend_var"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "taxa_urbana_10",
+    "line": 149,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "1f6c5ca6-7563-425c-b47c-bb3ba9531add",
+      "summarizeBy": "none",
+      "sourceColumn": "taxa_urbana_10"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "taxa_rural_10",
+    "line": 157,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "59a10f19-26dc-43c5-8193-57b378c8c05a",
+      "summarizeBy": "none",
+      "sourceColumn": "taxa_rural_10"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "taxa_urbana_21",
+    "line": 165,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "db3d37da-fd35-4ad3-b114-f3885e330db0",
+      "summarizeBy": "none",
+      "sourceColumn": "taxa_urbana_21"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "taxa_rural_21",
+    "line": 173,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "b108fb0e-3d3f-491f-a69b-48f4a9d768e6",
+      "summarizeBy": "none",
+      "sourceColumn": "taxa_rural_21"
+    }
+  },
+  {
+    "table": "dUF",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "name": "regiao",
+    "line": 181,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "e035a7e0-1c55-4d8c-88dc-f1cafec03635",
+      "summarizeBy": "none",
+      "sourceColumn": "regiao"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "data_carteira",
+    "line": 4,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "formatString": "Long Date",
+      "lineageTag": "e9fb072f-5bc4-4b98-ab6f-b5b5de899c90",
+      "summarizeBy": "none",
+      "sourceColumn": "data_carteira"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "ano_mes",
+    "line": 15,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "d4669534-283e-4250-80ae-45469c54ef0a",
+      "summarizeBy": "none",
+      "sourceColumn": "ano_mes"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "order_sale_order_code",
+    "line": 23,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "1eccf8bc-4525-4946-b543-2e58edadc32a",
+      "summarizeBy": "sum",
+      "sourceColumn": "order_sale_order_code"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "order_sale_order_date",
+    "line": 32,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "formatString": "Long Date",
+      "lineageTag": "800d297b-6a22-4178-b759-e69a078ebf5e",
+      "summarizeBy": "none",
+      "sourceColumn": "order_sale_order_date"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "order_billing_billing_date",
+    "line": 43,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "formatString": "Long Date",
+      "lineageTag": "8ed9d604-71c7-41a1-9243-d67877611004",
+      "summarizeBy": "none",
+      "sourceColumn": "order_billing_billing_date"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "order_sale_program_date",
+    "line": 54,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "formatString": "Long Date",
+      "lineageTag": "489a2bef-fffa-426d-a3d1-62b653b9dc1e",
+      "summarizeBy": "none",
+      "sourceColumn": "order_sale_program_date"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "obt_sales_order_status",
+    "line": 65,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "2fde7fb6-8917-4f38-abf7-9e4c9ac87e50",
+      "summarizeBy": "none",
+      "sourceColumn": "obt_sales_order_status"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "obt_sales_order_type",
+    "line": 73,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "af411d05-ea6c-4a15-8c23-03de7b11d9a1",
+      "summarizeBy": "none",
+      "sourceColumn": "obt_sales_order_type"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "company",
+    "line": 81,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "00213bde-5990-40bc-b127-35a8eb46f965",
+      "summarizeBy": "none",
+      "sourceColumn": "company"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "order_sale_order_office_code",
+    "line": 89,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "d7e57a7b-6b6a-43ce-adad-8ca8219ccddb",
+      "summarizeBy": "none",
+      "sourceColumn": "order_sale_order_office_code"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "order_sale_material_code",
+    "line": 97,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "d0c00e15-2d18-4d44-9bc5-751f835ac830",
+      "summarizeBy": "none",
+      "sourceColumn": "order_sale_material_code"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "order_sale_quantity",
+    "line": 105,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "96b175be-bb81-430b-9241-e9e0ea63efb1",
+      "summarizeBy": "sum",
+      "sourceColumn": "order_sale_quantity"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "order_sale_subtotal",
+    "line": 115,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "d238ce92-ab3c-4428-bbfb-19c912a02182",
+      "summarizeBy": "sum",
+      "sourceColumn": "order_sale_subtotal"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "order_billing_quantity",
+    "line": 125,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "27dc7d05-911c-443d-8e56-933807f48007",
+      "summarizeBy": "sum",
+      "sourceColumn": "order_billing_quantity"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "order_billing_subtotal",
+    "line": 135,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "47de1472-a955-403d-9664-30ba676ebd20",
+      "summarizeBy": "sum",
+      "sourceColumn": "order_billing_subtotal"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "obt_sales_department_status",
+    "line": 145,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "aec0e4df-d73d-47e8-9db4-32ff873dd03b",
+      "summarizeBy": "none",
+      "sourceColumn": "obt_sales_department_status"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "order_sale_storage_code",
+    "line": 153,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "100a31e8-792f-4be0-b406-8b40ca990cdc",
+      "summarizeBy": "none",
+      "sourceColumn": "order_sale_storage_code"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "order_sale_last_change_date_item",
+    "line": 161,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "formatString": "Long Date",
+      "lineageTag": "d4789288-6956-4751-9332-575a60db8b9e",
+      "summarizeBy": "none",
+      "sourceColumn": "order_sale_last_change_date_item"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "status_carteira",
+    "line": 172,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "6e26dfff-85bc-414b-bd35-61e0ce07d9f3",
+      "summarizeBy": "none",
+      "sourceColumn": "status_carteira"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "qt_ordem_carteira_inicial",
+    "line": 180,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "59df2eef-5e63-4fc5-bf64-79504acaea9d",
+      "summarizeBy": "sum",
+      "sourceColumn": "qt_ordem_carteira_inicial"
+    }
+  },
+  {
+    "table": "fCarteira_pedidos_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "name": "vr_item_carteira_inicial",
+    "line": 190,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "475ea8b9-b707-40e8-b3d9-238bb1a59431",
+      "summarizeBy": "sum",
+      "sourceColumn": "vr_item_carteira_inicial"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "empresa",
+    "line": 4,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "2c3188ac-93cc-4836-b5c8-2d9186a199e6",
+      "summarizeBy": "none",
+      "sourceColumn": "empresa"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "companhia",
+    "line": 12,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "658e4bf9-5d42-404c-868e-4f42f1e4cba3",
+      "summarizeBy": "none",
+      "sourceColumn": "companhia"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "data_movimento",
+    "line": 20,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "formatString": "Long Date",
+      "lineageTag": "96831d88-393f-4d95-a5c2-6bd89ca88e6b",
+      "summarizeBy": "none",
+      "sourceColumn": "data_movimento"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "chave_executivo",
+    "line": 31,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "53958a78-4e20-4a62-b5f2-f4709e3fe914",
+      "summarizeBy": "none",
+      "sourceColumn": "chave_executivo"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "cod_executivo",
+    "line": 39,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "62258e03-609d-444e-9067-e8f41488a2c8",
+      "summarizeBy": "none",
+      "sourceColumn": "cod_executivo"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "cod_coordenador",
+    "line": 47,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "4ed8526e-c906-427e-9275-9109d6c8cb61",
+      "summarizeBy": "none",
+      "sourceColumn": "cod_coordenador"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "chave_cliente",
+    "line": 55,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "4a0acda2-7f4f-4abf-befc-dcd12a8d553d",
+      "summarizeBy": "none",
+      "sourceColumn": "chave_cliente"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "cod_cliente",
+    "line": 63,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "5d19c3ec-4193-4e43-8138-fc6058c46c01",
+      "summarizeBy": "none",
+      "sourceColumn": "cod_cliente"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "estado",
+    "line": 71,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "b5bda712-7fcc-4751-b958-abcb901b6b8a",
+      "summarizeBy": "none",
+      "sourceColumn": "estado"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "cidade",
+    "line": 79,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "3ba56cf9-e02b-4c5f-a7ed-fea7752c63ae",
+      "summarizeBy": "none",
+      "sourceColumn": "cidade"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "nota_fiscal",
+    "line": 87,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "74362fde-ee04-497c-83f0-edafdbabf5ed",
+      "summarizeBy": "none",
+      "sourceColumn": "nota_fiscal"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "pedido",
+    "line": 95,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "7cc43658-ba54-45c6-9398-6b84fe586c27",
+      "summarizeBy": "none",
+      "sourceColumn": "pedido"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "sku",
+    "line": 103,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "6607b038-8f88-409d-acb2-df0100db49d9",
+      "summarizeBy": "none",
+      "sourceColumn": "sku"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "deposito_codigo",
+    "line": 111,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "2c270dc8-e9d4-4cc3-b6e2-848bbea26c3f",
+      "summarizeBy": "none",
+      "sourceColumn": "deposito_codigo"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "regional_codigo",
+    "line": 119,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "4b23173a-7377-4034-bc4d-6a136b03febb",
+      "summarizeBy": "none",
+      "sourceColumn": "regional_codigo"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "quantidade",
+    "line": 127,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "15873daf-4ae4-461a-a658-33e85bc92b78",
+      "summarizeBy": "sum",
+      "sourceColumn": "quantidade"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "receita",
+    "line": 137,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "56a9df9d-5815-4a0a-a685-bbda05a748e8",
+      "summarizeBy": "sum",
+      "sourceColumn": "receita"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "faturamento_cod_tipo",
+    "line": 147,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "85848282-054b-4fb2-8377-c8c3a7dc05b5",
+      "summarizeBy": "none",
+      "sourceColumn": "faturamento_cod_tipo"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "devolucao_cod_tipo",
+    "line": 155,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "6c4dd4db-3bec-488e-9b7c-fc128c675e43",
+      "summarizeBy": "none",
+      "sourceColumn": "devolucao_cod_tipo"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "canal_n1",
+    "line": 163,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "28585d81-5c2f-428f-b5df-0af0c204b5d9",
+      "summarizeBy": "none",
+      "sourceColumn": "canal_n1"
+    }
+  },
+  {
+    "table": "fDevolucao_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "name": "receita_bruta",
+    "line": 171,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "fd445396-3083-40ea-9f27-8cd3e75205bd",
+      "summarizeBy": "sum",
+      "sourceColumn": "receita_bruta"
+    }
+  },
+  {
+    "table": "fMeta_Geral",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_Geral.tmdl",
+    "name": "general_target_subtotal_billing",
+    "line": 4,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "6246aabc-9c4f-48a2-b9a9-ee0ef0525919",
+      "summarizeBy": "sum",
+      "sourceColumn": "general_target_subtotal_billing"
+    }
+  },
+  {
+    "table": "fMeta_Geral",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_Geral.tmdl",
+    "name": "general_target_subtotal_average_billing",
+    "line": 14,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "55f1465d-2fa2-4e3a-9de0-89fb0eb04446",
+      "summarizeBy": "sum",
+      "sourceColumn": "general_target_subtotal_average_billing"
+    }
+  },
+  {
+    "table": "fMeta_Geral",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_Geral.tmdl",
+    "name": "general_target_average_ticket",
+    "line": 24,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "d081ecc7-49c6-4298-9f7e-789691895013",
+      "summarizeBy": "sum",
+      "sourceColumn": "general_target_average_ticket"
+    }
+  },
+  {
+    "table": "fMeta_Geral",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_Geral.tmdl",
+    "name": "general_target_quantity_billing",
+    "line": 34,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "37ccdbc1-5c43-4949-99c6-3c5f5114c097",
+      "summarizeBy": "sum",
+      "sourceColumn": "general_target_quantity_billing"
+    }
+  },
+  {
+    "table": "fMeta_Geral",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_Geral.tmdl",
+    "name": "general_target_subtotal_return_percent",
+    "line": 44,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "55e6efc4-4b96-46fa-853f-04ee2f137ec7",
+      "summarizeBy": "sum",
+      "sourceColumn": "general_target_subtotal_return_percent"
+    }
+  },
+  {
+    "table": "fMeta_Geral",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_Geral.tmdl",
+    "name": "general_target_inovation_percent",
+    "line": 54,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "lineageTag": "7e513097-8f77-44dd-9bba-c4bb7ae68e29",
+      "summarizeBy": "sum",
+      "sourceColumn": "general_target_inovation_percent"
+    }
+  },
+  {
+    "table": "fMeta_Geral",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_Geral.tmdl",
+    "name": "general_target_days",
+    "line": 64,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "95e9023e-b13b-43a6-b0b0-d72721ed6c71",
+      "summarizeBy": "sum",
+      "sourceColumn": "general_target_days"
+    }
+  },
+  {
+    "table": "fMeta_Geral",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_Geral.tmdl",
+    "name": "general_target_date",
+    "line": 73,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "formatString": "Long Date",
+      "lineageTag": "783332c5-3aaf-427e-a6cb-cb45387cb330",
+      "summarizeBy": "none",
+      "sourceColumn": "general_target_date"
+    }
+  },
+  {
+    "table": "fMeta_Geral",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_Geral.tmdl",
+    "name": "obt_company",
+    "line": 84,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "f55d4407-527d-4143-9262-82d4e9fba20e",
+      "summarizeBy": "none",
+      "sourceColumn": "obt_company"
+    }
+  },
+  {
+    "table": "fMeta_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl",
+    "name": "chave_origem",
+    "line": 4,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "0dfb6a25-ec41-4c60-80d2-52fa461e38c8",
+      "summarizeBy": "none",
+      "sourceColumn": "chave_origem"
+    }
+  },
+  {
+    "table": "fMeta_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl",
+    "name": "empresa",
+    "line": 12,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "01c28164-ce4a-4d60-9dd8-b60d138684b0",
+      "summarizeBy": "none",
+      "sourceColumn": "empresa"
+    }
+  },
+  {
+    "table": "fMeta_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl",
+    "name": "companhia",
+    "line": 20,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "2c63407b-b643-460d-b02f-edf8f2d886e2",
+      "summarizeBy": "none",
+      "sourceColumn": "companhia"
+    }
+  },
+  {
+    "table": "fMeta_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl",
+    "name": "cod_executivo",
+    "line": 28,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "90a650c1-261d-4238-ae8a-ed303ed0b87d",
+      "summarizeBy": "none",
+      "sourceColumn": "cod_executivo"
+    }
+  },
+  {
+    "table": "fMeta_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl",
+    "name": "chave_coordenador",
+    "line": 36,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "3e3f6240-3fb9-4ebf-9304-a7b04706c791",
+      "summarizeBy": "none",
+      "sourceColumn": "chave_coordenador"
+    }
+  },
+  {
+    "table": "fMeta_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl",
+    "name": "chave_regional",
+    "line": 44,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "7c480f0a-4b1e-48e3-9d57-cb4fc8529dc2",
+      "summarizeBy": "none",
+      "sourceColumn": "chave_regional"
+    }
+  },
+  {
+    "table": "fMeta_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl",
+    "name": "chave_segmento",
+    "line": 52,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "6665c205-43df-43f6-945d-a625267d747c",
+      "summarizeBy": "none",
+      "sourceColumn": "chave_segmento"
+    }
+  },
+  {
+    "table": "fMeta_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl",
+    "name": "chave_marca",
+    "line": 60,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "c1470c44-da75-4263-bdc5-6cd406dcf0c7",
+      "summarizeBy": "none",
+      "sourceColumn": "chave_marca"
+    }
+  },
+  {
+    "table": "fMeta_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl",
+    "name": "meta_receita",
+    "line": 68,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "735328a6-d1f7-4b8b-9c2a-350617c5765a",
+      "summarizeBy": "sum",
+      "sourceColumn": "meta_receita"
+    }
+  },
+  {
+    "table": "fMeta_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl",
+    "name": "meta_positivacao",
+    "line": 78,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "914ea8f6-daac-4393-9434-3189be391322",
+      "summarizeBy": "sum",
+      "sourceColumn": "meta_positivacao"
+    }
+  },
+  {
+    "table": "fMeta_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl",
+    "name": "meta_ticket_medio",
+    "line": 88,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "faa1387b-0522-438c-9b3a-f433dfb6f1a4",
+      "summarizeBy": "sum",
+      "sourceColumn": "meta_ticket_medio"
+    }
+  },
+  {
+    "table": "fMeta_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl",
+    "name": "meta_data_alvo",
+    "line": 98,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "formatString": "Long Date",
+      "lineageTag": "f23326f5-97ba-4761-95ed-aca2a5e1398c",
+      "summarizeBy": "none",
+      "sourceColumn": "meta_data_alvo"
+    }
+  },
+  {
+    "table": "fMeta_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl",
+    "name": "canal_vendas",
+    "line": 109,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "149c26b7-2619-40ad-97c0-907d4a0ce860",
+      "summarizeBy": "none",
+      "sourceColumn": "canal_vendas"
+    }
+  },
+  {
+    "table": "fMeta_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl",
+    "name": "chave_executivo",
+    "line": 117,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "c2d328ae-b837-4e55-97b4-6e1c3cb80fd9",
+      "summarizeBy": "none",
+      "sourceColumn": "chave_executivo"
+    }
+  },
+  {
+    "table": "fPlanProd_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fPlanProd_unificada.tmdl",
+    "name": "cobertura_estoque_empresa",
+    "line": 4,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "ad0b1eae-eebe-40c1-bb53-7de24328f22e",
+      "summarizeBy": "none",
+      "sourceColumn": "cobertura_estoque_empresa"
+    }
+  },
+  {
+    "table": "fPlanProd_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fPlanProd_unificada.tmdl",
+    "name": "cobertura_estoque_company",
+    "line": 12,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "b10e65fd-7924-4a53-b1d8-8ec66bdd424b",
+      "summarizeBy": "none",
+      "sourceColumn": "cobertura_estoque_company"
+    }
+  },
+  {
+    "table": "fPlanProd_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fPlanProd_unificada.tmdl",
+    "name": "cobertura_estoque_data_referencia",
+    "line": 20,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "formatString": "Long Date",
+      "lineageTag": "f16b8f9a-00b3-4728-95c5-452be59387d7",
+      "summarizeBy": "none",
+      "sourceColumn": "cobertura_estoque_data_referencia"
+    }
+  },
+  {
+    "table": "fPlanProd_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fPlanProd_unificada.tmdl",
+    "name": "cobertura_estoque_sku",
+    "line": 31,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "f2d1b8f9-26ed-4421-8702-bf463ed7ed29",
+      "summarizeBy": "none",
+      "sourceColumn": "cobertura_estoque_sku"
+    }
+  },
+  {
+    "table": "fPlanProd_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fPlanProd_unificada.tmdl",
+    "name": "cobertura_estoque_quantidade",
+    "line": 39,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "a703ccdd-ad3a-43e6-95de-9d7b9874c63d",
+      "summarizeBy": "sum",
+      "sourceColumn": "cobertura_estoque_quantidade"
+    }
+  },
+  {
+    "table": "fPlanProd_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fPlanProd_unificada.tmdl",
+    "name": "cobertura_estoque_plano_medio",
+    "line": 49,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "dc8885ff-cdb7-4822-a9b1-fefabaa67ab8",
+      "summarizeBy": "sum",
+      "sourceColumn": "cobertura_estoque_plano_medio"
+    }
+  },
+  {
+    "table": "fPlanProd_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fPlanProd_unificada.tmdl",
+    "name": "cobertura_estoque_cobertura",
+    "line": 59,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "88d1ab7b-e9fe-40c8-b44d-12cccc7a0b2e",
+      "summarizeBy": "sum",
+      "sourceColumn": "cobertura_estoque_cobertura"
+    }
+  },
+  {
+    "table": "fPlanProd_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fPlanProd_unificada.tmdl",
+    "name": "status_sku",
+    "line": 69,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "b2a8f9a4-5dad-4c10-8313-dd8459f6d05f",
+      "summarizeBy": "none",
+      "sourceColumn": "status_sku"
+    }
+  },
+  {
+    "table": "fPlanProd_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fPlanProd_unificada.tmdl",
+    "name": "estq_transito",
+    "line": 77,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "eb50a8af-2d71-473d-8c34-ebada5bfe1fe",
+      "summarizeBy": "sum",
+      "sourceColumn": "estq_transito"
+    }
+  },
+  {
+    "table": "fPlanProd_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fPlanProd_unificada.tmdl",
+    "name": "estq_qual",
+    "line": 87,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "65bf9421-922c-48e0-b319-5966a46b7aae",
+      "summarizeBy": "sum",
+      "sourceColumn": "estq_qual"
+    }
+  },
+  {
+    "table": "fPlanProd_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fPlanProd_unificada.tmdl",
+    "name": "quant_falta",
+    "line": 97,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "591882e4-cbf2-41bd-9e86-1959583a0c18",
+      "summarizeBy": "sum",
+      "sourceColumn": "quant_falta"
+    }
+  },
+  {
+    "table": "fPlanProd_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fPlanProd_unificada.tmdl",
+    "name": "vr_medio_faltas",
+    "line": 107,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "31fd7ec0-4189-4fac-b6e0-a4b4bce8da60",
+      "summarizeBy": "sum",
+      "sourceColumn": "vr_medio_faltas"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "empresa",
+    "line": 4,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "02713e06-d800-49df-a53d-82b2f4462d44",
+      "summarizeBy": "none",
+      "sourceColumn": "empresa"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "companhia",
+    "line": 12,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "13a57ddf-391d-4c5c-9e1d-93a22f0de3e2",
+      "summarizeBy": "none",
+      "sourceColumn": "companhia"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "data_movimento",
+    "line": 20,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "formatString": "Short Date",
+      "lineageTag": "e97bf576-2473-4fb2-a23b-4b399c6784fe",
+      "summarizeBy": "none",
+      "sourceColumn": "data_movimento"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "data_pedido",
+    "line": 31,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "formatString": "Short Date",
+      "lineageTag": "23d0f56f-bccf-4c3e-bc34-96cbd8eab599",
+      "summarizeBy": "none",
+      "sourceColumn": "data_pedido"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "cod_executivo",
+    "line": 42,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "24ccaf98-d8cf-475c-9332-8ecd04e769b6",
+      "summarizeBy": "sum",
+      "sourceColumn": "cod_executivo"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "cod_coordenador",
+    "line": 51,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "3ab0f57c-a6aa-4554-b4b2-53d8a5311c41",
+      "summarizeBy": "none",
+      "sourceColumn": "cod_coordenador"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "chave_cliente",
+    "line": 59,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "fd489fef-5f72-4779-8d1f-6470bca4d72d",
+      "summarizeBy": "none",
+      "sourceColumn": "chave_cliente"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "cod_cliente",
+    "line": 67,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "3bcb782c-9033-49d5-bea1-423925f4d674",
+      "summarizeBy": "sum",
+      "sourceColumn": "cod_cliente"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "cpf_cnpj_base",
+    "line": 76,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "04d1e48e-52f6-43b9-8d0b-27c56bc355fc",
+      "summarizeBy": "none",
+      "sourceColumn": "cpf_cnpj_base"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "estado",
+    "line": 84,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "222d2b64-0afb-48ad-b4f4-eb832f58d1b6",
+      "summarizeBy": "none",
+      "sourceColumn": "estado"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "cidade",
+    "line": 92,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "85a5935c-6052-4c13-b1aa-bc1ebc5c5220",
+      "summarizeBy": "none",
+      "sourceColumn": "cidade"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "nota_fiscal",
+    "line": 100,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "31198f5b-99a6-4cf4-9286-3bf322f44131",
+      "summarizeBy": "sum",
+      "sourceColumn": "nota_fiscal"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "pedido",
+    "line": 109,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "b2a35f3a-d12b-4315-9411-eddcf808bad5",
+      "summarizeBy": "sum",
+      "sourceColumn": "pedido"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "sku",
+    "line": 118,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "bfa72a04-8ddc-4447-bd9d-810180e1de28",
+      "summarizeBy": "none",
+      "sourceColumn": "sku"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "categoria",
+    "line": 126,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "d301bc11-fed7-42c3-9fae-5824e746460f",
+      "summarizeBy": "none",
+      "sourceColumn": "categoria"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "canal_n1",
+    "line": 134,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "87bdbb21-f232-4483-bd25-f5af08cc774e",
+      "summarizeBy": "none",
+      "sourceColumn": "canal_n1"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "data_lancamento",
+    "line": 142,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "formatString": "Long Date",
+      "lineageTag": "41c822c9-a33a-481f-ae7d-809d2420b371",
+      "summarizeBy": "none",
+      "sourceColumn": "data_lancamento"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "pedido_tipo",
+    "line": 153,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "62e60bed-b819-4320-aa27-dd8d7c39f2ba",
+      "summarizeBy": "none",
+      "sourceColumn": "pedido_tipo"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "venda_cod_tipo",
+    "line": 161,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "ce0cbb81-12df-4032-895b-5c82908e7327",
+      "summarizeBy": "none",
+      "sourceColumn": "venda_cod_tipo"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "pedido_status",
+    "line": 169,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "0018c421-71bb-4e8d-b22d-1af416c5bffe",
+      "summarizeBy": "none",
+      "sourceColumn": "pedido_status"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "regional_cod",
+    "line": 177,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "532fc1c3-8a66-4c59-8c92-7f37b44ae7d8",
+      "summarizeBy": "none",
+      "sourceColumn": "regional_cod"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "ledger_net_subtotal",
+    "line": 185,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "e318e8a2-3354-4320-98e0-239112b7966b",
+      "summarizeBy": "sum",
+      "sourceColumn": "ledger_net_subtotal"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "quantidade",
+    "line": 195,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "b53d97a9-4b87-4610-b105-e588ebe50f03",
+      "summarizeBy": "sum",
+      "sourceColumn": "quantidade"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "quantidade_venda",
+    "line": 204,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "6af91dfd-24a3-428f-a09e-0432fba2aecc",
+      "summarizeBy": "sum",
+      "sourceColumn": "quantidade_venda"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "receita",
+    "line": 213,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "17901c66-b145-4d55-8fdd-22403d43ba51",
+      "summarizeBy": "sum",
+      "sourceColumn": "receita"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "receita_bruta",
+    "line": 223,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "01dc1c8e-7fec-4fb0-8d41-dcadb3ec3778",
+      "summarizeBy": "sum",
+      "sourceColumn": "receita_bruta"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "customer_regiao",
+    "line": 233,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "275de0ba-7009-49f8-b4d4-be6c794c52f3",
+      "summarizeBy": "none",
+      "sourceColumn": "customer_regiao"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "material_group_code",
+    "line": 241,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "1ae79864-043b-4adb-8a94-29f8316c5d02",
+      "summarizeBy": "none",
+      "sourceColumn": "material_group_code"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "material_medication",
+    "line": 249,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "258bd0da-c3ac-4ab8-837d-86d59ee2f1f4",
+      "summarizeBy": "none",
+      "sourceColumn": "material_medication"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "order_sale_quantity",
+    "line": 257,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "a52781ed-f993-461f-aa8d-d383741c3d98",
+      "summarizeBy": "sum",
+      "sourceColumn": "order_sale_quantity"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "order_sale_delivery_quantity",
+    "line": 266,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "4dd52876-5898-453d-b335-3f21f015a287",
+      "summarizeBy": "sum",
+      "sourceColumn": "order_sale_delivery_quantity"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "order_sale_cut_value",
+    "line": 275,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "020386f0-a47d-4c49-bbd5-d33e12a1750b",
+      "summarizeBy": "sum",
+      "sourceColumn": "order_sale_cut_value"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "order_sale_subtotal",
+    "line": 284,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "3c351739-18b9-4014-be0f-f0ad9d912ee2",
+      "summarizeBy": "sum",
+      "sourceColumn": "order_sale_subtotal"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "sale_rejection_reason_code",
+    "line": 294,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "d28a18b2-b63b-436c-8744-d72523674507",
+      "summarizeBy": "none",
+      "sourceColumn": "sale_rejection_reason_code"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "sale_billing_block_code",
+    "line": 302,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "698b7039-e96a-4b85-9148-a2112eab8a59",
+      "summarizeBy": "none",
+      "sourceColumn": "sale_billing_block_code"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "sale_delivery_code",
+    "line": 310,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "94caa139-31f5-4c56-b3c2-2e8218d55c47",
+      "summarizeBy": "sum",
+      "sourceColumn": "sale_delivery_code"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "sale_delivery_block_code",
+    "line": 319,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "0e059333-8e16-44df-a559-7e73e9477932",
+      "summarizeBy": "none",
+      "sourceColumn": "sale_delivery_block_code"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "sale_delivery_item_block_code",
+    "line": 327,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "7555f135-5008-4856-8fc3-afbb5fcd0ac5",
+      "summarizeBy": "none",
+      "sourceColumn": "sale_delivery_item_block_code"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "sale_storage_code",
+    "line": 335,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "c738fee2-24cc-464d-b543-370a689875c6",
+      "summarizeBy": "sum",
+      "sourceColumn": "sale_storage_code"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "sale_shipping_code",
+    "line": 344,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "456509aa-6c06-4f79-807e-abd5a7dee290",
+      "summarizeBy": "sum",
+      "sourceColumn": "sale_shipping_code"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "sale_shipping_type",
+    "line": 353,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "42c9cc23-f017-474e-a85c-e0f989617f58",
+      "summarizeBy": "none",
+      "sourceColumn": "sale_shipping_type"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "sale_program_date",
+    "line": 361,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "formatString": "Short Date",
+      "lineageTag": "13501613-2978-4d03-848f-16ce6209971b",
+      "summarizeBy": "none",
+      "sourceColumn": "sale_program_date"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "sale_cancellation_date",
+    "line": 372,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "formatString": "Short Date",
+      "lineageTag": "0866e6f8-1c56-4ac7-b3e8-6565ff0919d4",
+      "summarizeBy": "none",
+      "sourceColumn": "sale_cancellation_date"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "customer_license_zc0001_to",
+    "line": 383,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "formatString": "Short Date",
+      "lineageTag": "fd6a3a6e-b112-4c07-991c-197f37298caa",
+      "summarizeBy": "none",
+      "sourceColumn": "customer_license_zc0001_to"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "customer_license_zc0002_to",
+    "line": 394,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "formatString": "Short Date",
+      "lineageTag": "32787355-628c-4dc5-b938-d5e9a406fbb3",
+      "summarizeBy": "none",
+      "sourceColumn": "customer_license_zc0002_to"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "customer_customer_type_code",
+    "line": 405,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "2f268deb-b22b-426a-972c-ebd0b3019433",
+      "summarizeBy": "sum",
+      "sourceColumn": "customer_customer_type_code"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "customer_flag_customer_analytics",
+    "line": 414,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "c3db75f7-e343-4748-9e56-96e68678a36f",
+      "summarizeBy": "sum",
+      "sourceColumn": "customer_flag_customer_analytics"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "obt_sales_department_status",
+    "line": 423,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "83ad24b2-6aa9-4511-a915-a2e86027f3b3",
+      "summarizeBy": "none",
+      "sourceColumn": "obt_sales_department_status"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "sale_customer",
+    "line": 431,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "5966e926-0a45-4e2c-bdf4-f4e2212a5e76",
+      "summarizeBy": "none",
+      "sourceColumn": "sale_customer"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "material_brand_code",
+    "line": 439,
+    "description": null,
+    "properties": {
+      "dataType": "int64",
+      "formatString": "0",
+      "lineageTag": "4d719dc2-ed7c-44fd-9bf5-f9ca6d2b8039",
+      "summarizeBy": "sum",
+      "sourceColumn": "material_brand_code"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "chave_executivo",
+    "line": 448,
+    "description": null,
+    "properties": {
+      "dataType": "string",
+      "lineageTag": "3c1f5945-fbf2-4ec1-9ca1-2063cc3c555c",
+      "summarizeBy": "none",
+      "sourceColumn": "chave_executivo"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "data_entrega",
+    "line": 456,
+    "description": null,
+    "properties": {
+      "dataType": "dateTime",
+      "formatString": "Long Date",
+      "lineageTag": "4cc74e46-bc8a-435b-8c1a-7545ee88a7d0",
+      "summarizeBy": "none",
+      "sourceColumn": "data_entrega"
+    }
+  },
+  {
+    "table": "fVendas_unificada",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "name": "order_sale_total",
+    "line": 467,
+    "description": null,
+    "properties": {
+      "dataType": "double",
+      "lineageTag": "2e3fd5e1-1b04-4c94-a06e-3a9f512c8050",
+      "summarizeBy": "sum",
+      "sourceColumn": "order_sale_total"
+    }
+  },
+  {
+    "table": "Legenda Gradiente",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Legenda Gradiente.tmdl",
+    "name": "Value",
+    "line": 4,
+    "description": null,
+    "properties": {
+      "formatString": "0",
+      "lineageTag": "2056ad23-81d2-4de6-84a1-49cc54e300e1",
+      "summarizeBy": "sum",
+      "sourceColumn": "[Value]"
+    }
+  },
+  {
+    "table": "Parâmetros: Matriz Dinâmica",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Parâmetros%3A Matriz Dinâmica.tmdl",
+    "name": "Parâmetro 2",
+    "line": 4,
+    "description": null,
+    "properties": {
+      "lineageTag": "581622a7-d217-42f9-bf7c-78069237ef2b",
+      "summarizeBy": "none",
+      "sourceColumn": "[Value1]",
+      "sortByColumn": "'Parâmetro 2 Pedido'"
+    }
+  },
+  {
+    "table": "Parâmetros: Matriz Dinâmica",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Parâmetros%3A Matriz Dinâmica.tmdl",
+    "name": "Parâmetro 2 Campos",
+    "line": 15,
+    "description": null,
+    "properties": {
+      "isHidden": true,
+      "lineageTag": "39b14965-c9e5-4b89-8c33-a83422446290",
+      "summarizeBy": "none",
+      "sourceColumn": "[Value2]",
+      "sortByColumn": "'Parâmetro 2 Pedido'"
+    }
+  },
+  {
+    "table": "Parâmetros: Matriz Dinâmica",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Parâmetros%3A Matriz Dinâmica.tmdl",
+    "name": "Parâmetro 2 Pedido",
+    "line": 30,
+    "description": null,
+    "properties": {
+      "isHidden": true,
+      "formatString": "0",
+      "lineageTag": "93bdef48-60a4-4a84-a0a3-b93d9c6cf080",
+      "summarizeBy": "sum",
+      "sourceColumn": "[Value3]"
+    }
+  },
+  {
+    "table": "tLogistica e CS",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/tLogistica e CS.tmdl",
+    "name": "Valor Logistica",
+    "line": 4,
+    "description": null,
+    "properties": {
+      "lineageTag": "3bf6c438-67ea-49b2-9fda-e54bc83e5ef5",
+      "summarizeBy": "sum",
+      "sourceColumn": "[Valor Logistica]"
+    }
+  },
+  {
+    "table": "tLogistica e CS",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/tLogistica e CS.tmdl",
+    "name": "Valor CS",
+    "line": 14,
+    "description": null,
+    "properties": {
+      "lineageTag": "5eb4d382-6a06-435e-9452-18a6933b2e82",
+      "summarizeBy": "sum",
+      "sourceColumn": "[Valor CS]"
+    }
+  },
+  {
+    "table": "tLogistica e CS",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/tLogistica e CS.tmdl",
+    "name": "order_sale_subtotal",
+    "line": 24,
+    "description": null,
+    "properties": {
+      "lineageTag": "1f1a8116-f8be-4e12-9778-9eee6a3c7641",
+      "summarizeBy": "sum",
+      "sourceColumn": "fVendas_unificada[order_sale_subtotal]"
+    }
+  },
+  {
+    "table": "tLogistica e CS",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/tLogistica e CS.tmdl",
+    "name": "order_sale_quantity",
+    "line": 34,
+    "description": null,
+    "properties": {
+      "formatString": "0",
+      "lineageTag": "bf2eba24-5179-4c6b-8264-c3f920cdf9d6",
+      "summarizeBy": "sum",
+      "sourceColumn": "fVendas_unificada[order_sale_quantity]"
+    }
+  },
+  {
+    "table": "tLogistica e CS",
+    "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/tLogistica e CS.tmdl",
+    "name": "order_sale_delivery_quantity",
+    "line": 43,
+    "description": null,
+    "properties": {
+      "formatString": "0",
+      "lineageTag": "9256d577-ae32-4584-a868-99bce0822a7e",
+      "summarizeBy": "sum",
+      "sourceColumn": "fVendas_unificada[order_sale_delivery_quantity]"
+    }
+  }
+]

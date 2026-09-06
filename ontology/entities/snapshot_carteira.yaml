@@ -1,0 +1,55 @@
+schema_version: 1
+id: "snapshot_carteira"
+title: "Snapshot de carteira"
+type: "entity"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl"
+    locator: "declaração de tabela e colunas"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Leitura estática do snapshot PBIP; sem execução ou certificação de negócio."
+pending:
+  - "Confirmar interpretação, responsáveis e comportamento com dados reais."
+definition: "Registro de carteira associado à data_carteira, com valores e quantidades de pedido e faturamento. Confirmar granularidade item × snapshot."
+evidence_level: "interpretacao_proposta_a_partir_do_modelo"
+identifier: null
+identifier_basis: null
+grain: null
+attributes:
+  - "data_carteira"
+  - "ano_mes"
+  - "order_sale_order_code"
+  - "order_sale_order_date"
+  - "order_billing_billing_date"
+  - "order_sale_program_date"
+  - "obt_sales_order_status"
+  - "obt_sales_order_type"
+  - "company"
+  - "order_sale_order_office_code"
+  - "order_sale_material_code"
+  - "order_sale_quantity"
+  - "order_sale_subtotal"
+  - "order_billing_quantity"
+  - "order_billing_subtotal"
+  - "obt_sales_department_status"
+  - "order_sale_storage_code"
+  - "order_sale_last_change_date_item"
+  - "status_carteira"
+  - "qt_ordem_carteira_inicial"
+  - "vr_item_carteira_inicial"
+physical_mappings:
+  -
+    semantic_table: "fCarteira_pedidos_unificada"
+    source: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl"

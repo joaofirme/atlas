@@ -1,0 +1,123 @@
+table dClientes_unificada
+	lineageTag: 7a38c03f-16dc-4a26-9b9b-a296eaff61eb
+
+	column empresa
+		dataType: string
+		lineageTag: 675ce95f-de30-447e-9da2-aa3fdde2b532
+		summarizeBy: none
+		sourceColumn: empresa
+
+		annotation SummarizationSetBy = Automatic
+
+	column companhia
+		dataType: string
+		lineageTag: 744f4bb5-d2d0-47ab-8311-16c42f258dc7
+		summarizeBy: none
+		sourceColumn: companhia
+
+		annotation SummarizationSetBy = Automatic
+
+	column cliente_codigo
+		dataType: int64
+		formatString: 0
+		lineageTag: e0bc49c3-5b2c-4461-a2a4-a3aa2a032b94
+		summarizeBy: sum
+		sourceColumn: cliente_codigo
+
+		annotation SummarizationSetBy = Automatic
+
+	column cliente
+		dataType: string
+		lineageTag: 8cd20045-2e66-4a8c-9339-89991642db07
+		summarizeBy: none
+		sourceColumn: cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column cliente_cpf_cnpj_completo
+		dataType: string
+		lineageTag: c4c16e62-a566-4d3d-ac25-9df14a461a67
+		summarizeBy: none
+		sourceColumn: cliente_cpf_cnpj_completo
+
+		annotation SummarizationSetBy = Automatic
+
+	column cliente_cpf_cnpj_raiz
+		dataType: string
+		lineageTag: cefc13bb-a04e-445a-8816-0597b1e93c0e
+		summarizeBy: none
+		sourceColumn: cliente_cpf_cnpj_raiz
+
+		annotation SummarizationSetBy = Automatic
+
+	column cidade
+		dataType: string
+		lineageTag: 41e6cea2-1315-4220-85c6-1a646ae37322
+		summarizeBy: none
+		sourceColumn: cidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado
+		dataType: string
+		lineageTag: 4be3189d-73f8-458b-a8a3-4f405e0db9fb
+		summarizeBy: none
+		sourceColumn: estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column pais
+		dataType: string
+		lineageTag: b930ef76-6033-4c38-ba50-5e9e8f68f5b7
+		summarizeBy: none
+		sourceColumn: pais
+
+		annotation SummarizationSetBy = Automatic
+
+	column regiao
+		dataType: string
+		lineageTag: 4df6ec76-610e-4e22-ab30-74cfb4d4cdaf
+		summarizeBy: none
+		sourceColumn: regiao
+
+		annotation SummarizationSetBy = Automatic
+
+	column chave_cliente
+		dataType: string
+		lineageTag: 0b2c2c0d-23dd-42db-ae74-96db6fd77578
+		summarizeBy: none
+		sourceColumn: chave_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_grupo
+		dataType: string
+		lineageTag: 7cb12d55-3d9d-4499-82f5-4e089abdbeee
+		summarizeBy: none
+		sourceColumn: nome_grupo
+
+		annotation SummarizationSetBy = Automatic
+
+	column cliente_grupo
+		dataType: string
+		lineageTag: f4d3251e-b5ef-4181-890f-1b8f0eb162be
+		summarizeBy: none
+		sourceColumn: cliente_grupo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dClientes_unificada = m
+		mode: import
+		queryGroup: Dimensão
+		source =
+				let
+				    Source = AmazonRedshift.Database("farmax-cluster.cdkgzqhbae0k.us-east-1.redshift.amazonaws.com:5439","farmax_prod"),
+				    comercial = Source{[Name="comercial"]}[Data],
+				    dimensao_clientes_unificada1 = comercial{[Name="dimensao_clientes_unificada"]}[Data]
+				in
+				    dimensao_clientes_unificada1
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

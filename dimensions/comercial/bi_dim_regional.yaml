@@ -1,0 +1,44 @@
+schema_version: 1
+id: "bi_dim_regional"
+title: "Regional comercial"
+type: "dimension"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dRegional.tmdl"
+    locator: "colunas e partição"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Leitura estática do snapshot PBIP; sem execução ou certificação de negócio."
+pending:
+  - "Confirmar interpretação, responsáveis e comportamento com dados reais."
+definition: "Regional de vendas carregada com regras explícitas de seleção e normalização."
+entity: "regional"
+key: "order_sale_order_office_code"
+attributes:
+  - "order_sale_order_office_code"
+  - "order_sale_order_office"
+hierarchy: null
+physical_mapping:
+  semantic_table: "dRegional"
+  columns:
+    - "order_sale_order_office_code"
+    - "order_sale_order_office"
+unknown_values: null
+historical_behavior: null
+compatible_metrics: null
+observed_metric_references:
+  - "bi_carteira_e_estoque_html_v1"
+  - "bi_farmax_bi_html_old"
+  - "bi_farmax_bi_html_v2"
+compatibility_note: "Uso observado não comprova compatibilidade semântica de todos os níveis; revisar granularidade e filtros."

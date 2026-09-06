@@ -1,0 +1,139 @@
+table fMeta_unificada
+	lineageTag: 5fc37cfb-f89d-4dd4-8614-dae8c66a5e3f
+
+	column chave_origem
+		dataType: string
+		lineageTag: 0dfb6a25-ec41-4c60-80d2-52fa461e38c8
+		summarizeBy: none
+		sourceColumn: chave_origem
+
+		annotation SummarizationSetBy = Automatic
+
+	column empresa
+		dataType: string
+		lineageTag: 01c28164-ce4a-4d60-9dd8-b60d138684b0
+		summarizeBy: none
+		sourceColumn: empresa
+
+		annotation SummarizationSetBy = Automatic
+
+	column companhia
+		dataType: string
+		lineageTag: 2c63407b-b643-460d-b02f-edf8f2d886e2
+		summarizeBy: none
+		sourceColumn: companhia
+
+		annotation SummarizationSetBy = Automatic
+
+	column cod_executivo
+		dataType: string
+		lineageTag: 90a650c1-261d-4238-ae8a-ed303ed0b87d
+		summarizeBy: none
+		sourceColumn: cod_executivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column chave_coordenador
+		dataType: string
+		lineageTag: 3e3f6240-3fb9-4ebf-9304-a7b04706c791
+		summarizeBy: none
+		sourceColumn: chave_coordenador
+
+		annotation SummarizationSetBy = Automatic
+
+	column chave_regional
+		dataType: string
+		lineageTag: 7c480f0a-4b1e-48e3-9d57-cb4fc8529dc2
+		summarizeBy: none
+		sourceColumn: chave_regional
+
+		annotation SummarizationSetBy = Automatic
+
+	column chave_segmento
+		dataType: string
+		lineageTag: 6665c205-43df-43f6-945d-a625267d747c
+		summarizeBy: none
+		sourceColumn: chave_segmento
+
+		annotation SummarizationSetBy = Automatic
+
+	column chave_marca
+		dataType: string
+		lineageTag: c1470c44-da75-4263-bdc5-6cd406dcf0c7
+		summarizeBy: none
+		sourceColumn: chave_marca
+
+		annotation SummarizationSetBy = Automatic
+
+	column meta_receita
+		dataType: double
+		lineageTag: 735328a6-d1f7-4b8b-9c2a-350617c5765a
+		summarizeBy: sum
+		sourceColumn: meta_receita
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column meta_positivacao
+		dataType: double
+		lineageTag: 914ea8f6-daac-4393-9434-3189be391322
+		summarizeBy: sum
+		sourceColumn: meta_positivacao
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column meta_ticket_medio
+		dataType: double
+		lineageTag: faa1387b-0522-438c-9b3a-f433dfb6f1a4
+		summarizeBy: sum
+		sourceColumn: meta_ticket_medio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column meta_data_alvo
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f23326f5-97ba-4761-95ed-aca2a5e1398c
+		summarizeBy: none
+		sourceColumn: meta_data_alvo
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column canal_vendas
+		dataType: string
+		lineageTag: 149c26b7-2619-40ad-97c0-907d4a0ce860
+		summarizeBy: none
+		sourceColumn: canal_vendas
+
+		annotation SummarizationSetBy = Automatic
+
+	column chave_executivo
+		dataType: string
+		lineageTag: c2d328ae-b837-4e55-97b4-6e1c3cb80fd9
+		summarizeBy: none
+		sourceColumn: chave_executivo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fMeta_unificada = m
+		mode: import
+		queryGroup: Fato
+		source =
+				let
+				    Source = AmazonRedshift.Database("farmax-cluster.cdkgzqhbae0k.us-east-1.redshift.amazonaws.com:5439","farmax_prod"),
+				    comercial = Source{[Name="comercial"]}[Data],
+				    fato_metas_executivos_unificada = comercial{[Name="fato_metas_executivos_unificada"]}[Data]
+				in
+				    fato_metas_executivos_unificada
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

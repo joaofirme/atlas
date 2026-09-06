@@ -1,0 +1,55 @@
+schema_version: 1
+id: "bi_dim_base_receita"
+title: "Base de receita"
+type: "dimension"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Base Receita.tmdl"
+    locator: "colunas e partição"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Leitura estática do snapshot PBIP; sem execução ou certificação de negócio."
+pending:
+  - "Confirmar interpretação, responsáveis e comportamento com dados reais."
+definition: "Seletor desconectado com Receita Semi Liquida e Receita Bruta. Altera medidas via SELECTEDVALUE/SWITCH."
+entity: null
+key: null
+attributes:
+  - "Base Receita"
+  - "Ordem"
+hierarchy: null
+physical_mapping:
+  semantic_table: "Base Receita"
+  columns:
+    - "Base Receita"
+    - "Ordem"
+unknown_values: null
+historical_behavior: null
+compatible_metrics: null
+observed_metric_references:
+  - "bi_pedidos_e_faturamentos_html"
+  - "bi_carteira_e_estoque_html_v1"
+  - "bi_comercial_html_v1"
+  - "bi_06_valor_entregue"
+  - "bi_farmax_bi_html_old"
+  - "bi_faturamento_selecionado"
+  - "bi_percentual_meta_exibicao"
+  - "bi_devolucao_selecionada"
+  - "bi_legenda_base_receita"
+  - "bi_meta_rsl_exibicao"
+  - "bi_receita_selecionada"
+  - "bi_matriz_rsl_meta"
+  - "bi_farmax_bi_html_v2"
+  - "bi_pedidos_e_faturamentos_menu_html"
+compatibility_note: "Uso observado não comprova compatibilidade semântica de todos os níveis; revisar granularidade e filtros."

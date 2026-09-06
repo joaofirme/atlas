@@ -1,0 +1,244 @@
+table dTempo
+	lineageTag: 6718868e-290c-4960-a8b1-7d988e9888ba
+	dataCategory: Time
+
+	column DiaNum
+		dataType: int64
+		formatString: 0
+		lineageTag: d04fc31b-42fd-49c2-8f10-06b4c5ceb5a8
+		summarizeBy: none
+		sourceColumn: DiaNum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column DiaComZero
+		dataType: string
+		lineageTag: 6818d637-e764-4631-957a-d776925ee3e2
+		summarizeBy: none
+		sourceColumn: DiaComZero
+
+		annotation SummarizationSetBy = Automatic
+
+	column MesNum
+		dataType: int64
+		formatString: 0
+		lineageTag: 889e3ec7-3158-4450-b8b6-eb9b88590653
+		summarizeBy: none
+		sourceColumn: MesNum
+
+		annotation SummarizationSetBy = User
+
+	column MesComZero
+		dataType: string
+		lineageTag: e6916df5-9d97-47f5-9928-cafd4277addb
+		summarizeBy: none
+		sourceColumn: MesComZero
+
+		annotation SummarizationSetBy = Automatic
+
+	column MesNome
+		dataType: string
+		lineageTag: e28992dd-d897-4dbb-8404-b9d5326e41e6
+		summarizeBy: none
+		sourceColumn: MesNome
+		sortByColumn: MesNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column MesNomeAbrev
+		dataType: string
+		lineageTag: 5815805a-9cd5-4031-8e0e-33f4afd4fa3d
+		summarizeBy: none
+		sourceColumn: MesNomeAbrev
+		sortByColumn: MesNum
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ano
+		dataType: int64
+		formatString: 0
+		lineageTag: 49bbd427-81ce-4c63-9af3-6a1a4bfc41d4
+		summarizeBy: none
+		sourceColumn: Ano
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column Data
+		dataType: dateTime
+		isKey
+		formatString: Short Date
+		lineageTag: 99f752b6-694a-4727-b09e-de1acfbdd513
+		summarizeBy: none
+		sourceColumn: Data
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes/Ano
+		dataType: string
+		lineageTag: 949a2e81-b488-4e55-83e2-ecaa788335bc
+		summarizeBy: none
+		sourceColumn: Mes/Ano
+		sortByColumn: Ano0Mes
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ano0Mes
+		dataType: string
+		lineageTag: 38797f2e-5ff4-4e1c-add8-a88c19a46cb5
+		summarizeBy: none
+		sourceColumn: Ano0Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ano/MesNum
+		dataType: string
+		lineageTag: 4a59c024-7457-43e8-af3f-7d13b2b7068d
+		summarizeBy: none
+		sourceColumn: Ano/MesNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estação
+		dataType: string
+		lineageTag: b9388ceb-44e7-43aa-9d4d-5ad03bd6a0c5
+		summarizeBy: none
+		sourceColumn: Estação
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiaCorrente
+		dataType: string
+		lineageTag: 45f150f8-0e15-4f04-9068-f9ad314d6d03
+		summarizeBy: none
+		sourceColumn: DiaCorrente
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiaSemanaAbrev
+		dataType: string
+		lineageTag: 9a1d9ce4-df52-47e1-87a8-1f58e1e5ec58
+		summarizeBy: none
+		sourceColumn: DiaSemanaAbrev
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiaUtil
+		dataType: int64
+		formatString: 0
+		lineageTag: a2b07aa3-6963-4cc2-8526-e1fef086ed9d
+		summarizeBy: sum
+		sourceColumn: DiaUtil
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dTempo-b074aa8d-3514-4068-bd7d-574f5a1e77ca = m
+		mode: import
+		queryGroup: Dimensão
+		source =
+				//CONEXAO DATAFLOW
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    #"4c88a2b6-9309-4368-9a28-168154f1d083" = Workspaces{[workspaceId="4c88a2b6-9309-4368-9a28-168154f1d083"]}[Data],
+				    #"e935f8e3-404f-4bbd-8fbb-8942c0e6f04e" = #"4c88a2b6-9309-4368-9a28-168154f1d083"{[dataflowId="e935f8e3-404f-4bbd-8fbb-8942c0e6f04e"]}[Data],
+				    dTempo_ = #"e935f8e3-404f-4bbd-8fbb-8942c0e6f04e"{[entity="dTempo",version=""]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(dTempo_,{"Data", "DiaNum", "DiaComZero", "MesNum", "MesComZero", "MesNome", "MesNomeAbrev", "Ano", "Mes/Ano", "Ano0Mes", "Ano/MesNum", "DiaSemanaAbrev", "Estação"}),
+				    AdicionarDia = Table.AddColumn(#"Removed Other Columns", "DiaCorrente", each DateTime.ToText(DateTime.LocalNow(), "dd")),
+				    #"Ano > 2024" = Table.SelectRows(AdicionarDia, each [Ano] > 2024),
+				    #"Added Conditional Column" = Table.AddColumn(#"Ano > 2024", "DiaUtil", each if [DiaSemanaAbrev] = "sáb" then 0 else if [DiaSemanaAbrev] = "dom" then 0 else 1, type any),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Conditional Column",{{"Data", type datetime}, {"DiaUtil", Int64.Type}})
+				in
+				    #"Changed Type"
+				
+				//CRIACAO MANUAL
+				/*
+				let
+				// Criando Range de Data Entre 01/01/2020 e Hoje
+				Source = #date(2021, 1, 1),
+				ListaDatas = List.Dates(Source,Number.From(#date(2024, 12, 31))-Number.From(Source),#duration(1,0,0,0)),
+				#"ConverteTabela"= Table.FromList(ListaDatas, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				
+				// Renomeando e formatando a coluna para Data
+				#"Renomeia Coluna para Data" = Table.RenameColumns(ConverteTabela,{{"Column1", "Data"}}),
+				#"Formata Coluna como Data" = Table.TransformColumnTypes(#"Renomeia Coluna para Data",{{"Data", type date}}),
+				// Personalizado
+				//Ano = Table.AddColumn(MesExtenso, "Ano", each Date.Year([Data]), type number),
+				//#"Ano/Mes" = Table.AddColumn(Ano, "Ano/Mes", each Date.ToText([Data],"MMM/yyyy"), type text),
+				
+				// Dia
+				DiaNum = Table.AddColumn(#"Formata Coluna como Data", "DiaNum", each Date.Day([Data]), Int64.Type),
+				DiaComZero = Table.AddColumn(DiaNum, "DiaComZero", each Text.PadStart(Text.From(Date.Day([Data])),2,"0"), type text),
+				DiaNome = Table.AddColumn(DiaComZero, "DiaNome", each "Dia " & [DiaComZero] , type text),
+				DiaAno = Table.AddColumn(DiaNome, "DiaAno", each Date.DayOfYear([Data]), type number),
+				
+				// Mês
+				MesNum = Table.AddColumn(DiaAno, "MesNum", each Date.Month([Data]), Int64.Type),
+				MesComZero = Table.AddColumn(MesNum, "MesComZero", each Text.PadStart(Text.From(Date.Month([Data])),2,"0"), type text),
+				MesNome = Table.AddColumn(MesComZero, "MesNome", each Date.MonthName([Data]), type text),
+				MesNomeAbrev = Table.AddColumn(MesNome, "MesNomeAbrev", each Date.ToText([Data],"MMM"), type text),
+				MesNomeAbrevAno = Table.AddColumn(MesNomeAbrev, "MesNomeAbrevAno", each Date.ToText([Data],"MMM-yyyy"), type text),
+				MesExtenso = Table.AddColumn(MesNomeAbrevAno, "Mes Extenso", each "Mês " & [MesComZero]),
+				
+				// Ano
+				Ano = Table.AddColumn(MesExtenso, "Ano", each Date.Year([Data]), type number),
+				#"Ano/Mes" = Table.AddColumn(Ano, "Ano/Mes", each Date.ToText([Data],"MM/yyyy"), type text),
+				AnoMesNum = Table.AddColumn(Ano, "Ano/MesNum", each Date.ToText([Data],"MM/yyyy"), type text),
+				//#"Ano/MesNum" = Table.AddColumn(Ano, "Ano/MesNum", each Date.ToText([Data],"MM/yyyy"), type text),
+				    // Semana
+				DiaSemana = Table.AddColumn(#"Ano/Mes", "DiaSemana", each Date.DayOfWeek([Data]), type number),
+				DiaSemanaAbrev = Table.AddColumn(DiaSemana, "DiaSemanaAbrev", each Date.ToText([Data],"ddd"), type text),
+				DiaSemanaNome = Table.AddColumn(DiaSemanaAbrev, "DiaSemanaNome", each Date.ToText([Data],"dddd"), type text),
+				SemanaAno = Table.AddColumn(DiaSemanaNome, "SemanaAno", each Text.PadStart(Text.From(Date.WeekOfYear([Data])),2,"0"), type text),
+				#"Semana, Ano" = Table.AddColumn(SemanaAno, "Semana, Ano", each "Semana " & [SemanaAno] & ", " & Text.From([Ano]), type text),
+				SemanaExtenso = Table.AddColumn(#"Semana, Ano", "SemanaExtenso", each "Semana " & [SemanaAno], type text),
+				SemanaMes = Table.AddColumn(SemanaExtenso, "SemanaMes", each Date.WeekOfMonth([Data]), type number),
+				
+				// Bimestre
+				Bimestre = Table.AddColumn(SemanaMes, "Bimestre",
+				each if [MesNum] <= 2 then 1
+				else if [MesNum] <= 4 then 2
+				else if [MesNum] <= 6 then 3
+				else if [MesNum] <= 8 then 4
+				else if [MesNum] <= 10 then 5
+				else 6 , type number),
+				
+				// Semestre
+				Semestre = Table.AddColumn(Bimestre, "Semestre",
+				each if [MesNum] <= 6 then 1
+				else 2, type number),
+				
+				// Trimestre
+				TrimestreNum = Table.AddColumn(Semestre, "TrimestreNum", each Date.QuarterOfYear([Data]), type number),
+				TrimestreNom = Table.AddColumn(TrimestreNum, "TrimestreNom", each Number.ToText([TrimestreNum]) & "º" & " – Trimestre", type text),
+				
+				// Data Inicio e Fim mês
+				InicioMes = Table.AddColumn(TrimestreNom, "InicioMes", each Date.StartOfMonth([Data]), type date),
+				FimMes = Table.AddColumn(InicioMes, "FimMes", each Date.EndOfMonth([Data]), type date),
+				
+				//Calendário Ano
+				#"Calendario Ano" = Table.AddColumn(FimMes, "Calendario Ano", each "Calendário " & Text.From([Ano]), type text),
+				
+				//Flags
+				FlagFinalSemana = Table.AddColumn(#"Calendario Ano", "FinalSemana", each if([DiaSemana] = 0 or [DiaSemana] = 6) then "Sim" else "Não", type text),
+				FlagHoje = Table.AddColumn(FlagFinalSemana, "FlagHoje", each Date.IsInCurrentDay([Data]), type logical),
+				FlagMesAtual = Table.AddColumn(FlagHoje, "FlagMesAtual", each Date.IsInCurrentMonth([Data]), type logical),
+				FlagTrimestreAtual = Table.AddColumn(FlagMesAtual, "FlagTrimestreAtual", each Date.IsInCurrentQuarter([Data]), type logical),
+				FlagSemanaAtual = Table.AddColumn(FlagTrimestreAtual, "FlagSemanaAtual", each Date.IsInCurrentWeek([Data]), type logical),
+				FlagAnoAtual = Table.AddColumn(FlagSemanaAtual, "FlagAnoAtual", each Date.IsInCurrentYear([Data]), type logical),
+				FlagYTD = Table.AddColumn(FlagAnoAtual, "YTD", each if [FlagAnoAtual] = true and [Data] <= Date.From(DateTime.LocalNow()) then true else false, type logical)
+				in
+				    FlagYTD
+				*/
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

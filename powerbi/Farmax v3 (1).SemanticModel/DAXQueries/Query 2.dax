@@ -1,0 +1,9 @@
+EVALUATE
+        FILTER(
+            SUMMARIZE(
+                fFaturamento,
+                fFaturamento[customer_cnpj],
+                "order_billing_sum", [00 Faturamento]
+            )
+            , [order_billing_sum] > 0 
+        ) 

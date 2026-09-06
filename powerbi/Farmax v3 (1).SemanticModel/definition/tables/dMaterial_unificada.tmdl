@@ -1,0 +1,252 @@
+table dMaterial_unificada
+	lineageTag: 9a80b9d4-8b88-4b15-9c75-e84ec56ac72b
+
+	column empresa
+		dataType: string
+		lineageTag: 2b6c87dc-0e66-49b9-aef9-9916e44de646
+		summarizeBy: none
+		sourceColumn: empresa
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_produto
+		dataType: string
+		lineageTag: 6c34affa-0892-4d76-bfb5-81172fbc912e
+		summarizeBy: none
+		sourceColumn: codigo_produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column descricao
+		dataType: string
+		lineageTag: 221cfba7-946d-48b3-8bae-5cc8103bbcce
+		summarizeBy: none
+		sourceColumn: descricao
+
+		annotation SummarizationSetBy = Automatic
+
+	column ean
+		dataType: string
+		lineageTag: 94e33609-fedf-4748-b173-198cb85c77b6
+		summarizeBy: none
+		sourceColumn: ean
+
+		annotation SummarizationSetBy = Automatic
+
+	column marca
+		dataType: string
+		lineageTag: de98ce9a-e118-4c5e-9f59-b959a184197a
+		summarizeBy: none
+		sourceColumn: marca
+
+		annotation SummarizationSetBy = Automatic
+
+	column segmento
+		dataType: string
+		lineageTag: 9cd2e8df-0446-4444-9cff-8949d285cea7
+		summarizeBy: none
+		sourceColumn: segmento
+
+		annotation SummarizationSetBy = Automatic
+
+	column familia
+		dataType: string
+		lineageTag: 2736b318-fcdd-46c7-a42d-3470682a89d7
+		summarizeBy: none
+		sourceColumn: familia
+
+		annotation SummarizationSetBy = Automatic
+
+	column kit_brand
+		dataType: string
+		lineageTag: 1e37a04b-ffd9-43e9-afed-213d98ab0437
+		summarizeBy: none
+		sourceColumn: kit_brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column kit_atwrt
+		dataType: string
+		lineageTag: 3e9d4357-e40a-4a19-8bb5-a0c86be9b426
+		summarizeBy: none
+		sourceColumn: kit_atwrt
+
+		annotation SummarizationSetBy = Automatic
+
+	column embalagem_brand
+		dataType: string
+		lineageTag: 0d007b53-f1cd-4711-a9b4-355d842a9030
+		summarizeBy: none
+		sourceColumn: embalagem_brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column embalagem_atwrt
+		dataType: string
+		lineageTag: b2a34c77-9201-4b3b-ba65-5b0cfb39655e
+		summarizeBy: none
+		sourceColumn: embalagem_atwrt
+
+		annotation SummarizationSetBy = Automatic
+
+	column familia_brand
+		dataType: string
+		lineageTag: a8a72edd-e5f4-4e76-9c9c-647db50ebde9
+		summarizeBy: none
+		sourceColumn: familia_brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column familia_atwrt
+		dataType: string
+		lineageTag: e7bf3748-3a4b-4bfd-840b-e021c719b291
+		summarizeBy: none
+		sourceColumn: familia_atwrt
+
+		annotation SummarizationSetBy = Automatic
+
+	column subcategoria_brand
+		dataType: string
+		lineageTag: f7383a38-d6fa-4129-9b21-b3a5320c4843
+		summarizeBy: none
+		sourceColumn: subcategoria_brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column subcategoria_atwrt
+		dataType: string
+		lineageTag: 41f904ea-a03b-42d2-a1d5-ebeb63c76c17
+		summarizeBy: none
+		sourceColumn: subcategoria_atwrt
+
+		annotation SummarizationSetBy = Automatic
+
+	column categoria_brand
+		dataType: string
+		lineageTag: 28466718-dfef-411a-a389-8943b7096f17
+		summarizeBy: none
+		sourceColumn: categoria_brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column categoria_atwrt
+		dataType: string
+		lineageTag: fe36b906-8df4-4835-9c38-3f4010422d2d
+		summarizeBy: none
+		sourceColumn: categoria_atwrt
+
+		annotation SummarizationSetBy = Automatic
+
+	column publico_brand
+		dataType: string
+		lineageTag: c845e133-26a0-4a83-a25f-d56dbc39198c
+		summarizeBy: none
+		sourceColumn: publico_brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column publico_atwrt
+		dataType: string
+		lineageTag: 839ac030-6d64-448f-b6d8-5c2b074f3c3a
+		summarizeBy: none
+		sourceColumn: publico_atwrt
+
+		annotation SummarizationSetBy = Automatic
+
+	column textura_brand
+		dataType: string
+		lineageTag: f5037455-3020-4673-ae30-cdaf7040138a
+		summarizeBy: none
+		sourceColumn: textura_brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column textura_atwrt
+		dataType: string
+		lineageTag: 339631dc-132d-47fe-a29a-dac9236029dc
+		summarizeBy: none
+		sourceColumn: textura_atwrt
+
+		annotation SummarizationSetBy = Automatic
+
+	column fragrancia_brand
+		dataType: string
+		lineageTag: 438e7249-c652-4adb-bb4c-5cd0f76057d2
+		summarizeBy: none
+		sourceColumn: fragrancia_brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column fragrancia_atwrt
+		dataType: string
+		lineageTag: 9ff5d8bb-1655-4747-a57f-420d0f6dfa63
+		summarizeBy: none
+		sourceColumn: fragrancia_atwrt
+
+		annotation SummarizationSetBy = Automatic
+
+	column principioativo_brand
+		dataType: string
+		lineageTag: 17223c10-64ef-48b4-a745-0d7a1cf99439
+		summarizeBy: none
+		sourceColumn: principioativo_brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column principioativo
+		dataType: string
+		lineageTag: 4cd3565b-777a-4ecd-965b-d343b1a8f705
+		summarizeBy: none
+		sourceColumn: principioativo
+
+		annotation SummarizationSetBy = Automatic
+
+	column level
+		dataType: string
+		lineageTag: 98dd9b8b-7eb2-4092-b380-ea7b96c3ca21
+		summarizeBy: none
+		sourceColumn: level
+
+		annotation SummarizationSetBy = Automatic
+
+	column gtm_novo
+		dataType: string
+		lineageTag: 980e3fc7-f541-464b-ac56-e9addb7615e1
+		summarizeBy: none
+		sourceColumn: gtm_novo
+
+		annotation SummarizationSetBy = Automatic
+
+	column brand_novo
+		dataType: string
+		lineageTag: 07dde546-f9c2-4dfc-bb1f-8e686b79d60b
+		summarizeBy: none
+		sourceColumn: brand_novo
+
+		annotation SummarizationSetBy = Automatic
+
+	column novo_segmento
+		dataType: string
+		lineageTag: a8880841-ac8e-47ed-adb3-1a40135cad8a
+		summarizeBy: none
+		sourceColumn: novo_segmento
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dMaterial_unificada = m
+		mode: import
+		queryGroup: Dimensão
+		source =
+				let
+				    Source = AmazonRedshift.Database("farmax-cluster.cdkgzqhbae0k.us-east-1.redshift.amazonaws.com:5439","farmax_prod"),
+				    comercial = Source{[Name="comercial"]}[Data],
+				    dimensao_ean_unificada1 = comercial{[Name="dimensao_ean_unificada"]}[Data],
+				    #"Replaced Value" = Table.ReplaceValue(dimensao_ean_unificada1,"MARCAS PROPRIAS","MARCA PRÓPRIA",Replacer.ReplaceText,{"level"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","MARCAS DO GRUPO","FARMAX",Replacer.ReplaceText,{"level"})
+				in
+				    #"Replaced Value1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

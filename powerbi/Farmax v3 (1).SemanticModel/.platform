@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Farmax v3 (1)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "dd14538a-9ef3-4cb5-a5df-6c05a1a14120"
+  }
+}

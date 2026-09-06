@@ -1,0 +1,35 @@
+DEFINE
+	VAR __DS0FilterTable = 
+		TREATAS(
+			{"'dMarca'[material_gtm_segment]",
+				"'dRegional'[order_sale_order_office]",
+				"'dMarca'[material_brand]"},
+			'Parâmetro'[Parâmetro Campos]
+		)
+
+	VAR __DS0FilterTable2 = 
+		TREATAS({2025}, 'dTempo'[Ano])
+
+	VAR __DS0FilterTable3 = 
+		TREATAS({"Novembro"}, 'dTempo'[MesNome])
+
+	VAR __DS0Core = 
+		SUMMARIZECOLUMNS(
+			ROLLUPADDISSUBTOTAL('dTempo'[DiaNum], "IsGrandTotalRowTotal"),
+			__DS0FilterTable,
+			__DS0FilterTable2,
+			__DS0FilterTable3,
+			"v03_RSL", '_Medidas'[03 RSL],
+			"v00_Faturamento", '_Medidas'[00 Faturamento],
+			"v00_Devolução", '_Medidas'[00 Devolução],
+			"v01_Refaturamento", '_Medidas'[01 Refaturamento]
+		)
+
+	VAR __DS0BodyLimited = 
+		TOPN(102, __DS0Core, [IsGrandTotalRowTotal], 1, 'dTempo'[DiaNum], 1)
+
+EVALUATE
+	__DS0BodyLimited
+
+ORDER BY
+	[IsGrandTotalRowTotal], 'dTempo'[DiaNum]

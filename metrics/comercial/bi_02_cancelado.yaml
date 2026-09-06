@@ -1,0 +1,147 @@
+schema_version: 1
+id: "bi_02_cancelado"
+title: "02 Cancelado"
+type: "metric"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
+    locator: "medida _Medidas[02 Cancelado], linha 5280"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+  - "Confirmar unidade/moeda, granularidade, aditividade e dimensões permitidas; não inferir a aprovação a partir dos relacionamentos existentes."
+kind: "indicador"
+definition: "FARMAX: venda fora do depósito 52 com motivo de rejeição preenchido, por data de cancelamento. SANAVITA: venda CANCELADO, por data de pedido."
+definition_basis: "leitura_da_implementacao"
+source_description: null
+business_questions: null
+synonyms:
+  - "02 Cancelado"
+unit: null
+grain:
+  source: null
+  calculation: null
+time:
+  event: "FARMAX: sale_cancellation_date; SANAVITA: data_pedido"
+  timezone: null
+  calendar: "dTempo; comportamento específico depende do contexto DAX"
+  context_functions:
+    - "CALCULATE"
+    - "USERELATIONSHIP"
+formula:
+  conceptual: null
+  dependencies: []
+aggregation:
+  rule: null
+  additivity: null
+dimensions: null
+relationships: null
+filters:
+  mandatory: null
+  optional: null
+  exclusions: null
+  note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
+data_sources:
+  -
+    semantic_table: "dTempo"
+    physical_sources:
+      -
+        engine: "Power Platform Dataflow"
+        entities:
+          - "dTempo"
+        upstream: null
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl:145"
+  -
+    semantic_table: "fVendas_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_vendas_faturamento_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl:480"
+implementations:
+  dax:
+    expression: |2-
+      VAR vCanceladoFarmax =
+          CALCULATE(
+              SUM(fVendas_unificada[order_sale_cut_value])
+              ,USERELATIONSHIP(dTempo[Data],fVendas_unificada[sale_cancellation_date])
+              ,fVendas_unificada[empresa] = "FARMAX"
+              ,fVendas_unificada[pedido_tipo] = "VENDA"
+              ,fVendas_unificada[sale_storage_code] <> 52 --Remove Refaturamento
+              ,NOT(ISBLANK(fVendas_unificada[sale_rejection_reason_code]))
+          )
+      
+      VAR vCanceladoSanavita =
+          CALCULATE(
+              SUM(fVendas_unificada[order_sale_subtotal])
+              ,USERELATIONSHIP(dTempo[Data],fVendas_unificada[data_pedido])
+              ,fVendas_unificada[empresa] = "SANAVITA"
+              ,fVendas_unificada[pedido_tipo] = "VENDA"
+              ,fVendas_unificada[pedido_status] = "CANCELADO"
+          )
+      
+      RETURN
+          (COALESCE(vCanceladoFarmax, 0) + COALESCE(vCanceladoSanavita, 0)) + 0
+    table: "_Medidas"
+    properties:
+      displayFolder: "01 Vendas"
+      lineageTag: "7a8f4f0a-a23b-4202-9bfb-86bbfc9a6f26"
+    execution_validated: false
+    note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
+dependencies:
+  tables_direct: ["dTempo", "fVendas_unificada"]
+  columns_direct:
+    -
+      table: "fVendas_unificada"
+      column: "order_sale_cut_value"
+    -
+      table: "dTempo"
+      column: "Data"
+    -
+      table: "fVendas_unificada"
+      column: "sale_cancellation_date"
+    -
+      table: "fVendas_unificada"
+      column: "empresa"
+    -
+      table: "fVendas_unificada"
+      column: "pedido_tipo"
+    -
+      table: "fVendas_unificada"
+      column: "sale_storage_code"
+    -
+      table: "fVendas_unificada"
+      column: "sale_rejection_reason_code"
+    -
+      table: "fVendas_unificada"
+      column: "order_sale_subtotal"
+    -
+      table: "fVendas_unificada"
+      column: "data_pedido"
+    -
+      table: "fVendas_unificada"
+      column: "pedido_status"
+  measures_transitive: []
+  unqualified_references: []
+  method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
+edge_cases: null
+checks: null
+usage: []
+
+dependency_table_sources: [{"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fVendas_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl"}]

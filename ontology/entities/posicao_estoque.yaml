@@ -1,0 +1,46 @@
+schema_version: 1
+id: "posicao_estoque"
+title: "Posição de estoque e planejamento"
+type: "entity"
+domain: "operacoes"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fPlanProd_unificada.tmdl"
+    locator: "declaração de tabela e colunas"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Leitura estática do snapshot PBIP; sem execução ou certificação de negócio."
+pending:
+  - "Confirmar interpretação, responsáveis e comportamento com dados reais."
+definition: "Posição por referência de data, companhia e SKU, inferida dos campos; medidas de estoque exigem confirmar a regra de snapshot e não somar datas indiscriminadamente."
+evidence_level: "interpretacao_proposta_a_partir_do_modelo"
+identifier: null
+identifier_basis: null
+grain: null
+attributes:
+  - "cobertura_estoque_empresa"
+  - "cobertura_estoque_company"
+  - "cobertura_estoque_data_referencia"
+  - "cobertura_estoque_sku"
+  - "cobertura_estoque_quantidade"
+  - "cobertura_estoque_plano_medio"
+  - "cobertura_estoque_cobertura"
+  - "status_sku"
+  - "estq_transito"
+  - "estq_qual"
+  - "quant_falta"
+  - "vr_medio_faltas"
+physical_mappings:
+  -
+    semantic_table: "fPlanProd_unificada"
+    source: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fPlanProd_unificada.tmdl"

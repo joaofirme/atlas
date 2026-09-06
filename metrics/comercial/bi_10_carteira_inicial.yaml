@@ -1,0 +1,133 @@
+schema_version: 1
+id: "bi_10_carteira_inicial"
+title: "10 Carteira Inicial"
+type: "metric"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
+    locator: "medida _Medidas[10 Carteira Inicial], linha 5392"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+  - "Confirmar unidade/moeda, granularidade, aditividade e dimensões permitidas; não inferir a aprovação a partir dos relacionamentos existentes."
+kind: "indicador"
+definition: "Soma do subtotal do snapshot data_carteira no primeiro dia do mês da maior data selecionada; remove filtros de dTempo."
+definition_basis: "leitura_da_implementacao"
+source_description: null
+business_questions: null
+synonyms:
+  - "10 Carteira Inicial"
+unit: null
+grain:
+  source: null
+  calculation: null
+time:
+  event: "data_carteira no primeiro dia do mês selecionado"
+  timezone: null
+  calendar: "dTempo; comportamento específico depende do contexto DAX"
+  context_functions:
+    - "CALCULATE"
+    - "REMOVEFILTERS"
+    - "SELECTEDVALUE"
+formula:
+  conceptual: null
+  dependencies: []
+aggregation:
+  rule: null
+  additivity: null
+dimensions: null
+relationships: null
+filters:
+  mandatory: null
+  optional: null
+  exclusions: null
+  note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
+data_sources:
+  -
+    semantic_table: "dEmpresa"
+    physical_sources:
+      -
+        engine: "Power Platform Dataflow"
+        entities:
+          - "dEmpresa"
+        upstream: null
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dEmpresa.tmdl:55"
+  -
+    semantic_table: "dTempo"
+    physical_sources:
+      -
+        engine: "Power Platform Dataflow"
+        entities:
+          - "dTempo"
+        upstream: null
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl:145"
+  -
+    semantic_table: "fCarteira_pedidos_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_carteira_pedidos_planejamento"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl:203"
+implementations:
+  dax:
+    expression: |2-
+      VAR vEmpresaFiltro = SELECTEDVALUE(dEmpresa[Company])
+      RETURN
+          CALCULATE(
+              SUM(fCarteira_pedidos_unificada[order_sale_subtotal]),
+              fCarteira_pedidos_unificada[data_carteira] = DATE(YEAR(MAX(dTempo[Data])), MONTH(MAX(dTempo[Data])), 1),
+              REMOVEFILTERS(dTempo),
+              IF(
+                  NOT ISBLANK(vEmpresaFiltro),
+                  fCarteira_pedidos_unificada[company] = vEmpresaFiltro,
+                  TRUE()
+              )
+          )
+    table: "_Medidas"
+    properties:
+      displayFolder: "05 Faturamento"
+      lineageTag: "8b731602-5f46-45cb-a489-906da3c5e213"
+    execution_validated: false
+    note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
+dependencies:
+  tables_direct: ["dEmpresa", "dTempo", "fCarteira_pedidos_unificada"]
+  columns_direct:
+    -
+      table: "dEmpresa"
+      column: "Company"
+    -
+      table: "fCarteira_pedidos_unificada"
+      column: "order_sale_subtotal"
+    -
+      table: "fCarteira_pedidos_unificada"
+      column: "data_carteira"
+    -
+      table: "dTempo"
+      column: "Data"
+    -
+      table: "fCarteira_pedidos_unificada"
+      column: "company"
+  measures_transitive: []
+  unqualified_references: []
+  method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
+edge_cases: null
+checks: null
+usage: []
+
+dependency_table_sources: [{"table": "dEmpresa", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dEmpresa.tmdl"}, {"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fCarteira_pedidos_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl"}]

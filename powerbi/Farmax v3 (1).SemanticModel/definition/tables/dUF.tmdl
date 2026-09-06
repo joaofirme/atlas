@@ -1,0 +1,202 @@
+table dUF
+	lineageTag: da4dc164-7dde-443c-93e9-9b140901dc96
+
+	column uf
+		dataType: string
+		lineageTag: bea6b296-6361-41b7-957d-ae40132d0d2a
+		summarizeBy: none
+		sourceColumn: uf
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado
+		dataType: string
+		lineageTag: d6f21961-85fc-4141-84cd-e4434c7c4306
+		summarizeBy: none
+		sourceColumn: estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column area
+		dataType: int64
+		formatString: 0
+		lineageTag: 66abbcc3-4629-48d9-b26b-11e226f8bea3
+		summarizeBy: sum
+		sourceColumn: area
+
+		annotation SummarizationSetBy = Automatic
+
+	column den_demografica
+		dataType: int64
+		formatString: 0
+		lineageTag: 2ee244f9-c22f-4029-8685-e5118f40a697
+		summarizeBy: sum
+		sourceColumn: den_demografica
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pop_10
+		dataType: int64
+		formatString: 0
+		lineageTag: c9d77f18-5acf-4153-9ae7-7f87a1ce1454
+		summarizeBy: sum
+		sourceColumn: Pop_10
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pop_21
+		dataType: int64
+		formatString: 0
+		lineageTag: ef2be650-8324-4488-8e32-77b2b4dd1f9a
+		summarizeBy: sum
+		sourceColumn: Pop_21
+
+		annotation SummarizationSetBy = Automatic
+
+	column pop_var
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c629fe8-0bf7-4dd0-bfb5-9e3566795346
+		summarizeBy: sum
+		sourceColumn: pop_var
+
+		annotation SummarizationSetBy = Automatic
+
+	column var
+		dataType: string
+		lineageTag: 05dd113d-6405-43ef-810b-72dfd395d03b
+		summarizeBy: none
+		sourceColumn: var
+
+		annotation SummarizationSetBy = Automatic
+
+	column pib_10
+		dataType: int64
+		formatString: 0
+		lineageTag: b243d814-bbf9-4c80-ac98-5a189741fdf2
+		summarizeBy: sum
+		sourceColumn: pib_10
+
+		annotation SummarizationSetBy = Automatic
+
+	column pip_21
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c75d0b6-2df9-4613-9b63-c3c4d51ce8b4
+		summarizeBy: sum
+		sourceColumn: pip_21
+
+		annotation SummarizationSetBy = Automatic
+
+	column pib_var
+		dataType: string
+		lineageTag: 4f4f777f-c4b3-4b45-817f-cb0493e555b9
+		summarizeBy: none
+		sourceColumn: pib_var
+
+		annotation SummarizationSetBy = Automatic
+
+	column idh_10
+		dataType: string
+		lineageTag: b945c76e-06b9-4380-8942-46cf9b148246
+		summarizeBy: none
+		sourceColumn: idh_10
+
+		annotation SummarizationSetBy = Automatic
+
+	column idh_21
+		dataType: string
+		lineageTag: 9d31666e-7426-4924-9104-67de97df2886
+		summarizeBy: none
+		sourceColumn: idh_21
+
+		annotation SummarizationSetBy = Automatic
+
+	column idh_var
+		dataType: string
+		lineageTag: 866427f3-23b2-4fd1-b119-0e75a0a7592e
+		summarizeBy: none
+		sourceColumn: idh_var
+
+		annotation SummarizationSetBy = Automatic
+
+	column rend_domiciliar_10
+		dataType: int64
+		formatString: 0
+		lineageTag: 828767e4-dbb4-42ad-8444-6418fc41155a
+		summarizeBy: sum
+		sourceColumn: rend_domiciliar_10
+
+		annotation SummarizationSetBy = Automatic
+
+	column rend_domiciliar_21
+		dataType: int64
+		formatString: 0
+		lineageTag: 6fb29072-fcfc-4821-9ded-f582ef401b3d
+		summarizeBy: sum
+		sourceColumn: rend_domiciliar_21
+
+		annotation SummarizationSetBy = Automatic
+
+	column rend_var
+		dataType: string
+		lineageTag: a435524e-d8ae-42b2-8adc-d3cd380c4034
+		summarizeBy: none
+		sourceColumn: rend_var
+
+		annotation SummarizationSetBy = Automatic
+
+	column taxa_urbana_10
+		dataType: string
+		lineageTag: 1f6c5ca6-7563-425c-b47c-bb3ba9531add
+		summarizeBy: none
+		sourceColumn: taxa_urbana_10
+
+		annotation SummarizationSetBy = Automatic
+
+	column taxa_rural_10
+		dataType: string
+		lineageTag: 59a10f19-26dc-43c5-8193-57b378c8c05a
+		summarizeBy: none
+		sourceColumn: taxa_rural_10
+
+		annotation SummarizationSetBy = Automatic
+
+	column taxa_urbana_21
+		dataType: string
+		lineageTag: db3d37da-fd35-4ad3-b114-f3885e330db0
+		summarizeBy: none
+		sourceColumn: taxa_urbana_21
+
+		annotation SummarizationSetBy = Automatic
+
+	column taxa_rural_21
+		dataType: string
+		lineageTag: b108fb0e-3d3f-491f-a69b-48f4a9d768e6
+		summarizeBy: none
+		sourceColumn: taxa_rural_21
+
+		annotation SummarizationSetBy = Automatic
+
+	column regiao
+		dataType: string
+		lineageTag: e035a7e0-1c55-4d8c-88dc-f1cafec03635
+		summarizeBy: none
+		sourceColumn: regiao
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dUF = m
+		mode: import
+		source =
+				let
+				    Fonte = PowerPlatform.Dataflows(null),
+				    Workspaces = Fonte{[Id="Workspaces"]}[Data],
+				    #"4c88a2b6-9309-4368-9a28-168154f1d083" = Workspaces{[workspaceId="4c88a2b6-9309-4368-9a28-168154f1d083"]}[Data],
+				    #"e935f8e3-404f-4bbd-8fbb-8942c0e6f04e" = #"4c88a2b6-9309-4368-9a28-168154f1d083"{[dataflowId="e935f8e3-404f-4bbd-8fbb-8942c0e6f04e"]}[Data],
+				    dUF_ = #"e935f8e3-404f-4bbd-8fbb-8942c0e6f04e"{[entity="dUF",version=""]}[Data]
+				in
+				    dUF_
+
+	annotation PBI_ResultType = Table
+

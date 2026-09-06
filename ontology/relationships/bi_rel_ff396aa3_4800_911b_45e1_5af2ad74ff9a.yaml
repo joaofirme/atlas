@@ -1,0 +1,41 @@
+schema_version: 1
+id: "bi_rel_ff396aa3_4800_911b_45e1_5af2ad74ff9a"
+title: "fPlanProd_unificada.cobertura_estoque_sku → dMaterial_unificada.codigo_produto"
+type: "relationship"
+domain: "corporativo"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/relationships.tmdl"
+    locator: "relationship ff396aa3-4800-911b-45e1-5af2ad74ff9a; linha 90"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+relationship_kind: "semantic_model_join"
+from_object: "fPlanProd_unificada.cobertura_estoque_sku"
+to_object: "dMaterial_unificada.codigo_produto"
+business_verb: null
+declared_properties:
+  fromColumn: "fPlanProd_unificada.cobertura_estoque_sku"
+  toColumn: "dMaterial_unificada.codigo_produto"
+cardinality:
+  from: null
+  to: null
+  note: "null significa propriedade omitida no TMDL; não é cardinalidade medida nos dados."
+active_declared: null
+filter_direction_declared: null
+join_sql: null
+orphan_handling: null
+fanout_risk: "Revisar muitos-para-muitos e duplicidade das chaves; não traduzir relacionamento automaticamente em JOIN SQL."

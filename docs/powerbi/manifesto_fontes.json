@@ -1,0 +1,592 @@
+[
+  {
+    "path": "powerbi/.gitignore",
+    "sha256": "12a24de62907fd6c81fff066d7db4d98180f6c35056461f110a03d0023d396b8",
+    "bytes": 45
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).pbip",
+    "sha256": "315677f8be444cc2bc4ed642d92cc359dd63db5daebe0cbbdc49e12900259752",
+    "bytes": 292
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/.platform",
+    "sha256": "f5d372457de98cc4e9fb4dbec0ced9b83829b7de0417a1161862d2a990668664",
+    "bytes": 307
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/bookmarks/Bookmark42bc99560da310225b3a.bookmark.json",
+    "sha256": "3918c2eea024e3769fcf9b3a9d4213a5a067af3ece5f255311e7f9360d9e2210",
+    "bytes": 1408
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/bookmarks/Bookmark4479b41c919656dfaaf5.bookmark.json",
+    "sha256": "c04e610032838978bb926028667ae71d90d48d1c6d4948e27fd9dbe704cdb46e",
+    "bytes": 1274
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/bookmarks/Bookmarke0cc09f250349646a26f.bookmark.json",
+    "sha256": "605b2c2161fc748fe9e70b6518920ce7fccf91fab9154fa225f22c7eb22bcd3b",
+    "bytes": 1458
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/bookmarks/Bookmarke32f872ddd7de0310d33.bookmark.json",
+    "sha256": "63f69119453d4269fb94ec01d8514bdc6c45f2cb84011723715410a5469427d4",
+    "bytes": 1290
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/bookmarks/bookmarks.json",
+    "sha256": "d77d7f158fae4770d6b4f5c913e95bdbafd14983c715bfcc0601a9f79a162616",
+    "bytes": 394
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/676a3ff6e0ec4cda8033/page.json",
+    "sha256": "30fb8202b7e03aedab88c5270cdc66d04801a38eb1e674bc43b61a7e581e6a79",
+    "bytes": 287
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/676a3ff6e0ec4cda8033/visuals/1348f3e0eb772edbc538/visual.json",
+    "sha256": "9f8d08dd92e7ce6ac6624d68181e4a94f0bee36f56f184de49d8c5428046f38e",
+    "bytes": 8714
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/676a3ff6e0ec4cda8033/visuals/1fcf432ccbce47b988d6/visual.json",
+    "sha256": "bbf96cbabbeb543c813311b7312a5a179ecd1e33c246d62a22ac5a7da9d73024",
+    "bytes": 2490
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/676a3ff6e0ec4cda8033/visuals/59b0c29ded3347556a7b/visual.json",
+    "sha256": "5d15f89ba0b887a7bf759bfb1c59843f6a48b6f348df380c69249029130af77c",
+    "bytes": 8137
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/676a3ff6e0ec4cda8033/visuals/6bd4fabd2a02450e88a4/visual.json",
+    "sha256": "33e5999f1251864c39b96a76c943cc9949a0610e50f06e1b579305f602500629",
+    "bytes": 7593
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/676a3ff6e0ec4cda8033/visuals/6dab40603b82160d9985/visual.json",
+    "sha256": "cb204591563c72810377000010ef2055e9a1b7d0e23a53d750d8bf6fa25acf35",
+    "bytes": 9280
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/676a3ff6e0ec4cda8033/visuals/700c435d7a49490ad925/visual.json",
+    "sha256": "60c238ec420ac4fcbe472e05d3c42cd8faded1ce51f19fca381f896cf59ca527",
+    "bytes": 11644
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/676a3ff6e0ec4cda8033/visuals/7b75e09257b00a3c90e6/visual.json",
+    "sha256": "243ee3b31930dd41160c24e8948f2ce6b6269367a1624e6d759e479b76e4428d",
+    "bytes": 6938
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/676a3ff6e0ec4cda8033/visuals/97ee05cbe02e3a7dbb3b/visual.json",
+    "sha256": "4961655afa677b923d43903c560943195ec3ca9141d82d5b627218a04447f0d9",
+    "bytes": 8725
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/676a3ff6e0ec4cda8033/visuals/bfbba773b508cd78e940/visual.json",
+    "sha256": "f47a050d1a6aba8f7269d8c2f7091f0ac6755dd03a6ad947e1312bc5b6c31725",
+    "bytes": 423
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/6b98a5f70fa6995e06a6/page.json",
+    "sha256": "73465917e508bd13a9844dd4abc1804f6bb3c70cd4790cbc75c236181c533d51",
+    "bytes": 1033
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/6b98a5f70fa6995e06a6/visuals/38e8bdfd784635287031/visual.json",
+    "sha256": "a94ba7401b0c053e4aefbffdb3db4c7bd09a458aa7dcff6f2bc89870003e54bf",
+    "bytes": 8707
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/6b98a5f70fa6995e06a6/visuals/62ab9e9786d88687ab6c/visual.json",
+    "sha256": "f00df90e4495f860f8872d0724b1c594aaa8d84bdd4903af058cfd6b8579dc48",
+    "bytes": 7575
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/6b98a5f70fa6995e06a6/visuals/6881587b0ee90394d607/visual.json",
+    "sha256": "108361fbb6670d784517480d2a28a2116ca1273ba00c625d77845f37faf93565",
+    "bytes": 10068
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/6b98a5f70fa6995e06a6/visuals/b3cb347faa4349341057/visual.json",
+    "sha256": "b32d0d4a5e19d040d4b9712ad50250de213d3a3576f91787d1d14afa8a58301d",
+    "bytes": 8621
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/6b98a5f70fa6995e06a6/visuals/b51840b0e528b968da75/visual.json",
+    "sha256": "b83a3db98b9eb46ffaed54e41e33abc4c5b4f2be7bcb4ed61ba217cdb9cf4d2c",
+    "bytes": 424
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/6b98a5f70fa6995e06a6/visuals/c53248c0e790089d0d0c/visual.json",
+    "sha256": "ec8a146f382dc27367a8c7f26648b614bd64053dd21157f7da901d4ad64ae457",
+    "bytes": 8198
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/6b98a5f70fa6995e06a6/visuals/ca901414b0e633926f4b/visual.json",
+    "sha256": "3b3ab4d25153fa2cf4c4c480c290749889e8795dc66dfa1503c737924ebb60c4",
+    "bytes": 1314
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/6b98a5f70fa6995e06a6/visuals/dd7227248b4140250804/visual.json",
+    "sha256": "d775d95ec79592d1a530048a6542cbddaa608aa3a30f8e259f98b762f731786a",
+    "bytes": 11626
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/6b98a5f70fa6995e06a6/visuals/fd2aa27f50abe1638309/visual.json",
+    "sha256": "77fa6ac1574788bcd758923483c2c53086aa279a034cef3381452dc281729caa",
+    "bytes": 6718
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/af59c04b333091b9236c/page.json",
+    "sha256": "30f5464eb1788cf6973279c33dc84ba5c06035aba2e0824e2c8a1eb6ff6b5a9e",
+    "bytes": 1072
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/af59c04b333091b9236c/visuals/2b3f27416b22807d5da9/visual.json",
+    "sha256": "339ad4369c26b9895cfd65bf533e35b991bf0718257b239565cc58d77f6f0681",
+    "bytes": 378
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/af59c04b333091b9236c/visuals/398b5e1b055282440726/visual.json",
+    "sha256": "62ec6318c56c492d2a495fdb3614c52a98117e010befae4a53a6e8e4e5c8751a",
+    "bytes": 7593
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/af59c04b333091b9236c/visuals/4a279464aa7dac6aa23a/visual.json",
+    "sha256": "d5f8ea58254d2f3a3637ed076bd5566b025c3ddfe351875091899427284261f8",
+    "bytes": 8725
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/af59c04b333091b9236c/visuals/5b4d0305c39014572c01/visual.json",
+    "sha256": "28a0833424cc8893ac4d8b6656f0008d4b335f4f54c5dae874e3f996fbe29c3d",
+    "bytes": 426
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/af59c04b333091b9236c/visuals/5e944b3edc9e5da8aa20/visual.json",
+    "sha256": "9e593312cc21e9e33b0cc6f820a8c66e6e66ce95471b95cc65460616920cede6",
+    "bytes": 9334
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/af59c04b333091b9236c/visuals/5ea6360d9e3762020596/visual.json",
+    "sha256": "9abf887345a3b38dbd8c9ee3faf738ef35d67ed2cc206444a35505bada961ea4",
+    "bytes": 1621
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/af59c04b333091b9236c/visuals/7d901c85bd2e2303667b/visual.json",
+    "sha256": "9b4c6de6a43cc23151834844dab66a32564f89d0058a09e4bd1c002b849e51c1",
+    "bytes": 9280
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/af59c04b333091b9236c/visuals/b81369dce050748e6084/visual.json",
+    "sha256": "526fd0873439043f99d681c53843af6d05c24c957d7e455c54a090952dcaa199",
+    "bytes": 2108
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/af59c04b333091b9236c/visuals/d58743b75d4051b1cc79/visual.json",
+    "sha256": "2bd4af877becf7dd9aac38c47bfa438df91bd1aa553b5a44c48c42a2aaace7ea",
+    "bytes": 8714
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/af59c04b333091b9236c/visuals/e1351f8d087e9c00cbd2/visual.json",
+    "sha256": "b188e133030f90afda60a6afea322217f2b83fae1b2a46f02a4477476b7cd385",
+    "bytes": 7264
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/af59c04b333091b9236c/visuals/ea3a56ad401b0e153906/visual.json",
+    "sha256": "491fbdfc0bde3f5857e0e5f8fb2aad6cd5a9aa146fce01f1937db55d7f9afb3c",
+    "bytes": 11644
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/c7b4428a0e88121c63c8/page.json",
+    "sha256": "3bc120f3c6b4dfe1ae88066fcf5aeba5be9ca7b3728ccf8426c5c1b9fb8bacd6",
+    "bytes": 1068
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/c7b4428a0e88121c63c8/visuals/31286c7836dbb7a08008/visual.json",
+    "sha256": "b23b21ca5673ba2aa3fd25cb8f47e81c024a384a046cd657f634befcf15613ac",
+    "bytes": 9334
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/c7b4428a0e88121c63c8/visuals/3adf4587d7a65d8db22e/visual.json",
+    "sha256": "2d93f853de84e70d883cd105992ff36bf01d2c21b2ca7ab84ff60d8d29800055",
+    "bytes": 8903
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/c7b4428a0e88121c63c8/visuals/745823bccc8790271500/visual.json",
+    "sha256": "e7794c4dd19ffc9bd1b9e6904c15d03fa7fa60c43ae04bacb56c76659ad54188",
+    "bytes": 7593
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/c7b4428a0e88121c63c8/visuals/7a05ad2c285f61123079/visual.json",
+    "sha256": "2eb21f05f6264e6faf3be65e9f6998c9859c7443a0e1755b4e0b0e428456fd39",
+    "bytes": 11644
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/c7b4428a0e88121c63c8/visuals/8082c4cb7872ce2133e3/visual.json",
+    "sha256": "20ad5e3fc1ab9e9d7018cd1bf8564002334b4fc1c6ca9fd032fb0aabf776cff2",
+    "bytes": 1361
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/c7b4428a0e88121c63c8/visuals/98598a5ca30edc9c89e4/visual.json",
+    "sha256": "7219023b9ddbe049c13ffdf9ff6d4c3de9f314a00d49e5901b7496ae4a3aca1b",
+    "bytes": 8714
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/c7b4428a0e88121c63c8/visuals/d44d907d5db7564657dd/visual.json",
+    "sha256": "963ec5bcc8e1b8c0ba4751cfdfff18bf791f3db5d494f0c78486e6da8a45f6ce",
+    "bytes": 426
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/c7b4428a0e88121c63c8/visuals/e3112420fdfc17787fe4/visual.json",
+    "sha256": "73f75b0e277aef1321bc0eacba9032fcb32a7ef063eb268a9f6991daa16cb9a5",
+    "bytes": 6938
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/c7b4428a0e88121c63c8/visuals/fc156728a25e1d959ae0/visual.json",
+    "sha256": "6f76e033b70651f1d9b6b6f734830f23ad44a39371697267cc424c63d67ba4f4",
+    "bytes": 9280
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/page.json",
+    "sha256": "29456050eb605c8b93d3a315373dee0cb98e059db87580cc5afdee2a97c19d50",
+    "bytes": 1057
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/05af99138e04c9670978/visual.json",
+    "sha256": "2cb3984d3759708ab562cfec113b0fbf84b641f12c5c338cfa2a9487b7a7b7dc",
+    "bytes": 11644
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/16e9ed43e265ba233056/visual.json",
+    "sha256": "2ca8cb8f2aaa3064ffe6b47e93fb9143dafa78304cece4ce27764bbfb139d69b",
+    "bytes": 1909
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/228374d96043d38d897b/visual.json",
+    "sha256": "67dd89daddf70668fff2c1ba0933893d3b4617fd1dff4b718781ac6dadefe988",
+    "bytes": 3932
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/28052dbc04807ce51083/visual.json",
+    "sha256": "96cb0dc68b33b487f5afcdc9a5d87f679de1006e863881d5b6930bdfbfb1cc65",
+    "bytes": 7243
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/47429c0dd34ee152102b/visual.json",
+    "sha256": "f8d16e31718d510e4935f33fd362790cd302a5ec9861e4545b75f3b0f85b9b19",
+    "bytes": 2108
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/508c4883e8a700450b9c/visual.json",
+    "sha256": "f0c77ccd1bc621fb6174a7f98c1e56f7408452d5aa8daec3fa7af5d6b737deb6",
+    "bytes": 8762
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/8239866c04ab07a3c23a/visual.json",
+    "sha256": "4e688d07eeac440a1fa1c569c388c5fe7d548820dd32d9f339315e899beb56e7",
+    "bytes": 378
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/93b15b628386e340e8e5/visual.json",
+    "sha256": "23a2f009c12486038e98cbe663d74fed6889526e8e39952e1c84fd9637d14886",
+    "bytes": 17123
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/9f474b6578bdbb04730a/visual.json",
+    "sha256": "5c2c44084edecfb5d06c1482e2537470758b9795a09414bb15a6095c113efea0",
+    "bytes": 7593
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/af92410a5001468b103c/visual.json",
+    "sha256": "493259547868afe74ee51eba84d1533747d2433b3e1b8a31ad38a6888a00cb4b",
+    "bytes": 7264
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/b00c04b24dc241e1408e/visual.json",
+    "sha256": "c4a57e4a68143d301e5a532469782ab91d545156fd1c063748abbd31865abb42",
+    "bytes": 3785
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/b7e49fd586d8c0ec6203/visual.json",
+    "sha256": "3ae686f412568479a3853e1c3e5120d99ee280af035b9d3f4e72f89e0a330a5b",
+    "bytes": 1635
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/bbdb6239dae005602a93/visual.json",
+    "sha256": "c8521ed2049db7ed176b43b83a7da937a005b0d0a70bcc249afb744958ceceb9",
+    "bytes": 8714
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/bc0802fba0146323c8d0/visual.json",
+    "sha256": "2378293398689774e58729e99cdbac9c1fb4f0aff25f21f4a8636a790be16f02",
+    "bytes": 9280
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/cd2aded586ad937d0a9c/visual.json",
+    "sha256": "6579fe521f39b6bdcd20b9699d4aa5d0e121c1f91acb1cfd98b24e96c07035d0",
+    "bytes": 37554
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/e2e2c00ba887e0ddedc6/visual.json",
+    "sha256": "11c8806e0014a4a5028ee43e2ac47dbbba7a38c748201d736eefef51e4d3716b",
+    "bytes": 442
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/e8ededaa044678aba4e4/visual.json",
+    "sha256": "eef858bb4c1b7638e2a8d2f022257d7bd8d29858cb8396b12132987ee8ac2364",
+    "bytes": 9334
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/fc076bb1bb4a250c38d8/visual.json",
+    "sha256": "df8f9927fde16b5a17acfd0b68a85ec33d771c872fbc0b016948841484323385",
+    "bytes": 426
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/ecc78dd7cc2730e25226/page.json",
+    "sha256": "abd86db560aabd5b4b9884281e26469d4ec1db186b83f6369c46db07baa7843d",
+    "bytes": 1009
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/ecc78dd7cc2730e25226/visuals/0b416d401257bd3c0d3a/visual.json",
+    "sha256": "3d8ed05a1ca5d6937a27f1f8a3ec3ef24c071e25f4758a8bbca795ca98076f7c",
+    "bytes": 6687
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/ecc78dd7cc2730e25226/visuals/10e3a2f89aa1ad0d5385/visual.json",
+    "sha256": "b780d389d1a507097cf9ea350628919c577fe1eb18438e37da939904b8c3c54b",
+    "bytes": 8714
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/ecc78dd7cc2730e25226/visuals/1ae5721d55d840566200/visual.json",
+    "sha256": "aa21671a6e12a9cd83633a10f9cbc41fa44d398dc81f4b0e711bf64642647c0d",
+    "bytes": 8725
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/ecc78dd7cc2730e25226/visuals/2a091456b2e75b8c16b8/visual.json",
+    "sha256": "722d81dd474ef3d51ff92881adbd52fd5454ee42122ebb8736dcaa23ca9a582f",
+    "bytes": 7593
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/ecc78dd7cc2730e25226/visuals/7b3ec4ea3a3559aa467c/visual.json",
+    "sha256": "f9a39b0aea63d70069e70df826e786e09183757c90d9561fae83261346f3147d",
+    "bytes": 9334
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/ecc78dd7cc2730e25226/visuals/9d5f48bb648a9eb5e8ac/visual.json",
+    "sha256": "1edb91894a978297905b04096c91af6489e6da2301983a90f531aaf987c09932",
+    "bytes": 11644
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/ecc78dd7cc2730e25226/visuals/a64923dcd37acae03d5e/visual.json",
+    "sha256": "05cb9489a48407eeb4ee3b6ac54e4ff8fcb350b906a7bad0bdfdba4ed1398695",
+    "bytes": 1287
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/ecc78dd7cc2730e25226/visuals/af47164d7e180e61a900/visual.json",
+    "sha256": "d43c73b8275b2315650f0152cbec1f98cfefa4fc1961d27f24b67b5d4397d258",
+    "bytes": 426
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/ecc78dd7cc2730e25226/visuals/e05bf7ef3cc066207c79/visual.json",
+    "sha256": "fe8d355f904d9fe7dbc3f09325da4deb0cf140adc02b316ac1fc84c6874525a4",
+    "bytes": 9280
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/pages/pages.json",
+    "sha256": "b18536a86b7e096e1aec13bbd3c9b9675ff055744995c05e6538a137b3720b0a",
+    "bytes": 415
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/report.json",
+    "sha256": "79137c522d2064e3863a1db9796bd1798ab13e00247756afcf930cb2cd2df49d",
+    "bytes": 2053
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition/version.json",
+    "sha256": "c8bdd966a85f1eaab4312d2096b6d7b508243e4d7bc5a4d25af3cfcb1056a4e7",
+    "bytes": 152
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/definition.pbir",
+    "sha256": "4ec1992642e4598f07cecfc4e5e6f2c89d3554b70be953390eeccb320fe678db",
+    "bytes": 247
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).Report/StaticResources/SharedResources/BaseThemes/CY21SU11.json",
+    "sha256": "a3e6d45ff1e454b09d9faafa7bc5f76bc4a498ec3b34f576ca9ab462902c8b6a",
+    "bytes": 12212
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/.platform",
+    "sha256": "761e267acc443396c511b450e1552b3646af5a49719bc0e1246a57dcd5e252b6",
+    "bytes": 314
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/DAXQueries/Consulta 1.dax",
+    "sha256": "1dd771f8c9b1a593e48be8e909e281afd799e5e7ac2ad988849f38cb0d43f590",
+    "bytes": 864
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/DAXQueries/Query 2.dax",
+    "sha256": "9fc9f94daeea840bc859bd5289b7377eeada17cbc0352ca010679f3cc4107b6a",
+    "bytes": 240
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/cultures/pt-BR.tmdl",
+    "sha256": "5849cc03f8ed5328f4877174ca0a17d2b6bea345023e69894dbc8792abd5d2ad",
+    "bytes": 824110
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/database.tmdl",
+    "sha256": "822c914b643bca32bb20abd8a762df8204a1b9ef02acc2bc7348727f6699cb96",
+    "bytes": 39
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/expressions.tmdl",
+    "sha256": "507500d32032021a4c8a51e37f6eb90c4ce6966a563ec3eabc7fc93bd96a1e45",
+    "bytes": 610
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/model.tmdl",
+    "sha256": "1d9e1eec02166c054aedce03f87499a2a1857f55946b1e6649f6c820f2acf2be",
+    "bytes": 1438
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/relationships.tmdl",
+    "sha256": "dce8510d7c9aff484650352133ba84193cb6f8156acf29724184078cee7332f6",
+    "bytes": 4058
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/roles/Acesso_Coordenador.tmdl",
+    "sha256": "a8db8c21cb877a095fab0f48c3f31f5ec65c582fa7c082f53c6ca193d82c9416",
+    "bytes": 108
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/roles/Acesso_Executivo.tmdl",
+    "sha256": "a81bc8ef767eaa145255c8aeeb8e9d92188a1e002398eb348db3b9cfd99388ee",
+    "bytes": 106
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/roles/Acesso_Gerente.tmdl",
+    "sha256": "6ff1285773dd6cca2faa6042d0b654db442ec69df322227ad0ce2b6624b6c5cb",
+    "bytes": 104
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/roles/Geral.tmdl",
+    "sha256": "29b0ea7f42d07dc2e371a417fb0cfc7c7a091162c606c89bd9d48b3c2cb849fd",
+    "bytes": 95
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl",
+    "sha256": "257ac40235bc7e1a2f84adb54f085775106c40b82c2d6e684402cefaf83c0a6d",
+    "bytes": 429244
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Atualização.tmdl",
+    "sha256": "8f13ce403f46b051a912941ca10828e20ee4400c4836655d6469aca502ad762e",
+    "bytes": 640
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Base Receita.tmdl",
+    "sha256": "34e872066cc74d5683dbbbcac242040bd7505e4512f0342bb1ad0ae93963e350",
+    "bytes": 802
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dClientes_unificada.tmdl",
+    "sha256": "a20a959c5e660a223eaa936b1a7da30c1c772f79be8ee27947a2f88778eeaaaf",
+    "bytes": 3099
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dEmpresa.tmdl",
+    "sha256": "f61102c98aae29f6e030e1f8a852a148765cec1e60e02b36871dbee0eb4a8126",
+    "bytes": 2403
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dExecutivos_unificada.tmdl",
+    "sha256": "3211c3147eb7182045831a9b08ed5017220de9e8b360aeaaeca3e8d9a8284b3a",
+    "bytes": 3748
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dFeriado.tmdl",
+    "sha256": "c1be8ef95c9279b9c8127dbb20c97244f17b6adb78843d3e41b258e40dce6375",
+    "bytes": 1365
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl",
+    "sha256": "e6aec79d18f1aff49ecfc8a9bd364e8f3e4d899f20fa6a6a05030db28c727434",
+    "bytes": 6461
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dRegional.tmdl",
+    "sha256": "0589863cbd13ea726ead0fb48cee8d89d09cb7f425a75e265d7670eb97c3b28a",
+    "bytes": 2132
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl",
+    "sha256": "7c44bee2e82d7d39b52796e8fc666925b091179e66855504044f7230d69b6d69",
+    "bytes": 9882
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dUF.tmdl",
+    "sha256": "e46168b074084217c5f238634030477b11e59a8db65c29ddaff1c5716ed417fa",
+    "bytes": 4923
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fCarteira_pedidos_unificada.tmdl",
+    "sha256": "7d208fe10c5a3810ef41c8e968006fe1330bacba84851079a141642737f67cd4",
+    "bytes": 5822
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl",
+    "sha256": "aae0e1d1b2a28384a940646e330d058cc37b29393178d9a52d3fc7ff6c5e978e",
+    "bytes": 4868
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_Geral.tmdl",
+    "sha256": "b57b25be4f534a763d221848da00157e26035d2d8e980b12854d1e518aa53b4b",
+    "bytes": 3824
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl",
+    "sha256": "0615d33f3c1a574854a7b18757a59a8f66381d96a2676a13abfaae88f19b3734",
+    "bytes": 3583
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fPlanProd_unificada.tmdl",
+    "sha256": "b1a95955e645054a981e899dd7ab11f8f1573a2847a068a07d3edbed3437c85b",
+    "bytes": 3584
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl",
+    "sha256": "a39675e4f1f674a7c703dbc9f2f059f6bd0a964d642673d2ea9c2f54c9e91af1",
+    "bytes": 14339
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Legenda Gradiente.tmdl",
+    "sha256": "11f438df5727e4c2274f63eb644d52efbcac1f981a2afe5ce41adb5450369a32",
+    "bytes": 447
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Parâmetros%3A Matriz Dinâmica.tmdl",
+    "sha256": "12c4e211b017503070d0f855c8a51c8012e4f6040314600164c3b7ec2bab2260",
+    "bytes": 1555
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/tLogistica e CS.tmdl",
+    "sha256": "56703b6c274a93f0ba2a2311b608da6c3031bcf5d76093b3b2196be060389c98",
+    "bytes": 2292
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/definition.pbism",
+    "sha256": "682b6bde158087bd646fa88dad463688382d52b28d95cb8097b7522def3bbde2",
+    "bytes": 198
+  },
+  {
+    "path": "powerbi/Farmax v3 (1).SemanticModel/diagramLayout.json",
+    "sha256": "709598c7222f1f6a2066427bd9aa1e8e470f748af36d41cd519f694e1da3fb0f",
+    "bytes": 21928
+  }
+]

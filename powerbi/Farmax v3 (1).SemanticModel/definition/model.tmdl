@@ -1,0 +1,51 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup Fato
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup Dimensão
+
+	annotation PBI_QueryGroupOrder = 1
+
+annotation PBI_QueryOrder = ["dEmpresa","dExecutivos_unificada","dRegional","dTempo","dFeriado","fMeta_Geral","fVendas_unificada","fDevolucao_unificada","_Medidas","Atualização","RangeStart","RangeEnd","dUF","dClientes_unificada","dMaterial_unificada","fMeta_unificada","fPlanProd_unificada","fCarteira_pedidos_unificada"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DaxQueryView_Desktop","MCP-PBIModeling","DevMode"]
+
+ref table dTempo
+ref table 'tLogistica e CS'
+ref table _Medidas
+ref table Atualização
+ref table dEmpresa
+ref table dFeriado
+ref table dRegional
+ref table dUF
+ref table 'Legenda Gradiente'
+ref table 'Base Receita'
+ref table dExecutivos_unificada
+ref table fDevolucao_unificada
+ref table dClientes_unificada
+ref table fVendas_unificada
+ref table dMaterial_unificada
+ref table fMeta_unificada
+ref table fCarteira_pedidos_unificada
+ref table 'Parâmetros: Matriz Dinâmica'
+ref table fPlanProd_unificada
+ref table fMeta_Geral
+
+ref role Acesso_Executivo
+ref role Acesso_Gerente
+ref role Geral
+ref role Acesso_Coordenador
+
+ref cultureInfo pt-BR
+

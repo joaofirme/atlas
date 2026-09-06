@@ -1,0 +1,126 @@
+schema_version: 1
+id: "bi_00_faturamento"
+title: "00 Faturamento"
+type: "metric"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
+    locator: "medida _Medidas[00 Faturamento], linha 583"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+  - "Confirmar unidade/moeda, granularidade, aditividade e dimensões permitidas; não inferir a aprovação a partir dos relacionamentos existentes."
+kind: "indicador"
+definition: "Soma de receita para vendas faturadas ou parcialmente faturadas, usando a relação de data de movimento. Desconto de IPI/ST é declarado na descrição, não calculado explicitamente aqui."
+definition_basis: "leitura_da_implementacao"
+source_description: "Soma do valor faturado, descontando IPI e ST."
+business_questions: null
+synonyms:
+  - "00 Faturamento"
+unit: null
+grain:
+  source: null
+  calculation: null
+time:
+  event: "data_movimento via USERELATIONSHIP"
+  timezone: null
+  calendar: "dTempo; comportamento específico depende do contexto DAX"
+  context_functions:
+    - "CALCULATE"
+    - "USERELATIONSHIP"
+formula:
+  conceptual: null
+  dependencies: []
+aggregation:
+  rule: null
+  additivity: null
+dimensions: null
+relationships: null
+filters:
+  mandatory: null
+  optional: null
+  exclusions: null
+  note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
+data_sources:
+  -
+    semantic_table: "dTempo"
+    physical_sources:
+      -
+        engine: "Power Platform Dataflow"
+        entities:
+          - "dTempo"
+        upstream: null
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl:145"
+  -
+    semantic_table: "fVendas_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_vendas_faturamento_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl:480"
+implementations:
+  dax:
+    expression: |2-
+          CALCULATE(
+              SUM(fVendas_unificada[receita])
+              ,USERELATIONSHIP(dTempo[Data],fVendas_unificada[data_movimento])
+              ,fVendas_unificada[pedido_tipo]= "VENDA"
+              ,fVendas_unificada[pedido_status] in {"FATURADO", "FATURADO PARCIAL"}
+          )+0
+      
+      /*
+          CALCULATE(
+              SUM(fFaturamento[order_billing_subtotal]) 
+              ,fFaturamento[obt_sales_order_type]= "VENDA"
+              ,fFaturamento[obt_sales_order_status] in {"FATURADO", "FATURADO PARCIAL"}
+          )+0
+      */
+    table: "_Medidas"
+    properties:
+      formatString: "#,0"
+      displayFolder: "05 Faturamento"
+      lineageTag: "09b32f50-ee37-42dc-8c44-70b74b5e7fd7"
+    execution_validated: false
+    note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
+dependencies:
+  tables_direct: ["dTempo", "fVendas_unificada"]
+  columns_direct:
+    -
+      table: "fVendas_unificada"
+      column: "receita"
+    -
+      table: "dTempo"
+      column: "Data"
+    -
+      table: "fVendas_unificada"
+      column: "data_movimento"
+    -
+      table: "fVendas_unificada"
+      column: "pedido_tipo"
+    -
+      table: "fVendas_unificada"
+      column: "pedido_status"
+  measures_transitive: []
+  unqualified_references: []
+  method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
+edge_cases: null
+checks: null
+usage: []
+
+dependency_table_sources: [{"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fVendas_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl"}]

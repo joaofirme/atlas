@@ -1,0 +1,48 @@
+schema_version: 1
+id: "meta_comercial"
+title: "Meta comercial"
+type: "entity"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl"
+    locator: "declaração de tabela e colunas"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Leitura estática do snapshot PBIP; sem execução ou certificação de negócio."
+pending:
+  - "Confirmar interpretação, responsáveis e comportamento com dados reais."
+definition: "Objetivo por contexto comercial e data-alvo. A medida Meta RSL agrupa empresa, executivo, regional, segmento, marca, receita e data; isso não prova a chave natural da origem."
+evidence_level: "interpretacao_proposta_a_partir_do_modelo"
+identifier: null
+identifier_basis: null
+grain: null
+attributes:
+  - "chave_origem"
+  - "empresa"
+  - "companhia"
+  - "cod_executivo"
+  - "chave_coordenador"
+  - "chave_regional"
+  - "chave_segmento"
+  - "chave_marca"
+  - "meta_receita"
+  - "meta_positivacao"
+  - "meta_ticket_medio"
+  - "meta_data_alvo"
+  - "canal_vendas"
+  - "chave_executivo"
+physical_mappings:
+  -
+    semantic_table: "fMeta_unificada"
+    source: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl"

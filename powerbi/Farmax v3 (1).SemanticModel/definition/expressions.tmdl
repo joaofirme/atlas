@@ -1,0 +1,16 @@
+/// RangeStart Incremental
+expression RangeStart = #datetime(2025, 1, 1, 0, 0, 0) meta [IsParameterQuery=true, Type="DateTime", IsParameterQueryRequired=true]
+	lineageTag: 7e6ee9aa-b176-40b2-804a-0b5e58938afe
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = DateTime
+
+/// RangeEnd Incremental
+expression RangeEnd = #datetime(2026, 12, 31, 0, 0, 0) meta [IsParameterQuery=true, Type="DateTime", IsParameterQueryRequired=true]
+	lineageTag: 9e73c273-77ad-4591-a0ad-034339d0c8e3
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = DateTime
+

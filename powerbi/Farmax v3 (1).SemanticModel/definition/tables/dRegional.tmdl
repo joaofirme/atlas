@@ -1,0 +1,46 @@
+table dRegional
+	lineageTag: 83edbc2f-9d7b-4cf5-bb5e-c5df55969ac6
+
+	column order_sale_order_office_code
+		dataType: string
+		lineageTag: 441b7414-2879-4ee4-8385-f2721e2f18c0
+		summarizeBy: none
+		sourceColumn: order_sale_order_office_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_sale_order_office
+		dataType: string
+		lineageTag: fb09e628-7c42-4cbc-809f-ed2f02ee948f
+		summarizeBy: none
+		sourceColumn: order_sale_order_office
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dRegional = m
+		mode: import
+		queryGroup: Dimensão
+		source =
+				//CONEXAO NORMAL
+				let
+				    Fonte = Value.NativeQuery(AmazonRedshift.Database("farmax-cluster.cdkgzqhbae0k.us-east-1.redshift.amazonaws.com:5439","farmax_prod"), "select distinct#(lf)    regional_regional_code as order_sale_order_office_code,#(lf)    regional_regional_name as order_sale_order_office#(lf)from cadastro.dim_regional#(lf)where regional_regional_code ~ '[A-Za-z]'   -- contém pelo menos uma letra#(lf)  and regional_regional_code ~ '[0-9]'      -- contém pelo menos um número#(lf)  and regional_regional_code not in ('R007','R011')#(lf)union all #(lf)#(tab)select 'N/A' as order_sale_order_office_code, 'NÃO INFORMADA' as order_sale_order_office", null, [EnableFolding=true]),
+				    #"Replaced Value" = Table.ReplaceValue(Fonte,"REG. SETOR COMERCIAL","SETOR COMERCIAL",Replacer.ReplaceText,{"order_sale_order_office"})
+				in
+				    #"Replaced Value"
+				
+				//CONEXAO DATAFLOW
+				/*
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    #"4c88a2b6-9309-4368-9a28-168154f1d083" = Workspaces{[workspaceId="4c88a2b6-9309-4368-9a28-168154f1d083"]}[Data],
+				    #"e935f8e3-404f-4bbd-8fbb-8942c0e6f04e" = #"4c88a2b6-9309-4368-9a28-168154f1d083"{[dataflowId="e935f8e3-404f-4bbd-8fbb-8942c0e6f04e"]}[Data],
+				    dRegional_ = #"e935f8e3-404f-4bbd-8fbb-8942c0e6f04e"{[entity="dRegional",version=""]}[Data]
+				in
+				    dRegional_
+				*/
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

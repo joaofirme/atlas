@@ -1,0 +1,1522 @@
+[
+  {
+    "id": "bi_00_devolucao",
+    "title": "00 Devolução",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_00_devolucao.yaml"
+  },
+  {
+    "id": "bi_02_devolucao_total",
+    "title": "02 Devolução Total",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_02_devolucao_total.yaml"
+  },
+  {
+    "id": "bi_03_percentual_devolucao",
+    "title": "03 % Devolução",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_03_percentual_devolucao.yaml"
+  },
+  {
+    "id": "bi_01_refaturamento",
+    "title": "01 Refaturamento",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_01_refaturamento.yaml"
+  },
+  {
+    "id": "bi_03_total_a_faturar",
+    "title": "03 Total a Faturar",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_03_total_a_faturar.yaml"
+  },
+  {
+    "id": "bi_02_rsl_mais_aberto",
+    "title": "02 RSL + Aberto",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_02_rsl_mais_aberto.yaml"
+  },
+  {
+    "id": "bi_03_rsl",
+    "title": "03 RSL",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_03_rsl.yaml"
+  },
+  {
+    "id": "bi_04_rsl_ano_atual",
+    "title": "04 RSL Ano Atual",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_04_rsl_ano_atual.yaml"
+  },
+  {
+    "id": "bi_04_rsl_yoy",
+    "title": "04 RSL YoY",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_04_rsl_yoy.yaml"
+  },
+  {
+    "id": "bi_06_aguarda_producao",
+    "title": "06 Aguarda Produção",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_06_aguarda_producao.yaml"
+  },
+  {
+    "id": "bi_01_unidades_faturadas",
+    "title": "01 Unidades Faturadas",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_01_unidades_faturadas.yaml"
+  },
+  {
+    "id": "bi_01_em_analise",
+    "title": "01 Em Análise",
+    "type": "metric",
+    "domain": "financeiro",
+    "status": "draft",
+    "path": "metrics/financeiro/bi_01_em_analise.yaml"
+  },
+  {
+    "id": "bi_meta_diaria_atual",
+    "title": "Meta Diária Atual",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_meta_diaria_atual.yaml"
+  },
+  {
+    "id": "bi_meta_media",
+    "title": "Meta Média",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_meta_media.yaml"
+  },
+  {
+    "id": "bi_meta_de_unidades_faturadas",
+    "title": "Meta de Unidades Faturadas",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_meta_de_unidades_faturadas.yaml"
+  },
+  {
+    "id": "bi_percentual_meta_fat",
+    "title": "% Meta Fat",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_percentual_meta_fat.yaml"
+  },
+  {
+    "id": "bi_percentual_meta_rsl_mais_pedido",
+    "title": "% Meta (RSL + Pedido)",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_percentual_meta_rsl_mais_pedido.yaml"
+  },
+  {
+    "id": "bi_04_aberto",
+    "title": "04 Aberto",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_04_aberto.yaml"
+  },
+  {
+    "id": "bi_05_programado",
+    "title": "05 Programado",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_05_programado.yaml"
+  },
+  {
+    "id": "bi_meta_rsl",
+    "title": "Meta RSL",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_meta_rsl.yaml"
+  },
+  {
+    "id": "bi_percentual_meta_rl",
+    "title": "% Meta RL",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_percentual_meta_rl.yaml"
+  },
+  {
+    "id": "bi_percentual_meta_rsl",
+    "title": "% Meta RSL",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_percentual_meta_rsl.yaml"
+  },
+  {
+    "id": "bi_meta_rl",
+    "title": "Meta RL",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_meta_rl.yaml"
+  },
+  {
+    "id": "bi_00_faturamento",
+    "title": "00 Faturamento",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_00_faturamento.yaml"
+  },
+  {
+    "id": "bi_01_unidades_vendidas",
+    "title": "01 Unidades Vendidas",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_01_unidades_vendidas.yaml"
+  },
+  {
+    "id": "bi_00_valor_de_vendas",
+    "title": "00 Valor de Vendas",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_00_valor_de_vendas.yaml"
+  },
+  {
+    "id": "bi_00_atualizacao",
+    "title": "00 Atualização",
+    "type": "metric",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "metrics/corporativo/bi_00_atualizacao.yaml"
+  },
+  {
+    "id": "bi_04_percentual_meta_devolucao",
+    "title": "04 % Meta Devolução",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_04_percentual_meta_devolucao.yaml"
+  },
+  {
+    "id": "bi_07_preco_medio",
+    "title": "07 Preço Médio",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_07_preco_medio.yaml"
+  },
+  {
+    "id": "bi_meta_preco_medio",
+    "title": "Meta Preço Médio",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_meta_preco_medio.yaml"
+  },
+  {
+    "id": "bi_01_cor_meta_diaria",
+    "title": "01 Cor Meta Diaria",
+    "type": "metric",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "metrics/corporativo/bi_01_cor_meta_diaria.yaml"
+  },
+  {
+    "id": "bi_06_rl",
+    "title": "06 RL",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_06_rl.yaml"
+  },
+  {
+    "id": "bi_07_aguarda_producao_soro",
+    "title": "07 Aguarda Produção Soro",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_07_aguarda_producao_soro.yaml"
+  },
+  {
+    "id": "bi_08_aguarda_producao_sem_soro",
+    "title": "08 Aguarda Produção sem Soro",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_08_aguarda_producao_sem_soro.yaml"
+  },
+  {
+    "id": "bi_00_venda_efetiva",
+    "title": "00 Venda Efetiva",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_00_venda_efetiva.yaml"
+  },
+  {
+    "id": "bi_02_divisor",
+    "title": "02 Divisor",
+    "type": "metric",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "metrics/corporativo/bi_02_divisor.yaml"
+  },
+  {
+    "id": "bi_05_programado_m_mais",
+    "title": "05 Programado M+",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_05_programado_m_mais.yaml"
+  },
+  {
+    "id": "bi_03_texto_dias_uteis",
+    "title": "03 Texto Dias Úteis",
+    "type": "metric",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "metrics/corporativo/bi_03_texto_dias_uteis.yaml"
+  },
+  {
+    "id": "bi_04_rsl_yoy_fechado_percentual",
+    "title": "04 RSL YoY Fechado %",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_04_rsl_yoy_fechado_percentual.yaml"
+  },
+  {
+    "id": "bi_04_rsl_mom_fechado_percentual",
+    "title": "04 RSL MoM Fechado%",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_04_rsl_mom_fechado_percentual.yaml"
+  },
+  {
+    "id": "bi_04_rsl_yoy_aberto_percentual",
+    "title": "04 RSL YoY Aberto %",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_04_rsl_yoy_aberto_percentual.yaml"
+  },
+  {
+    "id": "bi_04_rsl_mom_aberto_percentual",
+    "title": "04 RSL MoM Aberto %",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_04_rsl_mom_aberto_percentual.yaml"
+  },
+  {
+    "id": "bi_04_percentual_vendas_mom",
+    "title": "04 % Vendas MoM",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_04_percentual_vendas_mom.yaml"
+  },
+  {
+    "id": "bi_04_percentual_vendas_yoy",
+    "title": "04 % Vendas YoY",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_04_percentual_vendas_yoy.yaml"
+  },
+  {
+    "id": "bi_04_meta_rsl_mom_percentual",
+    "title": "04 Meta RSL MoM %",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_04_meta_rsl_mom_percentual.yaml"
+  },
+  {
+    "id": "bi_04_meta_rsl_yoy_percentual",
+    "title": "04 Meta RSL YoY %",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_04_meta_rsl_yoy_percentual.yaml"
+  },
+  {
+    "id": "bi_04_percentual_unidades_mom",
+    "title": "04 % Unidades MoM",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_04_percentual_unidades_mom.yaml"
+  },
+  {
+    "id": "bi_04_percentual_unidades_yoy",
+    "title": "04 % Unidades YoY",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_04_percentual_unidades_yoy.yaml"
+  },
+  {
+    "id": "bi_00_percentual_venda_efetiva",
+    "title": "00 % Venda Efetiva",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_00_percentual_venda_efetiva.yaml"
+  },
+  {
+    "id": "bi_rsl_abaixo",
+    "title": "RSL Abaixo",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_rsl_abaixo.yaml"
+  },
+  {
+    "id": "bi_rsl_acima",
+    "title": "RSL Acima",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_rsl_acima.yaml"
+  },
+  {
+    "id": "bi_aux_max_mes",
+    "title": "Aux Max Mês",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_aux_max_mes.yaml"
+  },
+  {
+    "id": "bi_rsl_meta",
+    "title": "RSL > Meta",
+    "type": "metric",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "metrics/corporativo/bi_rsl_meta.yaml"
+  },
+  {
+    "id": "bi_08_faturamento_bruto",
+    "title": "08 Faturamento Bruto",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_08_faturamento_bruto.yaml"
+  },
+  {
+    "id": "bi_09_receita_bruta",
+    "title": "09 Receita Bruta",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_09_receita_bruta.yaml"
+  },
+  {
+    "id": "bi_pedidos_e_faturamentos_html",
+    "title": "Pedidos & Faturamentos HTML",
+    "type": "metric",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "metrics/corporativo/bi_pedidos_e_faturamentos_html.yaml"
+  },
+  {
+    "id": "bi_carteira_e_estoque_html_v1",
+    "title": "Carteira e Estoque HTML v1",
+    "type": "metric",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "metrics/corporativo/bi_carteira_e_estoque_html_v1.yaml"
+  },
+  {
+    "id": "bi_comercial_html_v1",
+    "title": "Comercial HTML v1",
+    "type": "metric",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "metrics/corporativo/bi_comercial_html_v1.yaml"
+  },
+  {
+    "id": "bi_06_valor_entregue",
+    "title": "06 Valor Entregue",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_06_valor_entregue.yaml"
+  },
+  {
+    "id": "bi_farmax_bi_html_old",
+    "title": "Farmax BI HTML old",
+    "type": "metric",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "metrics/corporativo/bi_farmax_bi_html_old.yaml"
+  },
+  {
+    "id": "bi_02_cancelado",
+    "title": "02 Cancelado",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_02_cancelado.yaml"
+  },
+  {
+    "id": "bi_06_ret_limit_cred_exc",
+    "title": "06 Ret.-Limit.créd.exc.",
+    "type": "metric",
+    "domain": "financeiro",
+    "status": "draft",
+    "path": "metrics/financeiro/bi_06_ret_limit_cred_exc.yaml"
+  },
+  {
+    "id": "bi_00_financeiro",
+    "title": "00 Financeiro",
+    "type": "metric",
+    "domain": "financeiro",
+    "status": "draft",
+    "path": "metrics/financeiro/bi_00_financeiro.yaml"
+  },
+  {
+    "id": "bi_00_logistica",
+    "title": "00 Logística",
+    "type": "metric",
+    "domain": "logistica",
+    "status": "draft",
+    "path": "metrics/logistica/bi_00_logistica.yaml"
+  },
+  {
+    "id": "bi_07_valor_em_transito",
+    "title": "07 Valor Em Transito",
+    "type": "metric",
+    "domain": "logistica",
+    "status": "draft",
+    "path": "metrics/logistica/bi_07_valor_em_transito.yaml"
+  },
+  {
+    "id": "bi_10_carteira_inicial",
+    "title": "10 Carteira Inicial",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_10_carteira_inicial.yaml"
+  },
+  {
+    "id": "bi_percentual_meta_rb",
+    "title": "% Meta RB",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_percentual_meta_rb.yaml"
+  },
+  {
+    "id": "bi_faturamento_selecionado",
+    "title": "Faturamento Selecionado",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_faturamento_selecionado.yaml"
+  },
+  {
+    "id": "bi_percentual_meta_exibicao",
+    "title": "% Meta Exibição",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_percentual_meta_exibicao.yaml"
+  },
+  {
+    "id": "bi_cor_borda_mes_parcial",
+    "title": "Cor Borda Mês Parcial",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_cor_borda_mes_parcial.yaml"
+  },
+  {
+    "id": "bi_cor_fundo_mes_parcial",
+    "title": "Cor Fundo Mês Parcial",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_cor_fundo_mes_parcial.yaml"
+  },
+  {
+    "id": "bi_devolucao_selecionada",
+    "title": "Devolução Selecionada",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_devolucao_selecionada.yaml"
+  },
+  {
+    "id": "bi_label_mes_parcial",
+    "title": "Label Mês Parcial",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_label_mes_parcial.yaml"
+  },
+  {
+    "id": "bi_legenda_base_receita",
+    "title": "Legenda Base Receita",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_legenda_base_receita.yaml"
+  },
+  {
+    "id": "bi_meta_rsl_exibicao",
+    "title": "Meta RSL Exibição",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_meta_rsl_exibicao.yaml"
+  },
+  {
+    "id": "bi_receita_selecionada",
+    "title": "Receita Selecionada",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_receita_selecionada.yaml"
+  },
+  {
+    "id": "bi_matriz_rsl_meta",
+    "title": "Matriz RSL > Meta",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_matriz_rsl_meta.yaml"
+  },
+  {
+    "id": "bi_vendido_matriz",
+    "title": "Vendido Matriz",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_vendido_matriz.yaml"
+  },
+  {
+    "id": "bi_aberto_matriz",
+    "title": "Aberto Matriz",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_aberto_matriz.yaml"
+  },
+  {
+    "id": "bi_programado_matriz",
+    "title": "Programado Matriz",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_programado_matriz.yaml"
+  },
+  {
+    "id": "bi_faturamento_selecionado_matriz",
+    "title": "Faturamento Selecionado Matriz",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_faturamento_selecionado_matriz.yaml"
+  },
+  {
+    "id": "bi_devolucao_selecionada_matriz",
+    "title": "Devolução Selecionada Matriz",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_devolucao_selecionada_matriz.yaml"
+  },
+  {
+    "id": "bi_receita_selecionada_matriz",
+    "title": "Receita Selecionada Matriz",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_receita_selecionada_matriz.yaml"
+  },
+  {
+    "id": "bi_linha_matriz_possui_movimento",
+    "title": "Linha Matriz Possui Movimento",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_linha_matriz_possui_movimento.yaml"
+  },
+  {
+    "id": "bi_00_customer_service",
+    "title": "00 Customer Service",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_00_customer_service.yaml"
+  },
+  {
+    "id": "bi_07_preco_medio_bruto",
+    "title": "07 Preço Médio Bruto",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_07_preco_medio_bruto.yaml"
+  },
+  {
+    "id": "bi_05_devolucao_bruta",
+    "title": "05 Devolução_Bruta",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_05_devolucao_bruta.yaml"
+  },
+  {
+    "id": "bi_meta_rb",
+    "title": "Meta RB",
+    "type": "metric",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "metrics/comercial/bi_meta_rb.yaml"
+  },
+  {
+    "id": "bi_farmax_bi_html_v2",
+    "title": "Farmax BI HTML v2",
+    "type": "metric",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "metrics/corporativo/bi_farmax_bi_html_v2.yaml"
+  },
+  {
+    "id": "bi_pedidos_e_faturamentos_menu_html",
+    "title": "Pedidos & Faturamentos Menu HTML",
+    "type": "metric",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "metrics/corporativo/bi_pedidos_e_faturamentos_menu_html.yaml"
+  },
+  {
+    "id": "bi_tabela_medidas",
+    "title": "_Medidas",
+    "type": "data_product",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "data_products/corporativo/bi_tabela_medidas.md"
+  },
+  {
+    "id": "bi_tabela_atualizacao",
+    "title": "Atualização",
+    "type": "data_product",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "data_products/corporativo/bi_tabela_atualizacao.md"
+  },
+  {
+    "id": "bi_tabela_base_receita",
+    "title": "Base Receita",
+    "type": "data_product",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "data_products/corporativo/bi_tabela_base_receita.md"
+  },
+  {
+    "id": "bi_tabela_dclientes_unificada",
+    "title": "dClientes_unificada",
+    "type": "data_product",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "data_products/comercial/bi_tabela_dclientes_unificada.md"
+  },
+  {
+    "id": "bi_tabela_dempresa",
+    "title": "dEmpresa",
+    "type": "data_product",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "data_products/comercial/bi_tabela_dempresa.md"
+  },
+  {
+    "id": "bi_tabela_dexecutivos_unificada",
+    "title": "dExecutivos_unificada",
+    "type": "data_product",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "data_products/comercial/bi_tabela_dexecutivos_unificada.md"
+  },
+  {
+    "id": "bi_tabela_dferiado",
+    "title": "dFeriado",
+    "type": "data_product",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "data_products/comercial/bi_tabela_dferiado.md"
+  },
+  {
+    "id": "bi_tabela_dmaterial_unificada",
+    "title": "dMaterial_unificada",
+    "type": "data_product",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "data_products/comercial/bi_tabela_dmaterial_unificada.md"
+  },
+  {
+    "id": "bi_tabela_dregional",
+    "title": "dRegional",
+    "type": "data_product",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "data_products/comercial/bi_tabela_dregional.md"
+  },
+  {
+    "id": "bi_tabela_dtempo",
+    "title": "dTempo",
+    "type": "data_product",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "data_products/comercial/bi_tabela_dtempo.md"
+  },
+  {
+    "id": "bi_tabela_duf",
+    "title": "dUF",
+    "type": "data_product",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "data_products/comercial/bi_tabela_duf.md"
+  },
+  {
+    "id": "bi_tabela_fcarteira_pedidos_unificada",
+    "title": "fCarteira_pedidos_unificada",
+    "type": "data_product",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "data_products/comercial/bi_tabela_fcarteira_pedidos_unificada.md"
+  },
+  {
+    "id": "bi_tabela_fdevolucao_unificada",
+    "title": "fDevolucao_unificada",
+    "type": "data_product",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "data_products/comercial/bi_tabela_fdevolucao_unificada.md"
+  },
+  {
+    "id": "bi_tabela_fmeta_geral",
+    "title": "fMeta_Geral",
+    "type": "data_product",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "data_products/comercial/bi_tabela_fmeta_geral.md"
+  },
+  {
+    "id": "bi_tabela_fmeta_unificada",
+    "title": "fMeta_unificada",
+    "type": "data_product",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "data_products/comercial/bi_tabela_fmeta_unificada.md"
+  },
+  {
+    "id": "bi_tabela_fplanprod_unificada",
+    "title": "fPlanProd_unificada",
+    "type": "data_product",
+    "domain": "operacoes",
+    "status": "draft",
+    "path": "data_products/operacoes/bi_tabela_fplanprod_unificada.md"
+  },
+  {
+    "id": "bi_tabela_fvendas_unificada",
+    "title": "fVendas_unificada",
+    "type": "data_product",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "data_products/comercial/bi_tabela_fvendas_unificada.md"
+  },
+  {
+    "id": "bi_tabela_legenda_gradiente",
+    "title": "Legenda Gradiente",
+    "type": "data_product",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "data_products/corporativo/bi_tabela_legenda_gradiente.md"
+  },
+  {
+    "id": "bi_tabela_parametros_matriz_dinamica",
+    "title": "Parâmetros: Matriz Dinâmica",
+    "type": "data_product",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "data_products/corporativo/bi_tabela_parametros_matriz_dinamica.md"
+  },
+  {
+    "id": "bi_tabela_tlogistica_e_cs",
+    "title": "tLogistica e CS",
+    "type": "data_product",
+    "domain": "logistica",
+    "status": "draft",
+    "path": "data_products/logistica/bi_tabela_tlogistica_e_cs.md"
+  },
+  {
+    "id": "bi_rel_autodetected_3a7ec5fb_e044_4d8e_bb91_64b680a0678c",
+    "title": "fDevolucao_unificada.chave_cliente → dClientes_unificada.chave_cliente",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_autodetected_3a7ec5fb_e044_4d8e_bb91_64b680a0678c.yaml"
+  },
+  {
+    "id": "bi_rel_autodetected_dce192c7_5eac_41c2_9f47_8e110cb40084",
+    "title": "fVendas_unificada.chave_cliente → dClientes_unificada.chave_cliente",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_autodetected_dce192c7_5eac_41c2_9f47_8e110cb40084.yaml"
+  },
+  {
+    "id": "bi_rel_572c3062_14e1_a275_25a7_19f0278a9b03",
+    "title": "fVendas_unificada.companhia → dEmpresa.Company",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_572c3062_14e1_a275_25a7_19f0278a9b03.yaml"
+  },
+  {
+    "id": "bi_rel_e9e81fbe_ef49_0ef5_e02a_9db5336157a2",
+    "title": "fVendas_unificada.data_pedido → dTempo.Data",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_e9e81fbe_ef49_0ef5_e02a_9db5336157a2.yaml"
+  },
+  {
+    "id": "bi_rel_bc2323fc_68b3_6afa_f392_e7b6ff622dfe",
+    "title": "fVendas_unificada.regional_cod → dRegional.order_sale_order_office_code",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_bc2323fc_68b3_6afa_f392_e7b6ff622dfe.yaml"
+  },
+  {
+    "id": "bi_rel_b2283a9e_b095_76c3_b789_78e205056c3f",
+    "title": "fVendas_unificada.sale_cancellation_date → dTempo.Data",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_b2283a9e_b095_76c3_b789_78e205056c3f.yaml"
+  },
+  {
+    "id": "bi_rel_2dd7faaf_5dc2_863e_2cfe_ea85d901ab43",
+    "title": "fVendas_unificada.data_movimento → dTempo.Data",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_2dd7faaf_5dc2_863e_2cfe_ea85d901ab43.yaml"
+  },
+  {
+    "id": "bi_rel_e2a996b8_b1f2_5ccb_31e2_781e618d5da9",
+    "title": "fDevolucao_unificada.data_movimento → dTempo.Data",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_e2a996b8_b1f2_5ccb_31e2_781e618d5da9.yaml"
+  },
+  {
+    "id": "bi_rel_f4eedbc4_ea27_34bd_8aa5_d01a57f6ab93",
+    "title": "fDevolucao_unificada.regional_codigo → dRegional.order_sale_order_office_code",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_f4eedbc4_ea27_34bd_8aa5_d01a57f6ab93.yaml"
+  },
+  {
+    "id": "bi_rel_e03fc402_c1d4_be6e_bf2e_c296a9afc19e",
+    "title": "fDevolucao_unificada.companhia → dEmpresa.Company",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_e03fc402_c1d4_be6e_bf2e_c296a9afc19e.yaml"
+  },
+  {
+    "id": "bi_rel_161570b7_b26e_3199_c561_a7dc1a96bc9a",
+    "title": "fDevolucao_unificada.chave_executivo → dExecutivos_unificada.executivo_chave",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_161570b7_b26e_3199_c561_a7dc1a96bc9a.yaml"
+  },
+  {
+    "id": "bi_rel_dc76daf3_fd84_0178_4fdf_6a5a48125462",
+    "title": "fDevolucao_unificada.sku → dMaterial_unificada.codigo_produto",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_dc76daf3_fd84_0178_4fdf_6a5a48125462.yaml"
+  },
+  {
+    "id": "bi_rel_674b67a1_daba_f6f8_f065_acfb362ed046",
+    "title": "fVendas_unificada.sku → dMaterial_unificada.codigo_produto",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_674b67a1_daba_f6f8_f065_acfb362ed046.yaml"
+  },
+  {
+    "id": "bi_rel_dd11cd0b_c3a6_7323_3051_65b6486f480e",
+    "title": "fMeta_unificada.meta_data_alvo → dTempo.Data",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_dd11cd0b_c3a6_7323_3051_65b6486f480e.yaml"
+  },
+  {
+    "id": "bi_rel_2ec3f4a3_a809_1d18_fdee_30075a931950",
+    "title": "fMeta_unificada.companhia → dEmpresa.Company",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_2ec3f4a3_a809_1d18_fdee_30075a931950.yaml"
+  },
+  {
+    "id": "bi_rel_aa41f29b_e09e_855b_507d_cc07db2208eb",
+    "title": "fMeta_unificada.chave_executivo → dExecutivos_unificada.executivo_chave",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_aa41f29b_e09e_855b_507d_cc07db2208eb.yaml"
+  },
+  {
+    "id": "bi_rel_db327af3_92e6_8445_b77e_ff98d2e263c4",
+    "title": "fVendas_unificada.chave_executivo → dExecutivos_unificada.executivo_chave",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_db327af3_92e6_8445_b77e_ff98d2e263c4.yaml"
+  },
+  {
+    "id": "bi_rel_a22dd875_10a7_c4b2_067b_67da443a6c7d",
+    "title": "fMeta_unificada.chave_regional → dRegional.order_sale_order_office_code",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_a22dd875_10a7_c4b2_067b_67da443a6c7d.yaml"
+  },
+  {
+    "id": "bi_rel_ab55d04b_2753_63db_2450_20f80863e1f8",
+    "title": "fCarteira_pedidos_unificada.data_carteira → dTempo.Data",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_ab55d04b_2753_63db_2450_20f80863e1f8.yaml"
+  },
+  {
+    "id": "bi_rel_964182c1_8e30_6d21_fa74_e19b722a13a0",
+    "title": "fMeta_unificada.chave_marca → dMaterial_unificada.brand_novo",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_964182c1_8e30_6d21_fa74_e19b722a13a0.yaml"
+  },
+  {
+    "id": "bi_rel_7eae087a_220d_86ff_9076_bc68cdf46e41",
+    "title": "dExecutivos_unificada.empresa → dEmpresa.Empresa",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_7eae087a_220d_86ff_9076_bc68cdf46e41.yaml"
+  },
+  {
+    "id": "bi_rel_ff396aa3_4800_911b_45e1_5af2ad74ff9a",
+    "title": "fPlanProd_unificada.cobertura_estoque_sku → dMaterial_unificada.codigo_produto",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_ff396aa3_4800_911b_45e1_5af2ad74ff9a.yaml"
+  },
+  {
+    "id": "bi_rel_30bf1785_b290_6345_d8cc_c2a7023759b4",
+    "title": "fPlanProd_unificada.cobertura_estoque_company → dEmpresa.Company",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_30bf1785_b290_6345_d8cc_c2a7023759b4.yaml"
+  },
+  {
+    "id": "bi_rel_576e8b79_7e81_5ac5_2b3e_0a6a755ba7cd",
+    "title": "fPlanProd_unificada.cobertura_estoque_data_referencia → dTempo.Data",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_576e8b79_7e81_5ac5_2b3e_0a6a755ba7cd.yaml"
+  },
+  {
+    "id": "bi_rel_autodetected_a3c943a9_e146_4ffd_8b12_28019512d403",
+    "title": "fCarteira_pedidos_unificada.company → dEmpresa.Company",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_autodetected_a3c943a9_e146_4ffd_8b12_28019512d403.yaml"
+  },
+  {
+    "id": "bi_rel_autodetected_5a6f9eb5_31ba_4e18_9194_10d04b1f1b35",
+    "title": "fCarteira_pedidos_unificada.order_sale_order_office_code → dRegional.order_sale_order_office_code",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_autodetected_5a6f9eb5_31ba_4e18_9194_10d04b1f1b35.yaml"
+  },
+  {
+    "id": "bi_rel_a04926d7_79bd_54e5_051a_393022f4a582",
+    "title": "fCarteira_pedidos_unificada.order_sale_material_code → dMaterial_unificada.codigo_produto",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_a04926d7_79bd_54e5_051a_393022f4a582.yaml"
+  },
+  {
+    "id": "bi_rel_f35e2acf_6f9c_39ee_899b_4d2415430cdb",
+    "title": "fMeta_Geral.obt_company → dEmpresa.Company",
+    "type": "relationship",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "ontology/relationships/bi_rel_f35e2acf_6f9c_39ee_899b_4d2415430cdb.yaml"
+  },
+  {
+    "id": "cliente",
+    "title": "Cliente",
+    "type": "entity",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/entities/cliente.yaml"
+  },
+  {
+    "id": "produto",
+    "title": "Produto / SKU",
+    "type": "entity",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/entities/produto.yaml"
+  },
+  {
+    "id": "empresa",
+    "title": "Empresa / companhia",
+    "type": "entity",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/entities/empresa.yaml"
+  },
+  {
+    "id": "executivo",
+    "title": "Executivo comercial",
+    "type": "entity",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/entities/executivo.yaml"
+  },
+  {
+    "id": "regional",
+    "title": "Regional comercial",
+    "type": "entity",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/entities/regional.yaml"
+  },
+  {
+    "id": "pedido",
+    "title": "Pedido de venda",
+    "type": "entity",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/entities/pedido.yaml"
+  },
+  {
+    "id": "faturamento",
+    "title": "Evento de faturamento",
+    "type": "entity",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/entities/faturamento.yaml"
+  },
+  {
+    "id": "devolucao",
+    "title": "Evento de devolução",
+    "type": "entity",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/entities/devolucao.yaml"
+  },
+  {
+    "id": "meta_comercial",
+    "title": "Meta comercial",
+    "type": "entity",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/entities/meta_comercial.yaml"
+  },
+  {
+    "id": "posicao_estoque",
+    "title": "Posição de estoque e planejamento",
+    "type": "entity",
+    "domain": "operacoes",
+    "status": "draft",
+    "path": "ontology/entities/posicao_estoque.yaml"
+  },
+  {
+    "id": "snapshot_carteira",
+    "title": "Snapshot de carteira",
+    "type": "entity",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/entities/snapshot_carteira.yaml"
+  },
+  {
+    "id": "bi_dim_cliente",
+    "title": "Cliente",
+    "type": "dimension",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "dimensions/comercial/bi_dim_cliente.yaml"
+  },
+  {
+    "id": "bi_dim_produto",
+    "title": "Produto / SKU",
+    "type": "dimension",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "dimensions/comercial/bi_dim_produto.yaml"
+  },
+  {
+    "id": "bi_dim_marca",
+    "title": "Marca",
+    "type": "dimension",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "dimensions/comercial/bi_dim_marca.yaml"
+  },
+  {
+    "id": "bi_dim_segmento",
+    "title": "Segmento",
+    "type": "dimension",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "dimensions/comercial/bi_dim_segmento.yaml"
+  },
+  {
+    "id": "bi_dim_classificacao_sku",
+    "title": "Classificação SKU",
+    "type": "dimension",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "dimensions/comercial/bi_dim_classificacao_sku.yaml"
+  },
+  {
+    "id": "bi_dim_empresa",
+    "title": "Empresa / companhia",
+    "type": "dimension",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "dimensions/comercial/bi_dim_empresa.yaml"
+  },
+  {
+    "id": "bi_dim_executivo",
+    "title": "Executivo",
+    "type": "dimension",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "dimensions/comercial/bi_dim_executivo.yaml"
+  },
+  {
+    "id": "bi_dim_regional",
+    "title": "Regional comercial",
+    "type": "dimension",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "dimensions/comercial/bi_dim_regional.yaml"
+  },
+  {
+    "id": "bi_dim_tempo",
+    "title": "Calendário",
+    "type": "dimension",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "dimensions/comercial/bi_dim_tempo.yaml"
+  },
+  {
+    "id": "bi_dim_canal",
+    "title": "Canal de venda",
+    "type": "dimension",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "dimensions/comercial/bi_dim_canal.yaml"
+  },
+  {
+    "id": "bi_dim_status_pedido",
+    "title": "Status do pedido",
+    "type": "dimension",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "dimensions/comercial/bi_dim_status_pedido.yaml"
+  },
+  {
+    "id": "bi_dim_geografia_cliente",
+    "title": "Geografia do cliente",
+    "type": "dimension",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "dimensions/comercial/bi_dim_geografia_cliente.yaml"
+  },
+  {
+    "id": "bi_dim_base_receita",
+    "title": "Base de receita",
+    "type": "dimension",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "dimensions/comercial/bi_dim_base_receita.yaml"
+  },
+  {
+    "id": "bi_dim_matriz_dinamica",
+    "title": "Eixo da matriz dinâmica",
+    "type": "dimension",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "dimensions/comercial/bi_dim_matriz_dinamica.yaml"
+  },
+  {
+    "id": "bi_venda",
+    "title": "Venda registrada",
+    "type": "concept",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/concepts/bi_venda.md"
+  },
+  {
+    "id": "bi_faturamento",
+    "title": "Faturamento",
+    "type": "concept",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/concepts/bi_faturamento.md"
+  },
+  {
+    "id": "bi_receita_semi_liquida",
+    "title": "Receita semi líquida (RSL)",
+    "type": "concept",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/concepts/bi_receita_semi_liquida.md"
+  },
+  {
+    "id": "bi_receita_liquida",
+    "title": "Receita líquida (RL)",
+    "type": "concept",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/concepts/bi_receita_liquida.md"
+  },
+  {
+    "id": "bi_receita_bruta",
+    "title": "Receita bruta no dashboard",
+    "type": "concept",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/concepts/bi_receita_bruta.md"
+  },
+  {
+    "id": "bi_devolucao_total",
+    "title": "Devolução total e refaturamento",
+    "type": "concept",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/concepts/bi_devolucao_total.md"
+  },
+  {
+    "id": "bi_carteira_aberta",
+    "title": "Carteira aberta",
+    "type": "concept",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/concepts/bi_carteira_aberta.md"
+  },
+  {
+    "id": "bi_programado",
+    "title": "Programado",
+    "type": "concept",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/concepts/bi_programado.md"
+  },
+  {
+    "id": "bi_venda_efetiva",
+    "title": "Venda efetiva",
+    "type": "concept",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/concepts/bi_venda_efetiva.md"
+  },
+  {
+    "id": "bi_meta",
+    "title": "Meta e atingimento",
+    "type": "concept",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/concepts/bi_meta.md"
+  },
+  {
+    "id": "bi_entregue_transito",
+    "title": "Entregue e em trânsito",
+    "type": "concept",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/concepts/bi_entregue_transito.md"
+  },
+  {
+    "id": "bi_dias_uteis",
+    "title": "Dias úteis e projeção",
+    "type": "concept",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/concepts/bi_dias_uteis.md"
+  },
+  {
+    "id": "bi_estoque_cobertura",
+    "title": "Estoque, demanda e cobertura",
+    "type": "concept",
+    "domain": "operacoes",
+    "status": "draft",
+    "path": "ontology/concepts/bi_estoque_cobertura.md"
+  },
+  {
+    "id": "bi_pareto_clientes",
+    "title": "Pareto de clientes",
+    "type": "concept",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/concepts/bi_pareto_clientes.md"
+  },
+  {
+    "id": "bi_mes_parcial",
+    "title": "Mês parcial e comparabilidade",
+    "type": "concept",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/concepts/bi_mes_parcial.md"
+  },
+  {
+    "id": "bi_margem_proxy",
+    "title": "Proxy de margem na apresentação",
+    "type": "concept",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "ontology/concepts/bi_margem_proxy.md"
+  },
+  {
+    "id": "bi_bases_receita",
+    "title": "Bases de receita e apresentação",
+    "type": "business_rule",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "business_rules/comercial/bi_bases_receita.md"
+  },
+  {
+    "id": "bi_datas_eventos",
+    "title": "Datas dos eventos",
+    "type": "business_rule",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "business_rules/comercial/bi_datas_eventos.md"
+  },
+  {
+    "id": "bi_separacao_pendencias",
+    "title": "Distribuição de pendências por área",
+    "type": "business_rule",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "business_rules/comercial/bi_separacao_pendencias.md"
+  },
+  {
+    "id": "bi_matriz_exibicao",
+    "title": "Unidade e ausência de meta na matriz",
+    "type": "business_rule",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "business_rules/comercial/bi_matriz_exibicao.md"
+  },
+  {
+    "id": "bi_projecao_fechamento",
+    "title": "Projeção, ritmo e gap",
+    "type": "business_rule",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "business_rules/comercial/bi_projecao_fechamento.md"
+  },
+  {
+    "id": "bi_estoque_valorizacao",
+    "title": "Estoque e carteira por SKU",
+    "type": "business_rule",
+    "domain": "operacoes",
+    "status": "draft",
+    "path": "business_rules/operacoes/bi_estoque_valorizacao.md"
+  },
+  {
+    "id": "bi_carteira_data_referencia",
+    "title": "Período do painel Carteira & Estoque",
+    "type": "business_rule",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "business_rules/comercial/bi_carteira_data_referencia.md"
+  },
+  {
+    "id": "bi_dias_uteis_calendarios",
+    "title": "Calendários úteis distintos",
+    "type": "business_rule",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "business_rules/comercial/bi_dias_uteis_calendarios.md"
+  },
+  {
+    "id": "bi_anatomia_nota",
+    "title": "Anatomia da nota e proxies",
+    "type": "business_rule",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "business_rules/comercial/bi_anatomia_nota.md"
+  },
+  {
+    "id": "bi_pareto_classificacao",
+    "title": "Classificação Pareto",
+    "type": "business_rule",
+    "domain": "comercial",
+    "status": "draft",
+    "path": "business_rules/comercial/bi_pareto_classificacao.md"
+  },
+  {
+    "id": "bi_farmax",
+    "title": "BI corporativo Farmax",
+    "type": "data_product",
+    "domain": "corporativo",
+    "status": "draft",
+    "path": "data_products/corporativo/bi_farmax.md"
+  }
+]

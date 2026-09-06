@@ -1,0 +1,41 @@
+schema_version: 1
+id: "bi_dim_marca"
+title: "Marca"
+type: "dimension"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl"
+    locator: "colunas e partição"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Leitura estática do snapshot PBIP; sem execução ou certificação de negócio."
+pending:
+  - "Confirmar interpretação, responsáveis e comportamento com dados reais."
+definition: "O modelo contém marca e brand_novo. A matriz e várias análises usam brand_novo; não unificar os campos por semelhança de nome."
+entity: "produto"
+key: null
+attributes:
+  - "marca"
+  - "brand_novo"
+hierarchy: null
+physical_mapping:
+  semantic_table: "dMaterial_unificada"
+  columns:
+    - "marca"
+    - "brand_novo"
+unknown_values: null
+historical_behavior: null
+compatible_metrics: null
+observed_metric_references: []
+compatibility_note: "Uso observado não comprova compatibilidade semântica de todos os níveis; revisar granularidade e filtros."

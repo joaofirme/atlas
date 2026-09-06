@@ -1,0 +1,50 @@
+schema_version: 1
+id: "bi_dim_cliente"
+title: "Cliente"
+type: "dimension"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dClientes_unificada.tmdl"
+    locator: "colunas e partição"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Leitura estática do snapshot PBIP; sem execução ou certificação de negócio."
+pending:
+  - "Confirmar interpretação, responsáveis e comportamento com dados reais."
+definition: "Cliente e agrupamentos usados em análises comerciais. Confirmar quando consolidar por grupo ou documento."
+entity: "cliente"
+key: "chave_cliente"
+attributes:
+  - "cliente"
+  - "cliente_grupo"
+  - "nome_grupo"
+  - "cliente_cpf_cnpj_raiz"
+hierarchy: null
+physical_mapping:
+  semantic_table: "dClientes_unificada"
+  columns:
+    - "cliente"
+    - "cliente_grupo"
+    - "nome_grupo"
+    - "cliente_cpf_cnpj_raiz"
+unknown_values: null
+historical_behavior: null
+compatible_metrics: null
+observed_metric_references:
+  - "bi_carteira_e_estoque_html_v1"
+  - "bi_comercial_html_v1"
+  - "bi_percentual_meta_exibicao"
+  - "bi_meta_rsl_exibicao"
+  - "bi_matriz_rsl_meta"
+compatibility_note: "Uso observado não comprova compatibilidade semântica de todos os níveis; revisar granularidade e filtros."

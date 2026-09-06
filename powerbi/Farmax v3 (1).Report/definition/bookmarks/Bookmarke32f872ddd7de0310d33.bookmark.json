@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "Inf. Ind. Administrativos",
+  "name": "Bookmarke32f872ddd7de0310d33",
+  "options": {
+    "targetVisualNames": [
+      "46a62489f3e3719aa4dc"
+    ],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSection63bc66854ae5d854c312",
+    "sections": {
+      "ReportSection63bc66854ae5d854c312": {
+        "visualContainers": {},
+        "visualContainerGroups": {
+          "438cd61a20ebc8b56a17": {
+            "isHidden": false
+          },
+          "653771d7c12204e392db": {
+            "isHidden": false
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "visible": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

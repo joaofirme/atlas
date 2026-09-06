@@ -1,0 +1,195 @@
+table fDevolucao_unificada
+	lineageTag: 32ea2e60-313d-440f-87a0-99d868f1d390
+
+	column empresa
+		dataType: string
+		lineageTag: 2c3188ac-93cc-4836-b5c8-2d9186a199e6
+		summarizeBy: none
+		sourceColumn: empresa
+
+		annotation SummarizationSetBy = Automatic
+
+	column companhia
+		dataType: string
+		lineageTag: 658e4bf9-5d42-404c-868e-4f42f1e4cba3
+		summarizeBy: none
+		sourceColumn: companhia
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_movimento
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 96831d88-393f-4d95-a5c2-6bd89ca88e6b
+		summarizeBy: none
+		sourceColumn: data_movimento
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column chave_executivo
+		dataType: string
+		lineageTag: 53958a78-4e20-4a62-b5f2-f4709e3fe914
+		summarizeBy: none
+		sourceColumn: chave_executivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column cod_executivo
+		dataType: string
+		lineageTag: 62258e03-609d-444e-9067-e8f41488a2c8
+		summarizeBy: none
+		sourceColumn: cod_executivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column cod_coordenador
+		dataType: string
+		lineageTag: 4ed8526e-c906-427e-9275-9109d6c8cb61
+		summarizeBy: none
+		sourceColumn: cod_coordenador
+
+		annotation SummarizationSetBy = Automatic
+
+	column chave_cliente
+		dataType: string
+		lineageTag: 4a0acda2-7f4f-4abf-befc-dcd12a8d553d
+		summarizeBy: none
+		sourceColumn: chave_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column cod_cliente
+		dataType: string
+		lineageTag: 5d19c3ec-4193-4e43-8138-fc6058c46c01
+		summarizeBy: none
+		sourceColumn: cod_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado
+		dataType: string
+		lineageTag: b5bda712-7fcc-4751-b958-abcb901b6b8a
+		summarizeBy: none
+		sourceColumn: estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column cidade
+		dataType: string
+		lineageTag: 3ba56cf9-e02b-4c5f-a7ed-fea7752c63ae
+		summarizeBy: none
+		sourceColumn: cidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column nota_fiscal
+		dataType: string
+		lineageTag: 74362fde-ee04-497c-83f0-edafdbabf5ed
+		summarizeBy: none
+		sourceColumn: nota_fiscal
+
+		annotation SummarizationSetBy = Automatic
+
+	column pedido
+		dataType: string
+		lineageTag: 7cc43658-ba54-45c6-9398-6b84fe586c27
+		summarizeBy: none
+		sourceColumn: pedido
+
+		annotation SummarizationSetBy = Automatic
+
+	column sku
+		dataType: string
+		lineageTag: 6607b038-8f88-409d-acb2-df0100db49d9
+		summarizeBy: none
+		sourceColumn: sku
+
+		annotation SummarizationSetBy = Automatic
+
+	column deposito_codigo
+		dataType: string
+		lineageTag: 2c270dc8-e9d4-4cc3-b6e2-848bbea26c3f
+		summarizeBy: none
+		sourceColumn: deposito_codigo
+
+		annotation SummarizationSetBy = Automatic
+
+	column regional_codigo
+		dataType: string
+		lineageTag: 4b23173a-7377-4034-bc4d-6a136b03febb
+		summarizeBy: none
+		sourceColumn: regional_codigo
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantidade
+		dataType: double
+		lineageTag: 15873daf-4ae4-461a-a658-33e85bc92b78
+		summarizeBy: sum
+		sourceColumn: quantidade
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column receita
+		dataType: double
+		lineageTag: 56a9df9d-5815-4a0a-a685-bbda05a748e8
+		summarizeBy: sum
+		sourceColumn: receita
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column faturamento_cod_tipo
+		dataType: string
+		lineageTag: 85848282-054b-4fb2-8377-c8c3a7dc05b5
+		summarizeBy: none
+		sourceColumn: faturamento_cod_tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column devolucao_cod_tipo
+		dataType: string
+		lineageTag: 6c4dd4db-3bec-488e-9b7c-fc128c675e43
+		summarizeBy: none
+		sourceColumn: devolucao_cod_tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column canal_n1
+		dataType: string
+		lineageTag: 28585d81-5c2f-428f-b5df-0af0c204b5d9
+		summarizeBy: none
+		sourceColumn: canal_n1
+
+		annotation SummarizationSetBy = Automatic
+
+	column receita_bruta
+		dataType: double
+		lineageTag: fd445396-3083-40ea-9f27-8cd3e75205bd
+		summarizeBy: sum
+		sourceColumn: receita_bruta
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fDevolucao_unificada = m
+		mode: import
+		queryGroup: Fato
+		source =
+				let
+				    Source = AmazonRedshift.Database("farmax-cluster.cdkgzqhbae0k.us-east-1.redshift.amazonaws.com:5439","farmax_prod"),
+				    comercial = Source{[Name="comercial"]}[Data],
+				    fato_devolucao_unificada1 = comercial{[Name="fato_devolucao_unificada"]}[Data]
+				in
+				    fato_devolucao_unificada1
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

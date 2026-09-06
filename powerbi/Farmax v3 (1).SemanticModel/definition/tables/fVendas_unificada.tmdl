@@ -1,0 +1,493 @@
+table fVendas_unificada
+	lineageTag: b3992a8d-9f51-48a3-9736-53d730107bb3
+
+	column empresa
+		dataType: string
+		lineageTag: 02713e06-d800-49df-a53d-82b2f4462d44
+		summarizeBy: none
+		sourceColumn: empresa
+
+		annotation SummarizationSetBy = Automatic
+
+	column companhia
+		dataType: string
+		lineageTag: 13a57ddf-391d-4c5c-9e1d-93a22f0de3e2
+		summarizeBy: none
+		sourceColumn: companhia
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_movimento
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: e97bf576-2473-4fb2-a23b-4b399c6784fe
+		summarizeBy: none
+		sourceColumn: data_movimento
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column data_pedido
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 23d0f56f-bccf-4c3e-bc34-96cbd8eab599
+		summarizeBy: none
+		sourceColumn: data_pedido
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column cod_executivo
+		dataType: int64
+		formatString: 0
+		lineageTag: 24ccaf98-d8cf-475c-9332-8ecd04e769b6
+		summarizeBy: sum
+		sourceColumn: cod_executivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column cod_coordenador
+		dataType: string
+		lineageTag: 3ab0f57c-a6aa-4554-b4b2-53d8a5311c41
+		summarizeBy: none
+		sourceColumn: cod_coordenador
+
+		annotation SummarizationSetBy = Automatic
+
+	column chave_cliente
+		dataType: string
+		lineageTag: fd489fef-5f72-4779-8d1f-6470bca4d72d
+		summarizeBy: none
+		sourceColumn: chave_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column cod_cliente
+		dataType: int64
+		formatString: 0
+		lineageTag: 3bcb782c-9033-49d5-bea1-423925f4d674
+		summarizeBy: sum
+		sourceColumn: cod_cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column cpf_cnpj_base
+		dataType: string
+		lineageTag: 04d1e48e-52f6-43b9-8d0b-27c56bc355fc
+		summarizeBy: none
+		sourceColumn: cpf_cnpj_base
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado
+		dataType: string
+		lineageTag: 222d2b64-0afb-48ad-b4f4-eb832f58d1b6
+		summarizeBy: none
+		sourceColumn: estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column cidade
+		dataType: string
+		lineageTag: 85a5935c-6052-4c13-b1aa-bc1ebc5c5220
+		summarizeBy: none
+		sourceColumn: cidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column nota_fiscal
+		dataType: int64
+		formatString: 0
+		lineageTag: 31198f5b-99a6-4cf4-9286-3bf322f44131
+		summarizeBy: sum
+		sourceColumn: nota_fiscal
+
+		annotation SummarizationSetBy = Automatic
+
+	column pedido
+		dataType: int64
+		formatString: 0
+		lineageTag: b2a35f3a-d12b-4315-9411-eddcf808bad5
+		summarizeBy: sum
+		sourceColumn: pedido
+
+		annotation SummarizationSetBy = Automatic
+
+	column sku
+		dataType: string
+		lineageTag: bfa72a04-8ddc-4447-bd9d-810180e1de28
+		summarizeBy: none
+		sourceColumn: sku
+
+		annotation SummarizationSetBy = Automatic
+
+	column categoria
+		dataType: string
+		lineageTag: d301bc11-fed7-42c3-9fae-5824e746460f
+		summarizeBy: none
+		sourceColumn: categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column canal_n1
+		dataType: string
+		lineageTag: 87bdbb21-f232-4483-bd25-f5af08cc774e
+		summarizeBy: none
+		sourceColumn: canal_n1
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_lancamento
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 41c822c9-a33a-481f-ae7d-809d2420b371
+		summarizeBy: none
+		sourceColumn: data_lancamento
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column pedido_tipo
+		dataType: string
+		lineageTag: 62e60bed-b819-4320-aa27-dd8d7c39f2ba
+		summarizeBy: none
+		sourceColumn: pedido_tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column venda_cod_tipo
+		dataType: string
+		lineageTag: ce0cbb81-12df-4032-895b-5c82908e7327
+		summarizeBy: none
+		sourceColumn: venda_cod_tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column pedido_status
+		dataType: string
+		lineageTag: 0018c421-71bb-4e8d-b22d-1af416c5bffe
+		summarizeBy: none
+		sourceColumn: pedido_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column regional_cod
+		dataType: string
+		lineageTag: 532fc1c3-8a66-4c59-8c92-7f37b44ae7d8
+		summarizeBy: none
+		sourceColumn: regional_cod
+
+		annotation SummarizationSetBy = Automatic
+
+	column ledger_net_subtotal
+		dataType: double
+		lineageTag: e318e8a2-3354-4320-98e0-239112b7966b
+		summarizeBy: sum
+		sourceColumn: ledger_net_subtotal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column quantidade
+		dataType: int64
+		formatString: 0
+		lineageTag: b53d97a9-4b87-4610-b105-e588ebe50f03
+		summarizeBy: sum
+		sourceColumn: quantidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantidade_venda
+		dataType: int64
+		formatString: 0
+		lineageTag: 6af91dfd-24a3-428f-a09e-0432fba2aecc
+		summarizeBy: sum
+		sourceColumn: quantidade_venda
+
+		annotation SummarizationSetBy = Automatic
+
+	column receita
+		dataType: double
+		lineageTag: 17901c66-b145-4d55-8fdd-22403d43ba51
+		summarizeBy: sum
+		sourceColumn: receita
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column receita_bruta
+		dataType: double
+		lineageTag: 01dc1c8e-7fec-4fb0-8d41-dcadb3ec3778
+		summarizeBy: sum
+		sourceColumn: receita_bruta
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column customer_regiao
+		dataType: string
+		lineageTag: 275de0ba-7009-49f8-b4d4-be6c794c52f3
+		summarizeBy: none
+		sourceColumn: customer_regiao
+
+		annotation SummarizationSetBy = Automatic
+
+	column material_group_code
+		dataType: string
+		lineageTag: 1ae79864-043b-4adb-8a94-29f8316c5d02
+		summarizeBy: none
+		sourceColumn: material_group_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column material_medication
+		dataType: string
+		lineageTag: 258bd0da-c3ac-4ab8-837d-86d59ee2f1f4
+		summarizeBy: none
+		sourceColumn: material_medication
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_sale_quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: a52781ed-f993-461f-aa8d-d383741c3d98
+		summarizeBy: sum
+		sourceColumn: order_sale_quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_sale_delivery_quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 4dd52876-5898-453d-b335-3f21f015a287
+		summarizeBy: sum
+		sourceColumn: order_sale_delivery_quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_sale_cut_value
+		dataType: int64
+		formatString: 0
+		lineageTag: 020386f0-a47d-4c49-bbd5-d33e12a1750b
+		summarizeBy: sum
+		sourceColumn: order_sale_cut_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_sale_subtotal
+		dataType: double
+		lineageTag: 3c351739-18b9-4014-be0f-f0ad9d912ee2
+		summarizeBy: sum
+		sourceColumn: order_sale_subtotal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sale_rejection_reason_code
+		dataType: string
+		lineageTag: d28a18b2-b63b-436c-8744-d72523674507
+		summarizeBy: none
+		sourceColumn: sale_rejection_reason_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sale_billing_block_code
+		dataType: string
+		lineageTag: 698b7039-e96a-4b85-9148-a2112eab8a59
+		summarizeBy: none
+		sourceColumn: sale_billing_block_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sale_delivery_code
+		dataType: int64
+		formatString: 0
+		lineageTag: 94caa139-31f5-4c56-b3c2-2e8218d55c47
+		summarizeBy: sum
+		sourceColumn: sale_delivery_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sale_delivery_block_code
+		dataType: string
+		lineageTag: 0e059333-8e16-44df-a559-7e73e9477932
+		summarizeBy: none
+		sourceColumn: sale_delivery_block_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sale_delivery_item_block_code
+		dataType: string
+		lineageTag: 7555f135-5008-4856-8fc3-afbb5fcd0ac5
+		summarizeBy: none
+		sourceColumn: sale_delivery_item_block_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sale_storage_code
+		dataType: int64
+		formatString: 0
+		lineageTag: c738fee2-24cc-464d-b543-370a689875c6
+		summarizeBy: sum
+		sourceColumn: sale_storage_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sale_shipping_code
+		dataType: int64
+		formatString: 0
+		lineageTag: 456509aa-6c06-4f79-807e-abd5a7dee290
+		summarizeBy: sum
+		sourceColumn: sale_shipping_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column sale_shipping_type
+		dataType: string
+		lineageTag: 42c9cc23-f017-474e-a85c-e0f989617f58
+		summarizeBy: none
+		sourceColumn: sale_shipping_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column sale_program_date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 13501613-2978-4d03-848f-16ce6209971b
+		summarizeBy: none
+		sourceColumn: sale_program_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column sale_cancellation_date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 0866e6f8-1c56-4ac7-b3e8-6565ff0919d4
+		summarizeBy: none
+		sourceColumn: sale_cancellation_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column customer_license_zc0001_to
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: fd6a3a6e-b112-4c07-991c-197f37298caa
+		summarizeBy: none
+		sourceColumn: customer_license_zc0001_to
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column customer_license_zc0002_to
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 32787355-628c-4dc5-b938-d5e9a406fbb3
+		summarizeBy: none
+		sourceColumn: customer_license_zc0002_to
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column customer_customer_type_code
+		dataType: int64
+		formatString: 0
+		lineageTag: 2f268deb-b22b-426a-972c-ebd0b3019433
+		summarizeBy: sum
+		sourceColumn: customer_customer_type_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_flag_customer_analytics
+		dataType: int64
+		formatString: 0
+		lineageTag: c3db75f7-e343-4748-9e56-96e68678a36f
+		summarizeBy: sum
+		sourceColumn: customer_flag_customer_analytics
+
+		annotation SummarizationSetBy = Automatic
+
+	column obt_sales_department_status
+		dataType: string
+		lineageTag: 83ad24b2-6aa9-4511-a915-a2e86027f3b3
+		summarizeBy: none
+		sourceColumn: obt_sales_department_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column sale_customer
+		dataType: string
+		lineageTag: 5966e926-0a45-4e2c-bdf4-f4e2212a5e76
+		summarizeBy: none
+		sourceColumn: sale_customer
+
+		annotation SummarizationSetBy = Automatic
+
+	column material_brand_code
+		dataType: int64
+		formatString: 0
+		lineageTag: 4d719dc2-ed7c-44fd-9bf5-f9ca6d2b8039
+		summarizeBy: sum
+		sourceColumn: material_brand_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column chave_executivo
+		dataType: string
+		lineageTag: 3c1f5945-fbf2-4ec1-9ca1-2063cc3c555c
+		summarizeBy: none
+		sourceColumn: chave_executivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_entrega
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4cc74e46-bc8a-435b-8c1a-7545ee88a7d0
+		summarizeBy: none
+		sourceColumn: data_entrega
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column order_sale_total
+		dataType: double
+		lineageTag: 2e3fd5e1-1b04-4c94-a06e-3a9f512c8050
+		summarizeBy: sum
+		sourceColumn: order_sale_total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fVendas_unificada = m
+		mode: import
+		queryGroup: Fato
+		source =
+				let
+				    Source = AmazonRedshift.Database("farmax-cluster.cdkgzqhbae0k.us-east-1.redshift.amazonaws.com:5439","farmax_prod"),
+				    comercial = Source{[Name="comercial"]}[Data],
+				    fato_vendas_faturamento_unificada = comercial{[Name="fato_vendas_faturamento_unificada"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(fato_vendas_faturamento_unificada, each [data_pedido] > #date(2024, 1, 1)),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"empresa", type text}, {"companhia", type text}, {"data_movimento", type date}, {"data_pedido", type date}, {"cod_executivo", Int64.Type}, {"cod_coordenador", type text}, {"chave_cliente", type text}, {"cod_cliente", Int64.Type}, {"cpf_cnpj_base", type text}, {"estado", type text}, {"cidade", type text}, {"nota_fiscal", Int64.Type}, {"pedido", Int64.Type}, {"sku", type text}, {"categoria", type text}, {"canal_n1", type text}, {"data_lancamento", type date}, {"pedido_tipo", type text}, {"venda_cod_tipo", type text}, {"pedido_status", type text}, {"regional_cod", type text}, {"ledger_net_subtotal", type number}, {"quantidade", Int64.Type}, {"quantidade_venda", Int64.Type}, {"receita", type number}, {"receita_bruta", type number}, {"customer_regiao", type text}, {"material_group_code", type text}, {"material_medication", type text}, {"order_sale_quantity", Int64.Type}, {"order_sale_delivery_quantity", Int64.Type}, {"order_sale_cut_value", Int64.Type}, {"order_sale_subtotal", type number}, {"sale_rejection_reason_code", type text}, {"sale_billing_block_code", type text}, {"sale_delivery_code", Int64.Type}, {"sale_delivery_block_code", type text}, {"sale_delivery_item_block_code", type text}, {"sale_storage_code", Int64.Type}, {"sale_shipping_code", Int64.Type}, {"sale_shipping_type", type text}, {"sale_program_date", type date}, {"sale_cancellation_date", type date}, {"customer_license_zc0001_to", type date}, {"customer_license_zc0002_to", type date}, {"customer_customer_type_code", Int64.Type}, {"customer_flag_customer_analytics", Int64.Type}, {"obt_sales_department_status", type text}, {"sale_customer", type text}, {"material_brand_code", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

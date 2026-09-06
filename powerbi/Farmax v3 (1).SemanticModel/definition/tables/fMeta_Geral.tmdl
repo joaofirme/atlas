@@ -1,0 +1,104 @@
+table fMeta_Geral
+	lineageTag: 2300c9de-d026-40ea-a06b-6180e7864b29
+
+	column general_target_subtotal_billing
+		dataType: double
+		lineageTag: 6246aabc-9c4f-48a2-b9a9-ee0ef0525919
+		summarizeBy: sum
+		sourceColumn: general_target_subtotal_billing
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column general_target_subtotal_average_billing
+		dataType: double
+		lineageTag: 55f1465d-2fa2-4e3a-9de0-89fb0eb04446
+		summarizeBy: sum
+		sourceColumn: general_target_subtotal_average_billing
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column general_target_average_ticket
+		dataType: double
+		lineageTag: d081ecc7-49c6-4298-9f7e-789691895013
+		summarizeBy: sum
+		sourceColumn: general_target_average_ticket
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column general_target_quantity_billing
+		dataType: double
+		lineageTag: 37ccdbc1-5c43-4949-99c6-3c5f5114c097
+		summarizeBy: sum
+		sourceColumn: general_target_quantity_billing
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column general_target_subtotal_return_percent
+		dataType: double
+		lineageTag: 55e6efc4-4b96-46fa-853f-04ee2f137ec7
+		summarizeBy: sum
+		sourceColumn: general_target_subtotal_return_percent
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column general_target_inovation_percent
+		dataType: int64
+		lineageTag: 7e513097-8f77-44dd-9bba-c4bb7ae68e29
+		summarizeBy: sum
+		sourceColumn: general_target_inovation_percent
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column general_target_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 95e9023e-b13b-43a6-b0b0-d72721ed6c71
+		summarizeBy: sum
+		sourceColumn: general_target_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column general_target_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 783332c5-3aaf-427e-a6cb-cb45387cb330
+		summarizeBy: none
+		sourceColumn: general_target_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column obt_company
+		dataType: string
+		lineageTag: f55d4407-527d-4143-9262-82d4e9fba20e
+		summarizeBy: none
+		sourceColumn: obt_company
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fMeta_Geral = m
+		mode: import
+		queryGroup: Fato
+		source =
+				let
+				    Fonte = Value.NativeQuery(AmazonRedshift.Database("farmax-cluster.cdkgzqhbae0k.us-east-1.redshift.amazonaws.com:5439","farmax_prod"), "with fMetas_Geral as (#(lf)SELECT#(lf)#(tab)obt_company,#(lf)#(tab)max(general_target_subtotal_billing) as general_target_subtotal_billing,#(lf)#(tab)max(general_target_subtotal_average_billing) as general_target_subtotal_average_billing,#(lf)#(tab)max(general_target_average_ticket)as general_target_average_ticket,#(lf)#(tab)max(general_target_quantity_billing)as general_target_quantity_billing,#(lf)#(tab)max(general_target_subtotal_return_percent) as general_target_subtotal_return_percent,#(lf)#(tab)max(general_target_inovation_percent) as general_target_inovation_percent,#(lf)#(tab)max(general_target_days)::int as general_target_days,#(lf)#(tab)(general_target_year||'-'||lpad(general_target_month,2,0)||'-'||'01')::date as general_target_date#(lf)FROM#(lf)#(tab)comercial.obt_sales#(lf)where general_target_year >= 2021#(lf)group by obt_company, general_target_date#(lf))#(lf)select * from fMetas_Geral", null, [EnableFolding=true])
+				in
+				    Fonte
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

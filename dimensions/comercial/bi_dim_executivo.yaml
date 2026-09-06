@@ -1,0 +1,49 @@
+schema_version: 1
+id: "bi_dim_executivo"
+title: "Executivo"
+type: "dimension"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dExecutivos_unificada.tmdl"
+    locator: "colunas e partição"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Leitura estática do snapshot PBIP; sem execução ou certificação de negócio."
+pending:
+  - "Confirmar interpretação, responsáveis e comportamento com dados reais."
+definition: "Responsável comercial; nome_unificado é usado pela matriz dinâmica."
+entity: "executivo"
+key: "executivo_chave"
+attributes:
+  - "executivo_cod"
+  - "executivo_nome"
+  - "nome_unificado"
+  - "coordenador_cod"
+  - "coordenador_nome"
+  - "gerente_regional_nome"
+hierarchy: null
+physical_mapping:
+  semantic_table: "dExecutivos_unificada"
+  columns:
+    - "executivo_cod"
+    - "executivo_nome"
+    - "nome_unificado"
+    - "coordenador_cod"
+    - "coordenador_nome"
+    - "gerente_regional_nome"
+unknown_values: null
+historical_behavior: null
+compatible_metrics: null
+observed_metric_references: []
+compatibility_note: "Uso observado não comprova compatibilidade semântica de todos os níveis; revisar granularidade e filtros."

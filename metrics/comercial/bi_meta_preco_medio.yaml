@@ -1,0 +1,90 @@
+schema_version: 1
+id: "bi_meta_preco_medio"
+title: "Meta Preço Médio"
+type: "metric"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
+    locator: "medida _Medidas[Meta Preço Médio], linha 694"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+  - "Confirmar unidade/moeda, granularidade, aditividade e dimensões permitidas; não inferir a aprovação a partir dos relacionamentos existentes."
+kind: "indicador"
+definition: "Meta de preço médio definida no orçamento."
+definition_basis: "descricao_do_modelo"
+source_description: "Meta de preço médio definida no orçamento."
+business_questions: null
+synonyms:
+  - "Meta Preço Médio"
+unit: null
+grain:
+  source: null
+  calculation: null
+time:
+  event: null
+  timezone: null
+  calendar: "dTempo; comportamento específico depende do contexto DAX"
+  context_functions: []
+formula:
+  conceptual: null
+  dependencies: []
+aggregation:
+  rule: null
+  additivity: null
+dimensions: null
+relationships: null
+filters:
+  mandatory: null
+  optional: null
+  exclusions: null
+  note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
+data_sources:
+  -
+    semantic_table: "fMeta_Geral"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - ""
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_Geral.tmdl:95"
+implementations:
+  dax:
+    expression: |2-
+      AVERAGE(fMeta_Geral[general_target_average_ticket])
+      --AVERAGE(fMeta_Executivo[seller_target_average_ticket])
+    table: "_Medidas"
+    properties:
+      displayFolder: "07 Meta"
+      lineageTag: "b10adf81-c4a8-4191-9b06-a482bf06b8e0"
+    execution_validated: false
+    note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
+dependencies:
+  tables_direct: ["fMeta_Geral"]
+  columns_direct:
+    -
+      table: "fMeta_Geral"
+      column: "general_target_average_ticket"
+  measures_transitive: []
+  unqualified_references: []
+  method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
+edge_cases: null
+checks: null
+usage: []
+
+dependency_table_sources: [{"table": "fMeta_Geral", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_Geral.tmdl"}]

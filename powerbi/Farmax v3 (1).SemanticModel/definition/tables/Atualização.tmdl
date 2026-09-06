@@ -1,0 +1,27 @@
+table Atualização
+	isHidden
+	lineageTag: 856966b2-db6c-4990-8704-0f9f812afd83
+
+	column Atualização
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 36c35a34-f3cb-476c-8370-870e3314be3b
+		summarizeBy: none
+		sourceColumn: Atualização
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Atualização-7927f5a8-bf93-4798-be45-b913a6a6af14 = m
+		mode: import
+		source =
+				let
+				    Fonte = DateTimeZone.SwitchZone(DateTimeZone.LocalNow(), -3)
+				in
+				    Fonte
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = DateTimeZone
+
+	annotation PBI_NavigationStepName = Navegação
+

@@ -1,0 +1,55 @@
+schema_version: 1
+id: "devolucao"
+title: "Evento de devolução"
+type: "entity"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl"
+    locator: "declaração de tabela e colunas"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Leitura estática do snapshot PBIP; sem execução ou certificação de negócio."
+pending:
+  - "Confirmar interpretação, responsáveis e comportamento com dados reais."
+definition: "Evento com data de movimento, cliente, SKU, nota e depósito. Depósito 52 é tratado como refaturamento nas medidas; validar a semântica fiscal."
+evidence_level: "interpretacao_proposta_a_partir_do_modelo"
+identifier: null
+identifier_basis: null
+grain: null
+attributes:
+  - "empresa"
+  - "companhia"
+  - "data_movimento"
+  - "chave_executivo"
+  - "cod_executivo"
+  - "cod_coordenador"
+  - "chave_cliente"
+  - "cod_cliente"
+  - "estado"
+  - "cidade"
+  - "nota_fiscal"
+  - "pedido"
+  - "sku"
+  - "deposito_codigo"
+  - "regional_codigo"
+  - "quantidade"
+  - "receita"
+  - "faturamento_cod_tipo"
+  - "devolucao_cod_tipo"
+  - "canal_n1"
+  - "receita_bruta"
+physical_mappings:
+  -
+    semantic_table: "fDevolucao_unificada"
+    source: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl"

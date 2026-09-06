@@ -1,0 +1,141 @@
+schema_version: 1
+id: "bi_receita_selecionada"
+title: "Receita Selecionada"
+type: "metric"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
+    locator: "medida _Medidas[Receita Selecionada], linha 5673"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+  - "Confirmar unidade/moeda, granularidade, aditividade e dimensões permitidas; não inferir a aprovação a partir dos relacionamentos existentes."
+kind: "seletor_de_metrica"
+definition: "Seleciona Receita Bruta quando Base Receita é Receita Bruta; nos demais casos seleciona RSL."
+definition_basis: "leitura_da_implementacao"
+source_description: null
+business_questions: null
+synonyms:
+  - "Receita Selecionada"
+unit: null
+grain:
+  source: null
+  calculation: null
+time:
+  event: null
+  timezone: null
+  calendar: "dTempo; comportamento específico depende do contexto DAX"
+  context_functions:
+    - "SELECTEDVALUE"
+formula:
+  conceptual: null
+  dependencies:
+    - "bi_03_rsl"
+    - "bi_09_receita_bruta"
+aggregation:
+  rule: null
+  additivity: null
+dimensions: null
+relationships: null
+filters:
+  mandatory: null
+  optional: null
+  exclusions: null
+  note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
+data_sources:
+  -
+    semantic_table: "Base Receita"
+    physical_sources:
+      -
+        engine: "DAX calculado"
+        upstream: null
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Base Receita.tmdl:23"
+  -
+    semantic_table: "dTempo"
+    physical_sources:
+      -
+        engine: "Power Platform Dataflow"
+        entities:
+          - "dTempo"
+        upstream: null
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl:145"
+  -
+    semantic_table: "fDevolucao_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_devolucao_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl:184"
+  -
+    semantic_table: "fVendas_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_vendas_faturamento_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl:480"
+implementations:
+  dax:
+    expression: |2-
+      VAR vBase =
+          SELECTEDVALUE(
+              'Base Receita'[Base Receita],
+              "Receita Semi Líquida"
+          )
+      RETURN
+          SWITCH(
+              vBase,
+              "Receita Bruta", [09 Receita Bruta],
+              [03 RSL]
+          )
+    table: "_Medidas"
+    properties:
+      displayFolder: "[Pedidos & Faturamento] Matriz dinâmica"
+      lineageTag: "b83be70d-e57f-48ef-ab5d-dff657638ecc"
+    execution_validated: false
+    note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
+dependencies:
+  tables_direct: ["Base Receita"]
+  columns_direct:
+    -
+      table: "Base Receita"
+      column: "Base Receita"
+  measures_transitive:
+    - "bi_00_devolucao"
+    - "bi_00_faturamento"
+    - "bi_01_refaturamento"
+    - "bi_02_devolucao_total"
+    - "bi_03_rsl"
+    - "bi_05_devolucao_bruta"
+    - "bi_08_faturamento_bruto"
+    - "bi_09_receita_bruta"
+  unqualified_references: []
+  method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
+edge_cases: null
+checks: null
+usage:
+  -
+    page_id: "e7a7a2fc000d0a5b0c10"
+    page_title: "Pedidos & Faturamento"
+    visual_id: "cd2aded586ad937d0a9c"
+    source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/cd2aded586ad937d0a9c/visual.json"
+    locator: "$/filterConfig/filters/7/field/Measure"
+
+dependency_table_sources: [{"table": "Base Receita", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Base Receita.tmdl"}, {"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fDevolucao_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl"}, {"table": "fVendas_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl"}]

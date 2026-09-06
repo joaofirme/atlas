@@ -1,0 +1,87 @@
+schema_version: 1
+id: "faturamento"
+title: "Evento de faturamento"
+type: "entity"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl"
+    locator: "declaração de tabela e colunas"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Leitura estática do snapshot PBIP; sem execução ou certificação de negócio."
+pending:
+  - "Confirmar interpretação, responsáveis e comportamento com dados reais."
+definition: "Evento representado por nota fiscal, data de movimento, valores e quantidades faturadas. Não equivale ao momento de criação do pedido."
+evidence_level: "interpretacao_proposta_a_partir_do_modelo"
+identifier: null
+identifier_basis: null
+grain: null
+attributes:
+  - "empresa"
+  - "companhia"
+  - "data_movimento"
+  - "data_pedido"
+  - "cod_executivo"
+  - "cod_coordenador"
+  - "chave_cliente"
+  - "cod_cliente"
+  - "cpf_cnpj_base"
+  - "estado"
+  - "cidade"
+  - "nota_fiscal"
+  - "pedido"
+  - "sku"
+  - "categoria"
+  - "canal_n1"
+  - "data_lancamento"
+  - "pedido_tipo"
+  - "venda_cod_tipo"
+  - "pedido_status"
+  - "regional_cod"
+  - "ledger_net_subtotal"
+  - "quantidade"
+  - "quantidade_venda"
+  - "receita"
+  - "receita_bruta"
+  - "customer_regiao"
+  - "material_group_code"
+  - "material_medication"
+  - "order_sale_quantity"
+  - "order_sale_delivery_quantity"
+  - "order_sale_cut_value"
+  - "order_sale_subtotal"
+  - "sale_rejection_reason_code"
+  - "sale_billing_block_code"
+  - "sale_delivery_code"
+  - "sale_delivery_block_code"
+  - "sale_delivery_item_block_code"
+  - "sale_storage_code"
+  - "sale_shipping_code"
+  - "sale_shipping_type"
+  - "sale_program_date"
+  - "sale_cancellation_date"
+  - "customer_license_zc0001_to"
+  - "customer_license_zc0002_to"
+  - "customer_customer_type_code"
+  - "customer_flag_customer_analytics"
+  - "obt_sales_department_status"
+  - "sale_customer"
+  - "material_brand_code"
+  - "chave_executivo"
+  - "data_entrega"
+  - "order_sale_total"
+physical_mappings:
+  -
+    semantic_table: "fVendas_unificada"
+    source: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl"

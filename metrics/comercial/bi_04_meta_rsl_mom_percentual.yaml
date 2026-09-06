@@ -1,0 +1,119 @@
+schema_version: 1
+id: "bi_04_meta_rsl_mom_percentual"
+title: "04 Meta RSL MoM %"
+type: "metric"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
+    locator: "medida _Medidas[04 Meta RSL MoM %], linha 1002"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+  - "Descrição de negócio não declarada no modelo; formular com a área responsável."
+  - "Confirmar unidade/moeda, granularidade, aditividade e dimensões permitidas; não inferir a aprovação a partir dos relacionamentos existentes."
+kind: "indicador"
+definition: null
+definition_basis: null
+source_description: null
+business_questions: null
+synonyms:
+  - "04 Meta RSL MoM %"
+unit: "razão exibida em percentual"
+grain:
+  source: null
+  calculation: null
+time:
+  event: null
+  timezone: null
+  calendar: "dTempo; comportamento específico depende do contexto DAX"
+  context_functions:
+    - "CALCULATE"
+    - "DATEADD"
+formula:
+  conceptual: null
+  dependencies:
+    - "bi_meta_rsl"
+aggregation:
+  rule: null
+  additivity: null
+dimensions: null
+relationships: null
+filters:
+  mandatory: null
+  optional: null
+  exclusions: null
+  note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
+data_sources:
+  -
+    semantic_table: "dTempo"
+    physical_sources:
+      -
+        engine: "Power Platform Dataflow"
+        entities:
+          - "dTempo"
+        upstream: null
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl:145"
+  -
+    semantic_table: "fMeta_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_metas_executivos_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl:128"
+implementations:
+  dax:
+    expression: |2-
+      VAR vMetaMesanterior = 
+          CALCULATE(
+              [Meta RSL],
+              DATEADD(
+                  'dTempo'[Data]
+                  ,-1
+                  ,MONTH
+              )
+          )
+      
+      RETURN  
+      
+          DIVIDE(
+              [Meta RSL]
+              ,vMetaMesanterior
+          )-1
+    table: "_Medidas"
+    properties:
+      formatString: "#,0.0%;-#,0.0%;#,0.0%"
+      displayFolder: "07 Meta"
+      lineageTag: "40cca8b8-41bb-479b-a1af-14a9c3589504"
+    execution_validated: false
+    note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
+dependencies:
+  tables_direct: ["dTempo"]
+  columns_direct:
+    -
+      table: "dTempo"
+      column: "Data"
+  measures_transitive:
+    - "bi_meta_rsl"
+  unqualified_references: []
+  method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
+edge_cases: null
+checks: null
+usage: []
+
+dependency_table_sources: [{"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fMeta_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl"}]

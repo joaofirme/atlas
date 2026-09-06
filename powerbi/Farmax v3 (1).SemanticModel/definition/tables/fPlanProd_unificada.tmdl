@@ -1,0 +1,131 @@
+table fPlanProd_unificada
+	lineageTag: 12b32029-4645-49da-b6e4-5386ae9aa00d
+
+	column cobertura_estoque_empresa
+		dataType: string
+		lineageTag: ad0b1eae-eebe-40c1-bb53-7de24328f22e
+		summarizeBy: none
+		sourceColumn: cobertura_estoque_empresa
+
+		annotation SummarizationSetBy = Automatic
+
+	column cobertura_estoque_company
+		dataType: string
+		lineageTag: b10e65fd-7924-4a53-b1d8-8ec66bdd424b
+		summarizeBy: none
+		sourceColumn: cobertura_estoque_company
+
+		annotation SummarizationSetBy = Automatic
+
+	column cobertura_estoque_data_referencia
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f16b8f9a-00b3-4728-95c5-452be59387d7
+		summarizeBy: none
+		sourceColumn: cobertura_estoque_data_referencia
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column cobertura_estoque_sku
+		dataType: string
+		lineageTag: f2d1b8f9-26ed-4421-8702-bf463ed7ed29
+		summarizeBy: none
+		sourceColumn: cobertura_estoque_sku
+
+		annotation SummarizationSetBy = Automatic
+
+	column cobertura_estoque_quantidade
+		dataType: double
+		lineageTag: a703ccdd-ad3a-43e6-95de-9d7b9874c63d
+		summarizeBy: sum
+		sourceColumn: cobertura_estoque_quantidade
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cobertura_estoque_plano_medio
+		dataType: double
+		lineageTag: dc8885ff-cdb7-4822-a9b1-fefabaa67ab8
+		summarizeBy: sum
+		sourceColumn: cobertura_estoque_plano_medio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cobertura_estoque_cobertura
+		dataType: double
+		lineageTag: 88d1ab7b-e9fe-40c8-b44d-12cccc7a0b2e
+		summarizeBy: sum
+		sourceColumn: cobertura_estoque_cobertura
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column status_sku
+		dataType: string
+		lineageTag: b2a8f9a4-5dad-4c10-8313-dd8459f6d05f
+		summarizeBy: none
+		sourceColumn: status_sku
+
+		annotation SummarizationSetBy = Automatic
+
+	column estq_transito
+		dataType: double
+		lineageTag: eb50a8af-2d71-473d-8c34-ebada5bfe1fe
+		summarizeBy: sum
+		sourceColumn: estq_transito
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column estq_qual
+		dataType: double
+		lineageTag: 65bf9421-922c-48e0-b319-5966a46b7aae
+		summarizeBy: sum
+		sourceColumn: estq_qual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column quant_falta
+		dataType: double
+		lineageTag: 591882e4-cbf2-41bd-9e86-1959583a0c18
+		summarizeBy: sum
+		sourceColumn: quant_falta
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column vr_medio_faltas
+		dataType: double
+		lineageTag: 31fd7ec0-4189-4fac-b6e0-a4b4bce8da60
+		summarizeBy: sum
+		sourceColumn: vr_medio_faltas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fPlanProd_unificada = m
+		mode: import
+		queryGroup: Fato
+		source =
+				let
+				    Source = AmazonRedshift.Database("farmax-cluster.cdkgzqhbae0k.us-east-1.redshift.amazonaws.com:5439","farmax_prod"),
+				    operacoes = Source{[Name="operacoes"]}[Data],
+				    fato_plan_prod_unificada = operacoes{[Name="fato_plan_prod_unificada"]}[Data]
+				in
+				    fato_plan_prod_unificada
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

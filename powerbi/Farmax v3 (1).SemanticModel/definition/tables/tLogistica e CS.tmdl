@@ -1,0 +1,70 @@
+table 'tLogistica e CS'
+	lineageTag: e43810a7-8f3d-49c9-b738-a1109db89397
+
+	column 'Valor Logistica'
+		lineageTag: 3bf6c438-67ea-49b2-9fda-e54bc83e5ef5
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Valor Logistica]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Valor CS'
+		lineageTag: 5eb4d382-6a06-435e-9452-18a6933b2e82
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Valor CS]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_sale_subtotal
+		lineageTag: 1f1a8116-f8be-4e12-9778-9eee6a3c7641
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: fVendas_unificada[order_sale_subtotal]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_sale_quantity
+		formatString: 0
+		lineageTag: bf2eba24-5179-4c6b-8264-c3f920cdf9d6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: fVendas_unificada[order_sale_quantity]
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_sale_delivery_quantity
+		formatString: 0
+		lineageTag: 9256d577-ae32-4584-a868-99bce0822a7e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: fVendas_unificada[order_sale_delivery_quantity]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'tLogistica e CS-44de43b6-4baa-4b71-8bdf-2bcfb92032d0' = calculated
+		mode: import
+		source =
+				
+				CALCULATETABLE (
+				    SUMMARIZE (
+				        fVendas_unificada,
+				        fVendas_unificada[order_sale_subtotal],
+				        fVendas_unificada[order_sale_quantity],
+				        fVendas_unificada[order_sale_delivery_quantity],
+				        "Valor Logistica",(fVendas_unificada[order_sale_subtotal]/fVendas_unificada[order_sale_quantity]) * fVendas_unificada[order_sale_delivery_quantity],
+				        "Valor CS",(fVendas_unificada[order_sale_subtotal]/fVendas_unificada[order_sale_quantity]) * (fVendas_unificada[order_sale_quantity]-fVendas_unificada[order_sale_delivery_quantity])
+				    )
+				    ,fVendas_unificada[obt_sales_department_status] = "LOGISTICA E CS"
+				    ,fVendas_unificada[pedido_status] = "A FATURAR"
+				)
+
+	annotation PBI_Id = 3e0aa961583a4e519652ef528111861f
+
