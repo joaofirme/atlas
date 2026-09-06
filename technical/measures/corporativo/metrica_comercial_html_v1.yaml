@@ -27,7 +27,6 @@ pending:
 kind: "renderizacao_html"
 definition: "Comercial HTML v1 - clientes por cpf_cnpj_completo"
 definition_basis: "leitura_da_implementacao"
-source_description: "Comercial HTML v1 - clientes por cpf_cnpj_completo"
 business_questions: null
 synonyms:
   - "Comercial HTML v1"

@@ -39,7 +39,7 @@ Interpretação documental da implementação observada na fonte de descoberta. 
 
 As expressões são mantidas nos contratos canônicos abaixo. Consultar também os filtros das páginas e as dependências transitivas.
 
-- [Comercial HTML v1](<../../metrics/corporativo/metrica_comercial_html_v1.yaml>)
+- [Comercial HTML v1](<../../technical/measures/corporativo/metrica_comercial_html_v1.yaml>)
 
 ## Exemplos
 
@@ -59,4 +59,4 @@ Confirmar significado, responsáveis e uso oficial com a área.
 
 ## Fontes
 
-- [Comercial HTML v1](<../../metrics/corporativo/metrica_comercial_html_v1.yaml>)
+- [Comercial HTML v1](<../../technical/measures/corporativo/metrica_comercial_html_v1.yaml>)

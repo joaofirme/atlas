@@ -1,10 +1,10 @@
 schema_version: 1
 id: "metrica_rsl_mais_aberto"
-title: "02 RSL + Aberto"
+title: "RSL + Aberto"
 type: "metric"
 domain: "comercial"
 status: "draft"
-version: "0.1.0"
+version: "0.1.1"
 owners:
   business: null
   technical: null
@@ -27,7 +27,6 @@ pending:
 kind: "indicador"
 definition: "Faturamento + Pedidos em Aberto."
 definition_basis: "descricao_do_modelo"
-source_description: "Faturamento + Pedidos em Aberto."
 business_questions: null
 synonyms:
   - "02 RSL + Aberto"

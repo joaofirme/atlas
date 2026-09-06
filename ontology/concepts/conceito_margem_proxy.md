@@ -39,7 +39,7 @@ Interpretação documental da implementação observada na fonte de descoberta. 
 
 As expressões são mantidas nos contratos canônicos abaixo. Consultar também os filtros das páginas e as dependências transitivas.
 
-- [Pedidos & Faturamentos HTML](<../../metrics/corporativo/metrica_pedidos_e_faturamentos_html.yaml>)
+- [Pedidos & Faturamentos HTML](<../../technical/measures/corporativo/metrica_pedidos_e_faturamentos_html.yaml>)
 
 ## Exemplos
 
@@ -59,4 +59,4 @@ Confirmar significado, responsáveis e uso oficial com a área.
 
 ## Fontes
 
-- [Pedidos & Faturamentos HTML](<../../metrics/corporativo/metrica_pedidos_e_faturamentos_html.yaml>)
+- [Pedidos & Faturamentos HTML](<../../technical/measures/corporativo/metrica_pedidos_e_faturamentos_html.yaml>)

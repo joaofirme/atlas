@@ -1,6 +1,6 @@
 schema_version: 1
-id: "metrica_devolucao_selecionada_matriz"
-title: "Devolução Selecionada Matriz"
+id: "metrica_faturamento_selecionado_matriz"
+title: "Faturamento Selecionado Matriz"
 type: "metric"
 domain: "comercial"
 status: "draft"
@@ -13,7 +13,7 @@ updated_at: "2026-09-06"
 sources:
   -
     reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
-    locator: "medida _Medidas[Devolução Selecionada Matriz], linha 5829"
+    locator: "medida _Medidas[Faturamento Selecionado Matriz], linha 5809"
     accessed_at: "2026-09-06"
 validation:
   reviewed_by: null
@@ -28,10 +28,9 @@ pending:
 kind: "medida_de_exibicao"
 definition: null
 definition_basis: null
-source_description: null
 business_questions: null
 synonyms:
-  - "Devolução Selecionada Matriz"
+  - "Faturamento Selecionado Matriz"
 unit: null
 grain:
   source: null
@@ -44,7 +43,7 @@ time:
 formula:
   conceptual: null
   dependencies:
-    - "metrica_devolucao_selecionada"
+    - "metrica_faturamento_selecionado"
     - "metrica_linha_matriz_possui_movimento"
 aggregation:
   rule: null
@@ -94,18 +93,21 @@ data_sources:
 implementations:
   dax:
     expression: |2-
-      IF(
-          ISBLANK([Linha Matriz Possui Movimento]),
-          BLANK(),
-          DIVIDE(
-              COALESCE([Devolução Selecionada], 0),
-              1000
+      VAR vFaturamento =
+          [Faturamento Selecionado]
+      RETURN
+          IF(
+              ISBLANK([Linha Matriz Possui Movimento]),
+              BLANK(),
+              DIVIDE(
+                  COALESCE(vFaturamento, 0),
+                  1000
+              )
           )
-      )
     table: "_Medidas"
     properties:
       displayFolder: "[Pedidos & Faturamento] Matriz dinâmica"
-      lineageTag: "b8a220f7-594c-4baa-b98b-558ef1ed0ded"
+      lineageTag: "6c81b5a5-0b8a-4bd8-bf48-f422f48bf921"
     execution_validated: false
     note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
 dependencies:
@@ -138,13 +140,13 @@ usage:
     page_title: "Pedidos & Faturamento"
     visual_id: "cd2aded586ad937d0a9c"
     source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/cd2aded586ad937d0a9c/visual.json"
-    locator: "$/visual/query/queryState/Values/projections/4/field/Measure"
+    locator: "$/visual/query/queryState/Values/projections/3/field/Measure"
   -
     page_id: "e7a7a2fc000d0a5b0c10"
     page_title: "Pedidos & Faturamento"
     visual_id: "cd2aded586ad937d0a9c"
     source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/cd2aded586ad937d0a9c/visual.json"
-    locator: "$/filterConfig/filters/16/field/Measure"
+    locator: "$/filterConfig/filters/15/field/Measure"
 
 source_expression_properties: {"formatStringDefinition": "\"#,##0.0;(#,##0.0)\""}
 

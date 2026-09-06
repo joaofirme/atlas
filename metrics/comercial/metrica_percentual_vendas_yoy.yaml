@@ -1,10 +1,10 @@
 schema_version: 1
 id: "metrica_percentual_vendas_yoy"
-title: "04 % Vendas YoY"
+title: "% Vendas YoY"
 type: "metric"
 domain: "comercial"
 status: "draft"
-version: "0.1.0"
+version: "0.1.1"
 owners:
   business: null
   technical: null
@@ -28,7 +28,6 @@ pending:
 kind: "indicador"
 definition: null
 definition_basis: null
-source_description: null
 business_questions: null
 synonyms:
   - "04 % Vendas YoY"

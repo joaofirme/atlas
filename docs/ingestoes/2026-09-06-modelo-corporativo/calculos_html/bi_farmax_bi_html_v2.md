@@ -1,6 +1,6 @@
 # Cálculos internos — Farmax BI HTML v2
 
-Implementação canônica: [Farmax BI HTML v2](<../../../../metrics/corporativo/metrica_farmax_bi_html_v2.yaml>). As variáveis abaixo pertencem ao escopo dessa expressão e não são medidas independentes. Números de linha são relativos à expressão DAX extraída. Índice lexical de variáveis de nível superior; variáveis aninhadas continuam preservadas na expressão completa.
+Implementação canônica: [Farmax BI HTML v2](<../../../../technical/measures/corporativo/metrica_farmax_bi_html_v2.yaml>). As variáveis abaixo pertencem ao escopo dessa expressão e não são medidas independentes. Números de linha são relativos à expressão DAX extraída. Índice lexical de variáveis de nível superior; variáveis aninhadas continuam preservadas na expressão completa.
 
 | Variável | Linha DAX | Classificação | Referências |
 |---|---:|---|---|

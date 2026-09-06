@@ -27,7 +27,6 @@ pending:
 kind: "indicador"
 definition: "Meta de venda diária."
 definition_basis: "descricao_do_modelo"
-source_description: "Meta de venda diária."
 business_questions: null
 synonyms:
   - "Meta Média"

@@ -35,7 +35,7 @@ Das 90 medidas, a classificação inicial identifica 57 indicadores, 14 auxiliar
 | Carteira | Total a faturar dividido entre programação até hoje e futura. | [Aberto](../../../metrics/comercial/metrica_aberto.yaml), [Programado](../../../metrics/comercial/metrica_programado.yaml) |
 | Meta | Meta RSL por contexto comercial e data-alvo. | [Meta RSL](../../../metrics/comercial/metrica_meta_rsl.yaml) |
 | Preço médio | RSL por unidade faturada. | [Preço Médio](../../../metrics/comercial/metrica_preco_medio.yaml) |
-| Estoque | Cobertura, plano médio, estoque e carteira por SKU calculados dentro do HTML. | [Carteira e Estoque](../../../metrics/corporativo/metrica_carteira_e_estoque_html_v1.yaml) |
+| Estoque | Cobertura, plano médio, estoque e carteira por SKU calculados dentro do HTML. | [Carteira e Estoque](../../../technical/measures/corporativo/metrica_carteira_e_estoque_html_v1.yaml) |
 
 Não há base para certificar uma métrica de custo de frete/frete por kg neste snapshot: a área chamada Logística trata de pedidos pendentes, entregues e em trânsito.
 

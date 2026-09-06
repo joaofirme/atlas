@@ -1,10 +1,10 @@
 schema_version: 1
 id: "metrica_percentual_meta_devolucao"
-title: "04 % Meta Devolução"
+title: "% Meta Devolução"
 type: "metric"
 domain: "comercial"
 status: "draft"
-version: "0.1.0"
+version: "0.1.1"
 owners:
   business: null
   technical: null
@@ -27,7 +27,6 @@ pending:
 kind: "indicador"
 definition: "Representação percentual de meta de devolução."
 definition_basis: "descricao_do_modelo"
-source_description: "Representação percentual de meta de devolução."
 business_questions: null
 synonyms:
   - "04 % Meta Devolução"

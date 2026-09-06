@@ -213,7 +213,7 @@
     "type": "metric",
     "domain": "corporativo",
     "status": "draft",
-    "path": "metrics/corporativo/metrica_atualizacao.yaml"
+    "path": "technical/measures/corporativo/metrica_atualizacao.yaml"
   },
   {
     "id": "metrica_percentual_meta_devolucao",
@@ -245,7 +245,7 @@
     "type": "metric",
     "domain": "corporativo",
     "status": "draft",
-    "path": "metrics/corporativo/metrica_cor_meta_diaria.yaml"
+    "path": "technical/measures/corporativo/metrica_cor_meta_diaria.yaml"
   },
   {
     "id": "metrica_rl",
@@ -285,7 +285,7 @@
     "type": "metric",
     "domain": "corporativo",
     "status": "draft",
-    "path": "metrics/corporativo/metrica_divisor.yaml"
+    "path": "technical/measures/corporativo/metrica_divisor.yaml"
   },
   {
     "id": "metrica_programado_m_mais",
@@ -301,7 +301,7 @@
     "type": "metric",
     "domain": "corporativo",
     "status": "draft",
-    "path": "metrics/corporativo/metrica_texto_dias_uteis.yaml"
+    "path": "technical/measures/corporativo/metrica_texto_dias_uteis.yaml"
   },
   {
     "id": "metrica_rsl_yoy_fechado_percentual",
@@ -397,7 +397,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_rsl_abaixo.yaml"
+    "path": "technical/measures/comercial/metrica_rsl_abaixo.yaml"
   },
   {
     "id": "metrica_rsl_acima",
@@ -405,7 +405,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_rsl_acima.yaml"
+    "path": "technical/measures/comercial/metrica_rsl_acima.yaml"
   },
   {
     "id": "metrica_aux_max_mes",
@@ -413,7 +413,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_aux_max_mes.yaml"
+    "path": "technical/measures/comercial/metrica_aux_max_mes.yaml"
   },
   {
     "id": "metrica_rsl_meta",
@@ -421,7 +421,7 @@
     "type": "metric",
     "domain": "corporativo",
     "status": "draft",
-    "path": "metrics/corporativo/metrica_rsl_meta.yaml"
+    "path": "technical/measures/corporativo/metrica_rsl_meta.yaml"
   },
   {
     "id": "metrica_faturamento_bruto",
@@ -445,7 +445,7 @@
     "type": "metric",
     "domain": "corporativo",
     "status": "draft",
-    "path": "metrics/corporativo/metrica_pedidos_e_faturamentos_html.yaml"
+    "path": "technical/measures/corporativo/metrica_pedidos_e_faturamentos_html.yaml"
   },
   {
     "id": "metrica_carteira_e_estoque_html_v1",
@@ -453,7 +453,7 @@
     "type": "metric",
     "domain": "corporativo",
     "status": "draft",
-    "path": "metrics/corporativo/metrica_carteira_e_estoque_html_v1.yaml"
+    "path": "technical/measures/corporativo/metrica_carteira_e_estoque_html_v1.yaml"
   },
   {
     "id": "metrica_comercial_html_v1",
@@ -461,7 +461,7 @@
     "type": "metric",
     "domain": "corporativo",
     "status": "draft",
-    "path": "metrics/corporativo/metrica_comercial_html_v1.yaml"
+    "path": "technical/measures/corporativo/metrica_comercial_html_v1.yaml"
   },
   {
     "id": "metrica_valor_entregue",
@@ -477,7 +477,7 @@
     "type": "metric",
     "domain": "corporativo",
     "status": "draft",
-    "path": "metrics/corporativo/metrica_farmax_bi_html_old.yaml"
+    "path": "technical/measures/corporativo/metrica_farmax_bi_html_old.yaml"
   },
   {
     "id": "metrica_cancelado",
@@ -533,7 +533,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_percentual_meta_rb.yaml"
+    "path": "technical/measures/comercial/metrica_percentual_meta_rb.yaml"
   },
   {
     "id": "metrica_faturamento_selecionado",
@@ -541,7 +541,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_faturamento_selecionado.yaml"
+    "path": "technical/measures/comercial/metrica_faturamento_selecionado.yaml"
   },
   {
     "id": "metrica_percentual_meta_exibicao",
@@ -549,7 +549,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_percentual_meta_exibicao.yaml"
+    "path": "technical/measures/comercial/metrica_percentual_meta_exibicao.yaml"
   },
   {
     "id": "metrica_cor_borda_mes_parcial",
@@ -557,7 +557,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_cor_borda_mes_parcial.yaml"
+    "path": "technical/measures/comercial/metrica_cor_borda_mes_parcial.yaml"
   },
   {
     "id": "metrica_cor_fundo_mes_parcial",
@@ -565,7 +565,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_cor_fundo_mes_parcial.yaml"
+    "path": "technical/measures/comercial/metrica_cor_fundo_mes_parcial.yaml"
   },
   {
     "id": "metrica_devolucao_selecionada",
@@ -573,7 +573,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_devolucao_selecionada.yaml"
+    "path": "technical/measures/comercial/metrica_devolucao_selecionada.yaml"
   },
   {
     "id": "metrica_label_mes_parcial",
@@ -581,7 +581,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_label_mes_parcial.yaml"
+    "path": "technical/measures/comercial/metrica_label_mes_parcial.yaml"
   },
   {
     "id": "metrica_legenda_base_receita",
@@ -589,7 +589,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_legenda_base_receita.yaml"
+    "path": "technical/measures/comercial/metrica_legenda_base_receita.yaml"
   },
   {
     "id": "metrica_meta_rsl_exibicao",
@@ -597,7 +597,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_meta_rsl_exibicao.yaml"
+    "path": "technical/measures/comercial/metrica_meta_rsl_exibicao.yaml"
   },
   {
     "id": "metrica_receita_selecionada",
@@ -605,7 +605,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_receita_selecionada.yaml"
+    "path": "technical/measures/comercial/metrica_receita_selecionada.yaml"
   },
   {
     "id": "metrica_matriz_rsl_meta",
@@ -613,7 +613,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_matriz_rsl_meta.yaml"
+    "path": "technical/measures/comercial/metrica_matriz_rsl_meta.yaml"
   },
   {
     "id": "metrica_vendido_matriz",
@@ -621,7 +621,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_vendido_matriz.yaml"
+    "path": "technical/measures/comercial/metrica_vendido_matriz.yaml"
   },
   {
     "id": "metrica_aberto_matriz",
@@ -629,7 +629,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_aberto_matriz.yaml"
+    "path": "technical/measures/comercial/metrica_aberto_matriz.yaml"
   },
   {
     "id": "metrica_programado_matriz",
@@ -637,7 +637,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_programado_matriz.yaml"
+    "path": "technical/measures/comercial/metrica_programado_matriz.yaml"
   },
   {
     "id": "metrica_faturamento_selecionado_matriz",
@@ -645,7 +645,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_faturamento_selecionado_matriz.yaml"
+    "path": "technical/measures/comercial/metrica_faturamento_selecionado_matriz.yaml"
   },
   {
     "id": "metrica_devolucao_selecionada_matriz",
@@ -653,7 +653,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_devolucao_selecionada_matriz.yaml"
+    "path": "technical/measures/comercial/metrica_devolucao_selecionada_matriz.yaml"
   },
   {
     "id": "metrica_receita_selecionada_matriz",
@@ -661,7 +661,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_receita_selecionada_matriz.yaml"
+    "path": "technical/measures/comercial/metrica_receita_selecionada_matriz.yaml"
   },
   {
     "id": "metrica_linha_matriz_possui_movimento",
@@ -669,7 +669,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_linha_matriz_possui_movimento.yaml"
+    "path": "technical/measures/comercial/metrica_linha_matriz_possui_movimento.yaml"
   },
   {
     "id": "metrica_customer_service",
@@ -701,7 +701,7 @@
     "type": "metric",
     "domain": "comercial",
     "status": "draft",
-    "path": "metrics/comercial/metrica_meta_rb.yaml"
+    "path": "technical/measures/comercial/metrica_meta_rb.yaml"
   },
   {
     "id": "metrica_farmax_bi_html_v2",
@@ -709,7 +709,7 @@
     "type": "metric",
     "domain": "corporativo",
     "status": "draft",
-    "path": "metrics/corporativo/metrica_farmax_bi_html_v2.yaml"
+    "path": "technical/measures/corporativo/metrica_farmax_bi_html_v2.yaml"
   },
   {
     "id": "metrica_pedidos_e_faturamentos_menu_html",
@@ -717,7 +717,7 @@
     "type": "metric",
     "domain": "corporativo",
     "status": "draft",
-    "path": "metrics/corporativo/metrica_pedidos_e_faturamentos_menu_html.yaml"
+    "path": "technical/measures/corporativo/metrica_pedidos_e_faturamentos_menu_html.yaml"
   },
   {
     "id": "tabela_medidas",

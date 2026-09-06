@@ -1,10 +1,10 @@
 schema_version: 1
 id: "metrica_devolucao_bruta"
-title: "05 Devolução_Bruta"
+title: "Devolução_Bruta"
 type: "metric"
 domain: "comercial"
 status: "draft"
-version: "0.1.0"
+version: "0.1.1"
 owners:
   business: null
   technical: null

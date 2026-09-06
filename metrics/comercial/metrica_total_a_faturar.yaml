@@ -1,10 +1,10 @@
 schema_version: 1
 id: "metrica_total_a_faturar"
-title: "03 Total a Faturar"
+title: "Total a faturar"
 type: "metric"
 domain: "comercial"
 status: "draft"
-version: "0.1.0"
+version: "0.2.0"
 owners:
   business: null
   technical: null
@@ -27,10 +27,8 @@ pending:
 kind: "indicador"
 definition: "Soma do valor dos pedidos classificados com tipo venda, e status a faturar."
 definition_basis: "descricao_do_modelo"
-source_description: "Soma do valor dos pedidos classificados com tipo venda, e status a faturar."
-business_questions: null
-synonyms:
-  - "03 Total a Faturar"
+business_questions: ["Quanto temos a faturar incluindo programação futura?"]
+synonyms: ["03 Total a Faturar", "total a faturar", "carteira total a faturar", "pedidos a faturar", "receita a faturar"]
 unit: null
 grain:
   source: null
@@ -43,7 +41,7 @@ time:
     - "CALCULATE"
     - "REMOVEFILTERS"
 formula:
-  conceptual: null
+  conceptual: "Soma do subtotal dos pedidos de venda a faturar, removendo o filtro de dTempo."
   dependencies: []
 aggregation:
   rule: null
@@ -51,7 +49,7 @@ aggregation:
 dimensions: null
 relationships: null
 filters:
-  mandatory: null
+  mandatory: ["pedido_tipo = VENDA", "pedido_status = A FATURAR", "REMOVEFILTERS(dTempo)"]
   optional: null
   exclusions: null
   note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
@@ -108,7 +106,7 @@ dependencies:
   measures_transitive: []
   unqualified_references: []
   method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
-edge_cases: null
+edge_cases: ["Expressão acrescenta +0 ao resultado.", "Filtro de depósito está comentado e não está ativo.", "Não somar posições de carteira em datas distintas como se fossem fluxo."]
 checks: null
 usage: []
 

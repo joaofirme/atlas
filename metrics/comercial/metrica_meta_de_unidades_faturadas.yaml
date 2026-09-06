@@ -28,7 +28,6 @@ pending:
 kind: "indicador"
 definition: "Meta de unidades faturadas definida no orçamento."
 definition_basis: "descricao_do_modelo"
-source_description: "Meta de unidades faturadas definida no orçamento."
 business_questions: null
 synonyms:
   - "Meta de Unidades Faturadas"

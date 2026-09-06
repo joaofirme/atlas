@@ -1,8 +1,8 @@
 schema_version: 1
-id: "metrica_legenda_base_receita"
-title: "Legenda Base Receita"
+id: "metrica_divisor"
+title: "02 Divisor"
 type: "metric"
-domain: "comercial"
+domain: "corporativo"
 status: "draft"
 version: "0.1.0"
 owners:
@@ -13,7 +13,7 @@ updated_at: "2026-09-06"
 sources:
   -
     reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
-    locator: "medida _Medidas[Legenda Base Receita], linha 5587"
+    locator: "medida _Medidas[02 Divisor], linha 795"
     accessed_at: "2026-09-06"
 validation:
   reviewed_by: null
@@ -28,10 +28,9 @@ pending:
 kind: "auxiliar_visual"
 definition: null
 definition_basis: null
-source_description: null
 business_questions: null
 synonyms:
-  - "Legenda Base Receita"
+  - "02 Divisor"
 unit: null
 grain:
   source: null
@@ -40,8 +39,7 @@ time:
   event: null
   timezone: null
   calendar: "dTempo; comportamento específico depende do contexto DAX"
-  context_functions:
-    - "SELECTEDVALUE"
+  context_functions: []
 formula:
   conceptual: null
   dependencies: []
@@ -55,51 +53,24 @@ filters:
   optional: null
   exclusions: null
   note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
-data_sources:
-  -
-    semantic_table: "Base Receita"
-    physical_sources:
-      -
-        engine: "DAX calculado"
-        upstream: null
-        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Base Receita.tmdl:23"
+data_sources: []
 implementations:
   dax:
-    expression: |2-
-      VAR vBaseReceita =
-          SELECTEDVALUE(
-              'Base Receita'[Base Receita],
-              "Receita Semi Líquida"
-          )
-      RETURN
-          IF(
-              vBaseReceita = "Receita Bruta",
-              "BASE RB",
-              "BASE RSL"
-          )
+    expression: "\"---\""
     table: "_Medidas"
     properties:
-      displayFolder: "[Pedidos & Faturamento] Matriz dinâmica"
-      lineageTag: "13736f35-b909-4cdd-9a8f-8d79ccea6a0d"
+      displayFolder: "00 Auxiliares"
+      lineageTag: "29703cc9-66d4-45ae-8549-c11fa01f326a"
     execution_validated: false
     note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
 dependencies:
-  tables_direct: ["Base Receita"]
-  columns_direct:
-    -
-      table: "Base Receita"
-      column: "Base Receita"
+  tables_direct: []
+  columns_direct: []
   measures_transitive: []
   unqualified_references: []
   method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
 edge_cases: null
 checks: null
-usage:
-  -
-    page_id: "e7a7a2fc000d0a5b0c10"
-    page_title: "Pedidos & Faturamento"
-    visual_id: "228374d96043d38d897b"
-    source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/228374d96043d38d897b/visual.json"
-    locator: "$/visual/query/queryState/Values/projections/0/field/Measure"
+usage: []
 
-dependency_table_sources: [{"table": "Base Receita", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Base Receita.tmdl"}]
+dependency_table_sources: []

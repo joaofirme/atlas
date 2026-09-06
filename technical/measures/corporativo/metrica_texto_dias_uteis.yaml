@@ -1,8 +1,8 @@
 schema_version: 1
-id: "metrica_aux_max_mes"
-title: "Aux Max Mês"
+id: "metrica_texto_dias_uteis"
+title: "03 Texto Dias Úteis"
 type: "metric"
-domain: "comercial"
+domain: "corporativo"
 status: "draft"
 version: "0.1.0"
 owners:
@@ -13,7 +13,7 @@ updated_at: "2026-09-06"
 sources:
   -
     reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
-    locator: "medida _Medidas[Aux Max Mês], linha 1141"
+    locator: "medida _Medidas[03 Texto Dias Úteis], linha 821"
     accessed_at: "2026-09-06"
 validation:
   reviewed_by: null
@@ -28,10 +28,9 @@ pending:
 kind: "auxiliar_visual"
 definition: null
 definition_basis: null
-source_description: null
 business_questions: null
 synonyms:
-  - "Aux Max Mês"
+  - "03 Texto Dias Úteis"
 unit: null
 grain:
   source: null
@@ -41,11 +40,11 @@ time:
   timezone: null
   calendar: "dTempo; comportamento específico depende do contexto DAX"
   context_functions:
-    - "ALLSELECTED"
+    - "CALCULATE"
+    - "SELECTEDVALUE"
 formula:
   conceptual: null
-  dependencies:
-    - "metrica_meta_rsl"
+  dependencies: []
 aggregation:
   rule: null
   additivity: null
@@ -67,45 +66,55 @@ data_sources:
         upstream: null
         source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl:145"
   -
-    semantic_table: "fMeta_unificada"
+    semantic_table: "fMeta_Geral"
     physical_sources:
       -
         engine: "Amazon Redshift"
         database: "farmax_prod"
         objects:
-          - "comercial.fato_metas_executivos_unificada"
-        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl:128"
+          - ""
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_Geral.tmdl:95"
 implementations:
   dax:
     expression: |2-
-      VAR vMaxMes = 
-          MAXX(
-              ALLSELECTED(
-                  dTempo[MesNome]
+      VAR Dias =
+          AVERAGEX(
+              VALUES('dTempo'[Mes/Ano]),
+              CALCULATE(
+                  AVERAGE('fMeta_Geral'[general_target_days])
               )
-              ,[Meta RSL]
           )
       
+      VAR Mes =
+          SELECTEDVALUE(dTempo[MesNome])
+      
       RETURN
-          vMaxMes * 1.2
+      
+          "Dias úteis: " & FORMAT(Dias,"0")
+          --"O mês " & FORMAT(Mes,"0") & " possuí " & FORMAT(Dias,"0") & " dias úteis"
     table: "_Medidas"
     properties:
-      displayFolder: "07 Meta"
-      lineageTag: "b11abee8-8195-4007-94ef-7d4312dc1fb2"
+      displayFolder: "00 Auxiliares"
+      lineageTag: "2f7ca222-a00f-44a8-befa-183669cb17f0"
     execution_validated: false
     note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
 dependencies:
-  tables_direct: ["dTempo"]
+  tables_direct: ["dTempo", "fMeta_Geral"]
   columns_direct:
     -
       table: "dTempo"
+      column: "Mes/Ano"
+    -
+      table: "fMeta_Geral"
+      column: "general_target_days"
+    -
+      table: "dTempo"
       column: "MesNome"
-  measures_transitive:
-    - "metrica_meta_rsl"
+  measures_transitive: []
   unqualified_references: []
   method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
 edge_cases: null
 checks: null
 usage: []
 
-dependency_table_sources: [{"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fMeta_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl"}]
+dependency_table_sources: [{"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fMeta_Geral", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_Geral.tmdl"}]

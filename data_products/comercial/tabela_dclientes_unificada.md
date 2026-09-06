@@ -101,11 +101,11 @@ Relacionamentos: 2. Consultar o [mapa do modelo](../../docs/ingestoes/2026-09-06
 
 Medidas com referência direta:
 
-- [Carteira e Estoque HTML v1](<../../metrics/corporativo/metrica_carteira_e_estoque_html_v1.yaml>)
-- [Comercial HTML v1](<../../metrics/corporativo/metrica_comercial_html_v1.yaml>)
-- [% Meta Exibição](<../../metrics/comercial/metrica_percentual_meta_exibicao.yaml>)
-- [Meta RSL Exibição](<../../metrics/comercial/metrica_meta_rsl_exibicao.yaml>)
-- [Matriz RSL > Meta](<../../metrics/comercial/metrica_matriz_rsl_meta.yaml>)
+- [Carteira e Estoque HTML v1](<../../technical/measures/corporativo/metrica_carteira_e_estoque_html_v1.yaml>)
+- [Comercial HTML v1](<../../technical/measures/corporativo/metrica_comercial_html_v1.yaml>)
+- [% Meta Exibição](<../../technical/measures/comercial/metrica_percentual_meta_exibicao.yaml>)
+- [Meta RSL Exibição](<../../technical/measures/comercial/metrica_meta_rsl_exibicao.yaml>)
+- [Matriz RSL > Meta](<../../technical/measures/comercial/metrica_matriz_rsl_meta.yaml>)
 
 ## Pendências
 

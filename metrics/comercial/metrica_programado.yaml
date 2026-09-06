@@ -1,10 +1,10 @@
 schema_version: 1
 id: "metrica_programado"
-title: "05 Programado"
+title: "Carteira programada"
 type: "metric"
 domain: "comercial"
 status: "draft"
-version: "0.1.0"
+version: "0.2.0"
 owners:
   business: null
   technical: null
@@ -28,9 +28,8 @@ kind: "indicador"
 definition: "Total a faturar com data programada estritamente posterior a TODAY(). A descrição original usa maior ou igual."
 definition_basis: "leitura_da_implementacao"
 source_description: "Soma do valor dos pedidos classificados com tipo venda, e status a faturar, data programada maior ou igual ao dia corrente."
-business_questions: null
-synonyms:
-  - "05 Programado"
+business_questions: ["Quanto da carteira está programado para depois de hoje?"]
+synonyms: ["05 Programado", "carteira programada", "programado", "a faturar futuro"]
 unit: null
 grain:
   source: null
@@ -43,7 +42,7 @@ time:
     - "CALCULATE"
     - "TODAY"
 formula:
-  conceptual: null
+  conceptual: "Total a faturar restrito à programação posterior à data corrente da execução."
   dependencies:
     - "metrica_total_a_faturar"
 aggregation:
@@ -52,7 +51,7 @@ aggregation:
 dimensions: null
 relationships: null
 filters:
-  mandatory: null
+  mandatory: ["Filtros herdados de metrica_total_a_faturar", "sale_program_date > TODAY()"]
   optional: null
   exclusions: null
   note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
@@ -90,7 +89,7 @@ dependencies:
     - "metrica_total_a_faturar"
   unqualified_references: []
   method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
-edge_cases: null
+edge_cases: ["Descrição da fonte inclui hoje, mas a expressão usa comparação estrita.", "Confirmar fuso e contexto da data de execução."]
 checks: null
 usage:
   -

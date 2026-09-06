@@ -39,7 +39,7 @@ Interpretação documental da implementação observada na fonte de descoberta. 
 
 Variáveis: vRitmoAtualDU = receita / dias úteis realizados; vProjecaoFechamento = ritmo × dias úteis totais; vRitmoNecessarioDU = receita faltante / dias restantes. A projeção é extrapolação, não previsão estatística. Gap não usa a projeção nessa implementação. Sem meta, status SEM META.
 
-- [Farmax BI HTML v2](<../../metrics/corporativo/metrica_farmax_bi_html_v2.yaml>)
+- [Farmax BI HTML v2](<../../technical/measures/corporativo/metrica_farmax_bi_html_v2.yaml>)
 
 ## Exemplos
 
@@ -59,4 +59,4 @@ Confirmar significado, responsáveis e uso oficial com a área.
 
 ## Fontes
 
-- [Farmax BI HTML v2](<../../metrics/corporativo/metrica_farmax_bi_html_v2.yaml>)
+- [Farmax BI HTML v2](<../../technical/measures/corporativo/metrica_farmax_bi_html_v2.yaml>)

@@ -1,10 +1,10 @@
 schema_version: 1
 id: "metrica_valor_em_transito"
-title: "07 Valor Em Transito"
+title: "Valor Em Transito"
 type: "metric"
 domain: "logistica"
 status: "draft"
-version: "0.1.0"
+version: "0.1.1"
 owners:
   business: null
   technical: null

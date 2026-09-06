@@ -101,7 +101,7 @@ Medidas com referência direta:
 - [Meta RL](<../../metrics/comercial/metrica_meta_rl.yaml>)
 - [04 % Meta Devolução](<../../metrics/comercial/metrica_percentual_meta_devolucao.yaml>)
 - [Meta Preço Médio](<../../metrics/comercial/metrica_meta_preco_medio.yaml>)
-- [03 Texto Dias Úteis](<../../metrics/corporativo/metrica_texto_dias_uteis.yaml>)
+- [03 Texto Dias Úteis](<../../technical/measures/corporativo/metrica_texto_dias_uteis.yaml>)
 
 ## Pendências
 

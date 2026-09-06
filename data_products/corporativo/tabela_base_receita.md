@@ -89,20 +89,20 @@ Relacionamentos: 0. Consultar o [mapa do modelo](../../docs/ingestoes/2026-09-06
 
 Medidas com referência direta:
 
-- [Pedidos & Faturamentos HTML](<../../metrics/corporativo/metrica_pedidos_e_faturamentos_html.yaml>)
-- [Carteira e Estoque HTML v1](<../../metrics/corporativo/metrica_carteira_e_estoque_html_v1.yaml>)
-- [Comercial HTML v1](<../../metrics/corporativo/metrica_comercial_html_v1.yaml>)
+- [Pedidos & Faturamentos HTML](<../../technical/measures/corporativo/metrica_pedidos_e_faturamentos_html.yaml>)
+- [Carteira e Estoque HTML v1](<../../technical/measures/corporativo/metrica_carteira_e_estoque_html_v1.yaml>)
+- [Comercial HTML v1](<../../technical/measures/corporativo/metrica_comercial_html_v1.yaml>)
 - [06 Valor Entregue](<../../metrics/comercial/metrica_valor_entregue.yaml>)
-- [Farmax BI HTML old](<../../metrics/corporativo/metrica_farmax_bi_html_old.yaml>)
-- [Faturamento Selecionado](<../../metrics/comercial/metrica_faturamento_selecionado.yaml>)
-- [% Meta Exibição](<../../metrics/comercial/metrica_percentual_meta_exibicao.yaml>)
-- [Devolução Selecionada](<../../metrics/comercial/metrica_devolucao_selecionada.yaml>)
-- [Legenda Base Receita](<../../metrics/comercial/metrica_legenda_base_receita.yaml>)
-- [Meta RSL Exibição](<../../metrics/comercial/metrica_meta_rsl_exibicao.yaml>)
-- [Receita Selecionada](<../../metrics/comercial/metrica_receita_selecionada.yaml>)
-- [Matriz RSL > Meta](<../../metrics/comercial/metrica_matriz_rsl_meta.yaml>)
-- [Farmax BI HTML v2](<../../metrics/corporativo/metrica_farmax_bi_html_v2.yaml>)
-- [Pedidos & Faturamentos Menu HTML](<../../metrics/corporativo/metrica_pedidos_e_faturamentos_menu_html.yaml>)
+- [Farmax BI HTML old](<../../technical/measures/corporativo/metrica_farmax_bi_html_old.yaml>)
+- [Faturamento Selecionado](<../../technical/measures/comercial/metrica_faturamento_selecionado.yaml>)
+- [% Meta Exibição](<../../technical/measures/comercial/metrica_percentual_meta_exibicao.yaml>)
+- [Devolução Selecionada](<../../technical/measures/comercial/metrica_devolucao_selecionada.yaml>)
+- [Legenda Base Receita](<../../technical/measures/comercial/metrica_legenda_base_receita.yaml>)
+- [Meta RSL Exibição](<../../technical/measures/comercial/metrica_meta_rsl_exibicao.yaml>)
+- [Receita Selecionada](<../../technical/measures/comercial/metrica_receita_selecionada.yaml>)
+- [Matriz RSL > Meta](<../../technical/measures/comercial/metrica_matriz_rsl_meta.yaml>)
+- [Farmax BI HTML v2](<../../technical/measures/corporativo/metrica_farmax_bi_html_v2.yaml>)
+- [Pedidos & Faturamentos Menu HTML](<../../technical/measures/corporativo/metrica_pedidos_e_faturamentos_menu_html.yaml>)
 
 ## Pendências
 

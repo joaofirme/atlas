@@ -1,6 +1,6 @@
 schema_version: 1
-id: "metrica_cor_fundo_mes_parcial"
-title: "Cor Fundo Mês Parcial"
+id: "metrica_label_mes_parcial"
+title: "Label Mês Parcial"
 type: "metric"
 domain: "comercial"
 status: "draft"
@@ -13,7 +13,7 @@ updated_at: "2026-09-06"
 sources:
   -
     reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
-    locator: "medida _Medidas[Cor Fundo Mês Parcial], linha 5523"
+    locator: "medida _Medidas[Label Mês Parcial], linha 5551"
     accessed_at: "2026-09-06"
 validation:
   reviewed_by: null
@@ -28,10 +28,9 @@ pending:
 kind: "auxiliar_visual"
 definition: null
 definition_basis: null
-source_description: null
 business_questions: null
 synonyms:
-  - "Cor Fundo Mês Parcial"
+  - "Label Mês Parcial"
 unit: null
 grain:
   source: null
@@ -40,11 +39,11 @@ time:
   event: null
   timezone: null
   calendar: "dTempo; comportamento específico depende do contexto DAX"
-  context_functions: []
+  context_functions:
+    - "TODAY"
 formula:
   conceptual: null
-  dependencies:
-    - "metrica_label_mes_parcial"
+  dependencies: []
 aggregation:
   rule: null
   additivity: null
@@ -68,22 +67,50 @@ data_sources:
 implementations:
   dax:
     expression: |2-
-      IF(
-          ISBLANK([Label Mês Parcial]),
-          "#F6F6F6",
-          "#FFF2D8"
-      )
+      VAR vDataInicialSelecionada =
+          MIN('dTempo'[Data])
+      
+      VAR vDataFinalSelecionada =
+          MAX('dTempo'[Data])
+      
+      VAR vInicioMesAtual =
+          DATE(
+              YEAR(TODAY()),
+              MONTH(TODAY()),
+              1
+          )
+      
+      VAR vFimMesAtual =
+          EOMONTH(
+              TODAY(),
+              0
+          )
+      
+      VAR vPeriodoIncluiMesAtual =
+          NOT ISBLANK(vDataInicialSelecionada)
+              && NOT ISBLANK(vDataFinalSelecionada)
+              && vDataInicialSelecionada <= vFimMesAtual
+              && vDataFinalSelecionada >= vInicioMesAtual
+      
+      RETURN
+          IF(
+              vPeriodoIncluiMesAtual,
+              "Mês parcial até dia " & FORMAT(DAY(TODAY()), "0"),
+              BLANK()
+          )
     table: "_Medidas"
     properties:
       displayFolder: "[Pedidos & Faturamento] Matriz dinâmica"
-      lineageTag: "9346302e-ca2c-47ae-b487-6b9419398bd7"
+      lineageTag: "9fe7a842-dccf-4546-ae27-2d93723bf558"
     execution_validated: false
     note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
 dependencies:
-  tables_direct: []
-  columns_direct: []
-  measures_transitive:
-    - "metrica_label_mes_parcial"
+  tables_direct: ["dTempo"]
+  columns_direct:
+    -
+      table: "dTempo"
+      column: "Data"
+  measures_transitive: []
   unqualified_references: []
   method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
 edge_cases: null
@@ -94,6 +121,18 @@ usage:
     page_title: "Pedidos & Faturamento"
     visual_id: "28052dbc04807ce51083"
     source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/28052dbc04807ce51083/visual.json"
-    locator: "$/visual/visualContainerObjects/background/0/properties/color/solid/color/expr/Measure"
+    locator: "$/visual/query/queryState/Values/projections/0/field/Measure"
+  -
+    page_id: "e7a7a2fc000d0a5b0c10"
+    page_title: "Pedidos & Faturamento"
+    visual_id: "28052dbc04807ce51083"
+    source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/28052dbc04807ce51083/visual.json"
+    locator: "$/visual/objects/labels/0/properties/color/solid/color/expr/Conditional/Cases/0/Condition/Not/Expression/Comparison/Left/Measure"
+  -
+    page_id: "e7a7a2fc000d0a5b0c10"
+    page_title: "Pedidos & Faturamento"
+    visual_id: "28052dbc04807ce51083"
+    source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/28052dbc04807ce51083/visual.json"
+    locator: "$/visual/objects/labels/0/properties/color/solid/color/expr/Conditional/Cases/1/Condition/Comparison/Left/Measure"
 
 dependency_table_sources: [{"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}]

@@ -84,7 +84,7 @@ Relacionamentos: 0. Consultar o [mapa do modelo](../../docs/ingestoes/2026-09-06
 
 Medidas com referência direta:
 
-- [00 Atualização](<../../metrics/corporativo/metrica_atualizacao.yaml>)
+- [00 Atualização](<../../technical/measures/corporativo/metrica_atualizacao.yaml>)
 
 ## Pendências
 

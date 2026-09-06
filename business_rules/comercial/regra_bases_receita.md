@@ -55,11 +55,11 @@ Interpretação documental da implementação observada na fonte de descoberta. 
 
 Condição: Base Receita via SELECTEDVALUE. Ação: selecionar medidas canônicas. Escopo: matriz e HTML. Autoridade e vigência: pendentes; evidência é o snapshot do modelo.
 
-- [Faturamento Selecionado](<../../metrics/comercial/metrica_faturamento_selecionado.yaml>)
-- [Receita Selecionada](<../../metrics/comercial/metrica_receita_selecionada.yaml>)
-- [Devolução Selecionada](<../../metrics/comercial/metrica_devolucao_selecionada.yaml>)
-- [Meta RB](<../../metrics/comercial/metrica_meta_rb.yaml>)
-- [% Meta RB](<../../metrics/comercial/metrica_percentual_meta_rb.yaml>)
+- [Faturamento Selecionado](<../../technical/measures/comercial/metrica_faturamento_selecionado.yaml>)
+- [Receita Selecionada](<../../technical/measures/comercial/metrica_receita_selecionada.yaml>)
+- [Devolução Selecionada](<../../technical/measures/comercial/metrica_devolucao_selecionada.yaml>)
+- [Meta RB](<../../technical/measures/comercial/metrica_meta_rb.yaml>)
+- [% Meta RB](<../../technical/measures/comercial/metrica_percentual_meta_rb.yaml>)
 
 ## Exemplos
 
@@ -79,8 +79,8 @@ Confirmar significado, responsáveis e uso oficial com a área.
 
 ## Fontes
 
-- [Faturamento Selecionado](<../../metrics/comercial/metrica_faturamento_selecionado.yaml>)
-- [Receita Selecionada](<../../metrics/comercial/metrica_receita_selecionada.yaml>)
-- [Devolução Selecionada](<../../metrics/comercial/metrica_devolucao_selecionada.yaml>)
-- [Meta RB](<../../metrics/comercial/metrica_meta_rb.yaml>)
-- [% Meta RB](<../../metrics/comercial/metrica_percentual_meta_rb.yaml>)
+- [Faturamento Selecionado](<../../technical/measures/comercial/metrica_faturamento_selecionado.yaml>)
+- [Receita Selecionada](<../../technical/measures/comercial/metrica_receita_selecionada.yaml>)
+- [Devolução Selecionada](<../../technical/measures/comercial/metrica_devolucao_selecionada.yaml>)
+- [Meta RB](<../../technical/measures/comercial/metrica_meta_rb.yaml>)
+- [% Meta RB](<../../technical/measures/comercial/metrica_percentual_meta_rb.yaml>)

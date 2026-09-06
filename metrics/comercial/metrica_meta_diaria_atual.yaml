@@ -27,7 +27,6 @@ pending:
 kind: "indicador"
 definition: "Cálculo de meta diária por dias úteis."
 definition_basis: "descricao_do_modelo"
-source_description: "Cálculo de meta diária por dias úteis."
 business_questions: null
 synonyms:
   - "Meta Diária Atual"

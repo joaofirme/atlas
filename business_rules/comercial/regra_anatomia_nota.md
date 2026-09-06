@@ -39,7 +39,7 @@ Interpretação documental da implementação observada na fonte de descoberta. 
 
 O piso é de apresentação, não alíquota. A diferença entre receitas não comprova a decomposição tributária. A variável vDevRefTotal soma devolução total e refaturamento; como devolução total já o inclui, há risco de duplicação dessa parcela na apresentação.
 
-- [Pedidos & Faturamentos HTML](<../../metrics/corporativo/metrica_pedidos_e_faturamentos_html.yaml>)
+- [Pedidos & Faturamentos HTML](<../../technical/measures/corporativo/metrica_pedidos_e_faturamentos_html.yaml>)
 
 ## Exemplos
 
@@ -59,4 +59,4 @@ Confirmar significado, responsáveis e uso oficial com a área.
 
 ## Fontes
 
-- [Pedidos & Faturamentos HTML](<../../metrics/corporativo/metrica_pedidos_e_faturamentos_html.yaml>)
+- [Pedidos & Faturamentos HTML](<../../technical/measures/corporativo/metrica_pedidos_e_faturamentos_html.yaml>)

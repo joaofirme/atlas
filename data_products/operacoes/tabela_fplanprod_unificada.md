@@ -100,7 +100,7 @@ Relacionamentos: 3. Consultar o [mapa do modelo](../../docs/ingestoes/2026-09-06
 
 Medidas com referência direta:
 
-- [Carteira e Estoque HTML v1](<../../metrics/corporativo/metrica_carteira_e_estoque_html_v1.yaml>)
+- [Carteira e Estoque HTML v1](<../../technical/measures/corporativo/metrica_carteira_e_estoque_html_v1.yaml>)
 
 ## Pendências
 

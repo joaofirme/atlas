@@ -1,6 +1,6 @@
 schema_version: 1
-id: "metrica_vendido_matriz"
-title: "Vendido Matriz"
+id: "metrica_programado_matriz"
+title: "Programado Matriz"
 type: "metric"
 domain: "comercial"
 status: "draft"
@@ -13,7 +13,7 @@ updated_at: "2026-09-06"
 sources:
   -
     reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
-    locator: "medida _Medidas[Vendido Matriz], linha 5752"
+    locator: "medida _Medidas[Programado Matriz], linha 5788"
     accessed_at: "2026-09-06"
 validation:
   reviewed_by: null
@@ -28,10 +28,9 @@ pending:
 kind: "medida_de_exibicao"
 definition: null
 definition_basis: null
-source_description: null
 business_questions: null
 synonyms:
-  - "Vendido Matriz"
+  - "Programado Matriz"
 unit: null
 grain:
   source: null
@@ -40,11 +39,13 @@ time:
   event: null
   timezone: null
   calendar: "dTempo; comportamento específico depende do contexto DAX"
-  context_functions: []
+  context_functions:
+    - "CALCULATE"
+    - "REMOVEFILTERS"
 formula:
   conceptual: null
   dependencies:
-    - "metrica_valor_de_vendas"
+    - "metrica_programado"
     - "metrica_linha_matriz_possui_movimento"
 aggregation:
   rule: null
@@ -94,22 +95,28 @@ data_sources:
 implementations:
   dax:
     expression: |2-
-      IF(
-          ISBLANK([Linha Matriz Possui Movimento]),
-          BLANK(),
-          DIVIDE(
-              COALESCE([00 Valor de Vendas], 0),
-              1000
+      VAR vProgramado =
+          CALCULATE(
+              [05 Programado],
+              REMOVEFILTERS(dTempo)
           )
-      )
+      RETURN
+          IF(
+              ISBLANK([Linha Matriz Possui Movimento]),
+              BLANK(),
+              DIVIDE(
+                  COALESCE(vProgramado, 0),
+                  1000
+              )
+          )
     table: "_Medidas"
     properties:
       displayFolder: "[Pedidos & Faturamento] Matriz dinâmica"
-      lineageTag: "bf46f6c1-c3e7-4c48-9933-a0844c2d1206"
+      lineageTag: "68e4ff24-680f-48f5-8c77-c62806926f9e"
     execution_validated: false
     note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
 dependencies:
-  tables_direct: []
+  tables_direct: ["dTempo"]
   columns_direct: []
   measures_transitive:
     - "metrica_devolucao"
@@ -138,19 +145,13 @@ usage:
     page_title: "Pedidos & Faturamento"
     visual_id: "cd2aded586ad937d0a9c"
     source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/cd2aded586ad937d0a9c/visual.json"
-    locator: "$/visual/query/queryState/Values/projections/0/field/Measure"
+    locator: "$/visual/query/queryState/Values/projections/2/field/Measure"
   -
     page_id: "e7a7a2fc000d0a5b0c10"
     page_title: "Pedidos & Faturamento"
     visual_id: "cd2aded586ad937d0a9c"
     source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/cd2aded586ad937d0a9c/visual.json"
-    locator: "$/visual/query/sortDefinition/sort/0/field/Measure"
-  -
-    page_id: "e7a7a2fc000d0a5b0c10"
-    page_title: "Pedidos & Faturamento"
-    visual_id: "cd2aded586ad937d0a9c"
-    source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/cd2aded586ad937d0a9c/visual.json"
-    locator: "$/filterConfig/filters/13/field/Measure"
+    locator: "$/filterConfig/filters/14/field/Measure"
 
 source_expression_properties: {"formatStringDefinition": "\"#,##0.0;(#,##0.0)\""}
 

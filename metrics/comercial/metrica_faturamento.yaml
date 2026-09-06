@@ -1,10 +1,10 @@
 schema_version: 1
 id: "metrica_faturamento"
-title: "00 Faturamento"
+title: "Faturamento"
 type: "metric"
 domain: "comercial"
 status: "draft"
-version: "0.1.0"
+version: "0.1.1"
 owners:
   business: null
   technical: null

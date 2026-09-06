@@ -1,6 +1,6 @@
 schema_version: 1
-id: "metrica_aberto_matriz"
-title: "Aberto Matriz"
+id: "metrica_devolucao_selecionada_matriz"
+title: "Devolução Selecionada Matriz"
 type: "metric"
 domain: "comercial"
 status: "draft"
@@ -13,7 +13,7 @@ updated_at: "2026-09-06"
 sources:
   -
     reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
-    locator: "medida _Medidas[Aberto Matriz], linha 5767"
+    locator: "medida _Medidas[Devolução Selecionada Matriz], linha 5829"
     accessed_at: "2026-09-06"
 validation:
   reviewed_by: null
@@ -28,10 +28,9 @@ pending:
 kind: "medida_de_exibicao"
 definition: null
 definition_basis: null
-source_description: null
 business_questions: null
 synonyms:
-  - "Aberto Matriz"
+  - "Devolução Selecionada Matriz"
 unit: null
 grain:
   source: null
@@ -40,13 +39,11 @@ time:
   event: null
   timezone: null
   calendar: "dTempo; comportamento específico depende do contexto DAX"
-  context_functions:
-    - "CALCULATE"
-    - "REMOVEFILTERS"
+  context_functions: []
 formula:
   conceptual: null
   dependencies:
-    - "metrica_aberto"
+    - "metrica_devolucao_selecionada"
     - "metrica_linha_matriz_possui_movimento"
 aggregation:
   rule: null
@@ -96,28 +93,22 @@ data_sources:
 implementations:
   dax:
     expression: |2-
-      VAR vAberto =
-          CALCULATE(
-              [04 Aberto],
-              REMOVEFILTERS(dTempo)
+      IF(
+          ISBLANK([Linha Matriz Possui Movimento]),
+          BLANK(),
+          DIVIDE(
+              COALESCE([Devolução Selecionada], 0),
+              1000
           )
-      RETURN
-          IF(
-              ISBLANK([Linha Matriz Possui Movimento]),
-              BLANK(),
-              DIVIDE(
-                  COALESCE(vAberto, 0),
-                  1000
-              )
-          )
+      )
     table: "_Medidas"
     properties:
       displayFolder: "[Pedidos & Faturamento] Matriz dinâmica"
-      lineageTag: "aaa41c32-9acc-4b11-b134-3fa28233e90e"
+      lineageTag: "b8a220f7-594c-4baa-b98b-558ef1ed0ded"
     execution_validated: false
     note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
 dependencies:
-  tables_direct: ["dTempo"]
+  tables_direct: []
   columns_direct: []
   measures_transitive:
     - "metrica_devolucao"
@@ -146,13 +137,13 @@ usage:
     page_title: "Pedidos & Faturamento"
     visual_id: "cd2aded586ad937d0a9c"
     source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/cd2aded586ad937d0a9c/visual.json"
-    locator: "$/visual/query/queryState/Values/projections/1/field/Measure"
+    locator: "$/visual/query/queryState/Values/projections/4/field/Measure"
   -
     page_id: "e7a7a2fc000d0a5b0c10"
     page_title: "Pedidos & Faturamento"
     visual_id: "cd2aded586ad937d0a9c"
     source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/cd2aded586ad937d0a9c/visual.json"
-    locator: "$/filterConfig/filters/12/field/Measure"
+    locator: "$/filterConfig/filters/16/field/Measure"
 
 source_expression_properties: {"formatStringDefinition": "\"#,##0.0;(#,##0.0)\""}
 

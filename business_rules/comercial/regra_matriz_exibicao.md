@@ -51,10 +51,10 @@ Interpretação documental da implementação observada na fonte de descoberta. 
 
 A indisponibilidade depende de base bruta e níveis cliente_grupo, descricao, level e novo_segmento. Esse zero é uma convenção visual, não aprovação de meta zero.
 
-- [Meta RSL Exibição](<../../metrics/comercial/metrica_meta_rsl_exibicao.yaml>)
-- [% Meta Exibição](<../../metrics/comercial/metrica_percentual_meta_exibicao.yaml>)
-- [Vendido Matriz](<../../metrics/comercial/metrica_vendido_matriz.yaml>)
-- [Linha Matriz Possui Movimento](<../../metrics/comercial/metrica_linha_matriz_possui_movimento.yaml>)
+- [Meta RSL Exibição](<../../technical/measures/comercial/metrica_meta_rsl_exibicao.yaml>)
+- [% Meta Exibição](<../../technical/measures/comercial/metrica_percentual_meta_exibicao.yaml>)
+- [Vendido Matriz](<../../technical/measures/comercial/metrica_vendido_matriz.yaml>)
+- [Linha Matriz Possui Movimento](<../../technical/measures/comercial/metrica_linha_matriz_possui_movimento.yaml>)
 
 ## Exemplos
 
@@ -74,7 +74,7 @@ Confirmar significado, responsáveis e uso oficial com a área.
 
 ## Fontes
 
-- [Meta RSL Exibição](<../../metrics/comercial/metrica_meta_rsl_exibicao.yaml>)
-- [% Meta Exibição](<../../metrics/comercial/metrica_percentual_meta_exibicao.yaml>)
-- [Vendido Matriz](<../../metrics/comercial/metrica_vendido_matriz.yaml>)
-- [Linha Matriz Possui Movimento](<../../metrics/comercial/metrica_linha_matriz_possui_movimento.yaml>)
+- [Meta RSL Exibição](<../../technical/measures/comercial/metrica_meta_rsl_exibicao.yaml>)
+- [% Meta Exibição](<../../technical/measures/comercial/metrica_percentual_meta_exibicao.yaml>)
+- [Vendido Matriz](<../../technical/measures/comercial/metrica_vendido_matriz.yaml>)
+- [Linha Matriz Possui Movimento](<../../technical/measures/comercial/metrica_linha_matriz_possui_movimento.yaml>)

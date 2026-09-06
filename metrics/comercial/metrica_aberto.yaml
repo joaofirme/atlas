@@ -1,10 +1,10 @@
 schema_version: 1
 id: "metrica_aberto"
-title: "04 Aberto"
+title: "Carteira aberta"
 type: "metric"
 domain: "comercial"
 status: "draft"
-version: "0.1.0"
+version: "0.2.0"
 owners:
   business: null
   technical: null
@@ -27,10 +27,8 @@ pending:
 kind: "indicador"
 definition: "Soma do valor dos pedidos classificados com tipo venda, e status a faturar, data programada menor ou igual ao dia corrente."
 definition_basis: "descricao_do_modelo"
-source_description: "Soma do valor dos pedidos classificados com tipo venda, e status a faturar, data programada menor ou igual ao dia corrente."
-business_questions: null
-synonyms:
-  - "04 Aberto"
+business_questions: ["Quanto de receita a faturar estão abertas?", "Por que a carteira aberta subiu ou caiu?"]
+synonyms: ["04 Aberto", "carteira aberta", "receita a faturar em aberto", "pedidos abertos", "receita a faturar abertas"]
 unit: null
 grain:
   source: null
@@ -43,7 +41,7 @@ time:
     - "CALCULATE"
     - "TODAY"
 formula:
-  conceptual: null
+  conceptual: "Total a faturar restrito à programação até a data corrente da execução."
   dependencies:
     - "metrica_total_a_faturar"
 aggregation:
@@ -52,7 +50,7 @@ aggregation:
 dimensions: null
 relationships: null
 filters:
-  mandatory: null
+  mandatory: ["Filtros herdados de metrica_total_a_faturar", "sale_program_date <= TODAY()"]
   optional: null
   exclusions: null
   note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
@@ -90,7 +88,7 @@ dependencies:
     - "metrica_total_a_faturar"
   unqualified_references: []
   method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
-edge_cases: null
+edge_cases: ["Validar o tratamento DAX de datas em branco.", "TODAY() depende do dia da execução; histórico exige data de referência e fonte compatíveis."]
 checks: null
 usage: []
 

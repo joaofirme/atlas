@@ -1,10 +1,10 @@
 schema_version: 1
 id: "metrica_em_analise"
-title: "01 Em Análise"
+title: "Em Análise"
 type: "metric"
 domain: "financeiro"
 status: "draft"
-version: "0.1.0"
+version: "0.1.1"
 owners:
   business: null
   technical: null
@@ -27,7 +27,6 @@ pending:
 kind: "indicador"
 definition: "Soma dos pedidos em aberto alocados no departamento financeiro, sem bloqueio de faturamento."
 definition_basis: "descricao_do_modelo"
-source_description: "Soma dos pedidos em aberto alocados no departamento financeiro, sem bloqueio de faturamento."
 business_questions: null
 synonyms:
   - "01 Em Análise"

@@ -1,8 +1,8 @@
 schema_version: 1
-id: "metrica_rsl_abaixo"
-title: "RSL Abaixo"
+id: "metrica_rsl_meta"
+title: "RSL > Meta"
 type: "metric"
-domain: "comercial"
+domain: "corporativo"
 status: "draft"
 version: "0.1.0"
 owners:
@@ -13,7 +13,7 @@ updated_at: "2026-09-06"
 sources:
   -
     reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
-    locator: "medida _Medidas[RSL Abaixo], linha 1115"
+    locator: "medida _Medidas[RSL > Meta], linha 1160"
     accessed_at: "2026-09-06"
 validation:
   reviewed_by: null
@@ -28,10 +28,9 @@ pending:
 kind: "auxiliar_visual"
 definition: null
 definition_basis: null
-source_description: null
 business_questions: null
 synonyms:
-  - "RSL Abaixo"
+  - "RSL > Meta"
 unit: null
 grain:
   source: null
@@ -45,7 +44,7 @@ formula:
   conceptual: null
   dependencies:
     - "metrica_rsl"
-    - "metrica_rsl_yoy"
+    - "metrica_meta_rsl"
 aggregation:
   rule: null
   additivity: null
@@ -76,6 +75,15 @@ data_sources:
           - "comercial.fato_devolucao_unificada"
         source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl:184"
   -
+    semantic_table: "fMeta_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_metas_executivos_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl:128"
+  -
     semantic_table: "fVendas_unificada"
     physical_sources:
       -
@@ -86,16 +94,11 @@ data_sources:
         source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl:480"
 implementations:
   dax:
-    expression: |2-
-      VAR vRSL = [03 RSL]
-      VAR vRSLLY = [04 RSL YoY]
-      
-       RETURN
-          IF(vRSLLY > vRSL, vRSL)
+    expression: "IF([03 RSL] > [Meta RSL], \"#CBE3F6\") --#A2BAE2 #4AB9B8"
     table: "_Medidas"
     properties:
-      displayFolder: "05 Faturamento"
-      lineageTag: "e688b211-25a9-4bb4-ba40-fb547fb8f35e"
+      displayFolder: "00 Auxiliares"
+      lineageTag: "04cbafd8-98f7-4c5f-a5a4-86097f6f84fa"
     execution_validated: false
     note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
 dependencies:
@@ -107,11 +110,11 @@ dependencies:
     - "metrica_refaturamento"
     - "metrica_devolucao_total"
     - "metrica_rsl"
-    - "metrica_rsl_yoy"
+    - "metrica_meta_rsl"
   unqualified_references: []
   method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
 edge_cases: null
 checks: null
 usage: []
 
-dependency_table_sources: [{"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fDevolucao_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl"}, {"table": "fVendas_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl"}]
+dependency_table_sources: [{"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fDevolucao_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl"}, {"table": "fMeta_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl"}, {"table": "fVendas_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl"}]

@@ -1,6 +1,6 @@
 schema_version: 1
-id: "metrica_faturamento_selecionado_matriz"
-title: "Faturamento Selecionado Matriz"
+id: "metrica_rsl_abaixo"
+title: "RSL Abaixo"
 type: "metric"
 domain: "comercial"
 status: "draft"
@@ -13,7 +13,7 @@ updated_at: "2026-09-06"
 sources:
   -
     reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
-    locator: "medida _Medidas[Faturamento Selecionado Matriz], linha 5809"
+    locator: "medida _Medidas[RSL Abaixo], linha 1115"
     accessed_at: "2026-09-06"
 validation:
   reviewed_by: null
@@ -25,13 +25,12 @@ pending:
   - "Revisar semântica com a área e validar resultados no modelo em execução."
   - "Descrição de negócio não declarada no modelo; formular com a área responsável."
   - "Confirmar unidade/moeda, granularidade, aditividade e dimensões permitidas; não inferir a aprovação a partir dos relacionamentos existentes."
-kind: "medida_de_exibicao"
+kind: "auxiliar_visual"
 definition: null
 definition_basis: null
-source_description: null
 business_questions: null
 synonyms:
-  - "Faturamento Selecionado Matriz"
+  - "RSL Abaixo"
 unit: null
 grain:
   source: null
@@ -44,8 +43,8 @@ time:
 formula:
   conceptual: null
   dependencies:
-    - "metrica_faturamento_selecionado"
-    - "metrica_linha_matriz_possui_movimento"
+    - "metrica_rsl"
+    - "metrica_rsl_yoy"
 aggregation:
   rule: null
   additivity: null
@@ -57,13 +56,6 @@ filters:
   exclusions: null
   note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
 data_sources:
-  -
-    semantic_table: "Base Receita"
-    physical_sources:
-      -
-        engine: "DAX calculado"
-        upstream: null
-        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Base Receita.tmdl:23"
   -
     semantic_table: "dTempo"
     physical_sources:
@@ -94,21 +86,15 @@ data_sources:
 implementations:
   dax:
     expression: |2-
-      VAR vFaturamento =
-          [Faturamento Selecionado]
-      RETURN
-          IF(
-              ISBLANK([Linha Matriz Possui Movimento]),
-              BLANK(),
-              DIVIDE(
-                  COALESCE(vFaturamento, 0),
-                  1000
-              )
-          )
+      VAR vRSL = [03 RSL]
+      VAR vRSLLY = [04 RSL YoY]
+      
+       RETURN
+          IF(vRSLLY > vRSL, vRSL)
     table: "_Medidas"
     properties:
-      displayFolder: "[Pedidos & Faturamento] Matriz dinâmica"
-      lineageTag: "6c81b5a5-0b8a-4bd8-bf48-f422f48bf921"
+      displayFolder: "05 Faturamento"
+      lineageTag: "e688b211-25a9-4bb4-ba40-fb547fb8f35e"
     execution_validated: false
     note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
 dependencies:
@@ -117,38 +103,14 @@ dependencies:
   measures_transitive:
     - "metrica_devolucao"
     - "metrica_faturamento"
-    - "metrica_valor_de_vendas"
     - "metrica_refaturamento"
     - "metrica_devolucao_total"
     - "metrica_rsl"
-    - "metrica_total_a_faturar"
-    - "metrica_aberto"
-    - "metrica_devolucao_bruta"
-    - "metrica_programado"
-    - "metrica_faturamento_bruto"
-    - "metrica_receita_bruta"
-    - "metrica_devolucao_selecionada"
-    - "metrica_faturamento_selecionado"
-    - "metrica_linha_matriz_possui_movimento"
-    - "metrica_receita_selecionada"
+    - "metrica_rsl_yoy"
   unqualified_references: []
   method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
 edge_cases: null
 checks: null
-usage:
-  -
-    page_id: "e7a7a2fc000d0a5b0c10"
-    page_title: "Pedidos & Faturamento"
-    visual_id: "cd2aded586ad937d0a9c"
-    source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/cd2aded586ad937d0a9c/visual.json"
-    locator: "$/visual/query/queryState/Values/projections/3/field/Measure"
-  -
-    page_id: "e7a7a2fc000d0a5b0c10"
-    page_title: "Pedidos & Faturamento"
-    visual_id: "cd2aded586ad937d0a9c"
-    source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/cd2aded586ad937d0a9c/visual.json"
-    locator: "$/filterConfig/filters/15/field/Measure"
+usage: []
 
-source_expression_properties: {"formatStringDefinition": "\"#,##0.0;(#,##0.0)\""}
-
-dependency_table_sources: [{"table": "Base Receita", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Base Receita.tmdl"}, {"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fDevolucao_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl"}, {"table": "fVendas_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl"}]
+dependency_table_sources: [{"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fDevolucao_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl"}, {"table": "fVendas_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl"}]

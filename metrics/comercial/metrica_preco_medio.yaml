@@ -1,10 +1,10 @@
 schema_version: 1
 id: "metrica_preco_medio"
-title: "07 Preço Médio"
+title: "Preço Médio"
 type: "metric"
 domain: "comercial"
 status: "draft"
-version: "0.1.0"
+version: "0.1.1"
 owners:
   business: null
   technical: null

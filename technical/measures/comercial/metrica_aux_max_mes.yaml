@@ -1,8 +1,8 @@
 schema_version: 1
-id: "metrica_atualizacao"
-title: "00 Atualização"
+id: "metrica_aux_max_mes"
+title: "Aux Max Mês"
 type: "metric"
-domain: "corporativo"
+domain: "comercial"
 status: "draft"
 version: "0.1.0"
 owners:
@@ -13,7 +13,7 @@ updated_at: "2026-09-06"
 sources:
   -
     reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
-    locator: "medida _Medidas[00 Atualização], linha 661"
+    locator: "medida _Medidas[Aux Max Mês], linha 1141"
     accessed_at: "2026-09-06"
 validation:
   reviewed_by: null
@@ -23,14 +23,14 @@ validation:
 pending:
   - "Confirmar responsável de negócio e responsável técnico."
   - "Revisar semântica com a área e validar resultados no modelo em execução."
+  - "Descrição de negócio não declarada no modelo; formular com a área responsável."
   - "Confirmar unidade/moeda, granularidade, aditividade e dimensões permitidas; não inferir a aprovação a partir dos relacionamentos existentes."
 kind: "auxiliar_visual"
-definition: "Data da última atualização do dataset."
-definition_basis: "descricao_do_modelo"
-source_description: "Data da última atualização do dataset."
+definition: null
+definition_basis: null
 business_questions: null
 synonyms:
-  - "00 Atualização"
+  - "Aux Max Mês"
 unit: null
 grain:
   source: null
@@ -40,10 +40,11 @@ time:
   timezone: null
   calendar: "dTempo; comportamento específico depende do contexto DAX"
   context_functions:
-    - "SELECTEDVALUE"
+    - "ALLSELECTED"
 formula:
   conceptual: null
-  dependencies: []
+  dependencies:
+    - "metrica_meta_rsl"
 aggregation:
   rule: null
   additivity: null
@@ -56,32 +57,54 @@ filters:
   note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
 data_sources:
   -
-    semantic_table: "Atualização"
+    semantic_table: "dTempo"
     physical_sources:
       -
-        engine: "Power Query local"
+        engine: "Power Platform Dataflow"
+        entities:
+          - "dTempo"
         upstream: null
-        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Atualização.tmdl:16"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl:145"
+  -
+    semantic_table: "fMeta_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_metas_executivos_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl:128"
 implementations:
   dax:
-    expression: "\"Atualizado em: \" & FORMAT(SELECTEDVALUE('Atualização'[Atualização]), \"dd/mm/yy hh:mm\")"
+    expression: |2-
+      VAR vMaxMes = 
+          MAXX(
+              ALLSELECTED(
+                  dTempo[MesNome]
+              )
+              ,[Meta RSL]
+          )
+      
+      RETURN
+          vMaxMes * 1.2
     table: "_Medidas"
     properties:
-      displayFolder: "00 Auxiliares"
-      lineageTag: "d3d0f3ce-e1e8-451c-8930-0ea27af7a1bc"
+      displayFolder: "07 Meta"
+      lineageTag: "b11abee8-8195-4007-94ef-7d4312dc1fb2"
     execution_validated: false
     note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
 dependencies:
-  tables_direct: ["Atualização"]
+  tables_direct: ["dTempo"]
   columns_direct:
     -
-      table: "Atualização"
-      column: "Atualização"
-  measures_transitive: []
+      table: "dTempo"
+      column: "MesNome"
+  measures_transitive:
+    - "metrica_meta_rsl"
   unqualified_references: []
   method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
 edge_cases: null
 checks: null
 usage: []
 
-dependency_table_sources: [{"table": "Atualização", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Atualização.tmdl"}]
+dependency_table_sources: [{"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fMeta_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl"}]

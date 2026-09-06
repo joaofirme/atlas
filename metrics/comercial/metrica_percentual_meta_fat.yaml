@@ -27,7 +27,6 @@ pending:
 kind: "indicador"
 definition: "Representação percentual de faturamento sobre a meta de RSL."
 definition_basis: "descricao_do_modelo"
-source_description: "Representação percentual de faturamento sobre a meta de RSL."
 business_questions: null
 synonyms:
   - "% Meta Fat"

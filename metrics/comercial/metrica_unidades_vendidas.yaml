@@ -1,10 +1,10 @@
 schema_version: 1
 id: "metrica_unidades_vendidas"
-title: "01 Unidades Vendidas"
+title: "Unidades Vendidas"
 type: "metric"
 domain: "comercial"
 status: "draft"
-version: "0.1.0"
+version: "0.1.1"
 owners:
   business: null
   technical: null
@@ -27,7 +27,6 @@ pending:
 kind: "indicador"
 definition: "Soma da unidade dos pedidos classificados com tipo venda, desconsiderando deposito 52 (refaturamento)."
 definition_basis: "descricao_do_modelo"
-source_description: "Soma da unidade dos pedidos classificados com tipo venda, desconsiderando deposito 52 (refaturamento)."
 business_questions: null
 synonyms:
   - "01 Unidades Vendidas"

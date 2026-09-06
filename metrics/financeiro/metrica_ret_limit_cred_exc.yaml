@@ -1,10 +1,10 @@
 schema_version: 1
 id: "metrica_ret_limit_cred_exc"
-title: "06 Ret.-Limit.créd.exc."
+title: "Ret.-Limit.créd.exc."
 type: "metric"
 domain: "financeiro"
 status: "draft"
-version: "0.1.0"
+version: "0.1.1"
 owners:
   business: null
   technical: null

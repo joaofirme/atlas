@@ -95,13 +95,13 @@ Relacionamentos: 7. Consultar o [mapa do modelo](../../docs/ingestoes/2026-09-06
 
 Medidas com referência direta:
 
-- [Pedidos & Faturamentos HTML](<../../metrics/corporativo/metrica_pedidos_e_faturamentos_html.yaml>)
-- [Carteira e Estoque HTML v1](<../../metrics/corporativo/metrica_carteira_e_estoque_html_v1.yaml>)
-- [Comercial HTML v1](<../../metrics/corporativo/metrica_comercial_html_v1.yaml>)
-- [Farmax BI HTML old](<../../metrics/corporativo/metrica_farmax_bi_html_old.yaml>)
+- [Pedidos & Faturamentos HTML](<../../technical/measures/corporativo/metrica_pedidos_e_faturamentos_html.yaml>)
+- [Carteira e Estoque HTML v1](<../../technical/measures/corporativo/metrica_carteira_e_estoque_html_v1.yaml>)
+- [Comercial HTML v1](<../../technical/measures/corporativo/metrica_comercial_html_v1.yaml>)
+- [Farmax BI HTML old](<../../technical/measures/corporativo/metrica_farmax_bi_html_old.yaml>)
 - [10 Carteira Inicial](<../../metrics/comercial/metrica_carteira_inicial.yaml>)
-- [Farmax BI HTML v2](<../../metrics/corporativo/metrica_farmax_bi_html_v2.yaml>)
-- [Pedidos & Faturamentos Menu HTML](<../../metrics/corporativo/metrica_pedidos_e_faturamentos_menu_html.yaml>)
+- [Farmax BI HTML v2](<../../technical/measures/corporativo/metrica_farmax_bi_html_v2.yaml>)
+- [Pedidos & Faturamentos Menu HTML](<../../technical/measures/corporativo/metrica_pedidos_e_faturamentos_menu_html.yaml>)
 
 ## Pendências
 

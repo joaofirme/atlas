@@ -1,82 +1,34 @@
 ---
 name: atlas-documentation
-description: Criar, revisar e organizar documentação, contratos semânticos e skills de análise no repositório Atlas, antiga MiniAlexandria da Farmax. Use ao cadastrar ou atualizar métricas, dimensões, ontologia, regras de negócio e produtos de dados, mantendo rastreabilidade e um padrão comum.
+description: Manter contratos, documentação e procedimentos analíticos do Atlas com rastreabilidade.
 ---
 
-# Construção e documentação do Atlas
+# Manutenção do Atlas
 
-## Propósito e origem
+O Atlas é a base de conhecimento de dados e negócio da Farmax. Esta skill é para edição; consultas seguem [docs/consulta.md](../../../docs/consulta.md).
 
-Atlas é o nome atual da MiniAlexandria: uma base versionada de conhecimento de dados e negócio da Farmax, reutilizável por pessoas, produtos de dados e agentes. O objetivo é manter definições consistentes, explicar a origem dos dados e registrar como analisar cada domínio.
+## Organização e leitura
 
-Fonte conceitual: conversa [Plataforma de IA do Ifood](https://chatgpt.com/c/6a98c0d7-4a88-83e9-9239-e6f3371c6df7), consultada em 2026-09-06. A conversa reúne um relato sobre o iFood e propostas de arquitetura para a Farmax; não comprova tabelas, fórmulas, responsáveis ou integrações em produção na Farmax. Não copiar a transcrição pessoal para a documentação.
+- `metrics/`: indicadores de negócio; uma definição e uma implementação canônica por ID.
+- `dimensions/`, `ontology/` e `business_rules/`: dimensões, entidades, joins, conceitos e regras referenciáveis.
+- `skills/`: procedimentos analíticos; `.agents/skills/`: instruções de manutenção.
+- `technical/measures/`: seletores, HTML, cores, placeholders e adaptações visuais. Preservar IDs para dependências.
+- `data_products/`: documentação técnica legada de tabelas; o prefixo `tabela_` não comprova produto governado.
+- `catalog/metrics.json`: índice de busca gerado; não editar à mão nem copiar fórmulas para ele.
+- `powerbi/` e `docs/ingestoes/`: evidências; ler somente quando houver necessidade de auditar a origem.
+- `docs/catalogo.md` e `docs/catalogo-tecnico.md`: índices gerados por tipo de consulta.
 
-Esta skill estabelece o padrão inicial do Atlas. Convenções de arquivos e metadados abaixo são decisões deste repositório, não especificações oficiais do iFood. Usar Atlas nos novos textos; preservar MiniAlexandria apenas como referência histórica.
+## Fluxo de edição
 
-## Arquitetura que vamos construir
+1. Conferir Git e buscar por ID, nome e sinônimos antes de criar um objeto. Abrir apenas os contratos relacionados.
+2. Usar português e IDs estáveis em snake_case sem acentos. Skills usam pastas e name em kebab-case. Criar pastas apenas com conteúdo real.
+3. Separar implementação observada, hipótese e aprovação de negócio. Fontes podem ser relatórios, modelos, SQL, planilhas e APIs; nomes de negócio não dependem da ferramenta.
+4. Não inventar tabelas, moeda, responsáveis, certificação ou resultados. Registrar lacunas específicas. SQL/DAX só são testados após execução comparada.
+5. Preservar evidência, dependências e IDs; uma fórmula canônica não deve ser copiada para textos ou índices. Remover repetição literal; preservar divergências entre descrição e expressão.
+6. Executar `python scripts/atlas.py build`, `python scripts/atlas.py validate` e `python -m unittest discover -s tests`. Revisar links e diff. Os testes estruturais não certificam cálculos.
+7. Se autorizado, publicar somente arquivos da tarefa no branch/remote conferidos, sem force push. Mudanças de regras certificadas exigem PR para revisão de negócio.
 
-- **Atlas/Git:** definições de negócio, contratos semânticos, documentação e procedimentos analíticos.
-- **Redshift:** fonte de dados prevista no contexto; objetos físicos precisam ser confirmados.
-- **Consumidores analíticos:** relatórios, modelos semânticos, serviços e agentes usam as definições do Atlas em seus contextos.
-- **Motor semântico futuro:** resolve métricas, dimensões, filtros e relacionamentos em consultas controladas.
-- **API/MCP futuro:** permite a agentes descobrir e consultar o conhecimento do Atlas.
-- **Agentes:** interpretam perguntas, escolhem procedimentos e explicam resultados com evidências.
-
-O desenho final discutido evolui de recuperar SQL para consultar métricas por um contrato como `query_metric(metric, dimensions, filters)`. Tratar esses nomes como proposta de interface até existir implementação. O agente não deve inventar uma fórmula alternativa para uma métrica certificada.
-
-O repositório não executa um servidor MCP por si só. Runtime, hospedagem, CI/CD e publicação em consumidores são etapas futuras, não capacidades instaladas pela criação desta documentação. A tecnologia do motor e o provedor de deploy permanecem em aberto.
-
-## Fontes de descoberta
-
-Usar os artefatos que as áreas já criaram e usam — relatórios, modelos semânticos, consultas SQL, planilhas, documentação, APIs e produtos de dados — para acelerar o mapeamento. Eles fornecem evidência sobre nomes, fórmulas, tabelas, colunas, filtros, relações e uso real.
-
-A fonte de descoberta não vira o centro do catálogo nem autoridade automática de negócio. Manter nomes de ferramentas e caminhos somente em `sources`, `implementations` e registros de ingestão. IDs, títulos e definições canônicas devem expressar o negócio e continuar válidos caso a ferramenta mude. Não criar um produto de dados canônico apenas para representar o relatório usado na coleta.
-
-Separar indicadores de artefatos de apresentação, seletores, textos, cores e cálculos de layout. Preservar estes últimos no inventário técnico quando ajudarem a interpretar a fonte, sem promovê-los a indicadores oficiais. Ao incorporar outra fonte, buscar equivalências e divergências antes de criar objetos novos.
-
-## Organização do repositório
-
-Criar diretórios somente quando houver conteúdo real para eles.
-
-```text
-atlas/
-├── AGENTS.md
-├── .agents/skills/atlas-documentation/SKILL.md
-├── README.md                         # propósito, navegação e estado da construção
-├── docs/
-│   ├── catalogo.md                    # índice de objetos e status
-│   ├── arquitetura/                   # desenho e limites das integrações
-│   ├── decisoes/                      # decisões arquiteturais e migrações
-│   └── roadmap.md                     # etapas, dependências e critérios de aceite
-├── metrics/<dominio>/<id>.yaml
-├── dimensions/<dominio>/<id>.yaml
-├── ontology/
-│   ├── entities/<id>.yaml
-│   ├── relationships/<id>.yaml
-│   └── concepts/<id>.md
-├── business_rules/<dominio>/<id>.md
-├── data_products/<dominio>/<id>.md
-├── skills/<dominio>/<nome-da-skill>/SKILL.md
-└── tests/                            # validações quando implementadas
-```
-
-`skills/` contém procedimentos analíticos do negócio; `.agents/skills/` contém a instrução de manutenção deste repositório. Não confundir as duas funções.
-
-Usar português do Brasil nos textos. Usar IDs estáveis em `snake_case`, sem acentos; o nome do arquivo acompanha o ID. Pastas de skills e seu campo `name` usam `kebab-case`. Domínios iniciais possíveis: `logistica`, `comercial`, `financeiro`, `marketing`, `operacoes`; criar apenas os necessários.
-
-Uma definição tem um único arquivo canônico. Documentos e skills referenciam esse arquivo por link relativo e ID, sem manter cópias de fórmulas. Separar uma variante em outro ID apenas quando representar outro significado de negócio.
-
-## Fluxo de trabalho do agente documental
-
-1. Ler as instruções do repositório, o catálogo e os arquivos relacionados, quando existirem. Inspecionar o estado Git antes de editar.
-2. Identificar a solicitação, o domínio, o tipo de objeto e a fonte. Buscar por ID, nome e sinônimos antes de criar outro objeto.
-3. Extrair definições confirmadas e separar propostas e lacunas. Não assumir que exemplos do chat são implementações reais.
-4. Criar ou atualizar o arquivo canônico usando os contratos abaixo. Preservar IDs e registrar impactos nas referências dependentes.
-5. Atualizar o catálogo e os links afetados. Na primeira contribuição de conteúdo, criar README e catálogo com links apenas para arquivos existentes.
-6. Revisar consistência semântica e executar as validações disponíveis. Registrar o que foi efetivamente verificado e o que não pôde ser verificado.
-7. Entregar um resumo com arquivos alterados, fontes, status, verificações e pendências. Se a tarefa incluir envio ao GitHub, seguir o fluxo de publicação abaixo.
-
-Quando faltar informação, usar `null` no YAML e “Pendente de confirmação” no texto, com uma pendência específica. Listas vazias significam “nenhum item aplicável”, não “ainda não investigado”; usar `null` para desconhecido. Não preencher donos, tabelas ou resultados fictícios. Avançar no rascunho e pedir somente os dados que impedem a conclusão.
+Os scripts `document_powerbi.py` e `map_powerbi_semantics.py` registram a carga inicial; não são sincronizadores de contratos curados. Para nova ingestão, comparar evidências antes de editar.
 
 ## Metadados comuns
 
@@ -154,36 +106,3 @@ Para conteúdos Markdown usar, nesta ordem: `# Título`, `## Objetivo`, `## Defi
 Para skills analíticas, manter no frontmatter os campos nativos `name` e `description`; colocar os metadados comuns dentro de `metadata`. Usar no corpo: `Quando usar`, `Entradas e pré-condições`, `Referências canônicas`, `Procedimento`, `Validação`, `Formato de saída`, `Limites e pendências` e `Fontes`. Não reproduzir fórmulas de arquivos canônicos.
 
 Uma resposta analítica deve informar período, filtros, métricas utilizadas, comparação, resultados, evidências e limitações. Separar observação de hipótese causal. Por exemplo, a skill de frete pode investigar volume, mix e tarifa, mas não deve alegar causalidade sem evidência ou inventar uma decomposição matemática.
-
-## Etapas de construção
-
-1. **Base documental:** manter este padrão, criar navegação, catálogo e decisões. Aceite: outro agente encontra a regra e identifica onde cadastrar cada objeto.
-2. **Ingestão contínua:** usar fontes mantidas pelas áreas para descobrir objetos e registrar proveniência. Aceite: inventário rastreável, deduplicado e com lacunas explícitas.
-3. **Validação de negócio:** revisar definições, responsáveis, granularidade, unidade e regras com os domínios. Aceite: contratos promovidos somente com evidências registradas.
-4. **Skills analíticas:** registrar procedimentos para perguntas reais usando IDs canônicos. Aceite: cada skill informa entradas, verificações, saída e limites.
-5. **Validação automatizada:** implementar schemas, integridade referencial e testes semânticos. Aceite: erros de contrato impedem promoção, e resultados de testes ficam rastreáveis.
-6. **Consumo programático:** implementar descoberta e leitura; evoluir para consultas controladas por motor semântico. Aceite: agentes e produtos usam os contratos e os casos de erro são definidos.
-7. **Expansão por domínio:** repetir o ciclo com novas fontes, produtos e métricas, reconciliando sobreposições.
-
-Não construir runtime, infraestrutura ou centenas de objetos ao receber apenas uma solicitação documental. Atualizar o roadmap com evidência de cada etapa concluída.
-
-## Revisão e publicação
-
-Antes de finalizar uma contribuição, verificar:
-
-- IDs únicos, nomes coerentes, links relativos válidos e dependências existentes; dependências ainda não criadas ficam como pendências explícitas.
-- Metadados e campos particulares preenchidos ou marcados como desconhecidos; status compatível com a evidência.
-- Ausência de fórmulas conflitantes, certificações inventadas e exemplos apresentados como dados reais.
-- Granularidade, tempo, unidade e joins coerentes; SQL/DAX só marcados como testados quando executados e comparados.
-- Nenhum segredo, credencial ou amostra identificável desnecessária incluído nos arquivos.
-- Catálogo atualizado: ID, nome, tipo, domínio, status e link canônico para cada objeto novo ou alterado.
-
-Executar os validadores do repositório quando existirem. Enquanto não existirem, realizar revisão documental e informar essa limitação; não afirmar que CI/CD ou testes automatizados passaram. Sem acesso aos dados, manter explícita a ausência de validação de execução.
-
-Criar ou editar arquivos não implica deploy. Quando commit, push ou PR fizerem parte da solicitação autorizada, conferir branch e remote, incluir somente os arquivos da tarefa e usar uma mensagem como `docs(atlas): documenta frete por kg`. Para alterações de regras oficiais, preparar PR com mudança de negócio, fontes, impacto e validação para revisão dos responsáveis. Não sobrescrever histórico remoto nem fazer merge ou deploy por inferência da palavra “documentar”.
-
-Ao atualizar integrações futuras, Atlas será a origem das definições sob sua gestão. Detectar e reconciliar divergências entre fontes antes de publicar. Mudanças em objetos fora do escopo exigem uma decisão explícita de migração.
-
-## Exemplo de solicitação
-
-“Use a skill atlas-documentation para documentar a métrica frete por kg a partir destas fontes. Procure definições existentes, cadastre o contrato no domínio adequado, atualize o catálogo e informe as pendências. Mantenha como draft tudo que ainda não tiver validação.”

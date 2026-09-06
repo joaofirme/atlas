@@ -1,10 +1,10 @@
 schema_version: 1
 id: "metrica_venda_efetiva"
-title: "00 Venda Efetiva"
+title: "Venda Efetiva"
 type: "metric"
 domain: "comercial"
 status: "draft"
-version: "0.1.0"
+version: "0.1.1"
 owners:
   business: null
   technical: null
@@ -27,7 +27,6 @@ pending:
 kind: "indicador"
 definition: "Soma das vendas, menos os pedidos cancelados, menos os programados para o próximo mês."
 definition_basis: "descricao_do_modelo"
-source_description: "Soma das vendas, menos os pedidos cancelados, menos os programados para o próximo mês."
 business_questions: null
 synonyms:
   - "00 Venda Efetiva"

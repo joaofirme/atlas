@@ -39,7 +39,7 @@ Interpretação documental da implementação observada na fonte de descoberta. 
 
 TicketMedio usa receita/quantidade de FATURADO na janela de 90 dias da maior data de pedido global, removendo filtros. EstoqueCalculadoValor = estoque × ticket; DemandaValor = demanda × ticket; EstoqueTotalValor acrescenta A Faturar. Não equivale automaticamente a estoque físico ou valorização contábil. O subtotal se refere ao Top 20, não a todos os SKUs.
 
-- [Carteira e Estoque HTML v1](<../../metrics/corporativo/metrica_carteira_e_estoque_html_v1.yaml>)
+- [Carteira e Estoque HTML v1](<../../technical/measures/corporativo/metrica_carteira_e_estoque_html_v1.yaml>)
 
 ## Exemplos
 
@@ -59,4 +59,4 @@ Confirmar significado, responsáveis e uso oficial com a área.
 
 ## Fontes
 
-- [Carteira e Estoque HTML v1](<../../metrics/corporativo/metrica_carteira_e_estoque_html_v1.yaml>)
+- [Carteira e Estoque HTML v1](<../../technical/measures/corporativo/metrica_carteira_e_estoque_html_v1.yaml>)

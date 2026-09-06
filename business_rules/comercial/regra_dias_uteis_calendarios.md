@@ -48,7 +48,7 @@ Interpretação documental da implementação observada na fonte de descoberta. 
 dTempo exclui sábado e domingo no M, sem consultar dFeriado. Não usar intercambiavelmente esses denominadores até revisar feriados, mês corrente, corte de atualização e contexto da meta.
 
 - [Meta Diária Atual](<../../metrics/comercial/metrica_meta_diaria_atual.yaml>)
-- [Farmax BI HTML v2](<../../metrics/corporativo/metrica_farmax_bi_html_v2.yaml>)
+- [Farmax BI HTML v2](<../../technical/measures/corporativo/metrica_farmax_bi_html_v2.yaml>)
 - [Meta Média](<../../metrics/comercial/metrica_meta_media.yaml>)
 
 ## Exemplos
@@ -70,5 +70,5 @@ Confirmar significado, responsáveis e uso oficial com a área.
 ## Fontes
 
 - [Meta Diária Atual](<../../metrics/comercial/metrica_meta_diaria_atual.yaml>)
-- [Farmax BI HTML v2](<../../metrics/corporativo/metrica_farmax_bi_html_v2.yaml>)
+- [Farmax BI HTML v2](<../../technical/measures/corporativo/metrica_farmax_bi_html_v2.yaml>)
 - [Meta Média](<../../metrics/comercial/metrica_meta_media.yaml>)

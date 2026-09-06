@@ -43,8 +43,8 @@ Interpretação documental da implementação observada na fonte de descoberta. 
 
 O código tenta converter o texto de atualização em data e usa TODAY() em caso de erro. Confirmar o parse e a interação efetiva entre filtros do HTML e REMOVEFILTERS das medidas base. O comentário sobre ignorar slicers não substitui um teste de contexto.
 
-- [Carteira e Estoque HTML v1](<../../metrics/corporativo/metrica_carteira_e_estoque_html_v1.yaml>)
-- [00 Atualização](<../../metrics/corporativo/metrica_atualizacao.yaml>)
+- [Carteira e Estoque HTML v1](<../../technical/measures/corporativo/metrica_carteira_e_estoque_html_v1.yaml>)
+- [00 Atualização](<../../technical/measures/corporativo/metrica_atualizacao.yaml>)
 
 ## Exemplos
 
@@ -64,5 +64,5 @@ Confirmar significado, responsáveis e uso oficial com a área.
 
 ## Fontes
 
-- [Carteira e Estoque HTML v1](<../../metrics/corporativo/metrica_carteira_e_estoque_html_v1.yaml>)
-- [00 Atualização](<../../metrics/corporativo/metrica_atualizacao.yaml>)
+- [Carteira e Estoque HTML v1](<../../technical/measures/corporativo/metrica_carteira_e_estoque_html_v1.yaml>)
+- [00 Atualização](<../../technical/measures/corporativo/metrica_atualizacao.yaml>)

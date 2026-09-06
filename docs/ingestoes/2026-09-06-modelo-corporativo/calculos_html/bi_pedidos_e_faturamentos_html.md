@@ -1,6 +1,6 @@
 # Cálculos internos — Pedidos & Faturamentos HTML
 
-Implementação canônica: [Pedidos & Faturamentos HTML](<../../../../metrics/corporativo/metrica_pedidos_e_faturamentos_html.yaml>). As variáveis abaixo pertencem ao escopo dessa expressão e não são medidas independentes. Números de linha são relativos à expressão DAX extraída. Índice lexical de variáveis de nível superior; variáveis aninhadas continuam preservadas na expressão completa.
+Implementação canônica: [Pedidos & Faturamentos HTML](<../../../../technical/measures/corporativo/metrica_pedidos_e_faturamentos_html.yaml>). As variáveis abaixo pertencem ao escopo dessa expressão e não são medidas independentes. Números de linha são relativos à expressão DAX extraída. Índice lexical de variáveis de nível superior; variáveis aninhadas continuam preservadas na expressão completa.
 
 | Variável | Linha DAX | Classificação | Referências |
 |---|---:|---|---|

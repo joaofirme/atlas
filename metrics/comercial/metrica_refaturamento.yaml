@@ -1,10 +1,10 @@
 schema_version: 1
 id: "metrica_refaturamento"
-title: "01 Refaturamento"
+title: "Refaturamento"
 type: "metric"
 domain: "comercial"
 status: "draft"
-version: "0.1.0"
+version: "0.1.1"
 owners:
   business: null
   technical: null

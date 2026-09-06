@@ -39,7 +39,7 @@ Interpretação documental da implementação observada na fonte de descoberta. 
 
 A implementação adiciona 1 ao número de clientes com participação acumulada até 80%. Rever empates, conjunto vazio, único cliente e a delimitação do cliente que cruza o limiar. O Top 15 exibido não corresponde necessariamente ao universo inteiro do Pareto.
 
-- [Comercial HTML v1](<../../metrics/corporativo/metrica_comercial_html_v1.yaml>)
+- [Comercial HTML v1](<../../technical/measures/corporativo/metrica_comercial_html_v1.yaml>)
 
 ## Exemplos
 
@@ -59,4 +59,4 @@ Confirmar significado, responsáveis e uso oficial com a área.
 
 ## Fontes
 
-- [Comercial HTML v1](<../../metrics/corporativo/metrica_comercial_html_v1.yaml>)
+- [Comercial HTML v1](<../../technical/measures/corporativo/metrica_comercial_html_v1.yaml>)
