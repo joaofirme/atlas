@@ -1,0 +1,41 @@
+schema_version: 1
+id: "relacionamento_ab55d04b_2753_63db_2450_20f80863e1f8"
+title: "fCarteira_pedidos_unificada.data_carteira → dTempo.Data"
+type: "relationship"
+domain: "corporativo"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/relationships.tmdl"
+    locator: "relationship ab55d04b-2753-63db-2450-20f80863e1f8; linha 75"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+relationship_kind: "semantic_model_join"
+from_object: "fCarteira_pedidos_unificada.data_carteira"
+to_object: "dTempo.Data"
+business_verb: null
+declared_properties:
+  fromColumn: "fCarteira_pedidos_unificada.data_carteira"
+  toColumn: "dTempo.Data"
+cardinality:
+  from: null
+  to: null
+  note: "null significa propriedade omitida no TMDL; não é cardinalidade medida nos dados."
+active_declared: null
+filter_direction_declared: null
+join_sql: null
+orphan_handling: null
+fanout_risk: "Revisar muitos-para-muitos e duplicidade das chaves; não traduzir relacionamento automaticamente em JOIN SQL."

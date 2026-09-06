@@ -9,6 +9,7 @@ import os
 from collections import Counter
 
 DATE='2026-09-06'
+INGESTION='docs/ingestoes/2026-09-06-modelo-corporativo'
 DATA=extract()
 TABLES={t['name']:t for t in DATA['tables']}
 MEASURES={m['id']:m for m in DATA['measures']}
@@ -66,7 +67,7 @@ def metric_domain(m):
     return 'financeiro' if f=='03 Financeiro' else 'logistica' if f=='04 Logística' else 'corporativo' if f in ('00 Auxiliares','Bi_novo') else 'comercial'
 
 def mpath(m): return f"metrics/{metric_domain(m)}/{m['id']}.yaml"
-def tpath(t): return f"data_products/{domain(t['name'])}/bi_tabela_{slug(t['name'])}.md"
+def tpath(t): return f"data_products/{domain(t['name'])}/tabela_{slug(t['name'])}.md"
 def esc(x): return str(x if x is not None else 'Pendente').replace('|','\\|').replace('\n','<br>')
 
 # Explicações da implementação; descrições originais são preservadas separadamente.
@@ -131,7 +132,8 @@ def closure(mid,seen=None):
 
 missing_columns=[]
 for m in DATA['measures']:
-    d=meta(m['id'],m['name'],'metric',metric_domain(m),m['source'],f"medida {m['table']}[{m['name']}], linha {m['line']}")
+    title=re.sub(r'^\d+\s+','',m['name'])
+    d=meta(m['id'],title,'metric',metric_domain(m),m['source'],f"medida {m['table']}[{m['name']}], linha {m['line']}")
     d['kind']=metric_kind(m)
     d['definition']=DEFS.get(m['name']) or m['description'] or ('Medida de composição visual; consultar implementação e inventário de cálculos internos.' if d['kind']=='renderizacao_html' else None)
     d['definition_basis']='leitura_da_implementacao' if m['name'] in DEFS or d['kind']=='renderizacao_html' else 'descricao_do_modelo' if m['description'] else None
@@ -161,7 +163,7 @@ for m in DATA['measures']:
     ydoc(mpath(m),d)
 
 for t in DATA['tables']:
-    path=tpath(t);d=meta('bi_tabela_'+slug(t['name']),t['name'],'data_product',domain(t['name']),t['source'])
+    path=tpath(t);d=meta('tabela_'+slug(t['name']),t['name'],'data_product',domain(t['name']),t['source'])
     rows=['| Coluna | Tipo | Coluna de origem | Resumo padrão | Oculta (declarado) | Descrição original | Linha |','|---|---|---|---|---|---|---|']
     for c in t['columns']:
         p=c['properties'];rows.append('| '+' | '.join(esc(x) for x in [c['name'],p.get('dataType'),p.get('sourceColumn'),p.get('summarizeBy'),p.get('isHidden','não declarado'),c['description'] or 'Não declarada',c['line']])+' |')
@@ -181,40 +183,40 @@ for t in DATA['tables']:
         specs+='\n### Hierarquias declaradas\n\n'+'\n'.join('```tmdl\n'+h['definition']+'\n```' for h in t['hierarchies'])
     related=[r for r in DATA['relationships'] if any(v.startswith(t['name']+'.') for k,v in r['properties'].items() if k in ('fromColumn','toColumn'))]
     users=[m for m in DATA['measures'] if any(c['table']==t['name'] for c in m['column_dependencies'])]
-    deps='Relacionamentos: '+str(len(related))+'. Consultar o [mapa do modelo](../../docs/powerbi/modelo.md).\n\nMedidas com referência direta:\n\n'+'\n'.join('- '+link(m['name'],mpath(m),path) for m in users)
-    mdoc(path,d,[('Objetivo','Mapear a tabela semântica e sua linhagem no BI corporativo.'),('Definição e escopo','Objeto técnico observado na exportação PBIP. Consumidores: modelo semântico e relatório Farmax v3 (1). Significado completo, granularidade e chaves naturais: pendentes de confirmação.'),('Especificação',specs),('Exemplos','Consultar os nomes de colunas e as medidas dependentes. Não foram coletadas amostras de linhas.'),('Validação',f"Inventariadas {len(t['columns'])} colunas e {len(t['partitions'])} partições. Sem consulta à origem, teste de cardinalidade ou execução do modelo."),('Dependências e impactos',deps),('Pendências','Responsáveis, política de atualização/SLA, qualidade, acesso, chaves e granularidade. A consulta de uma view não revela sua transformação upstream.'),('Fontes',link('Definição TMDL',t['source'],path))])
+    deps='Relacionamentos: '+str(len(related))+f'. Consultar o [inventário técnico](../../{INGESTION}/modelo.md).\n\nMedidas com referência direta:\n\n'+'\n'.join('- '+link(m['name'],mpath(m),path) for m in users)
+    mdoc(path,d,[('Objetivo','Mapear a tabela, suas colunas e sua linhagem como evidência para o Atlas.'),('Definição e escopo','Objeto técnico observado na fonte de descoberta. Significado completo, granularidade e chaves naturais: pendentes de confirmação.'),('Especificação',specs),('Exemplos','Consultar os nomes de colunas e as medidas dependentes. Não foram coletadas amostras de linhas.'),('Validação',f"Inventariadas {len(t['columns'])} colunas e {len(t['partitions'])} partições. Sem consulta à origem, teste de cardinalidade ou execução do modelo."),('Dependências e impactos',deps),('Pendências','Responsáveis, política de atualização/SLA, qualidade, acesso, chaves e granularidade. A consulta de uma view não revela sua transformação upstream.'),('Fontes',link('Definição TMDL',t['source'],path))])
 
 for r in DATA['relationships']:
-    p=r['properties'];id='bi_rel_'+slug(r['name']);d=meta(id,p['fromColumn']+' → '+p['toColumn'],'relationship','corporativo',r['source'],f"relationship {r['name']}; linha {r['line']}")
+    p=r['properties'];id='relacionamento_'+slug(r['name']);d=meta(id,p['fromColumn']+' → '+p['toColumn'],'relationship','corporativo',r['source'],f"relationship {r['name']}; linha {r['line']}")
     d.update(relationship_kind='semantic_model_join',from_object=p['fromColumn'],to_object=p['toColumn'],business_verb=None,declared_properties=p,cardinality={'from':p.get('fromCardinality'),'to':p.get('toCardinality'),'note':'null significa propriedade omitida no TMDL; não é cardinalidade medida nos dados.'},active_declared=p.get('isActive'),filter_direction_declared=p.get('crossFilteringBehavior'),join_sql=None,orphan_handling=None,fanout_risk='Revisar muitos-para-muitos e duplicidade das chaves; não traduzir relacionamento automaticamente em JOIN SQL.')
     ydoc(f'ontology/relationships/{id}.yaml',d)
 
 # Preserve all column metadata in a machine-readable inventory as well as readable dictionaries.
-write('docs/powerbi/colunas.json',json.dumps([{'table':t['name'],'source':t['source'],**c} for t in DATA['tables'] for c in t['columns']],ensure_ascii=False,indent=2))
-write('docs/powerbi/manifesto_fontes.json',json.dumps(DATA['manifest'],ensure_ascii=False,indent=2))
-write('docs/powerbi/uso_no_relatorio.json',json.dumps(DATA['pages'],ensure_ascii=False,indent=2))
+write(f'{INGESTION}/colunas.json',json.dumps([{'table':t['name'],'source':t['source'],**c} for t in DATA['tables'] for c in t['columns']],ensure_ascii=False,indent=2))
+write(f'{INGESTION}/manifesto_fontes.json',json.dumps(DATA['manifest'],ensure_ascii=False,indent=2))
+write(f'{INGESTION}/uso_no_relatorio.json',json.dumps(DATA['pages'],ensure_ascii=False,indent=2))
 
-model=['# Modelo semântico do BI','', '20 tabelas, 241 colunas, 90 medidas e 28 relacionamentos. Extração estática; estado inicial `draft`.','', '## Tabelas','', '| Tabela | Colunas | Partições |','|---|---:|---:|']
-for t in DATA['tables']:model.append(f"| {link(t['name'],tpath(t),'docs/powerbi/modelo.md')} | {len(t['columns'])} | {len(t['partitions'])} |")
+model=['# Inventário técnico da primeira fonte','', '20 tabelas, 241 colunas, 90 medidas e 28 relacionamentos. Extração estática; estado inicial `draft`.','', '## Tabelas','', '| Tabela | Colunas | Partições |','|---|---:|---:|']
+for t in DATA['tables']:model.append(f"| {link(t['name'],tpath(t),INGESTION+'/modelo.md')} | {len(t['columns'])} | {len(t['partitions'])} |")
 model+=['','## Relacionamentos','', 'Valores não declarados permanecem pendentes; não são inferidos como resultados de testes de cardinalidade.','', '| Origem | Destino | Ativo declarado | Cardinalidade destino declarada | Contrato |','|---|---|---|---|---|']
 for r in DATA['relationships']:
-    p=r['properties'];rp=f"ontology/relationships/bi_rel_{slug(r['name'])}.yaml"
-    model.append('| '+' | '.join([esc(p['fromColumn']),esc(p['toColumn']),esc(p.get('isActive','omitido')),esc(p.get('toCardinality','omitido')),link('abrir',rp,'docs/powerbi/modelo.md')])+' |')
+    p=r['properties'];rp=f"ontology/relationships/relacionamento_{slug(r['name'])}.yaml"
+    model.append('| '+' | '.join([esc(p['fromColumn']),esc(p['toColumn']),esc(p.get('isActive','omitido')),esc(p.get('toCardinality','omitido')),link('abrir',rp,INGESTION+'/modelo.md')])+' |')
 model+=['','## Segurança declarada','', 'As quatro roles abaixo declaram `modelPermission: read`. Os arquivos não contêm `tablePermission` ou filtros RLS. A associação de usuários e as permissões no serviço não estão disponíveis nesta exportação. Nomes como Acesso_Executivo não comprovam isolamento por executivo.','']
-model+=['- '+link(r['definition'].splitlines()[0],r['source'],'docs/powerbi/modelo.md') for r in DATA['roles']]
+model+=['- '+link(r['definition'].splitlines()[0],r['source'],INGESTION+'/modelo.md') for r in DATA['roles']]
 model+=['','## Parâmetros e atualização','', 'RangeStart e RangeEnd estão declarados em expressions.tmdl. Sua mera presença não comprova atualização incremental; as partições lidas não referenciam esses parâmetros. A tabela Atualização usa DateTimeZone.LocalNow com deslocamento -3; isso representa a execução da consulta, não comprova a data máxima dos eventos da origem.','', '## Método','', 'Extração lexical específica para este PBIP, guiada pela [sintaxe TMDL da Microsoft](https://learn.microsoft.com/en-us/analysis-services/tmdl/tmdl-overview). Comentários `///` são descrições; expressões e suas fontes foram preservadas. Não houve execução no Power BI.']
-write('docs/powerbi/modelo.md','\n'.join(model))
+write(f'{INGESTION}/modelo.md','\n'.join(model))
 
-pages=['# Páginas e consumo das métricas','', 'As referências incluem consultas, filtros e formatação. Uma referência em filtro não prova que o indicador é exibido. Páginas homônimas são identificadas pelo ID. [Inventário detalhado](uso_no_relatorio.json).']
+pages=['# Uso observado na primeira fonte','', 'As referências incluem consultas, filtros e formatação. Uma referência em filtro não prova que o indicador é exibido. Elementos homônimos são identificados pelo ID. [Inventário detalhado](uso_no_relatorio.json).']
 for p in DATA['pages']:
-    pages+=['',f"## {p['title']} — {p['id']}",'',f"{len(p['visuals'])} visuais. Visibilidade declarada: {p['visibility'] or 'não especificada'}. Fonte: "+link('page.json',p['source'],'docs/powerbi/paginas.md'),'', '| Visual | Tipo | Medidas referenciadas |','|---|---|---|']
+    pages+=['',f"## {p['title']} — {p['id']}",'',f"{len(p['visuals'])} visuais. Visibilidade declarada: {p['visibility'] or 'não especificada'}. Fonte: "+link('page.json',p['source'],INGESTION+'/paginas.md'),'', '| Visual | Tipo | Medidas referenciadas |','|---|---|---|']
     for v in p['visuals']:
         names=sorted(set(r['property'] for r in v['refs'] if r['kind']=='Measure'))
-        links=[link(n,mpath(BYNAME[n]),'docs/powerbi/paginas.md') if n in BYNAME else esc(n)+' **não encontrada**' for n in names]
-        pages.append('| '+link(v['id'],v['source'],'docs/powerbi/paginas.md')+' | '+esc(v['type'])+' | '+', '.join(links)+' |')
+        links=[link(n,mpath(BYNAME[n]),INGESTION+'/paginas.md') if n in BYNAME else esc(n)+' **não encontrada**' for n in names]
+        pages.append('| '+link(v['id'],v['source'],INGESTION+'/paginas.md')+' | '+esc(v['type'])+' | '+', '.join(links)+' |')
     cols=sorted(set(r['table']+'.'+r['property'] for v in p['visuals'] for r in v['refs'] if r['kind']=='Column' and r['table']))
     pages+=['','Campos referenciados: '+', '.join('`'+x+'`' for x in cols)+'.']
-write('docs/powerbi/paginas.md','\n'.join(pages))
+write(f'{INGESTION}/paginas.md','\n'.join(pages))
 
 # Index every top-level variable in HTML expressions, including computational
 # variables that do not exist as independent model measures. Do not mint fake measures.
@@ -233,13 +235,13 @@ for m in DATA['measures']:
         functions=sorted(set(re.findall(r'\b([A-Z][A-Z0-9_.]*)\s*\(',clean)))
         records.append({'variable':a[1],'expression_line':e[:a.start()].count('\n')+1,'expression':expr,'references':references,'functions':functions,'classification':'calculo_ou_contexto' if references or any(f in functions for f in ['DIVIDE','SUMX','CALCULATE','COUNTROWS','DATESBETWEEN']) else 'apoio_ou_apresentacao'})
     var_inventory.append({'metric_id':m['id'],'variables':[{k:v for k,v in r.items() if k!='expression'} for r in records]})
-    path=f"docs/powerbi/calculos_html/{m['id']}.md"
+    path=f"{INGESTION}/calculos_html/{m['id']}.md"
     text=f"# Cálculos internos — {m['name']}\n\nImplementação canônica: {link(m['name'],mpath(m),path)}. As variáveis abaixo pertencem ao escopo dessa expressão e não são medidas independentes. Números de linha são relativos à expressão DAX extraída. Índice lexical de variáveis de nível superior; variáveis aninhadas continuam preservadas na expressão completa.\n\n| Variável | Linha DAX | Classificação | Referências |\n|---|---:|---|---|\n"
     for r in records:text+='| '+r['variable']+' | '+str(r['expression_line'])+' | '+r['classification']+' | '+esc(', '.join(r['references']))+' |\n'
     write(path,text)
-write('docs/powerbi/variaveis_html.json',json.dumps(var_inventory,ensure_ascii=False,indent=2))
+write(f'{INGESTION}/variaveis_html.json',json.dumps(var_inventory,ensure_ascii=False,indent=2))
 
-write('docs/powerbi/pendencias_referencias.json',json.dumps({'missing_qualified_columns':missing_columns,'missing_visual_measures':[{'page_id':p['id'],'visual':v['source'],**r} for p in DATA['pages'] for v in p['visuals'] for r in v['refs'] if r['kind']=='Measure' and r['property'] not in BYNAME]},ensure_ascii=False,indent=2))
-write('docs/powerbi/indice_objetos.json',json.dumps(CAT,ensure_ascii=False,indent=2))
-write('docs/catalogo.md','# Catálogo Atlas\n\nPrimeira ingestão: Power BI Farmax v3 (1). Todos os objetos estão em rascunho. Medidas técnicas/HTML permanecem identificadas pelo campo `kind`; não equivalem a KPIs de negócio.\n\n| ID | Nome | Tipo | Domínio | Status |\n|---|---|---|---|---|\n'+'\n'.join('| '+link(x['id'],x['path'],'docs/catalogo.md')+' | '+esc(x['title'])+' | '+x['type']+' | '+x['domain']+' | '+x['status']+' |' for x in CAT))
+write(f'{INGESTION}/pendencias_referencias.json',json.dumps({'missing_qualified_columns':missing_columns,'missing_visual_measures':[{'page_id':p['id'],'visual':v['source'],**r} for p in DATA['pages'] for v in p['visuals'] for r in v['refs'] if r['kind']=='Measure' and r['property'] not in BYNAME]},ensure_ascii=False,indent=2))
+write(f'{INGESTION}/indice_objetos.json',json.dumps(CAT,ensure_ascii=False,indent=2))
+write('docs/catalogo.md','# Catálogo Atlas\n\nCatálogo canônico do Atlas. A primeira carga foi descoberta em um artefato mantido por uma área de negócio; a ferramenta e o arquivo de origem permanecem apenas na proveniência de cada objeto. Todos os objetos estão em rascunho. Medidas técnicas e de apresentação permanecem identificadas pelo campo `kind` e não equivalem a indicadores de negócio.\n\n| ID | Nome | Tipo | Domínio | Status |\n|---|---|---|---|---|\n'+'\n'.join('| '+link(x['id'],x['path'],'docs/catalogo.md')+' | '+esc(x['title'])+' | '+x['type']+' | '+x['domain']+' | '+x['status']+' |' for x in CAT))
 print(json.dumps({'objects':len(CAT),'kinds':dict(Counter(metric_kind(m) for m in DATA['measures'])),'missing_qualified_columns':missing_columns,'html_variables':sum(len(v['variables']) for v in var_inventory)},ensure_ascii=False))

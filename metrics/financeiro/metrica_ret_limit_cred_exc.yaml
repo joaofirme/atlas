@@ -1,0 +1,112 @@
+schema_version: 1
+id: "metrica_ret_limit_cred_exc"
+title: "06 Ret.-Limit.créd.exc."
+type: "metric"
+domain: "financeiro"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
+    locator: "medida _Medidas[06 Ret.-Limit.créd.exc.], linha 5308"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+  - "Confirmar unidade/moeda, granularidade, aditividade e dimensões permitidas; não inferir a aprovação a partir dos relacionamentos existentes."
+kind: "indicador"
+definition: "Parcela de Financeiro com bloqueio Z5 em FARMAX ou TRAVA.LIMITE.CREDITO em SANAVITA."
+definition_basis: "leitura_da_implementacao"
+source_description: null
+business_questions: null
+synonyms:
+  - "06 Ret.-Limit.créd.exc."
+unit: null
+grain:
+  source: null
+  calculation: null
+time:
+  event: null
+  timezone: null
+  calendar: "dTempo; comportamento específico depende do contexto DAX"
+  context_functions:
+    - "CALCULATE"
+formula:
+  conceptual: null
+  dependencies:
+    - "metrica_financeiro"
+aggregation:
+  rule: null
+  additivity: null
+dimensions: null
+relationships: null
+filters:
+  mandatory: null
+  optional: null
+  exclusions: null
+  note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
+data_sources:
+  -
+    semantic_table: "fVendas_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_vendas_faturamento_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl:480"
+implementations:
+  dax:
+    expression: |2-
+      VAR vRetLimiteFarmax =
+          CALCULATE(
+              [00 Financeiro]
+              ,fVendas_unificada[empresa] = "FARMAX"
+              ,fVendas_unificada[sale_billing_block_code] = "Z5"
+          )
+      
+      VAR vRetLimiteSanavita =
+          CALCULATE(
+              [00 Financeiro]
+              ,fVendas_unificada[empresa] = "SANAVITA"
+              ,fVendas_unificada[sale_billing_block_code] = "TRAVA.LIMITE.CREDITO"
+          )
+      
+      RETURN
+          (COALESCE(vRetLimiteFarmax, 0) + COALESCE(vRetLimiteSanavita, 0)) + 0
+    table: "_Medidas"
+    properties:
+      displayFolder: "03 Financeiro"
+      lineageTag: "adc510b0-dadd-4c9b-a3df-7e8f3c500dc0"
+    execution_validated: false
+    note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
+dependencies:
+  tables_direct: ["fVendas_unificada"]
+  columns_direct:
+    -
+      table: "fVendas_unificada"
+      column: "empresa"
+    -
+      table: "fVendas_unificada"
+      column: "sale_billing_block_code"
+  measures_transitive:
+    - "metrica_financeiro"
+    - "metrica_total_a_faturar"
+    - "metrica_aberto"
+  unqualified_references: []
+  method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
+edge_cases: null
+checks: null
+usage: []
+
+dependency_table_sources: [{"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fVendas_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl"}]

@@ -1,0 +1,238 @@
+schema_version: 1
+id: "metrica_percentual_meta_exibicao"
+title: "% Meta Exibição"
+type: "metric"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
+    locator: "medida _Medidas[% Meta Exibição], linha 5433"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+  - "Confirmar unidade/moeda, granularidade, aditividade e dimensões permitidas; não inferir a aprovação a partir dos relacionamentos existentes."
+kind: "medida_de_exibicao"
+definition: "RSL dividido por Meta RSL, com regras de exibição que retornam zero para contextos sem meta e branco para linhas sem movimento."
+definition_basis: "leitura_da_implementacao"
+source_description: null
+business_questions: null
+synonyms:
+  - "% Meta Exibição"
+unit: null
+grain:
+  source: null
+  calculation: null
+time:
+  event: null
+  timezone: null
+  calendar: "dTempo; comportamento específico depende do contexto DAX"
+  context_functions:
+    - "ISINSCOPE"
+    - "SELECTEDVALUE"
+formula:
+  conceptual: null
+  dependencies:
+    - "metrica_rsl"
+    - "metrica_linha_matriz_possui_movimento"
+    - "metrica_meta_rsl"
+aggregation:
+  rule: null
+  additivity: null
+dimensions: null
+relationships: null
+filters:
+  mandatory: null
+  optional: null
+  exclusions: null
+  note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
+data_sources:
+  -
+    semantic_table: "Base Receita"
+    physical_sources:
+      -
+        engine: "DAX calculado"
+        upstream: null
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Base Receita.tmdl:23"
+  -
+    semantic_table: "dClientes_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.dimensao_clientes_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dClientes_unificada.tmdl:112"
+  -
+    semantic_table: "dMaterial_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.dimensao_ean_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl:239"
+  -
+    semantic_table: "dTempo"
+    physical_sources:
+      -
+        engine: "Power Platform Dataflow"
+        entities:
+          - "dTempo"
+        upstream: null
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl:145"
+  -
+    semantic_table: "fDevolucao_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_devolucao_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl:184"
+  -
+    semantic_table: "fMeta_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_metas_executivos_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl:128"
+  -
+    semantic_table: "fVendas_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_vendas_faturamento_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl:480"
+implementations:
+  dax:
+    expression: |2-
+      VAR vDimensaoSemMeta =
+          ISINSCOPE('dClientes_unificada'[cliente_grupo])
+              || ISINSCOPE('dMaterial_unificada'[descricao])
+              || ISINSCOPE('dMaterial_unificada'[level])
+              || ISINSCOPE('dMaterial_unificada'[novo_segmento])
+      
+      VAR vBaseReceita =
+          SELECTEDVALUE(
+              'Base Receita'[Base Receita],
+              "Receita Semi Líquida"
+          )
+      
+      VAR vReceitaBrutaSelecionada =
+          vBaseReceita = "Receita Bruta"
+      
+      VAR vMeta =
+          [Meta RSL]
+      
+      VAR vLinhaPossuiDados =
+          NOT ISBLANK(
+              [Linha Matriz Possui Movimento]
+          )
+      
+      VAR vSemMeta =
+          vReceitaBrutaSelecionada
+              || vDimensaoSemMeta
+              || ISBLANK(vMeta)
+              || vMeta = 0
+      
+      VAR vPercentual =
+          DIVIDE(
+              [03 RSL],
+              vMeta
+          )
+      
+      RETURN
+          SWITCH(
+              TRUE(),
+      
+              NOT vLinhaPossuiDados,
+                  BLANK(),
+      
+              vSemMeta,
+                  0,
+      
+              COALESCE(
+                  vPercentual,
+                  0
+              )
+          )
+    table: "_Medidas"
+    properties:
+      displayFolder: "[Pedidos & Faturamento] Matriz dinâmica"
+      lineageTag: "4122d3a5-a5a6-4545-9d47-b509ebc78119"
+    execution_validated: false
+    note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
+dependencies:
+  tables_direct: ["Base Receita", "dClientes_unificada", "dMaterial_unificada"]
+  columns_direct:
+    -
+      table: "dClientes_unificada"
+      column: "cliente_grupo"
+    -
+      table: "dMaterial_unificada"
+      column: "descricao"
+    -
+      table: "dMaterial_unificada"
+      column: "level"
+    -
+      table: "dMaterial_unificada"
+      column: "novo_segmento"
+    -
+      table: "Base Receita"
+      column: "Base Receita"
+  measures_transitive:
+    - "metrica_devolucao"
+    - "metrica_faturamento"
+    - "metrica_valor_de_vendas"
+    - "metrica_refaturamento"
+    - "metrica_devolucao_total"
+    - "metrica_rsl"
+    - "metrica_total_a_faturar"
+    - "metrica_aberto"
+    - "metrica_devolucao_bruta"
+    - "metrica_programado"
+    - "metrica_faturamento_bruto"
+    - "metrica_receita_bruta"
+    - "metrica_devolucao_selecionada"
+    - "metrica_faturamento_selecionado"
+    - "metrica_linha_matriz_possui_movimento"
+    - "metrica_meta_rsl"
+    - "metrica_receita_selecionada"
+  unqualified_references: []
+  method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
+edge_cases: null
+checks: null
+usage:
+  -
+    page_id: "e7a7a2fc000d0a5b0c10"
+    page_title: "Pedidos & Faturamento"
+    visual_id: "cd2aded586ad937d0a9c"
+    source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/cd2aded586ad937d0a9c/visual.json"
+    locator: "$/visual/query/queryState/Values/projections/7/field/Measure"
+  -
+    page_id: "e7a7a2fc000d0a5b0c10"
+    page_title: "Pedidos & Faturamento"
+    visual_id: "cd2aded586ad937d0a9c"
+    source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/cd2aded586ad937d0a9c/visual.json"
+    locator: "$/filterConfig/filters/11/field/Measure"
+
+source_expression_properties: {"formatStringDefinition": "VAR vDimensaoSemMeta =\n    ISINSCOPE('dClientes_unificada'[cliente_grupo])\n        || ISINSCOPE('dMaterial_unificada'[descricao])\n        || ISINSCOPE('dMaterial_unificada'[level])\n        || ISINSCOPE('dMaterial_unificada'[novo_segmento])\nVAR vBaseReceita =\n    SELECTEDVALUE(\n        'Base Receita'[Base Receita],\n        \"Receita Semi Líquida\"\n    )\nVAR vMeta =\n    [Meta RSL]\nVAR vSemMeta =\n    vBaseReceita = \"Receita Bruta\"\n        || vDimensaoSemMeta\n        || ISBLANK(vMeta)\n        || vMeta = 0\nRETURN\n    IF(\n        vSemMeta,\n        \"\"\"N/A\"\"\",\n        \"0.0%\"\n    )"}
+
+dependency_table_sources: [{"table": "Base Receita", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Base Receita.tmdl"}, {"table": "dClientes_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dClientes_unificada.tmdl"}, {"table": "dMaterial_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dMaterial_unificada.tmdl"}, {"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fDevolucao_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl"}, {"table": "fMeta_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl"}, {"table": "fVendas_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl"}]

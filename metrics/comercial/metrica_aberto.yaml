@@ -1,0 +1,97 @@
+schema_version: 1
+id: "metrica_aberto"
+title: "04 Aberto"
+type: "metric"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
+    locator: "medida _Medidas[04 Aberto], linha 472"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+  - "Confirmar unidade/moeda, granularidade, aditividade e dimensões permitidas; não inferir a aprovação a partir dos relacionamentos existentes."
+kind: "indicador"
+definition: "Soma do valor dos pedidos classificados com tipo venda, e status a faturar, data programada menor ou igual ao dia corrente."
+definition_basis: "descricao_do_modelo"
+source_description: "Soma do valor dos pedidos classificados com tipo venda, e status a faturar, data programada menor ou igual ao dia corrente."
+business_questions: null
+synonyms:
+  - "04 Aberto"
+unit: null
+grain:
+  source: null
+  calculation: null
+time:
+  event: "sale_program_date até TODAY(); base remove dTempo"
+  timezone: null
+  calendar: "dTempo; comportamento específico depende do contexto DAX"
+  context_functions:
+    - "CALCULATE"
+    - "TODAY"
+formula:
+  conceptual: null
+  dependencies:
+    - "metrica_total_a_faturar"
+aggregation:
+  rule: null
+  additivity: null
+dimensions: null
+relationships: null
+filters:
+  mandatory: null
+  optional: null
+  exclusions: null
+  note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
+data_sources:
+  -
+    semantic_table: "fVendas_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_vendas_faturamento_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl:480"
+implementations:
+  dax:
+    expression: |2-
+      CALCULATE(
+          [03 Total a Faturar]
+          ,fVendas_unificada[sale_program_date] <= TODAY()
+      )
+    table: "_Medidas"
+    properties:
+      formatString: "#,0"
+      displayFolder: "01 Vendas"
+      lineageTag: "cd5030cd-5106-4504-9b1b-1db6149aafc3"
+    execution_validated: false
+    note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
+dependencies:
+  tables_direct: ["fVendas_unificada"]
+  columns_direct:
+    -
+      table: "fVendas_unificada"
+      column: "sale_program_date"
+  measures_transitive:
+    - "metrica_total_a_faturar"
+  unqualified_references: []
+  method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
+edge_cases: null
+checks: null
+usage: []
+
+dependency_table_sources: [{"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fVendas_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl"}]

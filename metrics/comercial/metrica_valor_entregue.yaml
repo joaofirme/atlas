@@ -1,0 +1,146 @@
+schema_version: 1
+id: "metrica_valor_entregue"
+title: "06 Valor Entregue"
+type: "metric"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
+    locator: "medida _Medidas[06 Valor Entregue], linha 4236"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+  - "Confirmar unidade/moeda, granularidade, aditividade e dimensões permitidas; não inferir a aprovação a partir dos relacionamentos existentes."
+kind: "indicador"
+definition: "Faturamento na base selecionada com data de entrega preenchida e até TODAY(); a métrica mantém a data de movimento do faturamento."
+definition_basis: "leitura_da_implementacao"
+source_description: "Valor faturado dos pedidos com data de entrega anterior a hoje."
+business_questions: null
+synonyms:
+  - "06 Valor Entregue"
+unit: null
+grain:
+  source: null
+  calculation: null
+time:
+  event: null
+  timezone: null
+  calendar: "dTempo; comportamento específico depende do contexto DAX"
+  context_functions:
+    - "CALCULATE"
+    - "SELECTEDVALUE"
+    - "TODAY"
+formula:
+  conceptual: null
+  dependencies:
+    - "metrica_faturamento"
+    - "metrica_faturamento_bruto"
+aggregation:
+  rule: null
+  additivity: null
+dimensions: null
+relationships: null
+filters:
+  mandatory: null
+  optional: null
+  exclusions: null
+  note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
+data_sources:
+  -
+    semantic_table: "Base Receita"
+    physical_sources:
+      -
+        engine: "DAX calculado"
+        upstream: null
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Base Receita.tmdl:23"
+  -
+    semantic_table: "dTempo"
+    physical_sources:
+      -
+        engine: "Power Platform Dataflow"
+        entities:
+          - "dTempo"
+        upstream: null
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl:145"
+  -
+    semantic_table: "fVendas_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_vendas_faturamento_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl:480"
+implementations:
+  dax:
+    expression: |2-
+      VAR vBaseReceita =
+          SELECTEDVALUE(
+              'Base Receita'[Base Receita],
+              "Receita Semi Líquida"
+          )
+      
+      RETURN
+          IF(
+              vBaseReceita = "Receita Bruta",
+              CALCULATE(
+                  [08 Faturamento Bruto],
+                  KEEPFILTERS(
+                      NOT ISBLANK(
+                          fVendas_unificada[data_entrega]
+                      )
+                  ),
+                  KEEPFILTERS(
+                      fVendas_unificada[data_entrega] <= TODAY()
+                  )
+              ),
+              CALCULATE(
+                  [00 Faturamento],
+                  KEEPFILTERS(
+                      NOT ISBLANK(
+                          fVendas_unificada[data_entrega]
+                      )
+                  ),
+                  KEEPFILTERS(
+                      fVendas_unificada[data_entrega] <= TODAY()
+                  )
+              )
+          )
+    table: "_Medidas"
+    properties:
+      displayFolder: "01 Vendas"
+      lineageTag: "3a0cd8f1-3d74-4095-9f93-71ac5245be94"
+    execution_validated: false
+    note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
+dependencies:
+  tables_direct: ["Base Receita", "fVendas_unificada"]
+  columns_direct:
+    -
+      table: "Base Receita"
+      column: "Base Receita"
+    -
+      table: "fVendas_unificada"
+      column: "data_entrega"
+  measures_transitive:
+    - "metrica_faturamento"
+    - "metrica_faturamento_bruto"
+  unqualified_references: []
+  method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
+edge_cases: null
+checks: null
+usage: []
+
+dependency_table_sources: [{"table": "Base Receita", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Base Receita.tmdl"}, {"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fVendas_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl"}]

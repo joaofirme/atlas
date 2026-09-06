@@ -1,0 +1,76 @@
+schema_version: 1
+id: "dimensao_tempo"
+title: "Calendário"
+type: "dimension"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"
+    locator: "colunas e partição"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Leitura estática do snapshot PBIP; sem execução ou certificação de negócio."
+pending:
+  - "Confirmar interpretação, responsáveis e comportamento com dados reais."
+definition: "Calendário comum. O evento temporal é escolhido por cada medida, não apenas pelo slicer."
+entity: null
+key: "Data"
+attributes:
+  - "Data"
+  - "Ano"
+  - "MesNum"
+  - "MesNome"
+  - "DiaNum"
+  - "DiaUtil"
+hierarchy: null
+physical_mapping:
+  semantic_table: "dTempo"
+  columns:
+    - "Data"
+    - "Ano"
+    - "MesNum"
+    - "MesNome"
+    - "DiaNum"
+    - "DiaUtil"
+unknown_values: null
+historical_behavior: null
+compatible_metrics: null
+observed_metric_references:
+  - "metrica_rsl_yoy"
+  - "metrica_unidades_faturadas"
+  - "metrica_meta_diaria_atual"
+  - "metrica_meta_media"
+  - "metrica_faturamento"
+  - "metrica_texto_dias_uteis"
+  - "metrica_rsl_yoy_fechado_percentual"
+  - "metrica_rsl_mom_fechado_percentual"
+  - "metrica_rsl_yoy_aberto_percentual"
+  - "metrica_rsl_mom_aberto_percentual"
+  - "metrica_percentual_vendas_mom"
+  - "metrica_percentual_vendas_yoy"
+  - "metrica_meta_rsl_mom_percentual"
+  - "metrica_meta_rsl_yoy_percentual"
+  - "metrica_percentual_unidades_mom"
+  - "metrica_percentual_unidades_yoy"
+  - "metrica_aux_max_mes"
+  - "metrica_faturamento_bruto"
+  - "metrica_pedidos_e_faturamentos_html"
+  - "metrica_carteira_e_estoque_html_v1"
+  - "metrica_comercial_html_v1"
+  - "metrica_farmax_bi_html_old"
+  - "metrica_cancelado"
+  - "metrica_carteira_inicial"
+  - "metrica_label_mes_parcial"
+  - "metrica_farmax_bi_html_v2"
+  - "metrica_pedidos_e_faturamentos_menu_html"
+compatibility_note: "Uso observado não comprova compatibilidade semântica de todos os níveis; revisar granularidade e filtros."

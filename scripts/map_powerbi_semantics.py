@@ -66,17 +66,17 @@ DIMS=[
 ('base_receita','Base de receita','Base Receita',None,None,['Base Receita','Ordem'],'Seletor desconectado com Receita Semi Liquida e Receita Bruta. Altera medidas via SELECTEDVALUE/SWITCH.'),
 ('matriz_dinamica','Eixo da matriz dinâmica','Parâmetros: Matriz Dinâmica',None,None,['Parâmetro 2','Parâmetro 2 Campos','Parâmetro 2 Pedido'],'Parâmetro de campo que escolhe regional, executivo, cliente, marca, segmento, classificação SKU ou SKU.')]
 for id,title,table,key,entity,attrs,definition in DIMS:
-    t=TS[table];d=meta('bi_dim_'+id,title,'dimension','comercial',[(t['source'],'colunas e partição')])
+    t=TS[table];d=meta('dimensao_'+id,title,'dimension','comercial',[(t['source'],'colunas e partição')])
     refs=[m['id'] for m in D['measures'] if any(c['table']==table and c['column'] in attrs for c in m['column_dependencies'])]
     d.update(definition=definition,entity=entity,key=key,attributes=attrs,hierarchy=None,physical_mapping=dict(semantic_table=table,columns=attrs),unknown_values=None,historical_behavior=None,compatible_metrics=None,observed_metric_references=refs,compatibility_note='Uso observado não comprova compatibilidade semântica de todos os níveis; revisar granularidade e filtros.')
-    save(f'dimensions/comercial/bi_dim_{id}.yaml',d)
+    save(f'dimensions/comercial/dimensao_{id}.yaml',d)
 
 CONCEPTS=[
 ('venda','Venda registrada','00 Valor de Vendas','Valor dos pedidos classificados como VENDA, excluindo depósito 52. Não exige status faturado na medida. Não é faturamento.'),
 ('faturamento','Faturamento','00 Faturamento','Valor de receita de pedidos faturados/parciais por data de movimento. A origem declara desconto de IPI/ST; confirmar a transformação upstream.'),
 ('receita_semi_liquida','Receita semi líquida (RSL)','03 RSL','Resultado após deduzir devolução total do faturamento. Não confundir com a coluna receita ou com o seletor Faturamento Selecionado.'),
 ('receita_liquida','Receita líquida (RL)','06 RL','Implementada como agregação dos máximos de ledger_net_subtotal por companhia e Ano0Mes. Requer validação contábil da origem e da repetição do valor nas linhas.'),
-('receita_bruta','Receita bruta no dashboard','09 Receita Bruta','No modelo, Receita Bruta já deduz Devolução_Bruta de Faturamento Bruto. O rótulo não significa soma bruta sem deduções.'),
+('receita_bruta','Receita bruta','09 Receita Bruta','Na implementação observada, Receita Bruta já deduz Devolução_Bruta de Faturamento Bruto. O rótulo não significa soma bruta sem deduções.'),
 ('devolucao_total','Devolução total e refaturamento','02 Devolução Total','Devolução Total inclui as parcelas fora e dentro do depósito 52. Somar Refaturamento novamente duplica essa parcela.'),
 ('carteira_aberta','Carteira aberta','04 Aberto','A faturar com programação até hoje, independentemente do filtro de calendário removido pela medida base. Não equivale a toda a carteira pendente.'),
 ('programado','Programado','05 Programado','A faturar com programação posterior a hoje. Programado M+ usa outra regra de mês/ano e não é sinônimo exato.'),
@@ -94,10 +94,10 @@ def narrative(id,title,type,domain,definition,names,extra='',pending='Confirmar 
     sources=[(MS[n]['source'],f"medida {n}; linha {MS[n]['line']}") for n in names]
     d=meta(id,title,type,domain,sources);path=f"ontology/concepts/{id}.md" if type=='concept' else f"business_rules/{domain}/{id}.md"
     refs='\n'.join('- '+link(n,metric_path(n),path) for n in names)
-    body='## Objetivo\n\n'+definition+'\n\n## Definição e escopo\n\nInterpretação documental da implementação observada no BI. Ainda não é uma definição certificada da empresa.\n\n## Especificação\n\n'+(extra or 'As expressões são mantidas nos contratos canônicos abaixo. Consultar também os filtros das páginas e as dependências transitivas.')+'\n\n'+refs+'\n\n## Exemplos\n\nUsar a definição em perguntas sobre o indicador, sempre informando base de receita, empresa e período; não há resultados numéricos extraídos.\n\n## Validação\n\nLeitura estática; sem execução DAX, comparação numérica ou revisão de negócio.\n\n## Dependências e impactos\n\nMudanças nessas definições podem afetar os visuais e cálculos dependentes listados em cada contrato.\n\n## Pendências\n\n'+pending+'\n\n## Fontes\n\n'+refs
+    body='## Objetivo\n\n'+definition+'\n\n## Definição e escopo\n\nInterpretação documental da implementação observada na fonte de descoberta. Ainda não é uma definição certificada da empresa.\n\n## Especificação\n\n'+(extra or 'As expressões são mantidas nos contratos canônicos abaixo. Consultar também os filtros observados e as dependências transitivas.')+'\n\n'+refs+'\n\n## Exemplos\n\nUsar a definição em perguntas sobre o indicador, sempre informando base de receita, empresa e período; não há resultados numéricos extraídos.\n\n## Validação\n\nLeitura estática; sem execução DAX, comparação numérica ou revisão de negócio.\n\n## Dependências e impactos\n\nMudanças nessas definições podem afetar os usos e cálculos dependentes listados em cada contrato.\n\n## Pendências\n\n'+pending+'\n\n## Fontes\n\n'+refs
     save(path,d,body)
 
-for id,title,name,definition in CONCEPTS:narrative('bi_'+id,title,'concept','operacoes' if id=='estoque_cobertura' else 'comercial',definition,[name])
+for id,title,name,definition in CONCEPTS:narrative('conceito_'+id,title,'concept','operacoes' if id=='estoque_cobertura' else 'comercial',definition,[name])
 
 RULES=[
 ('bases_receita','Bases de receita e apresentação',['Faturamento Selecionado','Receita Selecionada','Devolução Selecionada','Meta RB','% Meta RB'],'A seleção Receita Bruta escolhe as medidas brutas; o restante usa a base semi líquida. Devolução é a mesma nos dois ramos. Meta RB e % Meta RB são placeholders de texto, não valores zero.','Condição: Base Receita via SELECTEDVALUE. Ação: selecionar medidas canônicas. Escopo: matriz e HTML. Autoridade e vigência: pendentes; evidência é o snapshot do modelo.'),
@@ -111,10 +111,10 @@ RULES=[
 ('anatomia_nota','Anatomia da nota e proxies',['Pedidos & Faturamentos HTML'],'O HTML chama de impostos a diferença positiva entre Receita Bruta e RSL. A largura visual dessa parcela tem piso de 18%.','O piso é de apresentação, não alíquota. A diferença entre receitas não comprova a decomposição tributária. A variável vDevRefTotal soma devolução total e refaturamento; como devolução total já o inclui, há risco de duplicação dessa parcela na apresentação.'),
 ('pareto_classificacao','Classificação Pareto',['Comercial HTML v1'],'O HTML calcula receita por cliente/grupo, ranking denso e participação acumulada; usa 80% para delimitar classe A.','A implementação adiciona 1 ao número de clientes com participação acumulada até 80%. Rever empates, conjunto vazio, único cliente e a delimitação do cliente que cruza o limiar. O Top 15 exibido não corresponde necessariamente ao universo inteiro do Pareto.'),
 ]
-for id,title,names,definition,extra in RULES:narrative('bi_'+id,title,'business_rule','operacoes' if 'estoque' in id else 'comercial',definition,names,extra)
+for id,title,names,definition,extra in RULES:narrative('regra_'+id,title,'business_rule','operacoes' if 'estoque' in id else 'comercial',definition,names,extra)
 
 cat=ROOT/'docs/catalogo.md'
 with cat.open('a',encoding='utf-8') as f:
     for x in ADDED:f.write('| '+link(x['id'],x['path'],'docs/catalogo.md')+' | '+x['title']+' | '+x['type']+' | '+x['domain']+' | draft |\n')
-index=ROOT/'docs/powerbi/indice_objetos.json';all_objects=json.loads(read(index))+ADDED;index.write_text(json.dumps(all_objects,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+index=ROOT/'docs/ingestoes/2026-09-06-modelo-corporativo/indice_objetos.json';all_objects=json.loads(read(index))+ADDED;index.write_text(json.dumps(all_objects,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps({'added_semantic_objects':len(ADDED),'total_objects':len(all_objects)},ensure_ascii=False))

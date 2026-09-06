@@ -1,0 +1,159 @@
+schema_version: 1
+id: "metrica_programado_matriz"
+title: "Programado Matriz"
+type: "metric"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
+    locator: "medida _Medidas[Programado Matriz], linha 5788"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+  - "Descrição de negócio não declarada no modelo; formular com a área responsável."
+  - "Confirmar unidade/moeda, granularidade, aditividade e dimensões permitidas; não inferir a aprovação a partir dos relacionamentos existentes."
+kind: "medida_de_exibicao"
+definition: null
+definition_basis: null
+source_description: null
+business_questions: null
+synonyms:
+  - "Programado Matriz"
+unit: null
+grain:
+  source: null
+  calculation: null
+time:
+  event: null
+  timezone: null
+  calendar: "dTempo; comportamento específico depende do contexto DAX"
+  context_functions:
+    - "CALCULATE"
+    - "REMOVEFILTERS"
+formula:
+  conceptual: null
+  dependencies:
+    - "metrica_programado"
+    - "metrica_linha_matriz_possui_movimento"
+aggregation:
+  rule: null
+  additivity: null
+dimensions: null
+relationships: null
+filters:
+  mandatory: null
+  optional: null
+  exclusions: null
+  note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
+data_sources:
+  -
+    semantic_table: "Base Receita"
+    physical_sources:
+      -
+        engine: "DAX calculado"
+        upstream: null
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Base Receita.tmdl:23"
+  -
+    semantic_table: "dTempo"
+    physical_sources:
+      -
+        engine: "Power Platform Dataflow"
+        entities:
+          - "dTempo"
+        upstream: null
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl:145"
+  -
+    semantic_table: "fDevolucao_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_devolucao_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl:184"
+  -
+    semantic_table: "fVendas_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_vendas_faturamento_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl:480"
+implementations:
+  dax:
+    expression: |2-
+      VAR vProgramado =
+          CALCULATE(
+              [05 Programado],
+              REMOVEFILTERS(dTempo)
+          )
+      RETURN
+          IF(
+              ISBLANK([Linha Matriz Possui Movimento]),
+              BLANK(),
+              DIVIDE(
+                  COALESCE(vProgramado, 0),
+                  1000
+              )
+          )
+    table: "_Medidas"
+    properties:
+      displayFolder: "[Pedidos & Faturamento] Matriz dinâmica"
+      lineageTag: "68e4ff24-680f-48f5-8c77-c62806926f9e"
+    execution_validated: false
+    note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
+dependencies:
+  tables_direct: ["dTempo"]
+  columns_direct: []
+  measures_transitive:
+    - "metrica_devolucao"
+    - "metrica_faturamento"
+    - "metrica_valor_de_vendas"
+    - "metrica_refaturamento"
+    - "metrica_devolucao_total"
+    - "metrica_rsl"
+    - "metrica_total_a_faturar"
+    - "metrica_aberto"
+    - "metrica_devolucao_bruta"
+    - "metrica_programado"
+    - "metrica_faturamento_bruto"
+    - "metrica_receita_bruta"
+    - "metrica_devolucao_selecionada"
+    - "metrica_faturamento_selecionado"
+    - "metrica_linha_matriz_possui_movimento"
+    - "metrica_receita_selecionada"
+  unqualified_references: []
+  method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
+edge_cases: null
+checks: null
+usage:
+  -
+    page_id: "e7a7a2fc000d0a5b0c10"
+    page_title: "Pedidos & Faturamento"
+    visual_id: "cd2aded586ad937d0a9c"
+    source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/cd2aded586ad937d0a9c/visual.json"
+    locator: "$/visual/query/queryState/Values/projections/2/field/Measure"
+  -
+    page_id: "e7a7a2fc000d0a5b0c10"
+    page_title: "Pedidos & Faturamento"
+    visual_id: "cd2aded586ad937d0a9c"
+    source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/cd2aded586ad937d0a9c/visual.json"
+    locator: "$/filterConfig/filters/14/field/Measure"
+
+source_expression_properties: {"formatStringDefinition": "\"#,##0.0;(#,##0.0)\""}
+
+dependency_table_sources: [{"table": "Base Receita", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/Base Receita.tmdl"}, {"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fDevolucao_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl"}, {"table": "fVendas_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl"}]

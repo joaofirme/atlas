@@ -1,0 +1,41 @@
+schema_version: 1
+id: "relacionamento_autodetected_a3c943a9_e146_4ffd_8b12_28019512d403"
+title: "fCarteira_pedidos_unificada.company → dEmpresa.Company"
+type: "relationship"
+domain: "corporativo"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/relationships.tmdl"
+    locator: "relationship AutoDetected_a3c943a9-e146-4ffd-8b12-28019512d403; linha 102"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+relationship_kind: "semantic_model_join"
+from_object: "fCarteira_pedidos_unificada.company"
+to_object: "dEmpresa.Company"
+business_verb: null
+declared_properties:
+  fromColumn: "fCarteira_pedidos_unificada.company"
+  toColumn: "dEmpresa.Company"
+cardinality:
+  from: null
+  to: null
+  note: "null significa propriedade omitida no TMDL; não é cardinalidade medida nos dados."
+active_declared: null
+filter_direction_declared: null
+join_sql: null
+orphan_handling: null
+fanout_risk: "Revisar muitos-para-muitos e duplicidade das chaves; não traduzir relacionamento automaticamente em JOIN SQL."

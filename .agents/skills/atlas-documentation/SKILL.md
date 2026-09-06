@@ -7,7 +7,7 @@ description: Criar, revisar e organizar documentação, contratos semânticos e 
 
 ## Propósito e origem
 
-Atlas é o nome atual da MiniAlexandria: uma base versionada de conhecimento de dados e negócio da Farmax, reutilizável por pessoas, BI e agentes. O objetivo é manter definições consistentes, explicar a origem dos dados e registrar como analisar cada domínio.
+Atlas é o nome atual da MiniAlexandria: uma base versionada de conhecimento de dados e negócio da Farmax, reutilizável por pessoas, produtos de dados e agentes. O objetivo é manter definições consistentes, explicar a origem dos dados e registrar como analisar cada domínio.
 
 Fonte conceitual: conversa [Plataforma de IA do Ifood](https://chatgpt.com/c/6a98c0d7-4a88-83e9-9239-e6f3371c6df7), consultada em 2026-09-06. A conversa reúne um relato sobre o iFood e propostas de arquitetura para a Farmax; não comprova tabelas, fórmulas, responsáveis ou integrações em produção na Farmax. Não copiar a transcrição pessoal para a documentação.
 
@@ -17,14 +17,22 @@ Esta skill estabelece o padrão inicial do Atlas. Convenções de arquivos e met
 
 - **Atlas/Git:** definições de negócio, contratos semânticos, documentação e procedimentos analíticos.
 - **Redshift:** fonte de dados prevista no contexto; objetos físicos precisam ser confirmados.
-- **Fabric/Power BI:** consumidores da definição de métricas; Atlas não substitui o modelo semântico.
+- **Consumidores analíticos:** relatórios, modelos semânticos, serviços e agentes usam as definições do Atlas em seus contextos.
 - **Motor semântico futuro:** resolve métricas, dimensões, filtros e relacionamentos em consultas controladas.
 - **API/MCP futuro:** permite a agentes descobrir e consultar o conhecimento do Atlas.
 - **Agentes:** interpretam perguntas, escolhem procedimentos e explicam resultados com evidências.
 
 O desenho final discutido evolui de recuperar SQL para consultar métricas por um contrato como `query_metric(metric, dimensions, filters)`. Tratar esses nomes como proposta de interface até existir implementação. O agente não deve inventar uma fórmula alternativa para uma métrica certificada.
 
-O repositório não executa um servidor MCP por si só. Runtime, hospedagem, CI/CD e publicação no Fabric são etapas futuras, não capacidades instaladas pela criação desta documentação. A tecnologia do motor e o provedor de deploy permanecem em aberto.
+O repositório não executa um servidor MCP por si só. Runtime, hospedagem, CI/CD e publicação em consumidores são etapas futuras, não capacidades instaladas pela criação desta documentação. A tecnologia do motor e o provedor de deploy permanecem em aberto.
+
+## Fontes de descoberta
+
+Usar os artefatos que as áreas já criaram e usam — relatórios, modelos semânticos, consultas SQL, planilhas, documentação, APIs e produtos de dados — para acelerar o mapeamento. Eles fornecem evidência sobre nomes, fórmulas, tabelas, colunas, filtros, relações e uso real.
+
+A fonte de descoberta não vira o centro do catálogo nem autoridade automática de negócio. Manter nomes de ferramentas e caminhos somente em `sources`, `implementations` e registros de ingestão. IDs, títulos e definições canônicas devem expressar o negócio e continuar válidos caso a ferramenta mude. Não criar um produto de dados canônico apenas para representar o relatório usado na coleta.
+
+Separar indicadores de artefatos de apresentação, seletores, textos, cores e cálculos de layout. Preservar estes últimos no inventário técnico quando ajudarem a interpretar a fonte, sem promovê-los a indicadores oficiais. Ao incorporar outra fonte, buscar equivalências e divergências antes de criar objetos novos.
 
 ## Organização do repositório
 
@@ -150,12 +158,12 @@ Uma resposta analítica deve informar período, filtros, métricas utilizadas, c
 ## Etapas de construção
 
 1. **Base documental:** manter este padrão, criar navegação, catálogo e decisões. Aceite: outro agente encontra a regra e identifica onde cadastrar cada objeto.
-2. **Piloto semântico:** logística é a proposta inicial da conversa. Confirmar domínio, responsáveis e fontes; documentar custo de frete, peso transportado, frete/kg e dependências reais. Aceite: definições revisadas, sem referências órfãs e com lacunas explícitas.
-3. **Skill do piloto:** registrar o procedimento de análise de variação de frete e os exemplos de perguntas. Aceite: usa os IDs canônicos e possui saída e limitações claras.
-4. **Validação automatizada:** implementar schemas, integridade referencial e testes semânticos. Aceite: erros de contrato impedem promoção, e resultados de testes ficam rastreáveis.
-5. **Consumo programático:** implementar descoberta e leitura; evoluir para consultas controladas por motor semântico. Aceite: agente usa o contrato e os casos de erro são definidos. Não tratar Markdown sozinho como motor executável.
-6. **Integração com Fabric:** definir escopo das medidas governadas, geração/publicação, comparação de versões, recuperação e testes de paridade. Aceite: mudanças preservam objetos fora do escopo e têm evidência de equivalência. Confirmar APIs e requisitos na documentação oficial na implementação.
-7. **Expansão por domínio:** repetir o ciclo com novos produtos e métricas a partir da experiência do piloto.
+2. **Ingestão contínua:** usar fontes mantidas pelas áreas para descobrir objetos e registrar proveniência. Aceite: inventário rastreável, deduplicado e com lacunas explícitas.
+3. **Validação de negócio:** revisar definições, responsáveis, granularidade, unidade e regras com os domínios. Aceite: contratos promovidos somente com evidências registradas.
+4. **Skills analíticas:** registrar procedimentos para perguntas reais usando IDs canônicos. Aceite: cada skill informa entradas, verificações, saída e limites.
+5. **Validação automatizada:** implementar schemas, integridade referencial e testes semânticos. Aceite: erros de contrato impedem promoção, e resultados de testes ficam rastreáveis.
+6. **Consumo programático:** implementar descoberta e leitura; evoluir para consultas controladas por motor semântico. Aceite: agentes e produtos usam os contratos e os casos de erro são definidos.
+7. **Expansão por domínio:** repetir o ciclo com novas fontes, produtos e métricas, reconciliando sobreposições.
 
 Não construir runtime, infraestrutura ou centenas de objetos ao receber apenas uma solicitação documental. Atualizar o roadmap com evidência de cada etapa concluída.
 
@@ -174,7 +182,7 @@ Executar os validadores do repositório quando existirem. Enquanto não existire
 
 Criar ou editar arquivos não implica deploy. Quando commit, push ou PR fizerem parte da solicitação autorizada, conferir branch e remote, incluir somente os arquivos da tarefa e usar uma mensagem como `docs(atlas): documenta frete por kg`. Para alterações de regras oficiais, preparar PR com mudança de negócio, fontes, impacto e validação para revisão dos responsáveis. Não sobrescrever histórico remoto nem fazer merge ou deploy por inferência da palavra “documentar”.
 
-Ao atualizar integrações futuras, Atlas será a origem das definições sob sua gestão. Detectar e reconciliar divergências antes de publicar; não sobrescrever um modelo inteiro para alterar uma medida. Mudanças em medidas fora do escopo exigem uma decisão explícita de migração.
+Ao atualizar integrações futuras, Atlas será a origem das definições sob sua gestão. Detectar e reconciliar divergências entre fontes antes de publicar. Mudanças em objetos fora do escopo exigem uma decisão explícita de migração.
 
 ## Exemplo de solicitação
 

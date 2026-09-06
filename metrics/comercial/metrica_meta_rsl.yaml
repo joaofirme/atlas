@@ -1,0 +1,138 @@
+schema_version: 1
+id: "metrica_meta_rsl"
+title: "Meta RSL"
+type: "metric"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
+    locator: "medida _Medidas[Meta RSL], linha 506"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+  - "Confirmar unidade/moeda, granularidade, aditividade e dimensões permitidas; não inferir a aprovação a partir dos relacionamentos existentes."
+kind: "indicador"
+definition: "Meta de RSL definida no orçamento."
+definition_basis: "descricao_do_modelo"
+source_description: "Meta de RSL definida no orçamento."
+business_questions: null
+synonyms:
+  - "Meta RSL"
+unit: null
+grain:
+  source: null
+  calculation: null
+time:
+  event: "meta_data_alvo"
+  timezone: null
+  calendar: "dTempo; comportamento específico depende do contexto DAX"
+  context_functions: []
+formula:
+  conceptual: null
+  dependencies: []
+aggregation:
+  rule: null
+  additivity: null
+dimensions: null
+relationships: null
+filters:
+  mandatory: null
+  optional: null
+  exclusions: null
+  note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
+data_sources:
+  -
+    semantic_table: "fMeta_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_metas_executivos_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl:128"
+implementations:
+  dax:
+    expression: |2-
+      SUMX (
+          SUMMARIZE ( 
+              fMeta_unificada,
+              fMeta_unificada[empresa],
+              fMeta_unificada[cod_executivo], 
+              fMeta_unificada[chave_regional], 
+              fMeta_unificada[chave_segmento], 
+              fMeta_unificada[chave_marca], 
+              fMeta_unificada[meta_receita],
+              fMeta_unificada[meta_data_alvo]
+          ),
+          fMeta_unificada[meta_receita] 
+      )
+    table: "_Medidas"
+    properties:
+      formatString: "#,0"
+      displayFolder: "07 Meta"
+      lineageTag: "83e3de7b-ece6-4e34-bd22-48000b4568af"
+    execution_validated: false
+    note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
+dependencies:
+  tables_direct: ["fMeta_unificada"]
+  columns_direct:
+    -
+      table: "fMeta_unificada"
+      column: "empresa"
+    -
+      table: "fMeta_unificada"
+      column: "cod_executivo"
+    -
+      table: "fMeta_unificada"
+      column: "chave_regional"
+    -
+      table: "fMeta_unificada"
+      column: "chave_segmento"
+    -
+      table: "fMeta_unificada"
+      column: "chave_marca"
+    -
+      table: "fMeta_unificada"
+      column: "meta_receita"
+    -
+      table: "fMeta_unificada"
+      column: "meta_data_alvo"
+  measures_transitive: []
+  unqualified_references: []
+  method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
+edge_cases: null
+checks: null
+usage:
+  -
+    page_id: "676a3ff6e0ec4cda8033"
+    page_title: "Testes"
+    visual_id: "1fcf432ccbce47b988d6"
+    source: "powerbi/Farmax v3 (1).Report/definition/pages/676a3ff6e0ec4cda8033/visuals/1fcf432ccbce47b988d6/visual.json"
+    locator: "$/visual/query/queryState/Values/projections/2/field/Measure"
+  -
+    page_id: "676a3ff6e0ec4cda8033"
+    page_title: "Testes"
+    visual_id: "1fcf432ccbce47b988d6"
+    source: "powerbi/Farmax v3 (1).Report/definition/pages/676a3ff6e0ec4cda8033/visuals/1fcf432ccbce47b988d6/visual.json"
+    locator: "$/visual/query/sortDefinition/sort/0/field/Measure"
+  -
+    page_id: "e7a7a2fc000d0a5b0c10"
+    page_title: "Pedidos & Faturamento"
+    visual_id: "cd2aded586ad937d0a9c"
+    source: "powerbi/Farmax v3 (1).Report/definition/pages/e7a7a2fc000d0a5b0c10/visuals/cd2aded586ad937d0a9c/visual.json"
+    locator: "$/filterConfig/filters/5/field/Measure"
+
+dependency_table_sources: [{"table": "fMeta_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fMeta_unificada.tmdl"}]

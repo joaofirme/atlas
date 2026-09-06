@@ -1,0 +1,41 @@
+schema_version: 1
+id: "relacionamento_e2a996b8_b1f2_5ccb_31e2_781e618d5da9"
+title: "fDevolucao_unificada.data_movimento → dTempo.Data"
+type: "relationship"
+domain: "corporativo"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/relationships.tmdl"
+    locator: "relationship e2a996b8-b1f2-5ccb-31e2-781e618d5da9; linha 31"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+relationship_kind: "semantic_model_join"
+from_object: "fDevolucao_unificada.data_movimento"
+to_object: "dTempo.Data"
+business_verb: null
+declared_properties:
+  fromColumn: "fDevolucao_unificada.data_movimento"
+  toColumn: "dTempo.Data"
+cardinality:
+  from: null
+  to: null
+  note: "null significa propriedade omitida no TMDL; não é cardinalidade medida nos dados."
+active_declared: null
+filter_direction_declared: null
+join_sql: null
+orphan_handling: null
+fanout_risk: "Revisar muitos-para-muitos e duplicidade das chaves; não traduzir relacionamento automaticamente em JOIN SQL."

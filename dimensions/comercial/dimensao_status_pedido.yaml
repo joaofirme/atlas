@@ -1,0 +1,59 @@
+schema_version: 1
+id: "dimensao_status_pedido"
+title: "Status do pedido"
+type: "dimension"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl"
+    locator: "colunas e partição"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Leitura estática do snapshot PBIP; sem execução ou certificação de negócio."
+pending:
+  - "Confirmar interpretação, responsáveis e comportamento com dados reais."
+definition: "Status comercial, tipo e departamento são campos distintos; regras variam por empresa."
+entity: "pedido"
+key: null
+attributes:
+  - "pedido_status"
+  - "pedido_tipo"
+  - "obt_sales_department_status"
+hierarchy: null
+physical_mapping:
+  semantic_table: "fVendas_unificada"
+  columns:
+    - "pedido_status"
+    - "pedido_tipo"
+    - "obt_sales_department_status"
+unknown_values: null
+historical_behavior: null
+compatible_metrics: null
+observed_metric_references:
+  - "metrica_total_a_faturar"
+  - "metrica_aguarda_producao"
+  - "metrica_unidades_faturadas"
+  - "metrica_faturamento"
+  - "metrica_unidades_vendidas"
+  - "metrica_valor_de_vendas"
+  - "metrica_aguarda_producao_soro"
+  - "metrica_aguarda_producao_sem_soro"
+  - "metrica_programado_m_mais"
+  - "metrica_faturamento_bruto"
+  - "metrica_carteira_e_estoque_html_v1"
+  - "metrica_cancelado"
+  - "metrica_financeiro"
+  - "metrica_logistica"
+  - "metrica_valor_em_transito"
+  - "metrica_customer_service"
+compatibility_note: "Uso observado não comprova compatibilidade semântica de todos os níveis; revisar granularidade e filtros."

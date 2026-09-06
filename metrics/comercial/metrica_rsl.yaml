@@ -1,0 +1,116 @@
+schema_version: 1
+id: "metrica_rsl"
+title: "03 RSL"
+type: "metric"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
+    locator: "medida _Medidas[03 RSL], linha 160"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+  - "Confirmar unidade/moeda, granularidade, aditividade e dimensões permitidas; não inferir a aprovação a partir dos relacionamentos existentes."
+kind: "indicador"
+definition: "Diferença entre faturamento e devolução total, conforme a implementação DAX. A expansão tributária da sigla deve ser confirmada na origem."
+definition_basis: "leitura_da_implementacao"
+source_description: "Soma dos valores dos faturados dos itens das ordens de venda, deduzindo os impostos e taxas: ST, IPI Devoluções."
+business_questions: null
+synonyms:
+  - "03 RSL"
+unit: null
+grain:
+  source: null
+  calculation: null
+time:
+  event: null
+  timezone: null
+  calendar: "dTempo; comportamento específico depende do contexto DAX"
+  context_functions: []
+formula:
+  conceptual: null
+  dependencies:
+    - "metrica_faturamento"
+    - "metrica_devolucao_total"
+aggregation:
+  rule: null
+  additivity: null
+dimensions: null
+relationships: null
+filters:
+  mandatory: null
+  optional: null
+  exclusions: null
+  note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
+data_sources:
+  -
+    semantic_table: "dTempo"
+    physical_sources:
+      -
+        engine: "Power Platform Dataflow"
+        entities:
+          - "dTempo"
+        upstream: null
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl:145"
+  -
+    semantic_table: "fDevolucao_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_devolucao_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl:184"
+  -
+    semantic_table: "fVendas_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_vendas_faturamento_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl:480"
+implementations:
+  dax:
+    expression: "[00 Faturamento] - [02 Devolução Total]"
+    table: "_Medidas"
+    properties:
+      formatString: "#,0"
+      displayFolder: "05 Faturamento"
+      lineageTag: "6bfbec92-8337-4bf1-962e-f2c9eab44686"
+    execution_validated: false
+    note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
+dependencies:
+  tables_direct: []
+  columns_direct: []
+  measures_transitive:
+    - "metrica_devolucao"
+    - "metrica_faturamento"
+    - "metrica_refaturamento"
+    - "metrica_devolucao_total"
+  unqualified_references: []
+  method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
+edge_cases: null
+checks: null
+usage:
+  -
+    page_id: "676a3ff6e0ec4cda8033"
+    page_title: "Testes"
+    visual_id: "1fcf432ccbce47b988d6"
+    source: "powerbi/Farmax v3 (1).Report/definition/pages/676a3ff6e0ec4cda8033/visuals/1fcf432ccbce47b988d6/visual.json"
+    locator: "$/visual/query/queryState/Values/projections/1/field/Measure"
+
+dependency_table_sources: [{"table": "dTempo", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/dTempo.tmdl"}, {"table": "fDevolucao_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl"}, {"table": "fVendas_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl"}]

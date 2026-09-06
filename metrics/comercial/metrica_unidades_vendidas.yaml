@@ -1,0 +1,109 @@
+schema_version: 1
+id: "metrica_unidades_vendidas"
+title: "01 Unidades Vendidas"
+type: "metric"
+domain: "comercial"
+status: "draft"
+version: "0.1.0"
+owners:
+  business: null
+  technical: null
+created_at: "2026-09-06"
+updated_at: "2026-09-06"
+sources:
+  -
+    reference: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/_Medidas.tmdl"
+    locator: "medida _Medidas[01 Unidades Vendidas], linha 610"
+    accessed_at: "2026-09-06"
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence:
+    - "Extração estática dos arquivos PBIP/TMDL; nenhuma execução de DAX/M ou consulta aos dados."
+pending:
+  - "Confirmar responsável de negócio e responsável técnico."
+  - "Revisar semântica com a área e validar resultados no modelo em execução."
+  - "Confirmar unidade/moeda, granularidade, aditividade e dimensões permitidas; não inferir a aprovação a partir dos relacionamentos existentes."
+kind: "indicador"
+definition: "Soma da unidade dos pedidos classificados com tipo venda, desconsiderando deposito 52 (refaturamento)."
+definition_basis: "descricao_do_modelo"
+source_description: "Soma da unidade dos pedidos classificados com tipo venda, desconsiderando deposito 52 (refaturamento)."
+business_questions: null
+synonyms:
+  - "01 Unidades Vendidas"
+unit: "unidades"
+grain:
+  source: null
+  calculation: null
+time:
+  event: "data_pedido pela relação padrão do modelo"
+  timezone: null
+  calendar: "dTempo; comportamento específico depende do contexto DAX"
+  context_functions:
+    - "CALCULATE"
+formula:
+  conceptual: null
+  dependencies: []
+aggregation:
+  rule: null
+  additivity: null
+dimensions: null
+relationships: null
+filters:
+  mandatory: null
+  optional: null
+  exclusions: null
+  note: "Extrair os filtros efetivos da expressão e de suas dependências; não interpretar comentários históricos como regra ativa."
+data_sources:
+  -
+    semantic_table: "fVendas_unificada"
+    physical_sources:
+      -
+        engine: "Amazon Redshift"
+        database: "farmax_prod"
+        objects:
+          - "comercial.fato_vendas_faturamento_unificada"
+        source_locator: "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl:480"
+implementations:
+  dax:
+    expression: |2-
+      CALCULATE(
+          SUM(fVendas_unificada[quantidade_venda])
+          ,fVendas_unificada[pedido_tipo] = "VENDA"
+          ,fVendas_unificada[sale_storage_code] <> 52 --Remove Refaturamento
+      )+0
+      
+      /*
+          CALCULATE(
+          SUM(fPedido[order_sale_quantity])
+          ,fPedido[obt_sales_order_type] = "VENDA"
+          ,fPedido[order_sale_storage_code] <> 52 --Remove Refaturamento
+      )+0
+      */
+    table: "_Medidas"
+    properties:
+      formatString: "#,0"
+      displayFolder: "01 Vendas"
+      lineageTag: "e154bead-08be-4900-8645-61893caef97c"
+    execution_validated: false
+    note: "Expressão extraída, preservando comentários. Fonte PBIP é a evidência; este contrato é um rascunho de ingestão."
+dependencies:
+  tables_direct: ["fVendas_unificada"]
+  columns_direct:
+    -
+      table: "fVendas_unificada"
+      column: "quantidade_venda"
+    -
+      table: "fVendas_unificada"
+      column: "pedido_tipo"
+    -
+      table: "fVendas_unificada"
+      column: "sale_storage_code"
+  measures_transitive: []
+  unqualified_references: []
+  method: "Extração lexical exclui comentários e literais de texto; referências sem tabela podem ser colunas virtuais, não erros de modelo."
+edge_cases: null
+checks: null
+usage: []
+
+dependency_table_sources: [{"table": "fVendas_unificada", "source": "powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl"}]

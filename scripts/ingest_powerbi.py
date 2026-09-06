@@ -121,7 +121,7 @@ def extract():
     tables=[parse_table(p) for p in sorted((MODEL/'definition/tables').glob('*.tmdl'))]
     for t in tables:
         for m in t['measures']:
-            m['id']='bi_'+slug(m['name'])
+            m['id']='metrica_'+re.sub(r'^\d+_','',slug(m['name']))
             m['table']=t['name']; m['source']=t['source']
     measures=[m for t in tables for m in t['measures']]
     names={m['name']:m['id'] for m in measures}
