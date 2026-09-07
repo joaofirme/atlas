@@ -1,0 +1,29 @@
+schema_version: 1
+id: dataset_metas
+title: Metas comerciais
+type: dataset
+domain: comercial
+status: draft
+evidence_status: observed
+version: 0.1.0
+owners: {business: null, technical: null}
+created_at: '2026-09-07'
+updated_at: '2026-09-07'
+definition: Dataset candidato para análise e comparação de metas comerciais.
+business_description: Agrupa as fontes semânticas de meta observadas e mantém a necessidade de resolver divergências entre elas.
+business_questions: ["Qual dataset usar para metas comerciais?"]
+synonyms: [metas, fMeta_unificada, fMeta_Geral]
+grain: {business: Pendente de confirmação, observed: múltiplas tabelas de meta}
+dimensions: [dimensao_empresa, dimensao_executivo, dimensao_tempo]
+recommended_for: [metrica_meta_rsl, metrica_meta_rl, metrica_meta_media, metrica_meta_de_unidades_faturadas]
+physical:
+  platform: Microsoft Fabric/Power BI
+  semantic_model: Farmax v3 (1)
+  semantic_tables: [fMeta_unificada, fMeta_Geral]
+lineage:
+  observed_contracts: [data_products/comercial/tabela_fmeta_unificada.md, data_products/comercial/tabela_fmeta_geral.md]
+sources:
+  - {reference: data_products/comercial/tabela_fmeta_unificada.md, locator: contrato técnico observado, accessed_at: '2026-09-07'}
+  - {reference: data_products/comercial/tabela_fmeta_geral.md, locator: contrato técnico observado, accessed_at: '2026-09-07'}
+validation: {reviewed_by: null, reviewed_at: null, evidence: [Leitura estática; sem certificação.]}
+pending: [Definir fonte recomendada por métrica, granularidade, chaves, dimensões e responsáveis.]

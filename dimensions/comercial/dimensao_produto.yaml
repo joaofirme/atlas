@@ -38,7 +38,8 @@ physical_mapping:
     - "ean"
 unknown_values: null
 historical_behavior: null
-compatible_metrics: null
+compatible_metrics: ["metrica_faturamento", "metrica_receita_bruta", "metrica_total_a_faturar", "metrica_aberto", "metrica_programado", "metrica_devolucao"]
+compatibility_status: "observed_pending_approval"
 observed_metric_references:
   - "metrica_carteira_e_estoque_html_v1"
   - "metrica_percentual_meta_exibicao"

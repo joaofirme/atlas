@@ -1,0 +1,24 @@
+schema_version: 1
+id: dataset_logistica_customer_service
+title: Logística e Customer Service
+type: dataset
+domain: logistica
+status: draft
+evidence_status: observed
+version: 0.1.0
+owners: {business: null, technical: null}
+created_at: '2026-09-07'
+updated_at: '2026-09-07'
+definition: Dataset candidato para indicadores logísticos e de customer service.
+business_description: Camada de descoberta orientada ao negócio para a tabela desconectada observada no modelo.
+business_questions: ["Onde analisar logística e customer service?"]
+synonyms: [logística, customer service, tLogistica e CS]
+grain: {business: Pendente de confirmação, observed: linha da tabela tLogistica e CS}
+dimensions: []
+recommended_for: [metrica_logistica, metrica_customer_service, metrica_valor_em_transito]
+physical: {platform: Microsoft Fabric/Power BI, semantic_model: Farmax v3 (1), semantic_table: tLogistica e CS}
+lineage: {observed_contract: data_products/logistica/tabela_tlogistica_e_cs.md}
+sources:
+  - {reference: data_products/logistica/tabela_tlogistica_e_cs.md, locator: contrato técnico observado, accessed_at: '2026-09-07'}
+validation: {reviewed_by: null, reviewed_at: null, evidence: [Leitura estática; sem certificação.]}
+pending: [Resolver ausência de relacionamentos, confirmar granularidade, dimensões e responsáveis.]

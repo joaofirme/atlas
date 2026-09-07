@@ -33,6 +33,35 @@ class AtlasTests(unittest.TestCase):
         saved = json.loads((ROOT / 'catalog/metrics.json').read_text(encoding='utf-8'))
         self.assertEqual(saved, entries)
 
+    def test_all_business_indexes_are_generated(self):
+        for object_type, filename in atlas.INDEX_TYPES.items():
+            saved = json.loads((ROOT / 'catalog' / filename).read_text(encoding='utf-8'))
+            self.assertEqual(saved, atlas.index(self.catalog, object_type))
+
+    def test_cross_type_search_and_authority(self):
+        hits = atlas.search_all('qual dataset usar para vendas', self.catalog)
+        self.assertEqual(hits[0]['id'], 'dataset_vendas')
+        self.assertEqual(atlas.public_object('dataset_vendas', self.catalog)['authority'],
+                         'observed_not_official')
+        self.assertEqual(atlas.search_all('vendas', self.catalog, certified_only=True), [])
+
+    def test_certified_contract_requires_governance(self):
+        incomplete = {
+            'id': 'metrica_teste', 'title': 'Teste', 'type': 'metric',
+            'domain': 'comercial', 'status': 'certified', 'evidence_status': 'observed',
+            'version': '1.0.0', 'owners': {'business': None, 'technical': None},
+            'definition': 'Definição', 'sources': [], 'validation': {},
+            'formula': {'dependencies': []}}
+        with self.assertRaisesRegex(ValueError, 'certified incompleto'):
+            atlas.validate({'metrica_teste': incomplete})
+
+    def test_metric_dataset_dimension_rule_links(self):
+        item = atlas.context('metrica_aberto', self.catalog)
+        self.assertIn('dataset_vendas', [x['id'] for x in item['datasets']])
+        self.assertIn('dimensao_cliente', [x['id'] for x in item['linked_dimensions']])
+        self.assertIn('regra_carteira_data_referencia',
+                      [x['id'] for x in item['business_rules']])
+
     def test_context_has_transitive_evidence(self):
         context = atlas.context('metrica_aberto', self.catalog)
         self.assertIn('metrica_total_a_faturar', [x['id'] for x in context['dependencies']])

@@ -1,0 +1,24 @@
+schema_version: 1
+id: dataset_devolucoes
+title: Devoluções comerciais
+type: dataset
+domain: comercial
+status: draft
+evidence_status: observed
+version: 0.1.0
+owners: {business: null, technical: null}
+created_at: '2026-09-07'
+updated_at: '2026-09-07'
+definition: Dataset candidato para análise de devoluções.
+business_description: Representa em linguagem de negócio a tabela de devoluções observada no modelo.
+business_questions: ["Qual dataset usar para analisar devoluções?"]
+synonyms: [devoluções, fDevolucao_unificada]
+grain: {business: Pendente de confirmação, observed: linha do objeto fDevolucao_unificada}
+dimensions: [dimensao_empresa, dimensao_cliente, dimensao_produto, dimensao_tempo]
+recommended_for: [metrica_devolucao, metrica_devolucao_bruta, metrica_devolucao_total]
+physical: {platform: Microsoft Fabric/Power BI, semantic_model: Farmax v3 (1), semantic_table: fDevolucao_unificada}
+lineage: {observed_contract: data_products/comercial/tabela_fdevolucao_unificada.md, implementation_evidence: powerbi/Farmax v3 (1).SemanticModel/definition/tables/fDevolucao_unificada.tmdl}
+sources:
+  - {reference: data_products/comercial/tabela_fdevolucao_unificada.md, locator: contrato técnico observado, accessed_at: '2026-09-07'}
+validation: {reviewed_by: null, reviewed_at: null, evidence: [Leitura estática; sem certificação.]}
+pending: [Confirmar origem física, granularidade, chaves, dimensões e responsáveis.]

@@ -59,8 +59,11 @@ formula:
 aggregation:
   rule: null
   additivity: null
-dimensions: null
+dimensions: ["dimensao_empresa", "dimensao_cliente", "dimensao_produto", "dimensao_tempo"]
+dimension_compatibility_status: "observed_pending_approval"
 relationships: null
+datasets: ["dataset_devolucoes"]
+business_rules: ["regra_datas_eventos"]
 filters:
   mandatory: null
   optional: null
