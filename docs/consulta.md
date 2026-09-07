@@ -1,6 +1,6 @@
 # Consultar o Atlas
 
-1. Localize a métrica por nome, sinônimos ou pergunta no índice `catalog/metrics.json`. Com execução local, prefira a busca abaixo: ela retorna até cinco candidatos, sem carregar contratos no contexto do agente.
+1. Localize o objeto por nome, sinônimos ou pergunta nos índices de `catalog/`. Com execução local, prefira a busca abaixo: ela retorna candidatos sem carregar contratos completos no contexto do agente.
 2. Abra o contrato escolhido. Diferencie variantes antes de consultar valores. Preserve status, filtros, evento de data, unidade e limites.
 3. Use `show` para obter referências das dependências, impactos, dimensões candidatas, relacionamentos observados e páginas do relatório. Abra apenas o necessário; referências transitivas não comprovam exibição nem causalidade.
 4. Para calcular, a integração precisa acessar o modelo/dados com permissões e contexto equivalentes. O Atlas não fornece valores atuais nem executa DAX/SQL. Sem conexão, explique a definição e a lacuna, sem inventar um número.
@@ -15,7 +15,9 @@ python scripts/atlas.py search "quanto de receita a faturar estão abertas"
 python scripts/atlas.py show metrica_aberto
 ```
 
-O índice é derivado dos contratos: `python scripts/atlas.py build`. Busca lexical com normalização de acentos e sinônimos curados, sem embeddings; perguntas fora do vocabulário podem exigir reformulação. A integração pode expor `search` e `show` como ferramentas, mas nenhum servidor/API foi implantado.
+Os índices são derivados dos contratos: `python scripts/atlas.py build`. A busca cobre métricas, dimensões, datasets, conceitos, regras e skills. Use `--type dataset` para restringir e `--certified-only` quando o consumidor precisar apenas de definições oficiais.
+
+O servidor em `mcp/server.py` expõe busca e leitura por tipo. Em produção, transporte, identidade e autenticação devem ser publicados pela infraestrutura antes da conexão com o Copilot Studio.
 
 ## Exemplo: receita a faturar em aberto
 

@@ -1,0 +1,42 @@
+schema_version: 1
+id: dataset_vendas
+title: Vendas e faturamento
+type: dataset
+domain: comercial
+status: draft
+evidence_status: observed
+version: 0.1.0
+owners: {business: null, technical: null}
+created_at: '2026-09-07'
+updated_at: '2026-09-07'
+definition: Dataset candidato para análises comerciais de pedidos, faturamento, receita e volume.
+business_description: Organiza a descoberta do objeto de vendas pelo uso de negócio, sem transformar a observação técnica em certificação.
+business_questions: ["Qual dataset usar para analisar vendas?", "Onde encontro faturamento e carteira?"]
+synonyms: [vendas, faturamento, carteira, fVendas_unificada]
+grain: {business: Pendente de confirmação, observed: linha do objeto fVendas_unificada}
+dimensions: [dimensao_empresa, dimensao_cliente, dimensao_produto, dimensao_marca, dimensao_canal, dimensao_regional, dimensao_executivo, dimensao_tempo, dimensao_status_pedido]
+recommended_for: [metrica_faturamento, metrica_receita_bruta, metrica_total_a_faturar, metrica_aberto, metrica_programado, metrica_unidades_vendidas, metrica_unidades_faturadas]
+not_recommended_for: [metrica_logistica]
+business_rules: [regra_datas_eventos, regra_carteira_data_referencia, regra_bases_receita]
+physical:
+  platform: Amazon Redshift
+  database: farmax_prod
+  object: comercial.fato_vendas_faturamento_unificada
+  semantic_model: Farmax v3 (1)
+  semantic_table: fVendas_unificada
+lineage:
+  observed_contract: data_products/comercial/tabela_fvendas_unificada.md
+  implementation_evidence: powerbi/Farmax v3 (1).SemanticModel/definition/tables/fVendas_unificada.tmdl
+columns:
+  - {name: receita, related_metrics: [metrica_faturamento]}
+  - {name: receita_bruta, related_metrics: [metrica_receita_bruta]}
+  - {name: chave_cliente, dimension: dimensao_cliente}
+  - {name: sku, dimension: dimensao_produto}
+  - {name: sale_program_date, dimension: dimensao_tempo}
+sources:
+  - {reference: data_products/comercial/tabela_fvendas_unificada.md, locator: Origem, linhagem e dicionário observado, accessed_at: '2026-09-07'}
+validation:
+  reviewed_by: null
+  reviewed_at: null
+  evidence: [Derivado da documentação técnica e do snapshot PBIP; sem execução ou aprovação de negócio.]
+pending: [Confirmar granularidade, chaves, atualização, responsáveis e compatibilidade de cada métrica e dimensão.]

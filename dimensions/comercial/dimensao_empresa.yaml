@@ -40,7 +40,8 @@ physical_mapping:
     - "Grupo"
 unknown_values: null
 historical_behavior: null
-compatible_metrics: null
+compatible_metrics: ["metrica_faturamento", "metrica_receita_bruta", "metrica_total_a_faturar", "metrica_aberto", "metrica_programado", "metrica_devolucao"]
+compatibility_status: "observed_pending_approval"
 observed_metric_references:
   - "metrica_pedidos_e_faturamentos_html"
   - "metrica_carteira_e_estoque_html_v1"

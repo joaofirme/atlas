@@ -1,0 +1,24 @@
+schema_version: 1
+id: dataset_planejamento_producao
+title: Planejamento de produção
+type: dataset
+domain: operacoes
+status: draft
+evidence_status: observed
+version: 0.1.0
+owners: {business: null, technical: null}
+created_at: '2026-09-07'
+updated_at: '2026-09-07'
+definition: Dataset candidato para posição e planejamento de produção.
+business_description: Camada de descoberta orientada ao negócio sobre fPlanProd_unificada.
+business_questions: ["Onde analisar planejamento de produção e estoque?"]
+synonyms: [planejamento de produção, fPlanProd_unificada]
+grain: {business: Pendente de confirmação, observed: linha do objeto fPlanProd_unificada}
+dimensions: [dimensao_empresa, dimensao_produto, dimensao_tempo]
+recommended_for: []
+physical: {platform: Microsoft Fabric/Power BI, semantic_model: Farmax v3 (1), semantic_table: fPlanProd_unificada}
+lineage: {observed_contract: data_products/operacoes/tabela_fplanprod_unificada.md}
+sources:
+  - {reference: data_products/operacoes/tabela_fplanprod_unificada.md, locator: contrato técnico observado, accessed_at: '2026-09-07'}
+validation: {reviewed_by: null, reviewed_at: null, evidence: [Leitura estática; sem certificação.]}
+pending: [Confirmar granularidade, métricas, dimensões, atualização e responsáveis.]

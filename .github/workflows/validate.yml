@@ -10,6 +10,7 @@ jobs:
           python-version: '3.12'
       - run: pip install -r requirements.txt
       - run: python scripts/atlas.py validate
+      - run: python -m py_compile scripts/atlas.py mcp/server.py
       - run: python -m unittest discover -s tests
       - run: python scripts/atlas.py build
       - run: git diff --exit-code -- catalog docs/catalogo.md docs/catalogo-tecnico.md

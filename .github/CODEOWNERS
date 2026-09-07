@@ -1,0 +1,15 @@
+# Substitua os times abaixo pelos times GitHub da organização ao criá-los.
+*                                      @joaofirme
+/scripts/                              @joaofirme
+/mcp/                                  @joaofirme
+/tests/                                @joaofirme
+/.github/                              @joaofirme
+/metrics/comercial/                    @joaofirme
+/dimensions/comercial/                 @joaofirme
+/datasets/comercial/                   @joaofirme
+/business_rules/comercial/             @joaofirme
+/metrics/logistica/                    @joaofirme
+/datasets/logistica/                   @joaofirme
+/metrics/financeiro/                   @joaofirme
+/datasets/operacoes/                   @joaofirme
+/business_rules/operacoes/             @joaofirme

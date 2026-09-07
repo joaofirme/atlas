@@ -13,8 +13,9 @@ O Atlas é a base de conhecimento de dados e negócio da Farmax. Esta skill é p
 - `dimensions/`, `ontology/` e `business_rules/`: dimensões, entidades, joins, conceitos e regras referenciáveis.
 - `skills/`: procedimentos analíticos; `.agents/skills/`: instruções de manutenção.
 - `technical/measures/`: seletores, HTML, cores, placeholders e adaptações visuais. Preservar IDs para dependências.
-- `data_products/`: documentação técnica legada de tabelas; o prefixo `tabela_` não comprova produto governado.
-- `catalog/metrics.json`: índice de busca gerado; não editar à mão nem copiar fórmulas para ele.
+- `datasets/`: contratos orientados ao negócio que ligam métricas, dimensões e implementação física.
+- `data_products/`: documentação técnica legada preservada como evidência; o prefixo `tabela_` não comprova produto governado.
+- `catalog/*.json`: índices gerados de métricas, dimensões, datasets, conceitos, regras e skills; não editar à mão.
 - `powerbi/` e `docs/ingestoes/`: evidências; ler somente quando houver necessidade de auditar a origem.
 - `docs/catalogo.md` e `docs/catalogo-tecnico.md`: índices gerados por tipo de consulta.
 
@@ -41,6 +42,7 @@ title: Nome legível
 type: metric
 domain: logistica
 status: draft
+evidence_status: observed
 version: 0.1.0
 owners:
   business: null
@@ -61,6 +63,8 @@ pending:
 
 Substituir os valores ilustrativos ao criar um objeto. `type` aceita `metric`, `dimension`, `entity`, `relationship`, `concept`, `business_rule`, `data_product` ou `analysis_skill`. Documentos de navegação e esta skill de manutenção não precisam desse frontmatter.
 
+Evidência: `observed` registra o encontrado numa fonte, `proposed` registra uma proposta ainda não aprovada e `certified` registra evidência revisada. Estado e evidência são independentes, mas um objeto com `status: certified` exige `evidence_status: certified`.
+
 Estados: `draft` (incompleto ou proposto), `in_review` (pronto para revisão), `certified` (aprovação de negócio e validação técnica registradas), `deprecated` (substituído ou retirado, com motivo e sucessor quando existir). O agente não se declara revisor de negócio. Rascunhos não podem ser apresentados como regras oficiais. Uma alteração de significado em objeto certificado retorna a revisão.
 
 Versionamento do conteúdo: PATCH para esclarecimento sem mudança de significado; MINOR para adição compatível; MAJOR para mudança de cálculo, granularidade, filtro obrigatório ou contrato incompatível. Registrar a justificativa e o impacto de mudanças incompatíveis em `docs/decisoes/`. `schema_version` identifica o formato do contrato e é independente da versão do conteúdo.
@@ -77,6 +81,7 @@ Acrescentar aos metadados comuns:
 - `formula`: expressão conceitual e IDs de métricas dependentes.
 - `aggregation`: agregação válida e restrições de aditividade por dimensão e tempo.
 - `dimensions`: IDs das dimensões permitidas; `relationships`: IDs dos caminhos de join aprovados.
+- `datasets`: IDs dos datasets recomendados; `business_rules`: IDs das regras que definem ou restringem a métrica.
 - `filters`: filtros obrigatórios, opcionais e exclusões, incluindo cancelamentos ou devoluções quando aplicáveis.
 - `data_sources`: objetos físicos e colunas confirmados, vinculados às evidências de origem.
 - `implementations`: SQL/DAX confirmados, dialeto, dependências e limitações; `null` enquanto não confirmados.
@@ -98,6 +103,7 @@ Quando SQL e DAX coexistirem, ambos implementam a mesma definição. A equivalê
 | Relacionamento | Entidades de origem/destino, verbo de negócio, cardinalidade e direcionalidade; separar relação conceitual do join físico. Para join: chaves, tipo, tratamento de órfãos e risco de multiplicação de linhas. |
 | Conceito | Definição, sinônimos, exemplos, diferenças em relação a conceitos próximos e objetos relacionados. |
 | Regra de negócio | Contexto, condição, ação ou cálculo, exceções, vigência, autoridade da regra e objetos impactados. |
+| Dataset | Descrição de negócio, uso recomendado/não recomendado, granularidade, dimensões, métricas, mapeamento físico e rastreabilidade ao inventário observado. |
 | Produto de dados | Objetivo, consumidores, entradas/saídas, granularidade, linhagem, dependências, atualização, qualidade, acesso e sustentação. SLAs somente se acordados. |
 | Skill analítica | Quando usar, entradas, pré-condições, métricas/dimensões/regras por ID e link, sequência analítica, verificações, limites e formato de resposta. |
 

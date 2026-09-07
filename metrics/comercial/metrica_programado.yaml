@@ -48,8 +48,11 @@ formula:
 aggregation:
   rule: null
   additivity: null
-dimensions: null
+dimensions: ["dimensao_empresa", "dimensao_cliente", "dimensao_produto", "dimensao_marca", "dimensao_canal", "dimensao_regional", "dimensao_executivo", "dimensao_tempo", "dimensao_status_pedido"]
+dimension_compatibility_status: "observed_pending_approval"
 relationships: null
+datasets: ["dataset_vendas"]
+business_rules: ["regra_datas_eventos", "regra_carteira_data_referencia"]
 filters:
   mandatory: ["Filtros herdados de metrica_total_a_faturar", "sale_program_date > TODAY()"]
   optional: null
