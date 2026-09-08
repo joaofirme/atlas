@@ -104,6 +104,8 @@ Não invente tabelas, responsáveis, moedas, regras ou resultados. Quando uma in
 
 ## Estrutura do repositório
 
+Uma versão visual, com a árvore resumida e a mini documentação de cada pasta, está em [Estrutura do repositório Atlas](docs/estrutura-do-repositorio.md).
+
 | Caminho | Conteúdo | Quando consultar |
 |---|---|---|
 | `metrics/` | Contratos canônicos de indicadores de negócio, organizados por domínio. | Para significado, fórmula, unidade, granularidade, filtros, dimensões, datasets, regras, fontes e implementações. |
